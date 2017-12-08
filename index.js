@@ -1,4 +1,4 @@
-const {BaseKonnector, log, request, errors} = require('cozy-konnector-libs')
+const {BaseKonnector, log, request, errors, updateOrCreate} = require('cozy-konnector-libs')
 
 const rq = request({
   // debug: true,
@@ -13,30 +13,44 @@ module.export = new BaseKonnector(start)
 
 function start (fields) {
   return login(fields)
-  .then($ => {
-    const comptes = Array.from($('.ca-table tbody tr img'))
-      .map(compte => $(compte).closest('tr'))
-      .map(compte => Array.from($(compte).find('td'))
-          .map(td => {
-            const $td = $(td)
-            let text = $td.text().trim()
+  .then(parseAccounts)
+  .then(saveAccounts)
+}
 
-            // Get the full label of the account which is onmouseover event
-            const mouseover = $td.attr('onmouseover') || ''
-            let fullText = mouseover.match(/'(.*)'/)
-            if (fullText) text = fullText[1]
+function saveAccounts (accounts) {
+  return updateOrCreate(accounts, 'io.cozy.bank.accounts', ['number'])
+}
 
-            return text
-          })
-          .filter(td => td.length > 0)
-      )
+function parseAccounts ($) {
+  const comptes = Array.from($('.ca-table tbody tr img'))
+    .map(compte => $(compte).closest('tr'))
+    .map(compte => Array.from($(compte).find('td'))
+        .map(td => {
+          const $td = $(td)
+          let text = $td.text().trim()
 
-    console.log(comptes.map(compte => ({
-      label: compte[0],
-      number: compte[1],
-      amount: Number(compte[2].replace(' ', '').replace(',', '.'))
-    })))
-  })
+          // Get the full label of the account which is onmouseover event
+          const mouseover = $td.attr('onmouseover') || ''
+          let fullText = mouseover.match(/'(.*)'/)
+          if (fullText) text = fullText[1]
+
+          return text
+        })
+        .filter(td => td.length > 0)
+    )
+
+  const label2Type = {
+    'LIVRET A': 'bank',
+    'COMPTE CHEQUE': 'bank'
+  }
+
+  return comptes.map(compte => ({
+    institutionLabel: 'Crédit Agricole',
+    type: label2Type[compte[0]] || 'UNKNOWN LABEL',
+    label: compte[0],
+    number: compte[1],
+    balance: Number(compte[2].replace(' ', '').replace(',', '.'))
+  }))
 }
 
 function login (fields) {

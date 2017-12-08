@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "name": "Crédit Agricole",
   "type": "node",
-  "slug": "cragr",
+  "slug": "creditagricole",
   "source": "git://github.com/cozy/cozy-konnector-bank-cragr.git",
   "fields": {
     "account": {
