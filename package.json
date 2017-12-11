@@ -1,0 +1,30 @@
+{
+  "name": "cragr",
+  "version": "1.0.0",
+  "description": "Crédit Agricole connector",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cozy/cozy-konnector-bank-cragr.git"
+  },
+  "author": "doubleface <christophe@cozycloud.cc>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "cozy-konnector-libs": "^3.0.13"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "standalone": "cozy-konnector-standalone",
+    "standalone:record": "REPLAY=record cozy-konnector-standalone",
+    "standalone:replay": "REPLAY=replay cozy-konnector-standalone",
+    "dev": "cozy-konnector-dev",
+    "build": "webpack",
+    "deploy": "git-directory-deploy --directory build/ --branch build --repo=https://github.com/cozy/cozy-konnector-bank-cragr.git",
+    "deploy:travis": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --repo=https://$GITHUB_TOKEN@github.com/cozy/cozy-konnector-bank-cragr.git"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "git-directory-deploy": "^1.5.1",
+    "webpack": "^3.5.0"
+  }
+}
