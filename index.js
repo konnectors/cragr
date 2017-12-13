@@ -1,6 +1,11 @@
-const {BaseKonnector, log, request, errors, updateOrCreate} = require('cozy-konnector-libs')
+const {BaseKonnector, log, request, errors, updateOrCreate, addData, filterData} = require('cozy-konnector-libs')
+const xlsx = require('xlsx')
+const fs = require('fs')
+const path = require('path')
+const bluebird = require('bluebird')
+const moment = require('moment')
 
-const rq = request({
+let rq = request({
   // debug: true,
   jar: true,
   json: false,
@@ -8,6 +13,7 @@ const rq = request({
 })
 
 let loginUrl = null
+let baseUrl = null
 
 module.export = new BaseKonnector(start)
 
@@ -15,6 +21,78 @@ function start (fields) {
   return login(fields)
   .then(parseAccounts)
   .then(saveAccounts)
+  .then(comptes => {
+    rq = request({
+      cheerio: false
+    })
+
+    bluebird.each(comptes, compte => {
+      return fetchOperations(compte)
+      .then(operations => saveOperations(compte, operations))
+    })
+  })
+}
+
+function saveOperations (compte, operations) {
+  // Deduplicate on this keys "naive" version
+  const options = {
+    keys: ['date', 'amount'],
+    selector: {
+      account: compte.number
+    }
+  }
+
+  return filterData(operations, 'io.cozy.bank.operations', options)
+  .then(entries => addData(operations, 'io.cozy.bank.operations'))
+}
+
+function fetchOperations (compte) {
+  log('info', `Gettings operations for ${compte.label}`)
+  return rq({
+    url: `${baseUrl}/stb/${compte.linkOperations}&typeaction=telechargement`,
+    encoding: 'binary'
+  })
+  .then(body => {
+    fs.writeFileSync(path.resolve('temp.slk'), body, {
+      encoding: 'binary'
+    })
+    const workbook = xlsx.readFile(path.resolve('temp.slk'), {
+      type: 'string',
+      raw: true
+    })
+    fs.unlinkSync(path.resolve('temp.slk'))
+    const worksheet = workbook.Sheets[workbook.SheetNames[0]]
+    return xlsx.utils.sheet_to_csv(worksheet).split('\n').slice(9).filter(line => {
+      return line.length > 3 // avoid lines with empty cells
+    }).map(line => {
+      const cells = line.split(',')
+      const labels = cells[1].split('\u001b :').map(elem => elem.trim()).join(';')
+
+      let amount = 0
+      if (cells[2].length) amount = parseFloat(cells[2]) * -1
+      else if (cells[3].length) amount = parseFloat(cells[3])
+      else {
+        log('error', cells, 'could not find an amount in this operation')
+      }
+
+      // some months are abreviated in french and other in english!!!
+      // TODO use the real csv export (but which is harder to reach) which has better dates
+      const date = cells[0].toLowerCase().replace('déc', 'dec').replace('aoû', 'aug')
+
+      // FIXME a lot of information is hidden in the label of the operation (type of operation,
+      // real date of the operation)but the formating is quite inconsistent
+      return {
+        date: moment(date, 'DD-MMM').toDate(),
+        label: labels,
+        type: 'none', // TODO parse the labels for that for that
+        dateImport: new Date(),
+        dateOperation: date, // TODO parse the label for that
+        currency: 'EUR',
+        amount,
+        account: `io.cozy.bank.accounts:${compte._id}`
+      }
+    })
+  })
 }
 
 function saveAccounts (accounts) {
@@ -22,6 +100,7 @@ function saveAccounts (accounts) {
 }
 
 function parseAccounts ($) {
+  log('info', 'Gettings accounts')
   const comptes = Array.from($('.ca-table tbody tr img'))
     .map(compte => $(compte).closest('tr'))
     .map(compte => Array.from($(compte).find('td'))
@@ -34,6 +113,11 @@ function parseAccounts ($) {
           let fullText = mouseover.match(/'(.*)'/)
           if (fullText) text = fullText[1]
 
+          // if there is an image in the td then get the link to the csv
+          if ($td.find('img').length) {
+            text = $td.find('a').attr('href').match(/\('(.*)'\)/)[1]
+          }
+
           return text
         })
         .filter(td => td.length > 0)
@@ -42,6 +126,7 @@ function parseAccounts ($) {
   const label2Type = {
     'LIVRET A': 'bank',
     'COMPTE CHEQUE': 'bank'
+    // to complete when we have more data
   }
 
   return comptes.map(compte => ({
@@ -49,7 +134,8 @@ function parseAccounts ($) {
     type: label2Type[compte[0]] || 'UNKNOWN LABEL',
     label: compte[0],
     number: compte[1],
-    balance: Number(compte[2].replace(' ', '').replace(',', '.'))
+    balance: parseFloat(compte[2].replace(' ', '').replace(',', '.')),
+    linkOperations: compte[5]
   }))
 }
 
@@ -64,6 +150,9 @@ function login (fields) {
       })
 
     loginUrl = script.match(/var chemin = "(.*)".*\|/)[1]
+
+    const url = require('url').parse(loginUrl)
+    baseUrl = `${url.protocol}//${url.hostname}`
 
     return rq({
       url: loginUrl,

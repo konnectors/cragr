@@ -2,14 +2,14 @@ GET /particuliers.html
 host: www.ca-paris.fr
 
 HTTP/1.1 200 OK
-date: Fri, 08 Dec 2017 13:58:30 GMT
+date: Tue, 12 Dec 2017 11:08:53 GMT
 server: Apache-Coyote/1.1
 x-powered-by: Tomcat_13
 content-type: text/html;charset=ISO-8859-1
 vary: Accept-Encoding
 p3p: CP="ALL DSP COR CURa ADMa DEVa TAIa OUR BUS IND UNI COM NAV INT"
-set-cookie: JSESSIONID=BDAF8BA9BD8A9116FF5975C014AB7FDE; Path=/
-set-cookie: JADS-20480=EBAIPNAKFAAA; Expires=Mon, 06-Dec-2027 13:58:31 GMT; Path=/
+set-cookie: JSESSIONID=7DF36208800326E97BCD509159DF9D08; Path=/
+set-cookie: JADS-20480=EBAIPNAKFAAA; Expires=Fri, 10-Dec-2027 11:08:53 GMT; Path=/
 connection: close
 transfer-encoding: chunked
 

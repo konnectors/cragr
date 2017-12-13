@@ -1,0 +1,267 @@
+GET /stb/collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&fwkidpu=120858159_12122017_40012&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Telechargement&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=202109&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU%20MME%20NONAME&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&typeaction=telechargement
+host: www.paris-g4-enligne.credit-agricole.fr
+
+HTTP/1.1 200 OK
+date: Tue, 12 Dec 2017 11:08:59 GMT
+content-disposition: attachment; filename="CA20171212_1209.slk"
+content-type: application/slk
+content-language: fr-FR
+connection: close
+transfer-encoding: chunked
+
+ID;PWXL;N;E
+P;PGeneral
+P;P0
+P;P0.00
+P;P#,##0
+P;P#,##0.00
+P;P#,##0\ _E;;\-#,##0\ _E
+P;P#,##0\ _E;;[Red]\-#,##0\ _E
+P;P#,##0.00\ _E;;\-#,##0.00\ _E
+P;P#,##0.00\ _E;;[Red]\-#,##0.00\ _E
+P;P#,##0\ "E";;\-#,##0\ "E"
+P;P#,##0\ "E";;[Red]\-#,##0\ "E"
+P;P#,##0.00\ "E";;\-#,##0.00\ "E"
+P;P#,##0.00\ "E";;[Red]\-#,##0.00\ "E"
+P;P0%
+P;P0.00%
+P;P0.00E+00
+P;P##0.0E+0
+P;P#" "?/?
+P;P#" "??/??
+P;Pdd/mm/yy
+P;Pdd\-mmm\-yy
+P;Pdd\-mmm
+P;Pmmm\-yy
+P;Ph:mm\ AM/PM
+P;Ph:mm:ss\ AM/PM
+P;Phh:mm
+P;Phh:mm:ss
+P;Pdd/mm/yy\ hh:mm
+P;Pmm:ss
+P;Pmm:ss.0
+P;P@
+P;P[h]:mm:ss
+P;P_-* #,##0\ "E"_-;;\-* #,##0\ "E"_-;;_-* "-"\ "E"_-;;_-@_-
+P;P_-* #,##0\ _E_-;;\-* #,##0\ _F_-;;_-* "-"\ _E_-;;_-@_-
+P;P_-* #,##0.00\ "E"_-;;\-* #,##0.00\ "E"_-;;_-* "-"??\ "E"_-;;_-@_-
+P;P_-* #,##0.00\ _E_-;;\-* #,##0.00\ _E_-;;_-* "-"??\ _E_-;;_-@_-
+P;FArial;M200;L9
+P;FArial;M200;L9
+P;FArial;M200;L9
+P;FArial;M200;L9
+P;EArial;M200;L9
+P;EArial;M200;L9
+P;EArial;M200;L9
+P;EArial;M200;L9
+P;EArial;M200;SB
+P;EArial;M400
+P;EArial;M400;SB
+P;EArial;M320
+P;EArial;M320;SB
+P;EArial;M240;SB
+P;EArial;M280;SB
+P;EArial;M240
+P;EArial;M200;L9
+P;EArial;M200;SBI;L17
+P;EArial;M160
+F;P0;DG0G10;SM0;M255
+B;Y3;X4;D0 0 141 3
+O;L;D;V0;K47;G100 0.001
+F;W1 1 11
+F;W2 2 58
+F;W3 3 17
+F;W4 4 15
+F;W5 256 11
+
+F;SDM11;M525;R1
+F;Y1;X1
+C;K"TNBelNBechargement du 12/12/2017"
+F;X2
+F;X3
+F;X4
+
+F;Y3;X1
+F;X2
+F;X3
+F;X4
+F;SDM13;M405;R4
+F;Y4;X1
+C;K"M.OU MME NONAME"
+F;X2
+F;X3
+F;X4
+F;SDM13;M405;R5
+F;Y5;X1
+C;K"CCHQ nN0 XXXXXXXXXXX"
+F;X2
+F;X3
+F;X4
+F;M315;R6
+F;Y6;X1
+F;P0;FG0R;SDM14;X2
+C;K"Solde au 11/12/17"
+F;P4;FF2G;SDM14;X3
+C;K1111.11
+F;SDM14;X4
+C;K"EUR"
+F;Y7;X1
+F;X2
+F;X3
+F;X4
+F;SDM14;M315;R8
+F;Y8;X1
+C;K"Liste des opérations du compte entre le 01/06/2017 et le 11/12/2017"
+F;X2
+F;X3
+F;X4
+F;SDM9;R9
+F;P0;FG0R;SLRTBM9;Y9;X1
+C;K"Date"
+F;P0;FG0C;SLRTBM9;X2
+C;K"Libellé"
+F;P0;FG0R;SLRTBM9;X3
+C;K"Débit Euros"
+F;P0;FG0R;SLRTBM9;X4
+C;K"Crédit Euros"
+
+
+F;M1125;R10
+F;P21;FG0G;SLRTBM0;Y10;X1
+C;K"11-Déc"
+F;SLRTBM19;X2
+C;K"Bouygues Telecom                    :Prelevmnt                           :Lignes Mobiles :Fr35zz323 :Btaw0g39"
+F;P4;FF2G;SLRTBM0;X3
+C;K51.98
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;M450;R11
+F;P21;FG0G;SLRTBM0;Y11;X1
+C;K"11-Déc"
+F;SLRTBM19;X2
+C;K"E.Leclerc       08/12    :Paiement Par Carte                 "
+F;P4;FF2G;SLRTBM0;X3
+C;K22.50
+F;P4;FF2G;SLRTBM0;X4
+
+
+
+
+F;M1575;R23
+F;P21;FG0G;SLRTBM0;Y23;X1
+C;K"08-Déc"
+F;SLRTBM19;X2
+C;K"Credit Agricole De Paris Et Idf     :Prelevmnt                           :Cotisation D'assurance Pacifica Du :Contrat Garantie Accidents De La Vi :E 00000000000 :000000000002230 :00000000000000000000006859530907pck"
+F;P4;FF2G;SLRTBM0;X3
+C;K4.72
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;M450;R30
+F;P21;FG0G;SLRTBM0;Y30;X1
+C;K"05-Déc"
+F;SLRTBM19;X2
+C;K"XXXXXXXXXXX Echeance    05/12/17    :Remboursement De Pret              "
+F;P4;FF2G;SLRTBM0;X3
+C;K111.11
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;M675;R31
+F;P21;FG0G;SLRTBM0;Y31;X1
+C;K"05-Déc"
+F;SLRTBM19;X2
+C;K"Noname                               :Virement En Votre Faveur            :XXXXX XXXXX XXXXXX"
+F;SLRTBM0;X3
+F;P4;FF2G;SLRTBM0;X4
+C;K633.00
+
+
+F;M900;R36
+F;P21;FG0G;SLRTBM0;Y36;X1
+C;K"05-Déc"
+F;SLRTBM19;X2
+C;K"Virement Emis                       :Web Mme Ou Mr Noname Fe Femme D    :Femme De Menage :05/12/2017"
+F;P4;FF2G;SLRTBM0;X3
+C;K52.00
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;M450;R55
+F;P21;FG0G;SLRTBM0;Y55;X1
+C;K"04-Déc"
+F;SLRTBM19;X2
+C;K"Compte Service Equilibre + 5113     :Cotisation                         "
+F;P4;FF2G;SLRTBM0;X3
+C;K6.35
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;M450;R56
+F;P21;FG0G;SLRTBM0;Y56;X1
+C;K"04-Déc"
+F;SLRTBM19;X2
+C;K"Assu. Cnp Pret Habitat 12/17        :Reglement                          "
+F;P4;FF2G;SLRTBM0;X3
+C;K11.11
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;M1125;R80
+F;P21;FG0G;SLRTBM0;Y80;X1
+C;K"24-Nov"
+F;SLRTBM19;X2
+C;K"Virement Emis                       :Web Test Noname Ptz          :M.Ou Mme Noname :Ptz :24/11/2017"
+F;P4;FF2G;SLRTBM0;X3
+C;K12.34
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;M450;R81
+F;P21;FG0G;SLRTBM0;Y81;X1
+C;K"24-Nov"
+F;SLRTBM19;X2
+C;K"925XXXX                             :Cheque Emis                        "
+F;P4;FF2G;SLRTBM0;X3
+C;K47.40
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;M450;R177
+F;P21;FG0G;SLRTBM0;Y177;X1
+C;K"23-Oct"
+F;SLRTBM19;X2
+C;K"Virement Emis                       :Web Sdc  Immeuble   "
+F;P4;FF2G;SLRTBM0;X3
+C;K21.60
+F;P4;FF2G;SLRTBM0;X4
+
+
+F;Y645;X1
+F;X2
+F;X3
+F;X4
+F;Y646;X1
+F;X2
+F;X3
+F;X4
+F;Y647;X1
+F;X2
+F;X3
+F;X4
+F;Y648;X1
+F;X2
+F;X3
+F;X4
+F;Y649;X1
+F;X2
+F;X3
+F;X4
+F;Y650;X1
+F;X2
+F;X3
+F;X4
+E
+
+
