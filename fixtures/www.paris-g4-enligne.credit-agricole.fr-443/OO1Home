@@ -1,16 +1,15 @@
 POST /stb/entreeBam
 host: www.paris-g4-enligne.credit-agricole.fr
 content-type: application/x-www-form-urlencoded
-body: TOP_ORIGINE=V&vitrine=O&largeur_ecran=800&hauteur_ecran=600&origine=vitrine&situationTravail=BANQUAIRE&canal=WEB&typeAuthentification=CLIC_ALLER&urlOrigine=http%3A%2F%2Fwww.ca-paris.fr&tracking=O
 
 HTTP/1.1 200 OK
-date: Fri, 08 Dec 2017 13:58:30 GMT
+date: Tue, 12 Dec 2017 11:08:57 GMT
 content-type: text/html;charset=ISO-8859-1
 content-language: fr-FR
 expires: Mon, 01 Jan 1990 00:00:00 GMT
 cache-control: no-cache,no-store
 vary: Accept-Encoding,User-Agent
-set-cookie: ARPT=rd169o00000000000000000000ffff0a9b1794o443; path=/
+set-cookie: ARPT=rd169o00000000000000000000ffff0a9b17ado443; path=/
 connection: close
 transfer-encoding: chunked
 
@@ -33,8 +32,8 @@ transfer-encoding: chunked
 
 
 
- 
- 
+
+
 
 
 <link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/antiquus.css?v=59" media="all" />
@@ -72,15 +71,15 @@ transfer-encoding: chunked
 <SCRIPT LANGUAGE="JavaScript">
 <!--
 
-//Message affiché quand le souris est au-dessus: 
+//Message affichÃ© quand le souris est au-dessus:
 statusconfirmer="Confirmer l'identification";
 statusannuler="Annuler l'identification";
 statusaide="Besoin d'Aide ?";
 statuscondjur="Conditions juridiques";
-statusdemo="Voir la démonstration";
-statuscompte="Saisir votre identifiant à 11 chiffres";
+statusdemo="Voir la dÃ©monstration";
+statuscompte="Saisir votre identifiant Ã  11 chiffres";
 statuscode="Saisir votre code personnel";
-statuscorriger="Corriger votre dernière saisie";
+statuscorriger="Corriger votre derniÃ¨re saisie";
 statusclavnum="Cliquez dans la grille pour composer votre code personnel";
 statusrecom="Voir nos recommandations";
 
@@ -150,12 +149,12 @@ if ( !d.layers ){
 	else if ( ie ){
 		ie_pos = nua.indexOf( 'MSIE' );
 		ienu = nua.substr( ( ie_pos + 5 ), 3 );
-		ie4 = ( !dom ); 
+		ie4 = ( !dom );
 		ie5 = ( ienu.substring( 0, 1 ) == 5 );
 		ie6 = ( ienu.substring( 0, 1 ) == 6 );
 		browserOK = ( ienu.substring( 0, 1 ) >= ievers );
 	}
-	else{} 
+	else{}
 
 	ie5x = ( d.all && dom );
 	isIE55 = ie5x;
@@ -198,10 +197,10 @@ function setSize(win,width,height) {
 
 function clicPosition(position) {
 	cocherCase();
-	if (document.formulaire.CCCRYC2.value.length == 6) { 
-		return; 
+	if (document.formulaire.CCCRYC2.value.length == 6) {
+		return;
 	}
-	if (document.formulaire.CCCRYC.value=="") 
+	if (document.formulaire.CCCRYC.value=="")
 		document.formulaire.CCCRYC.value = position;
 	else
 		document.formulaire.CCCRYC.value = document.formulaire.CCCRYC.value + "," + position;
@@ -209,9 +208,9 @@ function clicPosition(position) {
 }
 
 var code, pos_der_code, affiche_code;
-function effacer() { 
-	if (document.formulaire.CCCRYC2.value.length == 0) { 
-		return; 
+function effacer() {
+	if (document.formulaire.CCCRYC2.value.length == 0) {
+		return;
 	}
 	code = document.formulaire.CCCRYC.value;
 	pos_der_code = code.lastIndexOf( ',' );
@@ -311,9 +310,9 @@ function ouvreFenetre(item,widthpop,heightpop,men,titre) {
 		//popup1 = window.open('',titre,aazz);
 		//popup1.name = titre;
 		//setSize(popup1,widthpop,heightpop);
-			
+
 		popup1 = window.open(url,titre,aazz);
-			
+
 	    if (moz ) popup1.focus();
 	    //popup1.location =url;
 	} else {
@@ -337,7 +336,7 @@ function setSize(win,width,height) {
 	}
 }
 
-//ouvre une fenêtre popup en plein écran ne laissant l'affichage que de la bnt
+//ouvre une fenÃªtre popup en plein Ã©cran ne laissant l'affichage que de la bnt
 function ouvrirPopupBntVisible(url) {
 	window.open(url,'Popup','location=no,toolbar=no,directories=no,menubar=yes,resizable=yes,scrollbars=yes,status=yes,width='+(screen.availWidth-140)+',height='+screen.availHeight+',screenY=0,screenX='+140);
 }
@@ -360,15 +359,15 @@ function ouvrirPopupBntVisible(url) {
 <table width="620px" cellspacing="0" cellpadding="0" border="0">
 <tr>
 <td style="background:#E6E6E6;">
-	<div id="entete_vide">	
+	<div id="entete_vide">
 		<div id="entete_2" style="background:none;">
    			 <div id="gauche-entete_con_2" >
 		        <h1 style=" border: 0">
 					<table >
 						<tr>
 							<td >
-								<a title="Caisse Régionale d'Ile de France, retour à l'accueil" href="#" id="lien-logo_2">
-									<img alt="Caisse Régionale d'Ile de France, retour à l'accueil" src="/web/bam/tech/allmedia/stb/commun/img/logo_882.png"></img>
+								<a title="Caisse RÃ©gionale d'Ile de France, retour Ã  l'accueil" href="#" id="lien-logo_2">
+									<img alt="Caisse RÃ©gionale d'Ile de France, retour Ã  l'accueil" src="/web/bam/tech/allmedia/stb/commun/img/logo_882.png"></img>
 								</a>
 							</td>
 						</tr>
@@ -385,29 +384,29 @@ function ouvrirPopupBntVisible(url) {
 		</TD>
 	</TR>
 	<TR valign="top">
-	
+
 		<TD>
-		
+
 		<TABLE style="background:#00000"border="0" width="100%" cellpadding="0" cellspacing="0">
 
 			<TR >
 				<TD valign="top" width="169" style="background:#E6E6E6 repeat-y scroll left top">&nbsp;</TD>
 				<TD id="col-centre" valign="top" width="590px" >
-				
+
 				<TABLE width="590" border="0" cellspacing="0" cellpadding="0">
 					<TR>
 						<TD>
-						
+
 						<table width="590" border="0" cellspacing="0" cellpadding="0">
-							
+
 							<tr>
 								<td colspan="2" class="montant2">&nbsp;</td>
 							</tr>
-							
+
 							<tr>
 								<td colspan="2" height="17"></td>
 							</tr>
-							<!-- bandeau authentification --> <tr><td colSpan="2" align="center"><a href="https://www.ca-paris.fr/Vitrine/ObjCommun/Fic/Paris/pap_bam/html/index.html" target="_blank" > <img src="https://www.ca-paris.fr/Vitrine/ObjCommun/Fic/Paris/pap_bam/img/img_entreebam.gif"border=no></a></td></tr> <tr><td>&nbsp;</td></tr>      
+							<!-- bandeau authentification --> <tr><td colSpan="2" align="center"><a href="https://www.ca-paris.fr/Vitrine/ObjCommun/Fic/Paris/pap_bam/html/index.html" target="_blank" > <img src="https://www.ca-paris.fr/Vitrine/ObjCommun/Fic/Paris/pap_bam/img/img_entreebam.gif"border=no></a></td></tr> <tr><td>&nbsp;</td></tr>
 							<tr>
 								<td height="17"><div class="boutons-act">
                     <h1>
@@ -421,18 +420,18 @@ function ouvrirPopupBntVisible(url) {
 							</tr>
 						</table>
 						<FORM class="ca-forms ca-forms-stitre" method="POST" name="formulaire" action="/stb/entreeBam" onSubmit="return false;">
-							<input type="hidden" name="idtcm" value="" /> 
-							<input type="hidden" name="tracking" value="O" /> 
-							<input type="hidden" name="origine" value="vitrine" /> 
+							<input type="hidden" name="idtcm" value="" />
+							<input type="hidden" name="tracking" value="O" />
+							<input type="hidden" name="origine" value="vitrine" />
 							<input type="hidden" name="situationTravail"
-								value="BANCAIRE" /> 
-							<input type="hidden" name="canal" value="WEB" /> 
+								value="BANCAIRE" />
+							<input type="hidden" name="canal" value="WEB" />
 							<input type="hidden" name="typeAuthentification"
 								value="CLIC_RETOUR" />
-							<input type="hidden" name="idUnique" value="-38ce309:16033612932:-6013" /> 
-							<input type="hidden" name="caisse" value="882" /> 
+							<input type="hidden" name="idUnique" value="-4e909e78:16048565b30:-666a" />
+							<input type="hidden" name="caisse" value="882" />
 							<input type="hidden" name="CCCRYC" value="" />
-						<fieldset class="blc-choix"><div class="blc-choix-wrap" style="padding-bottom: 40px;"><p class="nomarge">    <b>Le Crédit Agricole accorde une grande attention à la sécurité de ses sites    internet.</b> En tant qu'utilisateur vous avez également un rôle important    et actif à jouer pour assurer la sécurité des informations qui vous concernent.    Consultez ci-dessous les REGLES de SECURITE à respecter:    <div align="right"></div></p><p class="validation" style="width:570px"><a class="retour gauche" HREF="javascript:ouvrePOPUP('https://www.ca-paris.fr/site-securite.html',790,455,'no','AUTH');" tabindex="33">Nos recommandations</a></p></div></fieldset>
+						<fieldset class="blc-choix"><div class="blc-choix-wrap" style="padding-bottom: 40px;"><p class="nomarge">    <b>Le CrÃ©dit Agricole accorde une grande attention Ã  la sÃ©curitÃ© de ses sites    internet.</b> En tant qu'utilisateur vous avez Ã©galement un rÃ´le important    et actif Ã  jouer pour assurer la sÃ©curitÃ© des informations qui vous concernent.    Consultez ci-dessous les REGLES de SECURITE Ã  respecter:    <div align="right"></div></p><p class="validation" style="width:570px"><a class="retour gauche" HREF="javascript:ouvrePOPUP('https://www.ca-paris.fr/site-securite.html',790,455,'no','AUTH');" tabindex="33">Nos recommandations</a></p></div></fieldset>
 						<table width="590" border="0" >
 							<!-- Message securitaire -->
 
@@ -443,11 +442,11 @@ function ouvrirPopupBntVisible(url) {
 							 <script>
 								if(saf){
 									document.write("<div class=\"blc-choix-wrap\" style=\"padding-bottom:190px;\">");
-									
+
 								}else{
 									document.write("<div class=\"blc-choix-wrap\">");
 								}
-							   
+
 							</script>
 								<SCRIPT langage = "Javascript">
 <!--
@@ -495,31 +494,35 @@ return true;
 }
 -->
 </SCRIPT>
-<h3>Vos codes d'accès</h3>
-<label class="normal">Saisissez&nbsp;&nbsp;votre identifiant à 11 chiffres à l'aide de votre clavier :</label>
+<h3>Vos codes d'accÃ¨s</h3>
+<label class="normal">Saisissez&nbsp;&nbsp;votre identifiant Ã  11 chiffres Ã  l'aide de votre clavier :</label>
 <input type="text" name="CCPTE" size="22" maxlength="11" tabindex="1" >
 </p>
 <div id="bloc-pave-saisis-code">
 <label class="normal gauche" for="input-code">Cliquez dans la grille <br />pour composer votre CODE PERSONNEL :</label>
 
-								
+
 								</form>
 								<table id="pave-saisie-code" class="gauche">
 <tr align="center" valign="middle">
-<td  onClick="clicPosition('01'); " ><a tabindex=
+<td ><a tabindex=
 2
-href="javascript:raf()" >
-&nbsp;&nbsp;0&nbsp;&nbsp;
-</a></td>
-<td ><a tabindex=
+href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+<td  onClick="clicPosition('02'); " ><a tabindex=
 3
-href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td ><a tabindex=
+href="javascript:raf()" >
+&nbsp;&nbsp;8&nbsp;&nbsp;
+</a></td>
+<td  onClick="clicPosition('03'); " ><a tabindex=
 4
-href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td ><a tabindex=
+href="javascript:raf()" >
+&nbsp;&nbsp;5&nbsp;&nbsp;
+</a></td>
+<td  onClick="clicPosition('04'); " ><a tabindex=
 5
-href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+href="javascript:raf()" >
+&nbsp;&nbsp;7&nbsp;&nbsp;
+</a></td>
 <td ><a tabindex=
 6
 href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
@@ -528,87 +531,83 @@ href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 <td ><a tabindex=
 7
 href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td  onClick="clicPosition('07'); " ><a tabindex=
+<td ><a tabindex=
 8
-href="javascript:raf()" >
-&nbsp;&nbsp;6&nbsp;&nbsp;
-</a></td>
+href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 <td ><a tabindex=
 9
 href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td  onClick="clicPosition('09'); " ><a tabindex=
-10
-href="javascript:raf()" >
-&nbsp;&nbsp;5&nbsp;&nbsp;
-</a></td>
 <td ><a tabindex=
-11
+10
 href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+<td  onClick="clicPosition('10'); " ><a tabindex=
+11
+href="javascript:raf()" >
+&nbsp;&nbsp;6&nbsp;&nbsp;
+</a></td>
 </tr>
 <tr align="center" valign="middle">
-<td ><a tabindex=
+<td  onClick="clicPosition('11'); " ><a tabindex=
 12
-href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td  onClick="clicPosition('12'); " ><a tabindex=
-13
-href="javascript:raf()" >
-&nbsp;&nbsp;3&nbsp;&nbsp;
-</a></td>
-<td  onClick="clicPosition('13'); " ><a tabindex=
-14
 href="javascript:raf()" >
 &nbsp;&nbsp;9&nbsp;&nbsp;
 </a></td>
-<td  onClick="clicPosition('14'); " ><a tabindex=
-15
-href="javascript:raf()" >
-&nbsp;&nbsp;8&nbsp;&nbsp;
-</a></td>
 <td ><a tabindex=
-16
+13
 href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+<td ><a tabindex=
+14
+href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+<td ><a tabindex=
+15
+href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+<td  onClick="clicPosition('15'); " ><a tabindex=
+16
+href="javascript:raf()" >
+&nbsp;&nbsp;1&nbsp;&nbsp;
+</a></td>
 </tr>
 <tr align="center" valign="middle">
 <td ><a tabindex=
 17
 href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td  onClick="clicPosition('17'); " ><a tabindex=
+<td ><a tabindex=
 18
-href="javascript:raf()" >
-&nbsp;&nbsp;7&nbsp;&nbsp;
-</a></td>
-<td ><a tabindex=
+href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+<td  onClick="clicPosition('18'); " ><a tabindex=
 19
-href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td  onClick="clicPosition('19'); " ><a tabindex=
-20
 href="javascript:raf()" >
-&nbsp;&nbsp;1&nbsp;&nbsp;
+&nbsp;&nbsp;0&nbsp;&nbsp;
 </a></td>
 <td ><a tabindex=
+20
+href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+<td  onClick="clicPosition('20'); " ><a tabindex=
 21
-href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-</tr>
-<tr align="center" valign="middle">
-<td ><a tabindex=
-22
-href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td  onClick="clicPosition('22'); " ><a tabindex=
-23
 href="javascript:raf()" >
 &nbsp;&nbsp;4&nbsp;&nbsp;
 </a></td>
-<td  onClick="clicPosition('23'); " ><a tabindex=
-24
+</tr>
+<tr align="center" valign="middle">
+<td  onClick="clicPosition('21'); " ><a tabindex=
+22
 href="javascript:raf()" >
-&nbsp;&nbsp;2&nbsp;&nbsp;
+&nbsp;&nbsp;3&nbsp;&nbsp;
 </a></td>
+<td ><a tabindex=
+23
+href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+<td ><a tabindex=
+24
+href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 <td ><a tabindex=
 25
 href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-<td ><a tabindex=
+<td  onClick="clicPosition('25'); " ><a tabindex=
 26
-href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+href="javascript:raf()" >
+&nbsp;&nbsp;2&nbsp;&nbsp;
+</a></td>
 </tr>
 </table>
 
@@ -632,7 +631,7 @@ href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 													src="/web/bam/tech/allmedia/stb/commun/picts/point_transp.gif" /></TD>
 												<TD class="maCase"><IMG height="10" width="10"
 													src="/web/bam/tech/allmedia/stb/commun/picts/point_transp.gif" /></TD>
-											
+
 											</tr>
 										</TABLE>
 								</div>
@@ -642,69 +641,69 @@ href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 										</td>
 										</tr>
 										</table>
-								
+
                                 </span>
-                                
+
 							</div>
-							
+
 							<p class=" validation clearboth" style="width:570px;margin:30px 0 0;">
                                 <span class="gauche">
 	                                <a class="retour gauche" HREF="javascript:ouvrePOPUP('https://www.ca-paris.fr/Vitrine/ObjCommun/Fic/Paris/demo/inter.html',1024,587,'no','AUTH');"
-			   							 tabindex="31">Voir la démonstration</a>
+			   							 tabindex="31">Voir la dÃ©monstration</a>
                             	</span>
                             	<span class="droite">
-                            	
-                            	
-                            		
-	                            		
-			   							
-			   							
-			   						
 
-			   							
-			   							
-			   						
-			   							
-			   							
-			   						
+
+
+
+
+
+
+
+
+
+
+
+
+
 	                            		<a class="annuler droite" HREF="javascript:corriger();effacer();"
-		   									 tabindex="27">Corriger</a> 
+		   									 tabindex="27">Corriger</a>
 		   								<a class="droite" HREF="javascript:ValidCertif();"
 			   								 tabindex="28">Confirmer</a>
 	                            		<a class="annuler droite" HREF="javascript:document.location.href='https://www.ca-paris.fr';"
 			   								 tabindex="30">Annuler</a>
-	                            		
-			   							
 
-			   							
-			   							
-			   							
-			   							
-								</span>                           
+
+
+
+
+
+
+								</span>
                             </p>
 						</div>
                    		 </fieldset>
-										
+
 								</td>
 							</tr>
-							
+
 						</table>
-						
+
 						</td>
 					</tr>
 		<tr >
-		<td>		
-		<!-- Pavé Certificat --> 
-		
-		<!-- Conditions Juridique --> <form class="ca-forms" style="padding:0 0;"><p>Vous avez perdu votre code confidentiel <a href="https://www.ca-paris.fr/Formulaires/Vitrine/p-88791.jsp" target="_blank"><font color = "#0000ff">cliquez ici</font></a></p><br /><p>Si vous rencontrez des  problèmes de connexion ou de navigation, consultez <a href="https://www.ca-paris.fr/demos-particuliers.html" target="_blank"><font color = "#0000ff">notre aide en ligne</font></a></p><br /><p>Je reconnais avoir pris connaissance et accepté les conditions juridiques de la convention d'utilisation du service.</p><p class="validation" style="width:580px"><script>var srcLien = path_dynamic + "/app/bam/tech/allmedia/stb/entreebam/jsp/AUTH-INF.jsp";var srcPuceLien = path_static + "/web/bam/tech/allmedia/stb/commun/picts/PuceLien.gif";var yesno = "no";var authentif = "AUTH";</script><a class="retour gauche" HREF="javascript:ouvrePOPUP(srcLien,490,450,yesno,authentif);" tabindex="34">Conditions juridiques</a></p></form>
+		<td>
+		<!-- PavÃ© Certificat -->
+
+		<!-- Conditions Juridique --> <form class="ca-forms" style="padding:0 0;"><p>Vous avez perdu votre code confidentiel <a href="https://www.ca-paris.fr/Formulaires/Vitrine/p-88791.jsp" target="_blank"><font color = "#0000ff">cliquez ici</font></a></p><br /><p>Si vous rencontrez des  problÃ¨mes de connexion ou de navigation, consultez <a href="https://www.ca-paris.fr/demos-particuliers.html" target="_blank"><font color = "#0000ff">notre aide en ligne</font></a></p><br /><p>Je reconnais avoir pris connaissance et acceptÃ© les conditions juridiques de la convention d'utilisation du service.</p><p class="validation" style="width:580px"><script>var srcLien = path_dynamic + "/app/bam/tech/allmedia/stb/entreebam/jsp/AUTH-INF.jsp";var srcPuceLien = path_static + "/web/bam/tech/allmedia/stb/commun/picts/PuceLien.gif";var yesno = "no";var authentif = "AUTH";</script><a class="retour gauche" HREF="javascript:ouvrePOPUP(srcLien,490,450,yesno,authentif);" tabindex="34">Conditions juridiques</a></p></form>
 			</td>
 		</tr>
 		</table>
 		</TD>
 		<TD valign="top" width="171" style="background:#E6E6E6 repeat-y scroll left top">&nbsp;</TD>
 		</TR>
-		
-		
+
+
 	<TR valign="middle" style="background-color:#E6E6E6;">
 	<td></td>
 		<TD>
@@ -716,7 +715,7 @@ href="javascript:raf()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 				<TD class="footercopyright" align="center">&nbsp;</TD>
 			</TR>
 		</TABLE>
-		
+
 		</TD>
 		<td ></td>
 	</TR></TABLE>

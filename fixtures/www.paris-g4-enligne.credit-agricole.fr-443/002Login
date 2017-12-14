@@ -3,15 +3,15 @@ host: www.paris-g4-enligne.credit-agricole.fr
 content-type: application/x-www-form-urlencoded
 
 HTTP/1.1 200 OK
-date: Fri, 08 Dec 2017 13:58:30 GMT
+date: Tue, 12 Dec 2017 11:08:57 GMT
 expires: Thu, 01 Dec 1994 16:00:00 GMT
 cache-control: no-cache,no-store
 content-type: text/html; charset=windows-1252
 content-language: fr-FR
 vary: Accept-Encoding,User-Agent
-set-cookie: JSESSIONID=0000eed2XMHdd3aHv9b0kvr-p1N:-1; Path=/; Secure
-set-cookie: idUnique=3f6i6h2w5g4j2z542j6r4i462a1a3t541i6x3912; Path=/
-set-cookie: idUnique=3f6i6h2w5g4j2z542j6r4i462a1a3t541i6x3912; Path=/
+set-cookie: JSESSIONID=00006G6ldGtLa_ltcqhAdrM0IQU:-1; Path=/; Secure
+set-cookie: idUnique=1t5i5y21521gf363f21656d484u656q346dn4j; Path=/
+set-cookie: idUnique=1t5i5y21521gf363f21656d484u656q346dn4j; Path=/
 connection: close
 transfer-encoding: chunked
 
@@ -20,73 +20,21 @@ transfer-encoding: chunked
 <TABLE border="0" width="960px" cellpadding="0" cellspacing="0">
 <TR valign="middle"><TD>
 <!-----  DEBUT zone enteteTech  ---->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
 <link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/antiquus.css?v=59" media="all" />
 <link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/antiquus.css?v=59" media="all" />
-
-
 <link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles.css?v=59" media="all" />
 <link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles.css?v=59" media="all" />
-
-
 <link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles-mod.css?v=59" media="all" />
 <link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles-mod.css?v=59" media="all" />
-
-
-
-
-
-
-
-
-
-
-
 <link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/stb.css?v=59" media="all" />
-
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
   var PATH_STATIC = '';
-  
 </script>
-
-
 <script src="/web/eca/tech/allmedia/wai/js/wai.js" type="text/javascript"></script>
 <script src="/web/eca/tech/allmedia/wai/js/swfobject.js" type="text/javascript"></script>
 <script src="/web/bam/tech/allmedia/stb/commun/js/jquery.js" type="text/javascript"></script>
 <!-- TEST -->
-
-
 <script type="text/javascript" src="https://libs.de.coremetrics.com/eluminate.js"></script>
-		
 <script type="text/javascript">
 	cmSetClientID("50580000|88200_CLI_3",true,"data.de.coremetrics.com","credit-agricole.fr");
 </script>
@@ -95,13 +43,9 @@ transfer-encoding: chunked
 	// T300543 - Ajout limitation de durée du cookie IBM à 13 mois
 	cmSetupOther({"cm_JSFCoreCookieExpireSeconds":"33696000"});
 </script>
-
-
-
 <SCRIPT LANGUAGE=JavaScript>
-
 <!--
-idSessionSag = "-38ce30916033612932-6012.SAG_V6";
+idSessionSag = "-4e909e7816048565b30-6669.SAG_V6";
 idPage = "pagePU";
 urlBase = "/stb"+"/entreeBam";
 
@@ -114,7 +58,7 @@ var ccCoremetrics = "5";
 var WB_TRACKING_CBINAM = "1";
 var TRACKING = "O";
 var	topPfv = "B";
-var sDate = "20171208";
+var sDate = "20171212";
 var urlImageWAI = "";
 var pathDynamicStb = "/stb";
 var messageperso_info = "";
@@ -168,18 +112,6 @@ var donneesClient = {
 		montantLivretEpargneAbonne:-1
 }
 var listecomptes_client = [
-			{
-				libelle: "LIV A",
-				numero : XXXXXXXXXXX,
-				nature : "L2"
-			}
-			,
-			{
-				libelle: "LIV A",
-				numero : XXXXXXXXXXX,
-				nature : "L2"
-			}
-			,
 			{
 				libelle: "CCHQ",
 				numero : XXXXXXXXXXX,
@@ -785,7 +717,7 @@ function ouvreTelechargement(val, isForm) {
 <script type="text/javascript">
 
 
-idSessionSag = "-38ce30916033612932-6012.SAG_V6";
+idSessionSag = "-4e909e7816048565b30-6669.SAG_V6";
 idPage = "pagePU";
 urlBase = "/stb"+"/entreeBam";
 
@@ -804,7 +736,7 @@ var urlImageWAI = "";
 var pathDynamicStb = "/stb";
 
 //Parametre BV
-var OICLIBCLIENT= "M.       TEST USER        ";
+var OICLIBCLIENT= "M.       NONAME TEST        ";
 var OICIDPART= "00000064560567";
 var OICIDAGENCE= "00242";
 var OICTOPDATENAISSANCE= "19800209";
@@ -868,11 +800,11 @@ var OICTOPBV= false;
 	     </p> 
     </div>
     <div id="droite-entete_2">    	
-        <p id="der-conn_2">Votre dernière connexion :  08 décembre 2017 à 14:24</p>
+        <p id="der-conn_2">Votre dernière connexion :  12 décembre 2017 à 12:08</p>
         <div id="bloc-login_2">
             <div id="bloc-login-infos_2" style="font-size: 11px;">
                 <p>Bonjour </p>
-                <p>M.       TEST USER        </p>
+                <p>M.       NONAME TEST        </p>
             </div>
             <div id="btn-bloc-login_2">
                 
@@ -1155,21 +1087,20 @@ var OICTOPBV= false;
 							
 							<script>aide_message= "Accédez à vos messages";</script>
 							
-							
-							
-								<div id="ariane-message2_2">
+								
+								<div id="ariane-message3_2">
 								<p>
 <!--								Vous avez  -->
 									<a
 									href="javascript:doAction('Msdossier','infoperso')"
 									onMouseOver="StatusMessage(true, aide_message);return true"
 									onMouseOut="StatusMessage( false )">
-								<span style="color:#F8F8FF; font-size:22px; font-weight:bold; text-decoration:none">&nbsp;2</span>&nbsp;<img  src="/web/bam/tech/allmedia/stb/commun/img/pic_messagerie.png"> 
-<!--									nouveaux&nbsp;messages-->
+								<span style="color:#F8F8FF; font-size:22px; font-weight:bold; text-decoration:none">&nbsp;0</span>&nbsp; <img  src="/web/bam/tech/allmedia/stb/commun/img/pic_messagerie_gris.png">
+<!--									nouveau&nbsp;message-->
 									</a>
 								</p>
 								</div>
-											
+								
 							
 
 
@@ -1204,7 +1135,7 @@ var OICTOPBV= false;
 <TABLE border="0" valign="top" width="168px" cellpadding="0" cellspacing="0">
 <TR><TD>
 <!-----  DEBUT zone MENH  ---->
-<div idcomp='tcm-1356-326464'><script> prefixe = 'pack_111'; </script><!DOCTYPE table SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><ul id="menu-bnt">
+<div idcomp='tcm-1356-326464'><script> prefixe = 'pack_112'; </script><!DOCTYPE table SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><ul id="menu-bnt">
 
  <li class="boutonMen"><a href="#" onclick="clicXiti('Bnt_haut_Vide_MH__Priserdv', 'N'); lancerPu('Priserdv');" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, 'Prendre un RDV directement dans l\'agenda de votre conseiller / votre agence');return true;" shape="rect"><binarycontent img="/btn_prendre_rdv2016_V2_tcm_1356_439017.png"><script xml:space="preserve">displayBinary(prefixe, "/btn_prendre_rdv2016_V2_tcm_1356_439017.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><a href="#" onclick="clicXiti('Bnt_haut_Vide_MH__ESIMULCA__BNT_CREDITS__Partenaire', 'N'); lancerPuPartenaireParam('ESIMULCA', 'BNT_CREDITS', '');" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, 'Simuler votre pr&#234;t immobilier');return true;" shape="rect"><binarycontent img="/bouton_pret_immo_2016_V2_tcm_1356_439020.png"><script xml:space="preserve">displayBinary(prefixe, "/bouton_pret_immo_2016_V2_tcm_1356_439020.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><a href="#" onclick="clicXiti('Bnt_haut_Vide_MH__PACIFICA__LSTDEV__Partenaire', 'N'); lancerPuPartenaireParam('PACIFICA', 'LSTDEV', '');" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, 'Faire un devis, souscrire, g&#233;rer vos contrats (d&#233;clarer un sinistre, r&#233;cup&#233;rer une attestation...)');return true;" shape="rect"><binarycontent img="/btn_assurance__bien_2016_V2_tcm_1356_439018.png"><script xml:space="preserve">displayBinary(prefixe, "/btn_assurance__bien_2016_V2_tcm_1356_439018.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><a href="#" onclick="clicXiti('Bnt_haut_Vide_MH__PREDICA__ADHE__Partenaire', 'N'); lancerPuPartenaireParam('PREDICA', 'ADHE', '');" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, 'Simuler, souscrire un contrat, g&#233;rer vos avoirs (arbitrage...)');return true;" shape="rect"><binarycontent img="/btn_assurance_vie_2016_V2_tcm_1356_439019.png"><script xml:space="preserve">displayBinary(prefixe, "/btn_assurance_vie_2016_V2_tcm_1356_439019.png", "", "");</script></binarycontent></a></li><script xml:space="preserve">/*<![CDATA[*/$(document).ready(function () {$('li.tcmMenH> h2').click(function () {if ($(this).next('ul.menPersH1:visible').length != 0) {$(this).next('ul.menPersH1').slideUp('normal');$(this).removeClass('unfolded');}else{$(this).next('ul.menPersH1').slideDown('normal');$(this).addClass('unfolded');}return false;});$('li.toggleSubMenu > a').click(function () {if ($(this).next('ul.menPersH2:visible').length != 0) {$(this).next('ul.menPersH2').slideUp('normal');} else {$(this).next('ul.menPersH2').slideDown('normal');}return false;});});/*]]>*/</script>
 </ul></div><!--vide-->
@@ -1521,7 +1452,7 @@ function resetChoix() {
 
 </TD></TR><TR><TD>
 <!-----  DEBUT zone MENB  ---->
-<div idcomp='tcm-1356-243747'><script> prefixe = 'pack_111'; </script><!DOCTYPE table SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><ul id="menu-bnt">
+<div idcomp='tcm-1356-243747'><script> prefixe = 'pack_112'; </script><!DOCTYPE table SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><ul id="menu-bnt">
 
  <li class="boutonMen"><a href="#" onclick="clicXiti('menu_gauche_pdc_bas__Lien_Facebook_160px', 'N'); lancerURL('http://www.facebook.com/CreditAgricoleIDF');" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, 'Facebook');return true;" shape="rect"><binarycontent img="/img_bam_facebook_tcm_1356_291776.png"><script xml:space="preserve">displayBinary(prefixe, "/img_bam_facebook_tcm_1356_291776.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><h2 class=""><dynamiclink label="Num&#233;ros d'urgence" onclick="clicXiti('menu_gauche_pdc_bas__bnt_numero_urgence', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Num&#233;ros d'urgence';return true;" ref="tcm-1356-185300"><a href="javascript:lancerPUContenu('tcm-1356-185300','global');" onclick="clicXiti('menu_gauche_pdc_bas__bnt_numero_urgence', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Num&#233;ros d'urgence';return true;" shape="rect">Num&#233;ros d'urgence</a></dynamiclink></h2></li><li class="boutonMen"><h2 class=""><a href="#" onclick="clicXiti('menu_gauche_pdc_bas__Aide_et_Assistance', 'N'); lancerURL('https://www.ca-paris.fr/Vitrine/ObjCommun/Fic/Paris/aide-assistance/faq-client.html');" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, 'D&#233;mo et FAQ');return true;" shape="rect">D&#233;mo et FAQ</a></h2></li><script xml:space="preserve">/*<![CDATA[*/$(document).ready(function () {$('li.tcmMenB> h2').click(function () {if ($(this).next('ul.menPersB1:visible').length != 0) {$(this).next('ul.menPersB1').slideUp('normal');$(this).removeClass('unfolded');}else{$(this).next('ul.menPersB1').slideDown('normal');$(this).addClass('unfolded');}return false;});$('li.toggleSubMenu > a').click(function () {if ($(this).next('ul.menPersB2:visible').length != 0) {$(this).next('ul.menPersB2').slideUp('normal');} else {$(this).next('ul.menPersB2').slideDown('normal');}return false;});});/*]]>*/</script>
 </ul></div><!--vide-->
@@ -1699,10 +1630,10 @@ var widthpopup=580;
 	
 	
 		<span id="top-actions">
-			<a href="javascript:ouvrePOPUP('collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=ouvrePopUp&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6',widthpopup,580,'yes')" ONMOUSEOVER="StatusMessage(true, statusimprime);return true" ONMOUSEOUT="StatusMessage( false )"
+			<a href="javascript:ouvrePOPUP('collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&fwkidpu=120858159_12122017_40012&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=ouvrePopUp&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6',widthpopup,580,'yes')" ONMOUSEOVER="StatusMessage(true, statusimprime);return true" ONMOUSEOUT="StatusMessage( false )"
 			   id="top-actions-imprimer" 
 			   >Imprimer</a>
-			<a href="javascript:ouvreassistance('collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&act=Aide&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&IDENT=L_AID&ECRAN_AIDE=SYNTHCOMPTES_SYNTHESE&NUM_AIDE=0',520,480,'no')"
+			<a href="javascript:ouvreassistance('collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&act=Aide&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6&IDENT=L_AID&ECRAN_AIDE=SYNTHCOMPTES_SYNTHESE&NUM_AIDE=0',520,480,'no')"
 			   id="top-actions-aide" 
 			   onmouseout="StatusMessage( false )"
 			   onmouseover="StatusMessage(true, statusaide);return true"
@@ -1752,10 +1683,10 @@ var widthpopup=580;
 <!---------- FIN ERREURS-VALIDATION ----------->
 
 <table width="590px">
-<FORM name="frm_fwk" method="POST" action="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017" >
-<INPUT type="hidden" name="fwkpid" value="145831940_08122017"></INPUT>
-<INPUT type="hidden" name="fwkaid" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkidpu" value="145831174_08122017_47584"></INPUT>
+<FORM name="frm_fwk" method="POST" action="collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017" >
+<INPUT type="hidden" name="fwkpid" value="120858534_12122017"></INPUT>
+<INPUT type="hidden" name="fwkaid" value="120858159_12122017_40012"></INPUT>
+<INPUT type="hidden" name="fwkidpu" value="120858159_12122017_40012"></INPUT>
 <INPUT type="hidden" name="fwkrank" value="1"></INPUT>
 <INPUT type="hidden" name="fwkmperf" value="OFF"></INPUT>
 <INPUT type="hidden" name="fwkaction" value=""/>
@@ -1769,7 +1700,7 @@ var widthpopup=580;
 <INPUT type="hidden" name="stbpg" value="pagePU"/>
 
 
-<INPUT type="hidden" name="sessionSAG" value="-38ce30916033612932-6012.SAG_V6"/>
+<INPUT type="hidden" name="sessionSAG" value="-4e909e7816048565b30-6669.SAG_V6"/>
 
 
 <INPUT type="hidden" name="sessionAPP" value="Synthcomptes"/>
@@ -1791,13 +1722,13 @@ var widthpopup=580;
     <ul id="menu-onglet">
 	    
 	        <li>
-	            <a href="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&act=Edocsynth&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6"
+	            <a href="collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&act=Edocsynth&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6"
 	               title="Vos documents électroniques"
 	               >E-Documents</a>
 	        </li>
 	    
 	        <li>
-	            <a href="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Cartes&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&SYNTH_ORIGINE=Synthcomptes&PU_CIBLE=Cartes"
+	            <a href="collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&fwkidpu=120858159_12122017_40012&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Cartes&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6&SYNTH_ORIGINE=Synthcomptes&PU_CIBLE=Cartes"
 	               title="Accéder aux informations de vos cartes bancaires"
 	               >Infos Cartes</a>
 	        </li>
@@ -1894,231 +1825,7 @@ function fwkPUAvancerForm(prm_action, formulaire) {
 			
 			
                 <tr>
-                  <td colspan="8" class="titretetiere cel-texte" height="22">&nbsp;M.       Test User&nbsp;-&nbsp;Titulaire
-                  &nbsp;                  
-                  
-                   </td>
-                </tr>
-                <tr style="height:0px;" />
-			<!-------------Liste : COLONNES----------------->	
-			<tr class="tr-thead">        
-			<!-- COLONNE 1 : Icône de téléchargement -->
-							   
-					<th colspan="2" class="colceltitresoustetiere" height="22"> 
-	            		<div align="left" >&nbsp;Type de compte&nbsp;</div>
-	            	</th>
-	            	<th colspan="2" class="colceltitresoustetiere" height="22"> 
-	            		<div align="center" >&nbsp;N° de compte&nbsp;</div>
-	            	</th>
-            		 				
-			<!-- COLONNE 2 : Libellé de compte -->
-				
-			<!-- COLONNE 3 : Numéro de compte -->
-				
-			<!-- COLONNE 4 : Alerte -->
-				
-			<!-- COLONNE 5 : Mensualité -->	
-				
-							        
-		   	<!-- COLONNE 6 : Valeur / Montant Initial / Texte -->			
-				
-					
-							 
-					<th colspan="1" class="colceltitresoustetiere" height="22" width="110">
-		            	<div align="center">&nbsp;En valeur&nbsp;</div>
-				    </th>		   
-				 
-           	<!-- COLONNE 7 : Opération / Captial restant du / Montant disponible -->
-           		 
-           		 		
-           		 			
-					<th colspan="1" class="colceltitresoustetiere" height="22" width="110"> 
-		            	<div align="center">&nbsp;En opération&nbsp;</div>
-		            </th>
-		           	 
-			<!-- COLONNE 8 : Devise -->
-				
-								
-				<th  colspan="1" class="colceltitresoustetiere" height="22"> 
-	            	<div align="center">&nbsp;Devise&nbsp;</div>
-	            </th> 
-	         <!-- COLONNE 9 : Icône de téléchargement -->			
-				<th  colspan="1" class="colceltitresoustetiere" height="22"> 
-	            	<div align="center"  >&nbsp;</div>
-	            </th> 
-	     	</tr>
-			<!-------------Liste : DONNEES----------------->
-			
-			
-				
-				
-						<tr class="colcellignepaire">
-					
-						
-	            
-	           	
-	           	
-				
-					
-					<td class="cel-texte gras" height="17" align="left"   OnMouseOver="StatusMessage(true,'LIVRET A')" OnMouseOut="StatusMessage( false )">
-					
-						<FORM name="frm1" method="POST" action="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017" > 
-						<INPUT type="hidden" name="fwkpid" value="145831940_08122017"></INPUT>
-<INPUT type="hidden" name="fwkaid" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkidpu" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkrank" value="1"></INPUT>
-<INPUT type="hidden" name="fwkmperf" value="OFF"></INPUT>
-<INPUT type="hidden" name="fwkaction" value=""/>
-<INPUT type="hidden" name="fwkcodeaction" value=""/>
-<INPUT type="hidden" name="executeNP" value=""/>
-
-
-<INPUT type="hidden" name="stbzn" value="pu"/>
-
-
-<INPUT type="hidden" name="stbpg" value="pagePU"/>
-
-
-<INPUT type="hidden" name="sessionSAG" value="-38ce30916033612932-6012.SAG_V6"/>
-
-
-<INPUT type="hidden" name="sessionAPP" value="Synthcomptes"/>
-
-
-						<a HREF="javascript:fwkPUAvancerForm('Releves','frm1')"  ><input type="hidden"
-            name="donneesFrm"
-            value="&XCDOMC=L2&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=L2&CFONCP=1&MSTPRE=1705100&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M. TEST USER&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes">
-						&nbsp;LIV A</a>
-						</FORM>
-					
-	                </td>
-	                
-					<td  height="17"> 
-	                  <div align="center"> 
-	                      
-	                  	<FORM name="frma1" method="POST" action="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017" > 
-						<INPUT type="hidden" name="fwkpid" value="145831940_08122017"></INPUT>
-<INPUT type="hidden" name="fwkaid" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkidpu" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkrank" value="1"></INPUT>
-<INPUT type="hidden" name="fwkmperf" value="OFF"></INPUT>
-<INPUT type="hidden" name="fwkaction" value=""/>
-<INPUT type="hidden" name="fwkcodeaction" value=""/>
-<INPUT type="hidden" name="executeNP" value=""/>
-
-
-<INPUT type="hidden" name="stbzn" value="pu"/>
-
-
-<INPUT type="hidden" name="stbpg" value="pagePU"/>
-
-
-<INPUT type="hidden" name="sessionSAG" value="-38ce30916033612932-6012.SAG_V6"/>
-
-
-<INPUT type="hidden" name="sessionAPP" value="Synthcomptes"/>
-
-
-						<input type="hidden" name="donneesFrm"
-            value="&XCDOMC=L2&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=L2&CFONCP=1&MSTPRE=1705100&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M. TEST USER&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1">
-						<a href="javascript:fwkPUAvancerForm('AlerteFrm','frma1')" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
-						</FORM>       
-<!-- 	                  	<a href="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=DetailAlerte&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&XCDOMC=L2&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=L2&CFONCP=1&MSTPRE=1705100&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.       TEST USER&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
- -->		                   
-		                    	   
-			               
-			                
-	              	   </a>  
-	                 	</div>                  
-	                </td>				
-					
-					<td  height="17" align="left" colspan="2">
-					
-						<a HREF="javascript:fwkPUAvancerForm('Releves','frm1')" OnMouseOver="StatusMessage(true, statuscompte);return true" OnMouseOut="StatusMessage( false )" >
-						&nbsp;XXXXXXXXXXX</a>
-					
-	                </td>					
-					
-						
-											
-	                <td height="17" > 
-	                  <div align="right"
-                  	   
- 		                  
-		                  ><a HREF="javascript:fwkPUAvancerForm('Releves','frm1')" OnMouseOver="StatusMessage(true, statuscompte);return true" OnMouseOut="StatusMessage( false )" 
-			                 
-			                  	 class="montant3" >&nbsp;00 000,00
-			                  
-		                  </a>
-		                   
-					    
-	                  </div>
-	                </td>
-	                
-					
-					<td   height="17"  > 
-	                 <div align="right"
-	                 
-	                	><a HREF="javascript:fwkPUAvancerForm('Releves','frm1')" OnMouseOver="StatusMessage(true, statuscompte);return true" OnMouseOut="StatusMessage( false )" 
-		                  
-		                  	 class="montant3" >00 000,00
-		                  
-	                 	 </a>
-	                  	                  
-	                  </div>	                  
-	                </td>
-		            					
-					
-					<td  height="17" class="cel-devise">
-	                  <div align="center"
-	                  
-	                  ><a HREF="javascript:fwkPUAvancerForm('Releves','frm1')" OnMouseOver="StatusMessage(true, 'EUR');return true" OnMouseOut="StatusMessage( false )" 
-						  >EUR
-	           		  </a>
-	           		  
-	                  </div>
-	                </td>
-	                
-					<td  height="17">
-	                  <div align="center">
-	                	
-	            			<a href="javascript:ouvreTelechargement('collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Telechargement&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&XCDOMC=L2&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=L2&CFONCP=1&MSTPRE=1705100&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.       TEST USER&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes')" onMouseOver="StatusMessage(true, statustelechargement);return true" onMouseOut="StatusMessage( false )"><IMG SRC="/web/bam/appli/web/commun/img/picto_telecharger.png" BORDER=0  ALIGN=BASELINE HSPACE="2"></a>
-	              			
-	                  </div>
-	                </td>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-									      			
-			</tr> 
-			
-			
-           	 
-           	 
-			
-		
-			
-		
-               	   
-                
-	               
-            		
-            
-            		
-            		    
-            
-			
-			
-				<tr class="ligneRef"><td style="height:30px"  colspan="8" ></td></tr>
-				
-                <tr>
-                  <td colspan="8" class="titretetiere cel-texte" height="22">&nbsp;M.Ou Mme Test&nbsp;-&nbsp;Co-titulaire
+                  <td colspan="8" class="titretetiere cel-texte" height="22">&nbsp;M.Ou Mme Noname&nbsp;-&nbsp;Co-titulaire
                   &nbsp;                  
                   
                    </td>
@@ -2186,10 +1893,10 @@ function fwkPUAvancerForm(prm_action, formulaire) {
 					
 					<td class="cel-texte gras" height="17" align="left"   OnMouseOver="StatusMessage(true,'COMPTE CHEQUE')" OnMouseOut="StatusMessage( false )">
 					
-						<FORM name="frm2" method="POST" action="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017" > 
-						<INPUT type="hidden" name="fwkpid" value="145831940_08122017"></INPUT>
-<INPUT type="hidden" name="fwkaid" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkidpu" value="145831174_08122017_47584"></INPUT>
+						<FORM name="frm2" method="POST" action="collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017" > 
+						<INPUT type="hidden" name="fwkpid" value="120858534_12122017"></INPUT>
+<INPUT type="hidden" name="fwkaid" value="120858159_12122017_40012"></INPUT>
+<INPUT type="hidden" name="fwkidpu" value="120858159_12122017_40012"></INPUT>
 <INPUT type="hidden" name="fwkrank" value="1"></INPUT>
 <INPUT type="hidden" name="fwkmperf" value="OFF"></INPUT>
 <INPUT type="hidden" name="fwkaction" value=""/>
@@ -2203,15 +1910,14 @@ function fwkPUAvancerForm(prm_action, formulaire) {
 <INPUT type="hidden" name="stbpg" value="pagePU"/>
 
 
-<INPUT type="hidden" name="sessionSAG" value="-38ce30916033612932-6012.SAG_V6"/>
+<INPUT type="hidden" name="sessionSAG" value="-4e909e7816048565b30-6669.SAG_V6"/>
 
 
 <INPUT type="hidden" name="sessionAPP" value="Synthcomptes"/>
 
 
 						<a HREF="javascript:fwkPUAvancerForm('Releves','frm2')"  ><input type="hidden"
-            name="donneesFrm"
-            value="&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=368964&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU MME TEST&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes">
+              name="donneesFrm" value="&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=202109&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU MME NONAME&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes">
 						&nbsp;CCHQ</a>
 						</FORM>
 					
@@ -2220,10 +1926,10 @@ function fwkPUAvancerForm(prm_action, formulaire) {
 					<td  height="17"> 
 	                  <div align="center"> 
 	                      
-	                  	<FORM name="frma2" method="POST" action="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017" > 
-						<INPUT type="hidden" name="fwkpid" value="145831940_08122017"></INPUT>
-<INPUT type="hidden" name="fwkaid" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkidpu" value="145831174_08122017_47584"></INPUT>
+	                  	<FORM name="frma2" method="POST" action="collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017" > 
+						<INPUT type="hidden" name="fwkpid" value="120858534_12122017"></INPUT>
+<INPUT type="hidden" name="fwkaid" value="120858159_12122017_40012"></INPUT>
+<INPUT type="hidden" name="fwkidpu" value="120858159_12122017_40012"></INPUT>
 <INPUT type="hidden" name="fwkrank" value="1"></INPUT>
 <INPUT type="hidden" name="fwkmperf" value="OFF"></INPUT>
 <INPUT type="hidden" name="fwkaction" value=""/>
@@ -2237,17 +1943,16 @@ function fwkPUAvancerForm(prm_action, formulaire) {
 <INPUT type="hidden" name="stbpg" value="pagePU"/>
 
 
-<INPUT type="hidden" name="sessionSAG" value="-38ce30916033612932-6012.SAG_V6"/>
+<INPUT type="hidden" name="sessionSAG" value="-4e909e7816048565b30-6669.SAG_V6"/>
 
 
 <INPUT type="hidden" name="sessionAPP" value="Synthcomptes"/>
 
 
-						<input type="hidden" name="donneesFrm"
-            value="&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=368964&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU MME TEST&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1">
+						<input type="hidden" name="donneesFrm" value="&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=202109&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU MME NONAME&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1">
 						<a href="javascript:fwkPUAvancerForm('AlerteFrm','frma2')" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
 						</FORM>       
-<!-- 	                  	<a href="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=DetailAlerte&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=368964&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU MME TEST&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
+<!-- 	                  	<a href="collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&fwkidpu=120858159_12122017_40012&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=DetailAlerte&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=202109&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU MME NONAME&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
  -->		                   
 		                    	   
 			               
@@ -2271,7 +1976,7 @@ function fwkPUAvancerForm(prm_action, formulaire) {
  		                  
 		                  ><a HREF="javascript:fwkPUAvancerForm('Releves','frm2')" OnMouseOver="StatusMessage(true, statuscompte);return true" OnMouseOut="StatusMessage( false )" 
 			                 
-			                  	 class="montant3" >&nbsp;0 000,00
+			                  	 class="montant3" >&nbsp;1 111,11
 			                  
 		                  </a>
 		                   
@@ -2285,7 +1990,7 @@ function fwkPUAvancerForm(prm_action, formulaire) {
 	                 
 	                	><a HREF="javascript:fwkPUAvancerForm('Releves','frm2')" OnMouseOver="StatusMessage(true, statuscompte);return true" OnMouseOut="StatusMessage( false )" 
 		                  
-		                  	 class="montant3" >0 000,00
+		                  	 class="montant3" >1 111,11
 		                  
 	                 	 </a>
 	                  	                  
@@ -2306,263 +2011,11 @@ function fwkPUAvancerForm(prm_action, formulaire) {
 					<td  height="17">
 	                  <div align="center">
 	                	
-	            			<a href="javascript:ouvreTelechargement('collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Telechargement&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=368964&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU MME TEST&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes')" onMouseOver="StatusMessage(true, statustelechargement);return true" onMouseOut="StatusMessage( false )"><IMG SRC="/web/bam/appli/web/commun/img/picto_telecharger.png" BORDER=0  ALIGN=BASELINE HSPACE="2"></a>
+	            			<a href="javascript:ouvreTelechargement('collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&fwkidpu=120858159_12122017_40012&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Telechargement&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6&XCDOMC=30&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=202109&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.OU MME NONAME&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes')" onMouseOver="StatusMessage(true, statustelechargement);return true" onMouseOut="StatusMessage( false )"><IMG SRC="/web/bam/appli/web/commun/img/picto_telecharger.png" BORDER=0  ALIGN=BASELINE HSPACE="2"></a>
 	              			
 	                  </div>
 	                </td>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-									      			
 			</tr> 
-			
-			
-           	 
-           	 
-			
-		
-			
-		
-               	   
-                
-	               
-            		
-            
-            		
-            		    
-            
-			
-			
-				<tr class="ligneRef"><td style="height:30px"  colspan="8" ></td></tr>
-				
-                <tr>
-                  <td colspan="8" class="titretetiere cel-texte" height="22">&nbsp;M.       Test Other&nbsp;-&nbsp;Mandataire
-                  &nbsp;                  
-                  
-                   </td>
-                </tr>
-                <tr style="height:0px;" />
-			<!-------------Liste : COLONNES----------------->	
-			<tr class="tr-thead">        
-			<!-- COLONNE 1 : Icône de téléchargement -->
-							   
-					<th colspan="2" class="colceltitresoustetiere" height="22"> 
-	            		<div align="left" >&nbsp;Type de compte&nbsp;</div>
-	            	</th>
-	            	<th colspan="2" class="colceltitresoustetiere" height="22"> 
-	            		<div align="center" >&nbsp;N° de compte&nbsp;</div>
-	            	</th>
-            		 				
-			<!-- COLONNE 2 : Libellé de compte -->
-				
-			<!-- COLONNE 3 : Numéro de compte -->
-				
-			<!-- COLONNE 4 : Alerte -->
-				
-			<!-- COLONNE 5 : Mensualité -->	
-				
-							        
-		   	<!-- COLONNE 6 : Valeur / Montant Initial / Texte -->			
-				
-					
-							 
-					<th colspan="1" class="colceltitresoustetiere" height="22" width="110">
-		            	<div align="center">&nbsp;En valeur&nbsp;</div>
-				    </th>		   
-				 
-           	<!-- COLONNE 7 : Opération / Captial restant du / Montant disponible -->
-           		 
-           		 		
-           		 			
-					<th colspan="1" class="colceltitresoustetiere" height="22" width="110"> 
-		            	<div align="center">&nbsp;En opération&nbsp;</div>
-		            </th>
-		           	 
-			<!-- COLONNE 8 : Devise -->
-				
-								
-				<th  colspan="1" class="colceltitresoustetiere" height="22"> 
-	            	<div align="center">&nbsp;Devise&nbsp;</div>
-	            </th> 
-	         <!-- COLONNE 9 : Icône de téléchargement -->			
-				<th  colspan="1" class="colceltitresoustetiere" height="22"> 
-	            	<div align="center"  >&nbsp;</div>
-	            </th> 
-	     	</tr>
-			<!-------------Liste : DONNEES----------------->
-			
-			
-				
-				
-						<tr class="colcellignepaire">
-					
-						
-	            
-	           	
-	           	
-				
-					
-					<td class="cel-texte gras" height="17" align="left"   OnMouseOver="StatusMessage(true,'LIVRET A')" OnMouseOut="StatusMessage( false )">
-					
-						<FORM name="frm3" method="POST" action="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017" > 
-						<INPUT type="hidden" name="fwkpid" value="145831940_08122017"></INPUT>
-<INPUT type="hidden" name="fwkaid" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkidpu" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkrank" value="1"></INPUT>
-<INPUT type="hidden" name="fwkmperf" value="OFF"></INPUT>
-<INPUT type="hidden" name="fwkaction" value=""/>
-<INPUT type="hidden" name="fwkcodeaction" value=""/>
-<INPUT type="hidden" name="executeNP" value=""/>
-
-
-<INPUT type="hidden" name="stbzn" value="pu"/>
-
-
-<INPUT type="hidden" name="stbpg" value="pagePU"/>
-
-
-<INPUT type="hidden" name="sessionSAG" value="-38ce30916033612932-6012.SAG_V6"/>
-
-
-<INPUT type="hidden" name="sessionAPP" value="Synthcomptes"/>
-
-
-						<a HREF="javascript:fwkPUAvancerForm('Releves','frm3')"  ><input type="hidden"
-            name="donneesFrm"
-            value="&XCDOMC=L2&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=L2&CFONCP=6&MSTPRE=302487&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M. TEST OTHER&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes">
-						&nbsp;LIV A</a>
-						</FORM>
-					
-	                </td>
-	                
-					<td  height="17"> 
-	                  <div align="center"> 
-	                      
-	                  	<FORM name="frma3" method="POST" action="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017" > 
-						<INPUT type="hidden" name="fwkpid" value="145831940_08122017"></INPUT>
-<INPUT type="hidden" name="fwkaid" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkidpu" value="145831174_08122017_47584"></INPUT>
-<INPUT type="hidden" name="fwkrank" value="1"></INPUT>
-<INPUT type="hidden" name="fwkmperf" value="OFF"></INPUT>
-<INPUT type="hidden" name="fwkaction" value=""/>
-<INPUT type="hidden" name="fwkcodeaction" value=""/>
-<INPUT type="hidden" name="executeNP" value=""/>
-
-
-<INPUT type="hidden" name="stbzn" value="pu"/>
-
-
-<INPUT type="hidden" name="stbpg" value="pagePU"/>
-
-
-<INPUT type="hidden" name="sessionSAG" value="-38ce30916033612932-6012.SAG_V6"/>
-
-
-<INPUT type="hidden" name="sessionAPP" value="Synthcomptes"/>
-
-
-						<input type="hidden" name="donneesFrm" value="&XCDOMC=L2&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=L2&CFONCP=6&MSTPRE=302487&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.       TEST OTHER&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1">
-						<a href="javascript:fwkPUAvancerForm('AlerteFrm','frma3')" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
-						</FORM>       
-<!-- 	                  	<a href="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=DetailAlerte&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&XCDOMC=L2&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=L2&CFONCP=6&MSTPRE=302487&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.       TEST OTHER&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
- -->		                   
-		                    	   
-			               
-			                
-	              	   </a>  
-	                 	</div>                  
-	                </td>				
-					
-					<td  height="17" align="left" colspan="2">
-					
-						<a HREF="javascript:fwkPUAvancerForm('Releves','frm3')" OnMouseOver="StatusMessage(true, statuscompte);return true" OnMouseOut="StatusMessage( false )" >
-						&nbsp;XXXXXXXXXXX</a>
-					
-	                </td>					
-					
-						
-											
-	                <td height="17" > 
-	                  <div align="right"
-                  	   
- 		                  
-		                  ><a HREF="javascript:fwkPUAvancerForm('Releves','frm3')" OnMouseOver="StatusMessage(true, statuscompte);return true" OnMouseOut="StatusMessage( false )" 
-			                 
-			                  	 class="montant3" >&nbsp;0 000,00
-			                  
-		                  </a>
-		                   
-					    
-	                  </div>
-	                </td>
-	                
-					
-					<td   height="17"  > 
-	                 <div align="right"
-	                 
-	                	><a HREF="javascript:fwkPUAvancerForm('Releves','frm3')" OnMouseOver="StatusMessage(true, statuscompte);return true" OnMouseOut="StatusMessage( false )" 
-		                  
-		                  	 class="montant3" >0 000,00
-		                  
-	                 	 </a>
-	                  	                  
-	                  </div>	                  
-	                </td>
-		            					
-					
-					<td  height="17" class="cel-devise">
-	                  <div align="center"
-	                  
-	                  ><a HREF="javascript:fwkPUAvancerForm('Releves','frm3')" OnMouseOver="StatusMessage(true, 'EUR');return true" OnMouseOut="StatusMessage( false )" 
-						  >EUR
-	           		  </a>
-	           		  
-	                  </div>
-	                </td>
-	                
-					<td  height="17">
-	                  <div align="center">
-	                	
-	            			<a href="javascript:ouvreTelechargement('collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Telechargement&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&XCDOMC=L2&NOCPT=XXXXXXXXXXX&CSSCP=00000000000&CFPRO=L2&CFONCP=6&MSTPRE=302487&CADEVI=EUR&IDELCOCS=XXXXXXXXXXX&LILIG1=M.       TEST OTHER&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes')" onMouseOver="StatusMessage(true, statustelechargement);return true" onMouseOut="StatusMessage( false )"><IMG SRC="/web/bam/appli/web/commun/img/picto_telecharger.png" BORDER=0  ALIGN=BASELINE HSPACE="2"></a>
-	              			
-	                  </div>
-	                </td>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-									      			
-			</tr> 
-			
-			
-           	 
-           	 
-			
-		
-			
-		
-               	   
-                
-	               
-            		
-            
-            		
-            		    
-            
- 
-	           
-                
 </table>
 <br />
 <!-----------------------------  Boutons de navigations dans les pages---------------------------------->
@@ -2592,13 +2045,13 @@ function fwkPUAvancerForm(prm_action, formulaire) {
     <ul id="menu-onglet">
 	    
 	        <li>
-	            <a href="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&act=Edocsynth&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6"
+	            <a href="collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&act=Edocsynth&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6"
 	               title="Vos documents électroniques"
 	               >E-Documents</a>
 	        </li>
 	    
 	        <li>
-	            <a href="collecteNI?fwkaid=145831174_08122017_47584&fwkpid=145831940_08122017&fwkidpu=145831174_08122017_47584&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Cartes&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-38ce30916033612932-6012.SAG_V6&SYNTH_ORIGINE=Synthcomptes&PU_CIBLE=Cartes"
+	            <a href="collecteNI?fwkaid=120858159_12122017_40012&fwkpid=120858534_12122017&fwkidpu=120858159_12122017_40012&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Cartes&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-4e909e7816048565b30-6669.SAG_V6&SYNTH_ORIGINE=Synthcomptes&PU_CIBLE=Cartes"
 	               title="Accéder aux informations de vos cartes bancaires"
 	               >Infos Cartes</a>
 	        </li>
@@ -2705,7 +2158,7 @@ var g_TagPap = [];
 
 </div><div valign="middle">
 <!-----  DEBUT zone PROMO  ---->
-<div idcomp='tcm-1356-435343'><script> prefixe = 'pack_111'; </script><!DOCTYPE table SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><div class="bloc-pap" id="racineGDC" version="tcm:1356-184523-32 v.3"><script xml:space="preserve">var marqueurXiti="Syn_Promo_Simulations";var marqueurXiti435343 = marqueurXiti+ '_Affichage'; </script><h2><titre>Devis et simulations</titre></h2><p><style xml:space="preserve">.bloc-pap img{display:block;}</style><dynamiclink AnimCom="Stevcom" Profil_bam="+profil_evt_promo" label="Cliquez ici" onclick="clicXiti('Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Cliquez ici';return true;" ref="tcm-1356-295118"><a href="#" onclick="clicXiti('Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation', 'N'); javascript:lancerSTEvCom('Stevcom','profil_bam='+profil_evt_promo, this,'ACTION=lancerPUContenu(\'tcm-1356-295118\',\'global\')');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Cliquez ici';return true;" shape="rect"><binarycontent img="/devis_simulation_pap_droit_002%2E1_tcm_1356_371354.jpg"><script xml:space="preserve">displayBinary(prefixe, "/devis_simulation_pap_droit_002%2E1_tcm_1356_371354.jpg", "", "");</script></binarycontent></a></dynamiclink></p><div class="bloc-pap-texte"><p><script type="text/javascript" xml:space="preserve">document.write(String.fromCharCode(60,115,99,114,105,112,116,32,116,121,112,101,61,34,116,101,120,116,47,106,97,118,97,115,99,114,105,112,116,34,32,115,114,99,61,34,104,116,116,112,115,58,47,47,119,119,119,46,99,97,45,112,97,114,105,115,46,102,114,47,86,105,116,114,105,110,101,47,79,98,106,67,111,109,109,117,110,47,70,105,99,47,80,97,114,105,115,47,115,99,114,105,112,116,47,109,101,110,117,95,98,97,115,95,101,97,103,101,110,99,101,46,106,115,34,32,119,105,100,116,104,61,34,49,54,48,34,32,104,101,105,103,104,116,61,34,49,48,34,62,60,47,115,99,114,105,112,116,62));</script></p><p class="lirelasuite"><dynamiclink AnimCom="Stevcom" Profil_bam="+profil_evt_promo" label="Cliquez ici" onclick="clicXiti('Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Cliquez ici';return true;" ref="tcm-1356-295118"><a href="#" onclick="clicXiti('Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation', 'N'); javascript:lancerSTEvCom('Stevcom','profil_bam='+profil_evt_promo, this,'ACTION=lancerPUContenu(\'tcm-1356-295118\',\'global\')');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Cliquez ici';return true;" shape="rect">Cliquez ici</a></dynamiclink></p></div></div></div><!--vide-->
+<div idcomp='tcm-1356-435343'><script> prefixe = 'pack_112'; </script><!DOCTYPE table SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><div class="bloc-pap" id="racineGDC" version="tcm:1356-184523-32 v.3"><script xml:space="preserve">var marqueurXiti="Syn_Promo_Simulations";var marqueurXiti435343 = marqueurXiti+ '_Affichage'; </script><h2><titre>Devis et simulations</titre></h2><p><style xml:space="preserve">.bloc-pap img{display:block;}</style><dynamiclink AnimCom="Stevcom" Profil_bam="+profil_evt_promo" label="Cliquez ici" onclick="clicXiti('Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Cliquez ici';return true;" ref="tcm-1356-295118"><a href="#" onclick="clicXiti('Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation', 'N'); javascript:lancerSTEvCom('Stevcom','profil_bam='+profil_evt_promo, this,'ACTION=lancerPUContenu(\'tcm-1356-295118\',\'global\')');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Cliquez ici';return true;" shape="rect"><binarycontent img="/devis_simulation_pap_droit_002%2E1_tcm_1356_371354.jpg"><script xml:space="preserve">displayBinary(prefixe, "/devis_simulation_pap_droit_002%2E1_tcm_1356_371354.jpg", "", "");</script></binarycontent></a></dynamiclink></p><div class="bloc-pap-texte"><p><script type="text/javascript" xml:space="preserve">document.write(String.fromCharCode(60,115,99,114,105,112,116,32,116,121,112,101,61,34,116,101,120,116,47,106,97,118,97,115,99,114,105,112,116,34,32,115,114,99,61,34,104,116,116,112,115,58,47,47,119,119,119,46,99,97,45,112,97,114,105,115,46,102,114,47,86,105,116,114,105,110,101,47,79,98,106,67,111,109,109,117,110,47,70,105,99,47,80,97,114,105,115,47,115,99,114,105,112,116,47,109,101,110,117,95,98,97,115,95,101,97,103,101,110,99,101,46,106,115,34,32,119,105,100,116,104,61,34,49,54,48,34,32,104,101,105,103,104,116,61,34,49,48,34,62,60,47,115,99,114,105,112,116,62));</script></p><p class="lirelasuite"><dynamiclink AnimCom="Stevcom" Profil_bam="+profil_evt_promo" label="Cliquez ici" onclick="clicXiti('Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Cliquez ici';return true;" ref="tcm-1356-295118"><a href="#" onclick="clicXiti('Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation', 'N'); javascript:lancerSTEvCom('Stevcom','profil_bam='+profil_evt_promo, this,'ACTION=lancerPUContenu(\'tcm-1356-295118\',\'global\')');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Cliquez ici';return true;" shape="rect">Cliquez ici</a></dynamiclink></p></div></div></div><!--vide-->
 <!-----  FIN zone PROMO  ---->
 
 </div>
@@ -2790,7 +2243,7 @@ var codeCaisse = "882";
 
 
 <SCRIPT LANGUAGE=JavaScript>
-var iDSession = "-38ce30916033612932-6012.SAG_V6";
+var iDSession = "-4e909e7816048565b30-6669.SAG_V6";
 var codeCR = "882";
 </SCRIPT>	 
 <TABLE width="100%">
