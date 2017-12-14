@@ -1,7 +1,5 @@
 const {BaseKonnector, log, request, errors, updateOrCreate, addData, filterData} = require('cozy-konnector-libs')
 const xlsx = require('xlsx')
-const fs = require('fs')
-const path = require('path')
 const bluebird = require('bluebird')
 const moment = require('moment')
 const url = require('url')
@@ -52,18 +50,10 @@ function fetchOperations (account) {
     encoding: 'binary'
   })
   .then(body => {
-    // I add some encoding problems when using xlsx.read
-    // but this is clearly a FIXME
-    // Fetching a csv file instead of slk file may avoid this problem but this is harder to reach.
-    const tmpFile = path.resolve('temp.slk')
-    fs.writeFileSync(tmpFile, body, {
-      encoding: 'binary'
-    })
-    const workbook = xlsx.readFile(tmpFile, {
+    const workbook = xlsx.read(body, {
       type: 'string',
       raw: true
     })
-    fs.unlinkSync(tmpFile)
     const worksheet = workbook.Sheets[workbook.SheetNames[0]]
     return xlsx.utils.sheet_to_csv(worksheet).split('\n').slice(9).filter(line => {
       return line.length > 3 // avoid lines with empty cells
@@ -80,9 +70,9 @@ function fetchOperations (account) {
         log('error', cells, 'Could not find an amount in this operation')
       }
 
-      // some months are abbreviated in French and other in English!!!
+      // some months are abbreviated in French and other in English!!! + encoding problem
       // TODO use the real csv export (but which is harder to reach) which has better dates
-      const date = cells[0].toLowerCase().replace('déc', 'dec').replace('aoû', 'aug')
+      const date = cells[0].toLowerCase().replace('dã©c', 'dec').replace('aoã»', 'aug')
 
       // FIXME a lot of information is hidden in the label of the operation (type of operation,
       // real date of the operation) but the formating is quite inconsistent
