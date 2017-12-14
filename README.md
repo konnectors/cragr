@@ -1,4 +1,4 @@
-[Cozy][cozy] Crédit Agricol connector
+[Cozy][cozy] Crédit Agricole connector
 =====================================
 
 What's Cozy?
@@ -11,7 +11,7 @@ What's Cozy?
 What's this new konnector?
 --------------------------
 
-A connector to retrieve your Crédit Agricol bank accounts and operations.
+A connector to retrieve your Crédit Agricole bank accounts and operations.
 
 ### Open a Pull-Request
 
