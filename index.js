@@ -31,7 +31,7 @@ function start (fields) {
 function saveOperations (account, operations) {
   // Deduplicate on this keys "naive" version
   const options = {
-    keys: ['date', 'amount'],
+    keys: ['account', 'date', 'amount'],
     selector: {
       account: account.number
     }
