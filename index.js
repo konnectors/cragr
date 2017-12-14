@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const bluebird = require('bluebird')
 const moment = require('moment')
+const url = require('url')
 
 let rq = request({
   // debug: true,
@@ -21,24 +22,18 @@ function start (fields) {
   return login(fields)
   .then(parseAccounts)
   .then(saveAccounts)
-  .then(comptes => {
-    rq = request({
-      cheerio: false
-    })
-
-    bluebird.each(comptes, compte => {
-      return fetchOperations(compte)
-      .then(operations => saveOperations(compte, operations))
-    })
-  })
+  .then(comptes => bluebird.each(comptes, compte => {
+    return fetchOperations(compte)
+    .then(operations => saveOperations(compte, operations))
+  }))
 }
 
-function saveOperations (compte, operations) {
+function saveOperations (account, operations) {
   // Deduplicate on this keys "naive" version
   const options = {
     keys: ['date', 'amount'],
     selector: {
-      account: compte.number
+      account: account.number
     }
   }
 
@@ -46,21 +41,29 @@ function saveOperations (compte, operations) {
   .then(entries => addData(operations, 'io.cozy.bank.operations'))
 }
 
-function fetchOperations (compte) {
-  log('info', `Gettings operations for ${compte.label}`)
+function fetchOperations (account) {
+  log('info', `Gettings operations for ${account.label}`)
+
+  rq = request({
+    cheerio: false
+  })
   return rq({
-    url: `${baseUrl}/stb/${compte.linkOperations}&typeaction=telechargement`,
+    url: `${baseUrl}/stb/${account.linkOperations}&typeaction=telechargement`,
     encoding: 'binary'
   })
   .then(body => {
-    fs.writeFileSync(path.resolve('temp.slk'), body, {
+    // I add some encoding problems when using xlsx.read
+    // but this is clearly a FIXME
+    // Fetching a csv file instead of slk file may avoid this problem but this is harder to reach.
+    const tmpFile = path.resolve('temp.slk')
+    fs.writeFileSync(tmpFile, body, {
       encoding: 'binary'
     })
-    const workbook = xlsx.readFile(path.resolve('temp.slk'), {
+    const workbook = xlsx.readFile(tmpFile, {
       type: 'string',
       raw: true
     })
-    fs.unlinkSync(path.resolve('temp.slk'))
+    fs.unlinkSync(tmpFile)
     const worksheet = workbook.Sheets[workbook.SheetNames[0]]
     return xlsx.utils.sheet_to_csv(worksheet).split('\n').slice(9).filter(line => {
       return line.length > 3 // avoid lines with empty cells
@@ -69,27 +72,29 @@ function fetchOperations (compte) {
       const labels = cells[1].split('\u001b :').map(elem => elem.trim()).join(';')
 
       let amount = 0
-      if (cells[2].length) amount = parseFloat(cells[2]) * -1
-      else if (cells[3].length) amount = parseFloat(cells[3])
-      else {
-        log('error', cells, 'could not find an amount in this operation')
+      if (cells[2].length) {
+        amount = parseFloat(cells[2]) * -1
+      } else if (cells[3].length) {
+        amount = parseFloat(cells[3])
+      } else {
+        log('error', cells, 'Could not find an amount in this operation')
       }
 
-      // some months are abreviated in french and other in english!!!
+      // some months are abbreviated in French and other in English!!!
       // TODO use the real csv export (but which is harder to reach) which has better dates
       const date = cells[0].toLowerCase().replace('déc', 'dec').replace('aoû', 'aug')
 
       // FIXME a lot of information is hidden in the label of the operation (type of operation,
-      // real date of the operation)but the formating is quite inconsistent
+      // real date of the operation) but the formating is quite inconsistent
       return {
         date: moment(date, 'DD-MMM').toDate(),
         label: labels,
-        type: 'none', // TODO parse the labels for that for that
+        type: 'none', // TODO parse the labels for that
         dateImport: new Date(),
         dateOperation: date, // TODO parse the label for that
         currency: 'EUR',
         amount,
-        account: `io.cozy.bank.accounts:${compte._id}`
+        account: `io.cozy.bank.accounts:${account._id}`
       }
     })
   })
@@ -151,8 +156,8 @@ function login (fields) {
 
     loginUrl = script.match(/var chemin = "(.*)".*\|/)[1]
 
-    const url = require('url').parse(loginUrl)
-    baseUrl = `${url.protocol}//${url.hostname}`
+    const urlObj = url.parse(loginUrl)
+    baseUrl = `${urlObj.protocol}//${urlObj.hostname}`
 
     return rq({
       url: loginUrl,
