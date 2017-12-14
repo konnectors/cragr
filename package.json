@@ -2,7 +2,7 @@
   "name": "cragr",
   "version": "1.0.0",
   "description": "Crédit Agricole connector",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cozy/cozy-konnector-bank-cragr.git"
