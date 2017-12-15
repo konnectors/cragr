@@ -1,4 +1,4 @@
-const {BaseKonnector, log, request, errors, updateOrCreate, addData, filterData} = require('cozy-konnector-libs')
+const {BaseKonnector, log, request, errors, updateOrCreate, addData} = require('cozy-konnector-libs')
 const xlsx = require('xlsx')
 const bluebird = require('bluebird')
 const moment = require('moment')
@@ -27,16 +27,7 @@ function start (fields) {
 }
 
 function saveOperations (account, operations) {
-  // Deduplicate on this keys "naive" version
-  const options = {
-    keys: ['account', 'date', 'amount'],
-    selector: {
-      account: account.number
-    }
-  }
-
-  return filterData(operations, 'io.cozy.bank.operations', options)
-  .then(entries => addData(operations, 'io.cozy.bank.operations'))
+  return addData(operations, 'io.cozy.bank.operations')
 }
 
 function fetchOperations (account) {
@@ -84,7 +75,7 @@ function fetchOperations (account) {
         dateOperation: date, // TODO parse the label for that
         currency: 'EUR',
         amount,
-        account: `io.cozy.bank.accounts:${account._id}`
+        account: `${account._id}`
       }
     })
   })
