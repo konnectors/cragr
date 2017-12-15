@@ -50,7 +50,7 @@ function getDocuments () {
   .then(accounts => bluebird.each(accounts, fetchAndSaveAccountDocuments))
 }
 
-function fetchAndSaveAccountDocuments (account, index, length) {
+function fetchAccountDocuments (account, index) {
   return rq(account.link)
   .then($ => {
     log('info', account.label)
@@ -64,15 +64,23 @@ function fetchAndSaveAccountDocuments (account, index, length) {
         filename: `releve_${date}_${account.label}.pdf`
       }
     })
-
-    // Give an equal time to fetch documents for each account
-    // next documents will be downloaded for the next run
-    const remainingTime = FULL_TIMEOUT - Date.now()
-    const timeForThisAccount = remainingTime / (length - index)
-    return saveFiles(entries, fields, {
-      timeout: Date.now() + timeForThisAccount
-    })
+    return entries
   })
+}
+
+function saveAccountDocuments (entries, index, length) {
+  // Give an equal time to fetch documents for each account
+  // next documents will be downloaded for the next run
+  const remainingTime = FULL_TIMEOUT - Date.now()
+  const timeForThisAccount = remainingTime / (length - index)
+  return saveFiles(entries, fields, {
+    timeout: Date.now() + timeForThisAccount
+  })
+}
+
+function fetchAndSaveAccountDocuments (account, index, length) {
+  return fetchAccountDocuments(account, index)
+  .then(entries => saveAccountDocuments(entries, index, length))
 }
 
 function parseStatementsPage ($) {
