@@ -50,7 +50,7 @@ function fetchOperations (account) {
       return line.length > 3 // avoid lines with empty cells
     }).map(line => {
       const cells = line.split(',')
-      const labels = cells[1].split('\u001b :').map(elem => elem.trim()).join(';')
+      const labels = cells[1].split('\u001b :').map(elem => elem.trim())
 
       let amount = 0
       if (cells[2].length) {
@@ -69,7 +69,7 @@ function fetchOperations (account) {
       // real date of the operation) but the formating is quite inconsistent
       return {
         date: moment(date, 'DD-MMM').toDate(),
-        label: labels,
+        label: labels.shift(),
         type: 'none', // TODO parse the labels for that
         dateImport: new Date(),
         dateOperation: date, // TODO parse the label for that
