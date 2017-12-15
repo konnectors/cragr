@@ -17,10 +17,12 @@ const rq = request({
 let loginUrl = null
 let baseUrl = null
 let statementsUrl = null
+let fields = {}
 
 module.export = new BaseKonnector(start)
 
-function start (fields) {
+function start (requiredFields) {
+  fields = requiredFields
   return login(fields)
   .then(parseAccounts)
   .then(saveAccounts)
@@ -28,42 +30,27 @@ function start (fields) {
     return fetchOperations(compte)
     .then(operations => saveOperations(compte, operations))
   }))
-  .then(() => getDocuments(fields))
+  .then(getDocuments)
 }
 
-function getDocuments (fields) {
+function cleanDocumentLabel (label) {
+  // remove some special characters from the label
+  return label
+    .trim()
+    .split(' ')
+    .filter(l => l.length)
+    .join('_')
+    .replace('.', '')
+}
+
+function getDocuments () {
   log('info', 'Getting accounts statements')
-
-  // displaying the general document list
-  return rq(statementsUrl)
-  .then($ => {
-    // find the "Releve de comptes" section
-    // here I suppose the fist section is always the releves de comptes section but the name is
-    // checked
-    log('info', 'Getting the list of accounts with account statements')
-    if ($('#entete1').text().trim() === 'RELEVES DE COMPTES') {
-      // get the list of accounts with links to display the details
-      const accounts = Array.from($('#panneau1 .ca-table tbody')).map(account => {
-        const $account = $(account)
-        let label = $account.find('tr').eq(0).find('a').eq(1).text().trim()
-
-        // remove some special characters from the label
-        label = label.split(' ').filter(l => l.length).join('_').replace('.', '')
-
-        let link = $account.find('.fleche-ouvrir').attr('href')
-        link = `${baseUrl}/stb/${link}`
-        return { label, link }
-      })
-
-      return bluebird.each(accounts, (account, index, length) => saveAccountDocuments($, fields, account, index, length))
-    } else {
-      log('error', 'No account statement')
-      return []
-    }
-  })
+  return fetchStatementPage()
+  .then(parseStatementsPage)
+  .then(accounts => bluebird.each(accounts, fetchAndSaveAccountDocuments))
 }
 
-function saveAccountDocuments ($, fields, account, index, length) {
+function fetchAndSaveAccountDocuments (account, index, length) {
   return rq(account.link)
   .then($ => {
     log('info', account.label)
@@ -71,10 +58,9 @@ function saveAccountDocuments ($, fields, account, index, length) {
     const entries = Array.from($('#panneau1 table tbody').eq(index).find('tr[title]')).map(elem => {
       const $cells = $(elem).find('td')
       const date = $cells.eq(0).text().split('/').reverse().join('')
-      let link = $cells.eq(3).find('a').attr('href').split(';')[1].match(/\('(.*)'\)/)[1]
-      link = `${baseUrl}/stb/${link}&typeaction=telechargement`
+      const link = $cells.eq(3).find('a').attr('href').split(';')[1].match(/\('(.*)'\)/)[1]
       return {
-        fileurl: link,
+        fileurl: `${baseUrl}/stb/${link}&typeaction=telechargement`,
         filename: `releve_${date}_${account.label}.pdf`
       }
     })
@@ -87,6 +73,31 @@ function saveAccountDocuments ($, fields, account, index, length) {
       timeout: Date.now() + timeForThisAccount
     })
   })
+}
+
+function parseStatementsPage ($) {
+  // find the "Releve de comptes" section
+  // here I suppose the fist section is always the releves de comptes section but the name is
+  // checked
+  log('info', 'Getting the list of accounts with account statements')
+  if ($('#entete1').text().trim() === 'RELEVES DE COMPTES') {
+    // get the list of accounts with links to display the details
+    const accounts = Array.from($('#panneau1 .ca-table tbody')).map(account => {
+      const $account = $(account)
+      const label = cleanDocumentLabel($account.find('tr').eq(0).find('a').eq(1).text())
+
+      const link = $account.find('.fleche-ouvrir').attr('href')
+      return { label, link: `${baseUrl}/stb/${link}` }
+    })
+    return accounts
+  } else {
+    log('warning', 'No account statement')
+    return []
+  }
+}
+
+function fetchStatementPage () {
+  return rq(statementsUrl)
 }
 
 function saveOperations (account, operations) {
@@ -115,6 +126,7 @@ function fetchOperations (account) {
       const cells = line.split(',')
       const labels = cells[1].split('\u001b :').map(elem => elem.trim()).join(';')
 
+      // select the right cell if it is a debit or a credit
       let amount = 0
       if (cells[2].length) {
         amount = parseFloat(cells[2]) * -1
@@ -188,7 +200,7 @@ function parseAccounts ($) {
   }))
 }
 
-function login (fields) {
+function login () {
   log('info', 'Logging in')
   return rq('https://www.ca-paris.fr/particuliers.html')
   .then($ => {
