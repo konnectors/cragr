@@ -2,7 +2,7 @@
   "name": "cragr",
   "version": "1.0.0",
   "description": "Crédit Agricole connector",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cozy/cozy-konnector-bank-cragr.git"
@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "prettier": "prettier --write '{src,test}/**/*.{js,jsx}' && eslint --fix '{src,test}/**/*.{js,jsx}'",
     "standalone": "cozy-konnector-standalone",
     "standalone:record": "REPLAY=record cozy-konnector-standalone",
     "standalone:replay": "REPLAY=replay cozy-konnector-standalone",
@@ -25,7 +26,9 @@
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
+    "eslint-config-cozy-app": "^0.3.1",
     "git-directory-deploy": "^1.5.1",
+    "prettier": "^1.9.2",
     "webpack": "^3.5.0"
   }
 }
