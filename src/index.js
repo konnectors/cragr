@@ -1,10 +1,13 @@
-const {BaseKonnector, log, request, errors, updateOrCreate, addData} = require('cozy-konnector-libs')
+const {BaseKonnector, log, request, errors, updateOrCreate, addData, saveFiles} = require('cozy-konnector-libs')
 const xlsx = require('xlsx')
 const bluebird = require('bluebird')
 const moment = require('moment')
 const url = require('url')
 
-let rq = request({
+// time given to the connector to save the files
+const FULL_TIMEOUT = Date.now() + 60 * 1000
+
+const rq = request({
   // debug: true,
   jar: true,
   json: false,
@@ -13,6 +16,7 @@ let rq = request({
 
 let loginUrl = null
 let baseUrl = null
+let statementsUrl = null
 
 module.export = new BaseKonnector(start)
 
@@ -24,6 +28,65 @@ function start (fields) {
     return fetchOperations(compte)
     .then(operations => saveOperations(compte, operations))
   }))
+  .then(() => getDocuments(fields))
+}
+
+function getDocuments (fields) {
+  log('info', 'Getting accounts statements')
+
+  // displaying the general document list
+  return rq(statementsUrl)
+  .then($ => {
+    // find the "Releve de comptes" section
+    // here I suppose the fist section is always the releves de comptes section but the name is
+    // checked
+    log('info', 'Getting the list of accounts with account statements')
+    if ($('#entete1').text().trim() === 'RELEVES DE COMPTES') {
+      // get the list of accounts with links to display the details
+      const accounts = Array.from($('#panneau1 .ca-table tbody')).map(account => {
+        const $account = $(account)
+        let label = $account.find('tr').eq(0).find('a').eq(1).text().trim()
+
+        // remove some special characters from the label
+        label = label.split(' ').filter(l => l.length).join('_').replace('.', '')
+
+        let link = $account.find('.fleche-ouvrir').attr('href')
+        link = `${baseUrl}/stb/${link}`
+        return { label, link }
+      })
+
+      return bluebird.each(accounts, (account, index, length) => saveAccountDocuments($, fields, account, index, length))
+    } else {
+      log('error', 'No account statement')
+      return []
+    }
+  })
+}
+
+function saveAccountDocuments ($, fields, account, index, length) {
+  return rq(account.link)
+  .then($ => {
+    log('info', account.label)
+    // now get all the links to the releves of this account
+    const entries = Array.from($('#panneau1 table tbody').eq(index).find('tr[title]')).map(elem => {
+      const $cells = $(elem).find('td')
+      const date = $cells.eq(0).text().split('/').reverse().join('')
+      let link = $cells.eq(3).find('a').attr('href').split(';')[1].match(/\('(.*)'\)/)[1]
+      link = `${baseUrl}/stb/${link}&typeaction=telechargement`
+      return {
+        fileurl: link,
+        filename: `releve_${date}_${account.label}.pdf`
+      }
+    })
+
+    // Give an equal time to fetch documents for each account
+    // next documents will be downloaded for the next run
+    const remainingTime = FULL_TIMEOUT - Date.now()
+    const timeForThisAccount = remainingTime / (length - index)
+    return saveFiles(entries, fields, {
+      timeout: Date.now() + timeForThisAccount
+    })
+  })
 }
 
 function saveOperations (account, operations) {
@@ -33,7 +96,7 @@ function saveOperations (account, operations) {
 function fetchOperations (account) {
   log('info', `Gettings operations for ${account.label}`)
 
-  rq = request({
+  const rq = request({
     cheerio: false
   })
   return rq({
@@ -186,6 +249,8 @@ function login (fields) {
     })
   })
   .then($ => {
+    const idSessionSag = $('input[name=sessionSAG]').attr('value')
+    statementsUrl = `${baseUrl}/stb/entreeBam?sessionSAG=${idSessionSag}&stbpg=pagePU&act=Edocsynth&stbzn=bnt&actCrt=Edocsynth#null`
     if ($('.ca-table tbody tr img').length) {
       log('info', 'LOGIN_OK')
       return $

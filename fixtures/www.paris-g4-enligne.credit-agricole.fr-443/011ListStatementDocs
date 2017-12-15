@@ -1,0 +1,2331 @@
+GET /stb/collecteNI?fwkaid=122906320_14122017_37594&fwkpid=122906992_14122017&fwkidpu=122906320_14122017_37594&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Detail&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Edocsynth&sessionSAG=4c159fea160522c10e5-6732.SAG_V6&NIV1=RELEVES%20DE%20COMPTES%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&ind=ID009&ANCRE=ID009
+host: www.paris-g4-enligne.credit-agricole.fr
+accept: application/json
+
+HTTP/1.1 200 OK
+date: Thu, 14 Dec 2017 11:29:07 GMT
+expires: Thu, 01 Dec 1994 16:00:00 GMT
+cache-control: no-cache,no-store
+content-type: text/html; charset=windows-1252
+content-language: fr-FR
+set-cookie: idUnique=2l2v4z5tn6q46l3727253i4q111b4x284n6hl; Path=/
+connection: close
+transfer-encoding: chunked
+
+<html><head><title>Caisse Régionale d'Ile de France</title></head><body marginheight="0" topmargin="0" vspace="0" marginwidth="0" leftmargin="0" hspace="0"><div id="container">
+<link id="linkcss" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/cssstyles.css" rel="stylesheet"/>
+<TABLE border="0" width="960px" cellpadding="0" cellspacing="0">
+<TR valign="middle"><TD>
+<!-----  DEBUT zone enteteTech  ---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/antiquus.css?v=59" media="all" />
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/antiquus.css?v=59" media="all" />
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles.css?v=59" media="all" />
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles.css?v=59" media="all" />
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles-mod.css?v=59" media="all" />
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles-mod.css?v=59" media="all" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/stb.css?v=59" media="all" />
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var PATH_STATIC = '';
+  
+</script>
+
+
+<script src="/web/eca/tech/allmedia/wai/js/wai.js" type="text/javascript"></script>
+<script src="/web/eca/tech/allmedia/wai/js/swfobject.js" type="text/javascript"></script>
+<script src="/web/bam/tech/allmedia/stb/commun/js/jquery.js" type="text/javascript"></script>
+<!-- TEST -->
+
+
+<script type="text/javascript" src="https://libs.de.coremetrics.com/eluminate.js"></script>
+		
+<script type="text/javascript">
+	cmSetClientID("50580000|88200_CLI_3",true,"data.de.coremetrics.com","credit-agricole.fr");
+</script>
+
+<script type="text/javascript">
+	// T300543 - Ajout limitation de durée du cookie IBM à 13 mois
+	cmSetupOther({"cm_JSFCoreCookieExpireSeconds":"33696000"});
+</script>
+
+
+
+<SCRIPT LANGUAGE=JavaScript>
+
+<!--
+idSessionSag = "4c159fea160522c10e5-6732.SAG_V6";
+idPage = "pagePU";
+urlBase = "/stb"+"/entreeBam";
+
+// Données pour l'authentification forte
+errSecu = "0";
+
+var codeCaisse = "882";
+var	ccXiti = "17";
+var ccCoremetrics = "5";
+var WB_TRACKING_CBINAM = "1";
+var TRACKING = "O";
+var	topPfv = "B";
+var sDate = "20171214";
+var urlImageWAI = "";
+var pathDynamicStb = "/stb";
+var messageperso_info = "";
+var messageperso_bam = "";
+//4ème PAP
+var messageperso_promo = "";
+var messageperso_bbas = "";
+//Fin 4ème PAP
+// Ecart J8
+ var messageperso_menuHaut = "";
+ var messageperso_menuBas = "";
+ var profil_evt_menh = "                    ";
+ var profil_evt_menb = "                    ";
+
+var profil_evt_bam = "                    ";
+var profil_evt_info = "                    ";
+var profil_evt_promo = "                    ";
+//4ème PAP
+var profil_evt_bbas = "                    ";
+//Fin 4ème PAP
+var toppersoffres = "";
+
+
+
+	var listeproduits_recommande = null;
+
+
+	var listeproduits_recommande_enfants = null;
+
+
+	var listeproduits_souscriptible = null;
+
+
+	var listeproduits_souscriptible_enfants = null;
+
+
+
+var donneesClient = {
+		age:19800209,
+		aCreditImmo:false,
+		aCreditConso:false,
+		aLivretEpargne:false,
+		montantLivretEpargne:-1,
+		aCompteTitre:false,
+		profilClient:"Particulier",
+		marcheClient:null,
+		eligibleSouscriptionEnfant:false,
+		codePerimetre: "XXXXXXXXXXX",
+		codeAgence: "00242",
+		aLivretEpargneAbonne:false,
+		montantLivretEpargneAbonne:-1
+}
+var listecomptes_client = [
+			{
+				libelle: "LIV A",
+				numero : XXXXXXXXXXX,
+				nature : "L2"
+			}
+			 ];
+
+
+function getUrlAction(action,idZone) {
+	var url = urlBase;
+	url = url + "?sessionSAG="+idSessionSag;
+	url = url + "&stbpg="+idPage;
+	url = url + "&act="+action;
+	if (idZone)
+		url = url + "&stbzn="+idZone;
+		
+	return url;
+}
+
+function getUrlActionPartenaire(partenaire) {
+	var url = urlBase;
+	url = url + "?sessionSAG="+idSessionSag;
+	url = url + "&stbpg="+idPage;
+	url = url + "&site="+partenaire;
+	url = url + "&typeaction=reroutage_aller";
+	return url;
+}
+
+function doAction(act,idZone, actCrt, idCpt) {
+	var url = getUrlAction(act,idZone);
+	
+	if (idZone == "bnt") {
+		// action courant = action demandee
+		var crt = act;
+		// on surchage l'action courante si besoin (cas du detail)
+		if (actCrt) {
+			crt = actCrt;
+		}
+	
+		indEt=crt.indexOf("&");
+		if (indEt != -1)
+			crt = crt.substring(0,indEt);
+
+		url = url + "&actCrt="+crt;
+		if (idCpt) 
+			url = url + "&idCptCrt="+idCpt;
+	}	
+	document.location.href = url;
+}
+
+function doActionDelayed(act,idZone, actCrt, idCpt) {
+	var html = " <SCRIPT language=\"JavaScript\" src=\"/web/bam/appli/web/commun/js/prisesFWK.js\" ></SCRIPT> <SCRIPT language=\"JavaScript\" src=\"/web/bam/appli/web/commun/js/outils.js\" > </SCRIPT> <SCRIPT language=\"JavaScript\" src=\"/web/bam/appli/web/commun/js/infosbulle.js\" > </SCRIPT> <table width=\"480\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"> <tr> <td colspan=\"2\" height=\"6\"></td> </tr> <tr> <td height=\"20\"><font class=\"titrepage\">Synthèse globale</font></td> <td height=\"20\"></td> </tr> <TR> <TD colSpan = \"2\" height=\"4\"><IMG src=\"/web/bam/appli/web/commun/picts/filettitrepage.gif\" border=0 width=\"100%\" height=\"1\"> </TD> </TR> </table> <br> <br> <FONT CLASS=\"taille3\" FACE=\"Helvetica,Arial\" SIZE=\"3\" color=\"Black\"> Veuillez patienter quelques instants pendant la construction de votre synthèse (cette opération peut prendre quelques minutes). </FONT><span id=\"infoBull\"></span><span id=\"ombrBull\"></span><br> <TABLE WIDTH=\"364\" BORDER=\"0\" CELLSPACING=\"0\" CELLPADDING=\"0\"> </TABLE> ";
+	
+	document.getElementById('trPagePu').innerHTML = html;
+	
+	doAction(act,idZone, actCrt, idCpt);
+
+}
+
+function enchainerApplication(idSite) {
+	var url = getUrlAction('partenaire');
+	if (idSite.substring(0,7) != "http://" && idSite.substring(0,8) != "https://")
+		idSite = "http://"+idSite;
+	url = url + "&cible="+idSite;
+	window.open(url, "win", "height=500, width=600, location=yes, menubar=yes, resizable=yes, scrollbars=yes, status=yes, toolbar=yes");
+}
+
+function lancerURLParam(url,height,width,scrollbar){
+	if (url.substring(0,7) != "http://" && url.substring(0,8) != "https://")
+		url = "http://"+url;
+	ouvrirPopup(url, "win", height, width, 'yes', 'yes','yes','yes','no',scrollbar);
+}
+
+function lancerURL(url){
+	lancerURLParam(url,500,600,'yes');
+}
+
+function lancerURLSimul(url){
+	lancerURLParam(url,500,690,'yes');
+}
+
+function ouvrirPopup(url, nom, h, w, loc, menu, tool, rsize, status, scroll){
+window.open(url, nom, "height="+h+", width="+w+", location="+loc+", menubar="+menu+", resizable="+rsize+", scrollbars="+scroll+", status="+status+", toolbar="+tool);
+}
+
+
+function lancerContenu(idContenu, idGabarit) {
+
+	var url = getUrlAction(idGabarit);
+	url = url + "&idContenu="+idContenu;
+
+	document.location.href= url;
+}
+
+function lancerPUContenu(idContenu) {
+	
+	var chemin = "Performance&prov=pap&tcm="+idContenu;
+	var url = getUrlAction(chemin);
+		
+	document.location.href= url;
+}
+
+function lancerPu(idPu) {
+
+	var url = getUrlAction(idPu);
+		
+	document.location.href= url;
+}
+
+function lancerPuParam(idPu, param) {
+
+	var url = getUrlAction(idPu);
+	url = url + "&"+param;
+		
+	document.location.href= url;
+}
+
+function getIdComp(obj) {
+
+  var cArret = 'BODY';
+  var cNode = 'DIV';
+  var cAttr = 'idcomp';
+  
+  if(obj.parentNode) {
+  	var currNode = obj.parentNode;
+  	var idcomp;
+  	while(currNode && currNode.nodeName != cArret) {
+    	if(currNode.nodeName == cNode && (idcomp = currNode.getAttribute(cAttr)))
+      		return idcomp;
+    
+    	currNode = currNode.parentNode;
+  	}
+  }
+  else {
+	idcomp = obj;
+	return idcomp;
+  }
+  return null;
+}
+
+function lancerPuParamComp(idPu, param, obj) {
+
+  var url = getUrlAction(idPu);
+  url += "&"+ param;
+  url += "&IDCOMP="+ getIdComp(obj);
+  
+  document.location.href = url;
+}
+
+function lancerPuPartenaire(partenaire) {
+	
+	var url = getUrlActionPartenaire(partenaire);
+	
+	document.location.href = url;
+
+}
+
+function lancerPuPartenaireParam(partenaire, sdt, param) {
+	
+	var url = getUrlActionPartenaire(partenaire);
+	url = url + "&sdt=" + sdt + "&parampartenaire=" + param;
+	
+	document.location.href = url;
+
+}
+
+function lancerPuPartenaireParamComp(partenaire, sdt, param, obj) {
+
+	var url = getUrlActionPartenaire(partenaire);
+	url = url + "&sdt=" + sdt + "&parampartenaire=" + param + ";" + getIdComp(obj);
+	document.location.href = url;
+}
+
+function lancerPuPartenaireParamComp2(partenaire, sdt, param, idComp) {
+
+            var url = getUrlActionPartenaire(partenaire);
+            url = url + "&sdt=" + sdt + "&parampartenaire=" + param + ";" + idComp;
+
+            document.location.href = url;
+}
+
+function lancerPuPartenaireParamPopup(partenaire, sdt, param, nom, h, w, loc, menu, tool, rsize, status, scroll)
+{
+	var url = getUrlActionPartenaire(partenaire);
+	url = url + "&sdt=" + sdt + "&parampartenaire=" + param;
+	ouvrirPopup(url, nom, h, w, loc, menu, tool, rsize, status, scroll);
+}
+
+function lancerEvenement(evenement) {
+
+	var url = urlBase;
+	url = url + "?sessionSAG="+idSessionSag;
+	url = url + "&stbpg="+idPage;
+	url = url + "&stbevt="+evenement;
+		
+	document.location.href= url;
+}
+function lancerSTEvCom(idPu, param1, obj, param2) {
+	var aRemplacer = /\&/g;
+	param2 = param2.replace(aRemplacer, "etcommercial")
+	
+	var url = getUrlAction(idPu);
+	url += "&"+ param1;
+	url += "&IDCOMP="+ getIdComp(obj);
+	url += "&"+ param2;
+	
+	if (param2.substring(0,16) == "ACTION=lancerURL")
+		ouvrirPopup(url,"win", 500, 600, 'yes', 'yes','yes','yes','no','yes');
+	else
+		document.location.href = url;
+}
+
+function lancerSTTrackingElargi(idPu, idCompSource, idCompCible, action) {
+	var aRemplacer = /\&/g;
+	action = action.replace(aRemplacer, "etcommercial")
+	
+	var url = getUrlAction(idPu);
+	url += "&idCompSource="+ idCompSource;
+	url += "&idCompCible="+ idCompCible;
+	url += "&"+ action;
+	url += "&provenance=TE";
+	
+	if (action.substring(0,16) == "ACTION=lancerURL")
+		ouvrirPopup(url,"win", 500, 600, 'yes', 'yes','yes','yes','no','yes');
+	else
+		document.location.href = url;
+	
+}
+function StatusMessage(over,msg) {
+	if (browserOK==true) {
+		if(over==true) window.status=msg;
+		else window.status=" "; 
+	}
+}
+
+function iframePuPartenaireParam(frameId, partenaire, sdt, param) {
+
+	var url = getUrlActionPartenaire(partenaire);
+	url = url + "&sdt=" + sdt + "&parampartenaire=" + param;
+	document.getElementById(frameId).src = url;
+
+}
+
+ 
+
+function iframePuPartenaireParamComp(frameId, partenaire, sdt, param, obj) {
+
+    var url = getUrlActionPartenaire(partenaire);
+    url = url + "&sdt=" + sdt + "&parampartenaire=" + param + ";" + getIdComp(obj);
+    document.getElementById(frameId).src = url;
+}
+
+
+//-->
+</SCRIPT>
+
+
+
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+
+function ouvrePOPUP(item,widthpop,heightpop,men) {
+	if(item.indexOf("?") != -1) {
+		item = item+"&stbevt=Popup";
+	}
+	else {
+		item = item+"?stbevt=Popup";
+	}
+
+	ouvreFenetre(item,widthpop,heightpop,men,"PopUp");
+}
+function ouvreassistance(item,widthpop,heightpop,men) {
+	ouvreFenetre(item,widthpop,heightpop,men,"Assistance");
+}
+
+function ouvreFenetre(item,widthpop,heightpop,men,titre) {
+
+	if (item.indexOf("?") != -1) {
+		if (item.indexOf("#") != -1)
+			url = item.substring(0,item.indexOf("#"))+"&typeaction=Popup"+item.substring(item.indexOf("#"),item.length);
+		else
+			url = item+"&typeaction=Popup";
+	} else {
+		url = item;
+	}
+
+	aazz = "menubar=" + men + ",resizable=yes,toolbar=no,width=" + widthpop + ",height=" + heightpop + ",scrollbars=yes";
+
+	// on verifie si l'on n'est pas deja sur la bonne fenetre
+	if (titre!=window.name) {
+		// Mise en commentaire de l ancien code
+		//if (!saf) {
+			// on recupere un reference sur le popup (s'il n'est pas ouvert, cela en ouvre une!)
+		//	popup1 = window.open('',titre,aazz);
+			// on ferme le popup
+		//	popup1.close();
+		//}
+		// on ouvre le nouveau avec les nouveaux parametres (taille, bouton...)
+		//popup1 = window.open('',titre,aazz);
+		//popup1.name = titre;
+		//setSize(popup1,widthpop,heightpop);
+			
+		popup1 = window.open(url,titre,aazz);
+			
+	    if (moz ) popup1.focus();
+	    //popup1.location =url;
+	} else {
+		window.name = titre;
+		setSize(window,widthpop,heightpop);
+		document.location = url;
+	}
+
+}
+
+function setSize(win,width,height) {
+	if (win.outerWidth) {
+		win.outerWidth = width;
+		win.outerHeight = height;
+	}
+	else if (win.resizeTo) {
+		win.resizeTo(width,height);
+	}
+	else {
+		alert("Not supported.");
+	}
+}
+
+//ouvre une fenêtre popup en plein écran ne laissant l'affichage que de la bnt
+function ouvrirPopupBntVisible(url) {
+	window.open(url,'Popup','location=no,toolbar=no,directories=no,menubar=yes,resizable=yes,scrollbars=yes,status=yes,width='+(screen.availWidth-140)+',height='+screen.availHeight+',screenY=0,screenX='+140);
+}
+
+// -->
+</SCRIPT>
+
+
+
+
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+// Detection navigateur
+nsvers = "0.94"; // pour netscape "6.2";
+ievers = "5";
+browserOK = false;
+isIE55 = false;
+var d, na, nua, nav, nan, dom, ie, ienu, ie4, ie5, ie5x, ie6, moz, moznu, ns62, mac, win, old, lin, ie5mac, ie5xwin, op, opnu, op4, op5, op6, op7, konq, saf, saf_num;
+
+//variable initialization
+
+d = document;
+na = navigator;
+nav = na.appVersion;
+nan = na.appName;
+nua = na.userAgent;
+win = ( nav.indexOf( 'Win' ) != -1 );
+mac = ( nav.indexOf( 'Mac' ) != -1 );
+lin = ( nav.indexOf( 'Linux' ) != -1 );
+
+if ( !d.layers ){
+	dom = ( d.getElementById );
+	old = ( nav.substring( 0, 1 ) < 4 );
+	op = ( nua.indexOf( 'Opera' ) != -1 );
+	moz = ( nua.indexOf( 'Gecko' ) != -1 );
+	ie = ( d.all && !op );
+	konq = ( nua.indexOf( 'Konqueror' ) != -1 );
+	saf = ( nua.indexOf( 'Safari' ) != -1 );
+
+	if ( op ){
+		op_pos = nua.indexOf( 'Opera' );
+		opnu = nua.substr( ( op_pos + 6 ), 3 );
+		op5 = ( opnu.substring( 0, 1 ) == 5 );
+		op6 = ( opnu.substring( 0, 1 ) == 6 );
+		op7 = ( opnu.substring( 0, 1 ) == 7 );
+	}
+	else if ( saf ){
+		saf_pos = nua.indexOf( 'Safari' );
+		saf_nu = nua.substr( ( saf_pos + 7 ), 2 );
+	}
+	else if ( moz ){
+		rv_pos = nua.indexOf( 'rv' );
+		moz_rv = nua.substr( ( rv_pos + 3 ), 3 );
+		moz_rv_sub = nua.substr( ( rv_pos + 7 ), 1 );
+		moz_rv_sub = moz_rv + moz_rv_sub;
+		browserOK = (moz_rv_sub >= nsvers);
+	}
+	else if ( ie ){
+		ie_pos = nua.indexOf( 'MSIE' );
+		ienu = nua.substr( ( ie_pos + 5 ), 3 );
+		ie4 = ( !dom ); 
+		ie5 = ( ienu.substring( 0, 1 ) == 5 );
+		ie6 = ( ienu.substring( 0, 1 ) == 6 );
+		browserOK = ( ienu.substring( 0, 1 ) >= ievers );
+	}
+	else{} 
+
+	ie5x = ( d.all && dom );
+	isIE55 = ie5x;
+	ie5mac = ( mac && ie5 );
+	ie5xwin = ( win && ie5x );
+}
+
+
+function submitTelecharger(action) {
+	var frm;
+	frm = document.frm_tel;
+	frm.typeaction.value = "telechargement";
+	if (isIE55)	{
+		frm.target = 'frameTelecharge';
+	}
+	frm.fwkcodeaction.value = 'Executer';
+	frm.fwkaction.value = action;
+	frm.submit();
+}
+
+function getCSS() {
+	elt =  document.getElementById("linkcss");
+	return elt.getAttribute("href");
+}
+
+function getCSSIE(num){
+	var nom = navigator.appName;
+	var version = navigator.appVersion;
+	var retour = "";
+	if(nom == "Microsoft Internet Explorer"){
+		version = (version.split(";")[1]).split("\ ")[2].substring(0,1);
+		var versionNum = parseInt(version);	
+		var chemin = "/web/bam/appli/web/commun/styles/";
+		if(num=="1"){
+			chemin = "/web/bam/tech/allmedia/stb/commun/styles/";
+		}
+		if(versionNum == 8){
+			retour = ""+chemin+"ie8.css?v=58";
+		}else if(versionNum<= 7){
+			retour = ""+chemin+"ie.css?v=58";			
+		}		
+	}
+	return retour;
+}
+
+function getCSSIEOLD(){
+	var nom = navigator.appName;
+	var version = navigator.appVersion;
+	var retour = "";
+	if(nom == "Microsoft Internet Explorer"){
+		version = (version.split(";")[1]).split("\ ")[2].substring(0,1);	
+		var versionNum = parseInt(version);	
+		if(versionNum< 7){
+			retour = "/web/bam/tech/allmedia/stb/commun/styles/ieold.css?v=58";			
+		}		
+	}
+	return retour;
+}
+
+//FEUILLE_STYLE = getCSS();
+FEUILLE_STYLE_ANTIQUUS = "/web/bam/tech/allmedia/stb/commun/styles/antiquus.css?v=58";
+FEUILLE_STYLE_ANTIQUUS2 = "/web/bam/appli/web/commun/styles/antiquus.css?v=58";
+FEUILLE_STYLE = "/web/bam/tech/allmedia/stb/commun/styles/styles.css?v=58";
+FEUILLE_STYLE2 = "/web/bam/appli/web/commun/styles/styles.css?v=58";
+FEUILLE_STYLE_MOD = "/web/bam/tech/allmedia/stb/commun/styles/styles-mod.css?v=58";
+FEUILLE_STYLE_MOD2 = "/web/bam/appli/web/commun/styles/styles-mod.css?v=58";
+FEUILLE_STYLE_IE = getCSSIE(1);
+FEUILLE_STYLE_IEOLD = getCSSIEOLD();
+FEUILLE_STYLE_IE2 = getCSSIE(2);
+FEUILLE_STYLE_IEOLD2 = "/web/bam/appli/web/commun/styles/ieold.css?v=58";
+
+
+PICTS = 		"/web/bam/tech/allmedia/stb/commun/picts";
+
+var urlTelechargement= "";
+function telechargeFinal() {
+	return urlTelechargement;
+	titre = "Téléchargement";
+	aazz = "menubar=no,resizable=yes,toolbar=no,width=400,height=450";
+	//popup1 = window.open(urlTelechargement,titre,aazz);
+}
+function ouvreTelechargement(val, isForm) {
+	titre = "Téléchargement";
+	var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+	if (is_chrome)  
+	aazz = "menubar=no,resizable=yes,toolbar=no,width=860,height=480";
+	else aazz = "menubar=no,resizable=yes,toolbar=no,width=520,height=480";
+	//aazz = "menubar=no,resizable=yes,toolbar=no,width=520,height=480";
+	popup1 = window.open('',titre,aazz);
+	if (!isForm){
+		url = val + "&typeaction=telechargement";
+		urlTelechargement = url;
+		var frmTel;
+		frmTel = document.FRM_TEL;
+		frmTel.urlTel.value = url;
+		frmTel.target = 'Téléchargement';
+		frmTel.submit();
+	}
+	if ((browserOK) && (navigator.appName=="Netscape")) popup1.focus();
+	// Cas du telechargement a partir d un releve
+	// Si modification du texte du pop-up de telechargement, penser a le modifier egalement dans Telechargement.jsp (cas a partir de la bnt ou de la synthese)
+	if (isForm){
+ 		popup1.document.writeln('<html><head><title>'+titre+'</title>');
+ 		//on inclue toutes les css necessaires (cf enteteCSS.jsp)
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_ANTIQUUS+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_ANTIQUUS2+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE2+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_MOD+'">'); 		
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_MOD2+'">'); 
+ 		//gestion des feuilles de styles pour IE
+ 		if(FEUILLE_STYLE_IE!=""){
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IE+'">');
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IE2+'">');
+ 		}
+ 		if(FEUILLE_STYLE_IEOLD!=""){
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IEOLD+'">');
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IEOLD2+'">');
+ 		}		
+ 		popup1.document.writeln('<script language=\"JavaScript\">');
+ 		popup1.document.writeln('function tel() {'); 		
+		popup1.document.writeln('}');
+		popup1.document.writeln('function fermer() {');
+		popup1.document.writeln('	self.close();');
+		popup1.document.writeln('}');
+		popup1.document.writeln('</script>');
+		popup1.document.writeln('</head>');
+		popup1.document.writeln('<body leftMargin="0" text="#000000" topMargin="0" onload="tel()">');
+		//on inclue les css ici sinon pas de rafraichissement
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_ANTIQUUS+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_ANTIQUUS2+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE2+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_MOD+'">'); 		
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_MOD2+'">'); 
+ 		//gestion des feuilles de styles pour IE
+ 		if(FEUILLE_STYLE_IE!=""){
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IE+'">');
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IE2+'">');
+ 		}
+ 		if(FEUILLE_STYLE_IEOLD!=""){
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IEOLD+'">');
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IEOLD2+'">');
+ 		}	
+ 		popup1.document.writeln('<div id="container">');
+		popup1.document.writeln('<style>#container{width:500px;}.boutons-act, .titrepage {width:290px; }</style>');
+		if(FEUILLE_STYLE_IE!=""){
+ 			popup1.document.writeln('<style>.boutons-act, .titrepage {width:420px;}</style>');
+ 		}
+		popup1.document.writeln('<div id="col-popup">');
+		popup1.document.writeln('<div class="boutons-act">');
+		popup1.document.writeln('<a id="ancre-contenu" name="ancre-contenu" href="#ancre-contenu"></a>');
+		popup1.document.writeln('<h1>Téléchargement</h1>');	
+		popup1.document.writeln('<span id="top-actions">');
+		popup1.document.writeln('<a id="top-actions-fermer" href="javascript:window.close()" target="_parent" onMouseOver="StatusMessage(true, statusfermer);return true" onMouseOut="StatusMessage(false)">Fermer</a>');
+		popup1.document.writeln('</span>');
+		popup1.document.writeln('</div>');
+		popup1.document.writeln('<br/>Veuillez patienter, le t&eacute;l&eacute;chargement est en cours.<br/>');
+		popup1.document.writeln('<br/>');
+		popup1.document.writeln('<TABLE align="center" width="100%">');
+		popup1.document.writeln('<TR class="colceltitresoustetiere">');
+		popup1.document.writeln('<TD height="22"></TD>');
+		popup1.document.writeln('</TR>');
+		popup1.document.writeln('<TR>');
+		popup1.document.writeln('<TD><IMG src="'+PICTS+'/filetcorpspage.gif" border="0" height="1" width="100%"></TD>');
+		popup1.document.writeln('<td height="15"></td>');		
+		popup1.document.writeln('</TR>');
+		popup1.document.writeln('</TABLE>');
+		popup1.document.writeln('</div>');
+		popup1.document.writeln('</div>');				 
+		popup1.document.writeln('</body></html>');
+		popup1.document.close();
+		var frm;
+		frm = document.frm_tel;
+		frm.typeaction.value = "telechargement";
+		frm.target = 'Téléchargement';
+		frm.fwkcodeaction.value = 'Executer';
+		frm.fwkaction.value = val;
+		frm.submit();
+		
+	}	   
+   
+}
+
+//-->
+</SCRIPT>
+
+<!-----  FIN zone enteteTech  ---->
+
+</TD></TR><TR valign="middle"><TD>
+<!-----  DEBUT zone boutonVert  ---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Javascript pour générer le boutonVert -->
+<script type="text/javascript">
+
+
+idSessionSag = "4c159fea160522c10e5-6732.SAG_V6";
+idPage = "pagePU";
+urlBase = "/stb"+"/entreeBam";
+
+
+
+// Données pour l'authentification forte
+errSecu = "0";
+
+var codeCaisse = "882";
+var	ccXiti = "17";
+var ccCoremetrics = "5";
+var WB_TRACKING_CBINAM = "1";
+var TRACKING = "O";
+var	topPfv = "B";
+var urlImageWAI = "";
+var pathDynamicStb = "/stb";
+
+//Parametre BV
+var OICLIBCLIENT= "M.       NONAME CHRISTOPHE        ";
+var OICIDPART= "00000064560567";
+var OICIDAGENCE= "00242";
+var OICTOPDATENAISSANCE= "19800209";
+var OICTYPEPARTENAIRE= "B";
+var OICTOPPRISERDV= true;
+var OICTOPISBAM= true;
+var OICTOPMAILSECU= true;
+var OICTOPCANALSOS= false;
+var OICTOPCANALTEL= false;
+var OICTOPTCANALCHAT= false;
+var OICTOPCANALRDV= false;
+var OICTOPCANALMAIL= false;
+var OICTOPBV= false;
+
+(function(){
+  var t = document.createElement('script');
+  t.type="text/javascript"; 
+  t.async=true;
+  t.src="https://www.ca-paris.fr/Vitrine/ModExt/FO/OIC/P_OIC.jsp";
+  var n=document.getElementsByTagName('script')[0];
+  n.parentNode.insertBefore(t,n);
+})();
+</SCRIPT>
+
+
+<!-----  FIN zone boutonVert  ---->
+
+</TD></TR><TR height="17" valign="top"><TD>
+<!-----  DEBUT zone bnc  ---->
+
+
+	
+	
+	
+		
+
+
+
+<div id="entete_professionnel">
+
+<div id="entete_2" >
+    <div id="gauche-entete_2">
+    	<h1>
+			<table >
+				<tr>   
+					<td >
+						<a title="Caisse Régionale d'Ile de France, retour à l'accueil" href="#" id="lien-logo_2">
+							<img alt="Caisse Régionale d'Ile de France, retour à l'accueil" src="/web/bam/tech/allmedia/stb/commun/img/logo_882.png"></img>
+						</a>
+					</td>
+				</tr>
+			</table>
+
+        </h1>
+<!--        <p id="slogan"></p>-->
+    </div>
+    <div id="centre-entete_2">
+<!--	    <img alt="Crédit Agricole Nord de France, retour à l'accueil" src="/web/bam/tech/allmedia/stb/commun/img/separateur.png"></img>-->
+	     <p id="typeespace_2">
+	     	
+	     </p> 
+    </div>
+    <div id="droite-entete_2">    	
+        <p id="der-conn_2">Votre dernière connexion :  14 décembre 2017 à 12:03</p>
+        <div id="bloc-login_2">
+            <div id="bloc-login-infos_2" style="font-size: 11px;">
+                <p>Bonjour </p>
+                <p>M.       NONAME CHRISTOPHE        </p>
+            </div>
+            <div id="btn-bloc-login_2">
+                
+                <a  onMouseOver="StatusMessage(true, 'Déconnexion');return true" onMouseOut="StatusMessage( false )" href="javascript:doAction('TA_Deconnexion&typeaction=deconnexion','bnc');" id="btn-deconnexion_2">Déconnexion</a>
+            </div>
+        </div>
+        <div class="clearboth"></div>
+        <div id="bloc-login_22">
+        	
+
+ 
+			<p>               
+                    <a  id="coordonnees_2" href="javascript:lancerPu('Coordonnees')"
+			onMouseOver="StatusMessage(true, 'Gérer vos coordonnées');return true"
+			onMouseOut="StatusMessage( false )">Vos Coordonnées</a>
+                    &nbsp; <a id="contact_2" href="javascript:lancerPu('Contact')"
+			onMouseOver="StatusMessage(true, 'Si vous avez une demande particulière, cliquez ici');return true"
+			onMouseOut="StatusMessage( false )">Nous contacter</a>
+               
+               		&nbsp; <a id="btn-sos_22" href="javascript:lancerContenu('tcm-1356-185300','global');"
+			onMouseOver="StatusMessage(true, 'Déclarez une perte, un vol ou un sinistre');return true"
+			onMouseOut="StatusMessage( false )">SOS Urgences</a>
+			</p>				
+			
+			
+					        
+        </div>   
+        <div class="clearboth"></div>           
+    </div>
+</div>
+
+
+
+<ul id="menu-bnc_2">
+
+
+
+ 
+			<li id="bnc-compte" class="bnc-g  prem-menu">
+			<p style = "text-align:center">
+				<a href="javascript:doAction('Synthcomptes&prov=bnc-comptes', 'bnc');" id="bnc-compte-href"
+							
+							style="width: 118 "	
+					onMouseOver="StatusMessage(true, 'Comptes et cartes'); document.getElementById('bnc-compte_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-compte_on.png'; return true"
+					onMouseOut="StatusMessage( false ); document.getElementById('bnc-compte_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-compte_off.png';">
+					<img alt="Comptes et cartes" id="bnc-compte_logo" 
+						src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-compte_off.png">
+					</img>		
+
+						<br/>
+					<span>
+							Comptes<br/><span class="small"> & cartes</span>
+					</span>
+				</a>
+			</p>
+			</li>
+		
+		<li>
+		</li>
+		
+
+			<li id="bnc-messagerie" class="bnc-gmess" >				
+				<p style = "text-align:center">
+				   <a href="javascript:lancerPu('Msdossier')" id="bnc-messagerie-href"
+						
+							style="width:				
+							118
+						"						
+						
+							onMouseOver="StatusMessage(true, 'Messagerie '); 
+							document.getElementById('bnc-messagerie_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-messagerie_on.png';
+							return true"
+							onMouseOut="StatusMessage( false );
+							document.getElementById('bnc-messagerie_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-messagerie_off.png';"						
+						>
+						<img alt="Messagerie " id="bnc-messagerie_logo" 
+							src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-messagerie_off.png"
+							>
+						</img>		
+
+						<br/>
+						<span>
+							Messagerie 
+						</span>		
+					</a>
+				</p>
+			</li>
+
+	
+		<li>
+		</li>
+		
+ 
+			<li id="bnc-espaceconseil" class="bnc-g ">
+			<p style = "text-align:center">
+				<a href="javascript:lancerSTTrackingElargi('Performance&prov=bnc-escons','bnc-espaceconseil','','ACTION=')" id="bnc-espaceconseil-href"
+							
+							style="width: 118 "	
+					onMouseOver="StatusMessage(true, 'Conseils'); document.getElementById('bnc-espaceconseil_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-espaceconseil_on.png'; return true"
+					onMouseOut="StatusMessage( false ); document.getElementById('bnc-espaceconseil_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-espaceconseil_off.png';">
+					<img alt="Conseils" id="bnc-espaceconseil_logo" 
+						src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-espaceconseil_off.png">
+					</img>		
+
+						<br/>
+					<span>
+							Conseils
+					</span>
+				</a>
+			</p>
+			</li>
+		
+		<li>
+		</li>
+		
+ 
+			<li id="bnc-devissimulations" class="bnc-g ">
+			<p style = "text-align:center">
+				<a href="javascript:lancerSTTrackingElargi('Performance&prov=bnc-desim','bnc-devissimulations','','ACTION=')" id="bnc-devissimulations-href"
+							
+							style="width: 118 "	
+					onMouseOver="StatusMessage(true, 'Simulation et Devis'); document.getElementById('bnc-devissimulations_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-devissimulations_on.png'; return true"
+					onMouseOut="StatusMessage( false ); document.getElementById('bnc-devissimulations_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-devissimulations_off.png';">
+					<img alt="Simulation et Devis" id="bnc-devissimulations_logo" 
+						src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-devissimulations_off.png">
+					</img>		
+
+						<br/>
+					<span>
+							Simulation<br/><span class="small"> & Devis</span>
+					</span>
+				</a>
+			</p>
+			</li>
+		
+		<li>
+		</li>
+		
+
+		<li id="bnc-quotidien" class="bnc-d " >
+			<p style = "text-align:center">
+				<a href="javascript:lancerSTTrackingElargi('Performance&prov=bnc-quot','bnc-quotidien','','ACTION=')" id="bnc-quotidien-href" 
+					style="width:
+							118
+						"
+							onMouseOver="StatusMessage(true, 'Quotidien'); document.getElementById('bnc-quotidien_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-quotidien_on.png'; return true"
+							onMouseOut="StatusMessage( false ); document.getElementById('bnc-quotidien_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-quotidien_off.png'">
+	
+					<img alt="Quotidien" id="bnc-quotidien_logo" 	
+						src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-quotidien_off.png">
+					</img>
+						<br/>
+					<span>
+							Quotidien
+					</span>
+					
+				</a>
+			</p>
+		</li>
+		
+		
+	
+	
+		<li id="bnc-credits" class="bnc-d " >
+			<p style = "text-align:center">
+				<a href="javascript:lancerSTTrackingElargi('Performance&prov=bnc-cred','bnc-credits','','ACTION=')" id="bnc-credits-href" 
+					style="width:
+							118
+						"
+							onMouseOver="StatusMessage(true, 'Crédits'); document.getElementById('bnc-credits_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-credits_on.png'; return true"
+							onMouseOut="StatusMessage( false ); document.getElementById('bnc-credits_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-credits_off.png'">
+	
+					<img alt="Crédits" id="bnc-credits_logo" 	
+						src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-credits_off.png">
+					</img>
+						<br/>
+					<span>
+							Crédits
+					</span>
+					
+				</a>
+			</p>
+		</li>
+		
+		
+	
+	
+		<li id="bnc-epargne" class="bnc-d " >
+			<p style = "text-align:center">
+				<a href="javascript:lancerSTTrackingElargi('Performance&prov=bnc-epar','bnc-epargne','','ACTION=')" id="bnc-epargne-href" 
+					style="width:
+							118
+						"
+							onMouseOver="StatusMessage(true, 'Épargner'); document.getElementById('bnc-epargne_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-epargne_on.png'; return true"
+							onMouseOut="StatusMessage( false ); document.getElementById('bnc-epargne_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-epargne_off.png'">
+	
+					<img alt="Épargner" id="bnc-epargne_logo" 	
+						src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-epargne_off.png">
+					</img>
+						<br/>
+					<span>
+							Épargner
+					</span>
+					
+				</a>
+			</p>
+		</li>
+		
+		
+	
+	
+		<li id="bnc-assurance" class="bnc-d  der-menu" >
+			<p style = "text-align:center">
+				<a href="javascript:lancerSTTrackingElargi('Performance&prov=bnc-assur','bnc-assurance','','ACTION=')" id="bnc-assurance-href" 
+					style="width: 
+							120
+						"
+							onMouseOver="StatusMessage(true, 'Assurance'); document.getElementById('bnc-assurance_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-assurance_on.png'; return true"
+							onMouseOut="StatusMessage( false ); document.getElementById('bnc-assurance_logo').src='/web/bam/tech/allmedia/stb/commun/img/p_bnc-assurance_off.png'">
+	
+					<img alt="S'assurer" id="bnc-assurance_logo" 	
+						src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-assurance_off.png">
+					</img>
+						<br/>
+					<span>
+							S'assurer
+					</span>
+					
+				</a>
+			</p>
+		</li>
+		
+		
+	
+	
+	
+	</ul>
+
+
+
+
+
+<!-----  FIN zone bnc  ---->
+
+</TD></TR><TR valign="middle"><TD>
+<!-----  DEBUT zone FILDARIANE  ---->
+
+
+
+
+<script type="text/javascript">
+  var PU_PREM_ECRAN = "javascript:doAction('Synthcomptes', 'bnt');";
+</script>
+<div id="fil-ariane_2">
+    <div id="fil-ariane-contenu">
+	    <ul>
+			<li id="ariane-home_2">
+				<a title="Retour à la page d'accueil"
+				   href="javascript:doAction('Synthcomptes', 'bnt');"
+				   ><img height="25"
+				         alt="Retour à la page d'accueil"
+				         src="/web/bam/tech/allmedia/stb/commun/img/picto_home.png" /></a>
+			</li>
+	    </ul>
+	</div>
+	
+	
+	
+	
+	<script src="/web/bam/appli/web/commun/js/breadcrumbs.js?v=59" type="text/javascript"></script>
+	
+	
+	
+	
+
+
+							
+							
+							
+							
+							<script>aide_message= "Accédez à vos messages";</script>
+							
+								
+								<div id="ariane-message3_2">
+								<p>
+<!--								Vous avez  -->
+									<a
+									href="javascript:doAction('Msdossier','infoperso')"
+									onMouseOver="StatusMessage(true, aide_message);return true"
+									onMouseOut="StatusMessage( false )">
+								<span style="color:#F8F8FF; font-size:22px; font-weight:bold; text-decoration:none">&nbsp;0</span>&nbsp; <img  src="/web/bam/tech/allmedia/stb/commun/img/pic_messagerie_gris.png">
+<!--									nouveau&nbsp;message-->
+									</a>
+								</p>
+								</div>
+								
+							
+
+
+</div>
+
+
+<!-----  FIN zone FILDARIANE  ---->
+
+</TD></TR><TR valign="middle"><TD>
+<!-----  DEBUT zone libPerimetre  ---->
+
+
+
+
+<div id="libPerimetre_2">
+	<span class="textePerimetre_2">Espace Titulaire : Comptes particuliers</span>
+</div>
+
+
+
+
+
+<!-----  FIN zone libPerimetre  ---->
+
+</TD></TR><TR valign="middle"><TD>
+<!-----  DEBUT zone infoperso  ---->
+
+<!-----  FIN zone infoperso  ---->
+
+</TD></TR><TR height="17" valign="top"><TD><TABLE border="0" cellpadding="0" cellspacing="0">
+<TR><TD valign="top" width="168px">
+<TABLE border="0" valign="top" width="168px" cellpadding="0" cellspacing="0">
+<TR><TD>
+<!-----  DEBUT zone MENH  ---->
+<!--vide--><!--vide-->
+<!-----  FIN zone MENH  ---->
+
+</TD></TR><TR><TD>
+<!-----  DEBUT zone bnt  ---->
+
+
+
+<SCRIPT language="JavaScript">
+function go() {
+	url = document.forms.FRM_LST.nocpte.options[document.forms.FRM_LST.nocpte.selectedIndex].value;
+    i = document.forms.FRM_LST.nocpte.selectedIndex;
+    if (url != "")
+	{
+		doAction(url,'bnt','DetCpt', i );
+	}
+}
+
+choix=false;
+function choixCompte() {
+  if (saf) {
+    go();
+  } else {
+        if (choix) {
+                choix=false;
+                go();
+        }
+        else
+                choix = true;
+ }
+}
+
+function resetChoix() {
+        choix=false;
+}
+
+</SCRIPT>
+<FORM name="FRM_LST" method="POST">
+
+
+<ul id="menu-bnt_2">
+  <li>
+    <h2 id="bnt-titre-synthese" class="prem-titre-bnt">
+<!--			<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-vert.png" vertical-align="middle"></div>    -->
+			<div class="traitgauchevert">&nbsp;</div>
+    		<div class="libmenubnt">
+ 			   Synthèses
+ 			 </div>  
+ 	</h2>
+ 	</li>
+    <ul>
+        
+            
+		<script>aide_bnt1_0= "Accédez à vos comptes";</script>
+			
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doAction('Synthcomptes','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_0);return true"
+						onMouseOut="StatusMessage( false )">Mes Comptes</a>
+				</li>
+				
+		<script>aide_bnt1_1= "Accédez à vos crédits";</script>
+			
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doAction('Synthcredits','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_1);return true"
+						onMouseOut="StatusMessage( false )">Mes Crédits</a>
+				</li>
+				
+		<script>aide_bnt1_2= "Accédez à vos contrats d'épargne";</script>
+			
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doAction('Synthepargnes','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_2);return true"
+						onMouseOut="StatusMessage( false )">Mon Épargne</a>
+				</li>
+				
+		<script>aide_bnt1_3= "Accédez à vos contrats d'assurances";</script>
+			
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doAction('Synthassurances','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_3);return true"
+						onMouseOut="StatusMessage( false )">Mes Assurances</a>
+				</li>
+				
+		<script>aide_bnt1_4= "Accédez à vos avantages fidélité";</script>
+			
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doAction('Reroutfidelite&typeaction=reroutage_aller&site=FIDELITE','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_4);return true"
+						onMouseOut="StatusMessage( false )">Ma fidélité</a>
+				</li>
+				
+		<script>aide_bnt1_5= "Accédez à vos comptes en devises";</script>
+			
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doAction('Synthdevises','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_5);return true"
+						onMouseOut="StatusMessage( false )">Devises</a>
+				</li>
+				
+		<script>aide_bnt1_6= "Visualisez la situation globale de votre patrimoine";</script>
+			
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doActionDelayed('Synthglobale','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_6);return true"
+						onMouseOut="StatusMessage( false )">Situation globale</a>
+				</li>
+				
+		
+				    <!-- </ul> -->
+  				<!-- </li>  -->
+  				
+  				<p style="height:10px;"></p>
+				<li id="padding-top-titre-bnt">
+					<h2 id="bnt-titre-services">
+<!--						<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-rose-1.png" vertical-align="middle"></div>    -->
+    					<div class="traitgaucherose1">&nbsp;</div>
+    					<div class="libmenubnt">
+ 						   Services
+ 			 			</div>  
+					</h2>
+					<ul>
+				<script>aide_bnt1_7= "Effectuez un virement";</script>
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"					
+						href="javascript:doAction('Virementssepa','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_7);return true"
+						onMouseOut="StatusMessage( false )">Virements</a>
+				</li>
+		<script>aide_bnt1_8= "Commandez votre chéquier";</script>
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"					
+						href="javascript:doAction('Chequiers','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt1_8);return true"
+						onMouseOut="StatusMessage( false )">Chéquiers</a>
+				</li>
+		
+		</ul>
+	</li>
+
+	
+	
+	
+	<p style="height:10px;"></p>
+		<li id="padding-top-titre-bnt">
+		    <h2 id="bnt-titre-eservices">
+<!--		    	<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-rose-2.png" vertical-align="middle"></div>    -->
+	    		<div class="traitgaucherose2">&nbsp;</div>
+	    		<div class="libmenubnt">
+			    	e-Services
+		    	</div>
+		    </h2>
+		    <ul>
+			
+				<script>aide_bnt3_0= "Effectuez une demande de souscription à un de nos produits directement en ligne"; </script>
+				
+						<li class="nomarge-li-BNT">
+						<a  
+						style="width:auto"
+						href="#" onclick="lancerSTTrackingElargi('Performance&prov=bnt','bnt-souscription100enligne','','ACTION=');"							
+						onMouseOver="StatusMessage(true, aide_bnt3_0);return true"
+						onMouseOut="StatusMessage( false )">Souscription 100% <BR> en ligne</a>
+						</li>
+					
+				<script>aide_bnt3_1= "Signez vos contrats en attente"; </script>
+				
+						<li class="nomarge-li-BNT">
+						<a  
+						style="width:auto"
+						href="javascript:doAction('Contratsenattente','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt3_1);return true"
+						onMouseOut="StatusMessage( false )">Mes contrats en attente</a>
+						</li>
+						 
+					
+				<script>aide_bnt3_2= "Accédez au service de présentation et de règlement de factures"; </script>
+				
+							<li class="nomarge-li-BNT">
+								<a  
+									style="width:auto"
+									href="javascript:doAction('Sepamail','bnt')"Sepamail
+									onMouseOver="StatusMessage(true, aide_bnt3_2);return true"
+									onMouseOut="StatusMessage( false )">Mes factures par SEPAmail
+								</a>
+							</li>
+							 
+						
+				<script>aide_bnt3_3= "L'essentiel sur votre produit en quelques points clés"; </script>
+				
+						<li class="nomarge-li-BNT">
+						<a  
+						style="width:auto"
+						href=javascript:lancerContenu('tcm-1356-240649','global');
+						onMouseOver="StatusMessage(true, aide_bnt3_3);return true"
+						onMouseOut="StatusMessage( false )">Mémo</a>
+						</li>
+						 
+					
+			</ul>
+		</li>
+	
+
+
+	<!-- E-Documents -->	
+	
+	<p style="height:10px;"></p>
+	<li id="padding-top-titre-bnt">
+	    <h2 id="bnt-titre-edocuments">
+<!--			<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-rose-2.png" vertical-align="middle"></div>    -->
+	    	<div class="traitgaucherose2">&nbsp;</div>
+	    	<div class="libmenubnt">
+			    	e-Documents
+		    </div>
+	    </h2>
+	    <ul>	    
+	    
+			<script>aide_bnt4_0= "Gérer vos documents électroniques"; </script> 
+			
+			
+				<li class="nomarge-li-BNT">
+					<a 
+						style="width:auto"
+						href=javascript:doAction('Edocgest','bnt')
+						onMouseOver="StatusMessage(true, aide_bnt4_0);return true"
+						onMouseOut="StatusMessage( false )">Gestion</a>
+				</li>
+			
+			
+				
+		
+			<script>aide_bnt4_1= "Consulter vos documents électroniques"; </script> 
+			
+			
+				<li class="nomarge-li-BNT">
+					<a class="itemactif-bnt-titre-edocuments"
+						style="width:auto;height:23"
+						href=javascript:doAction('Edocsynth','bnt')
+						onMouseOver="StatusMessage(true, aide_bnt4_1);return true"
+						onMouseOut="StatusMessage( false )">Consultation&nbsp;
+						<img id="imgQEDNLU" alt="Nouveau e-Document" title="Nouveau e-Document" src="/web/bam/appli/web/commun/img/picto_nouveau.png"/>
+					</a>
+				</li>
+			
+			
+				
+		
+    	</ul>
+    </li>
+    
+
+	
+	<p style="height:10px;"></p>
+	<li id="padding-top-titre-bnt">
+	    <h2 id="bnt-titre-outils">
+<!--			<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-gris.png" vertical-align="middle"></div>    -->
+	    	<div class="traitgauchegris">&nbsp;</div>
+	    	<div class="libmenubnt">
+			    	Outils
+		    </div>
+	    </h2>
+	    
+	    <ul>
+			
+				<script>aide_bnt5_0= "Téléchargez vos relevés de comptes"; </script> 
+				
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doAction('Telechargement','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt5_0);return true"
+						onMouseOut="StatusMessage( false )">Téléchargement</a>
+				</li>
+				
+			
+				<script>aide_bnt5_1= "Gérer vos préférences"; </script> 
+				
+				<li class="nomarge-li-BNT">
+					<a  
+						style="width:auto"
+						href="javascript:doAction('Preferences','bnt')"
+						onMouseOver="StatusMessage(true, aide_bnt5_1);return true"
+						onMouseOut="StatusMessage( false )">Vos Préférences</a>
+				</li>
+				
+			
+    </ul>
+  </li>
+</ul>
+</FORM>
+<FORM action="app/bam/tech/allmedia/stb/navibam/jsp/Telechargement.jsp" name="FRM_TEL" method="post" >
+<INPUT type="hidden" name="urlTel" />
+</FORM>
+
+<!-----  FIN zone bnt  ---->
+
+</TD></TR><TR><TD>
+<!-----  DEBUT zone MENB  ---->
+<div idcomp='tcm-1356-243747'><script> prefixe = 'pack_112'; </script><!DOCTYPE table SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><ul id="menu-bnt">
+
+ <li class="boutonMen"><a href="#" onclick="clicXiti('menu_gauche_pdc_bas__Lien_Facebook_160px', 'N'); lancerURL('http://www.facebook.com/CreditAgricoleIDF');" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, 'Facebook');return true;" shape="rect"><binarycontent img="/img_bam_facebook_tcm_1356_291776.png"><script xml:space="preserve">displayBinary(prefixe, "/img_bam_facebook_tcm_1356_291776.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><h2 class=""><dynamiclink label="Num&#233;ros d'urgence" onclick="clicXiti('menu_gauche_pdc_bas__bnt_numero_urgence', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Num&#233;ros d'urgence';return true;" ref="tcm-1356-185300"><a href="javascript:lancerPUContenu('tcm-1356-185300','global');" onclick="clicXiti('menu_gauche_pdc_bas__bnt_numero_urgence', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='Num&#233;ros d'urgence';return true;" shape="rect">Num&#233;ros d'urgence</a></dynamiclink></h2></li><li class="boutonMen"><h2 class=""><a href="#" onclick="clicXiti('menu_gauche_pdc_bas__Aide_et_Assistance', 'N'); lancerURL('https://www.ca-paris.fr/Vitrine/ObjCommun/Fic/Paris/aide-assistance/faq-client.html');" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, 'D&#233;mo et FAQ');return true;" shape="rect">D&#233;mo et FAQ</a></h2></li><script xml:space="preserve">/*<![CDATA[*/$(document).ready(function () {$('li.tcmMenB> h2').click(function () {if ($(this).next('ul.menPersB1:visible').length != 0) {$(this).next('ul.menPersB1').slideUp('normal');$(this).removeClass('unfolded');}else{$(this).next('ul.menPersB1').slideDown('normal');$(this).addClass('unfolded');}return false;});$('li.toggleSubMenu > a').click(function () {if ($(this).next('ul.menPersB2:visible').length != 0) {$(this).next('ul.menPersB2').slideUp('normal');} else {$(this).next('ul.menPersB2').slideDown('normal');}return false;});});/*]]>*/</script>
+</ul></div><!--vide-->
+<!-----  FIN zone MENB  ---->
+
+</TD></TR>
+</TABLE>
+</TD><TD valign="top" width="6.5px">
+
+<!-----  DEBUT zone filler  ---->
+<SPAN style="font-size: 1px">&nbsp;</SPAN>
+
+
+<!-----  FIN zone filler  ---->
+
+</TD><TD valign="top" width="590px" id="col-centre">
+<div border="0" width="100%" cellpadding="0" cellspacing="0">
+<div valign="top" width="590px"><div>
+<div height="33" valign="middle" id="trPagePu">
+<!-----  DEBUT zone pu  ---->
+
+
+
+
+
+<!-- MLA
+	L'include suivant est le même que celui fait dans EnteteSTB.jsp
+	Il permet de charger toutes les CSS de la BAM dans le NP lors du lancement d'une PU
+	C'est pour corriger le problème des pertes des CSS lors d'un back navigateur
+	quand le client est dans un page de contenu et qu'il revient dans la BAM
+	Ceci à pour conséquence de charger en double les CSS au lancement de l'application
+ -->
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/antiquus.css?v=59" media="all" />
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/antiquus.css?v=59" media="all" />
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles.css?v=59" media="all" />
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles.css?v=59" media="all" />
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles-mod.css?v=59" media="all" />
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles-mod.css?v=59" media="all" />
+
+
+<SCRIPT language="JavaScript" src="/web/bam/appli/web/commun/js/prisesFWK.js" > </SCRIPT>
+<SCRIPT language="JavaScript" src="/web/bam/appli/web/commun/js/outils.js" > </SCRIPT>
+<SCRIPT language="JavaScript" src="/web/bam/appli/web/commun/js/infosbulle.js" > </SCRIPT>
+<script src="/web/bam/appli/web/commun/js/griserBouton.js" type="text/javascript"></script>
+
+
+<!------------- EDOC-SYNTH1-010 --------------->
+<!-- 1998, Effets Lot C, version 3.0 -->
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+// on recupere la version du navigateur
+Version=navigator.appVersion
+Version=Version.substring(0,1)
+// ---------------------------Debut Infobulle utilisé pour firefox2 uniquement
+IB = new Object;
+var posX=0;posY=0;
+var xOffset=10;
+var yOffset=10;
+var myTimer;
+var urlNonModif = this.window.location.href;
+
+function getFF2(it){
+	if(navigator.appCodeName=="Mozilla"){
+		var ffVers = navigator.userAgent.lastIndexOf('/');
+		if(navigator.userAgent.substring(ffVers+1,ffVers+2)=="2"){
+			it.title = " ";
+			myTimer = setTimeout("showInfobulle('Votre document ne sera plus disponible. Si vous souhaitez <BR> conserver ce document, pensez à le télécharger.')",1000);
+		}
+	}
+}
+function showInfobulle(texte) {
+	contenu="<TABLE bgcolor='"+IB.ColContour+"' border=0 cellspacing=0 cellpadding="+IB.NbPixel+"><TR><TD><TABLE border=0 cellpadding=2 cellspacing=0 bgcolor='"+IB.ColFond+"'><TR><TD><FONT size='-1' face='arial' color='"+IB.ColTexte+"'>"+texte+"</FONT></TD></TR></TABLE></TD></TR></TABLE>";
+	var finalPosX=posX-xOffset;
+	if (finalPosX<0) finalPosX=0;
+	if (document.getElementById) {
+		document.getElementById('bulle').innerHTML=contenu;
+		document.getElementById('bulle').style.top=posY+yOffset;
+		document.getElementById('bulle').style.left=finalPosX;
+		document.getElementById('bulle').style.visibility="visible";
+		setTimeout("hideBulle()",6000);
+	}
+}
+function getMousePos(e) {
+	posX=e.pageX;
+	posY=e.pageY; 
+}
+
+function hideBulle() {
+	if(navigator.appCodeName=="Mozilla"){
+		var ffVers = navigator.userAgent.lastIndexOf('/');
+		if(navigator.userAgent.substring(ffVers+1,ffVers+2)=="2"){
+			if (document.getElementById){
+				document.getElementById("bulle").style.visibility="hidden";
+			}
+		}
+	}
+}
+
+function initBulle(ColTexte,ColFond,ColContour,NbPixel) {
+	// Definie les couleur de l'infobulle
+	IB.ColTexte=ColTexte;
+	IB.ColFond=ColFond;
+	IB.ColContour=ColContour;
+	IB.NbPixel=NbPixel;
+	if (document.getElementById) {
+	    document.onmousemove=getMousePos;
+	    document.write("<DIV id='bulle' style='border:1px solid black;position:absolute;top:0;left:0;visibility:hidden;z-index:9;'></DIV>");
+	}
+}
+// --------------------------- Fin Infobulle pour firefox 2
+
+// si c'est Netscape 2 ou plus, c'est bon
+browserOK=((navigator.appCodeName=="Mozilla") && (Version > 1))
+
+//Message affiche quand la souris est au-dessus: 
+statusplan="Accès au plan du site";
+statuslexique="Les principales notices bancaires";
+statuscontact="Communiquez avec le Crédit Agricole";
+statusaide="Besoin d'Aide ?";
+statusrecherche="Rechercher un document électronique.";
+
+arrPanneaux = new Array();
+arrLibs = new Array();
+arrBlocNewDocs = new Array();
+
+
+totDoc = 0;    
+indice = 0;    
+nbDocPage = 0; 
+pageCourante = 1;
+
+tmpIdNiv4bis = "";
+
+indDoubleClic = 0;
+id2=0;
+var lien2;
+	
+// Fonction de dépliage repliage de la synthèse dépliée
+function showHideDeplie(id, entete){
+	var elt = document.getElementById(id);
+	if (elt != null){
+		if (elt.style.display == "none"){
+			elt.style.display = "block";
+			document.getElementById(entete).src = "/web/bam/appli/web/commun/img/fleche_blanc_bas.png";
+			document.getElementById(entete).style.display = "";
+		}else{
+			elt.style.display = "none";
+			document.getElementById(entete).src = "/web/bam/appli/web/commun/img/fleche_blanc_droite.png";
+			document.getElementById(entete).style.display = "";
+		}
+	}
+	for (i=0;i<arrPanneaux.length;i++){
+		var numImg = i+1;
+		if(arrPanneaux[i] != id){
+			document.getElementById(arrPanneaux[i]).style.display = "none";
+			document.getElementById("imagefleche"+numImg).src = "/web/bam/appli/web/commun/img/fleche_blanc_droite.png";
+			document.getElementById("Aimagefleche"+numImg).title = "Ouvrir le panneau "+arrLibs[i];
+		}else{
+			if(document.getElementById("Aimagefleche"+numImg).title == "Ouvrir le panneau "+arrLibs[i]){
+				document.getElementById("Aimagefleche"+numImg).title = "Fermer le panneau "+arrLibs[i];
+			}else{
+				document.getElementById("Aimagefleche"+numImg).title = "Ouvrir le panneau "+arrLibs[i];
+			}
+		}
+	}
+	// On ferme le sous-niveau
+	if(document.getElementById("ligne0") != null){
+		if(document.getElementById("pagination")!= null){
+			// Maj de la pagination
+			indice = 0;
+			pageCourante = Math.ceil((indice+1)/nbDocPage);
+			dernierePage = Math.ceil(totDoc/nbDocPage);
+			document.getElementById("page").innerHTML = pageCourante+' sur '+dernierePage;
+		}
+		document.getElementById("ligne0").style.display = "";
+		if(document.getElementById("img-panneau-docs")!=null){
+			document.getElementById("img-panneau-docs").src = "/web/bam/appli/web/commun/img/fleche_bleuc_droite.png";
+			var titre = document.getElementById("title-panneau-docs").title;
+			document.getElementById("title-panneau-docs").title = "Ouvrir "+titre.substring(7);
+		}else{
+			document.getElementById("niv4bisImg"+tmpIdNiv4bis).src = "/web/bam/appli/web/commun/img/fleche_blanc_droite.png";
+			var titre = document.getElementById("niv4bisA"+tmpIdNiv4bis).title;
+			document.getElementById("niv4bisA"+tmpIdNiv4bis).title = "Ouvrir "+titre.substring(7);
+		}
+		for(i=1;i<totDoc;i++){
+			document.getElementById("ligne"+i).style.display = "none";
+		}
+		if(document.getElementById("pagination") != null){
+			document.getElementById("pagination").style.display = "none";
+			document.getElementById("prem").style.display = "none";
+			document.getElementById("prec").style.display = "none";
+			document.getElementById("suiv").style.display = "";
+			document.getElementById("der").style.display = "";
+		}
+	}
+}
+
+// Fonction de dépliage repliage de la synthèse détail en cours
+function showhideDocs(libPanneau,idALink,idImage){
+	action = document.getElementById(idALink).title.substring(0,6);
+	image = "";
+	if(idImage == "img-panneau-docs"){
+		image = "/web/bam/appli/web/commun/img/fleche_bleuc_droite.png";
+	}else{
+		image = "/web/bam/appli/web/commun/img/fleche_blanc_droite.png";
+	}
+	if(action == "Fermer"){
+		indice = 0;
+		document.getElementById(idImage).src = ""+image;
+		document.getElementById(idALink).title = "Ouvrir le panneau "+libPanneau;
+		if(document.getElementById("pagination")!= null){
+			document.getElementById("pagination").style.display = "none";
+			document.getElementById("prem").style.display = "none";
+			document.getElementById("prec").style.display = "none";
+			document.getElementById("suiv").style.display = "";
+			document.getElementById("der").style.display = "";
+			pageCourante = Math.ceil((indice+1)/nbDocPage);
+			dernierePage = Math.ceil(totDoc/nbDocPage);
+			document.getElementById("page").innerHTML = pageCourante+' sur '+dernierePage;
+		}
+	}else{
+		if(idImage == "img-panneau-docs"){
+			image = "/web/bam/appli/web/commun/img/fleche_bleuc_bas.png";
+		}else{
+			image = "/web/bam/appli/web/commun/img/fleche_blanc_bas.png";
+		}
+		document.getElementById(idImage).src = ""+image;
+		document.getElementById(idALink).title = "Fermer le panneau "+libPanneau;
+		if(document.getElementById("pagination")!= null){
+			document.getElementById("pagination").style.display = "";
+		}
+	}
+	document.getElementById("ligne0").style.display = "";
+	for(i=1;i<totDoc;i++){
+		if(action == "Fermer"){
+			document.getElementById("ligne"+i).style.display = "none";
+		}else{
+			if(i<nbDocPage){
+				document.getElementById("ligne"+i).style.display = "";
+			}
+		}
+	}
+}
+
+// Fonction deplie vide
+function deplie(){
+}
+
+// Fonction permettant de paginer la synthèse détail
+function pagine(monid){
+	if(monid=="prem"){
+		indice = 0;
+	}else if(monid=="der"){
+		indice = totDoc - totDoc % nbDocPage;
+		if(totDoc % nbDocPage == 0){
+			indice -= nbDocPage;
+		}
+	}else if(monid=="suiv"){
+		indice += nbDocPage;
+	}else if(monid=="prec"){
+		indice -= nbDocPage;
+	} 
+	for(i = 0; i<totDoc;i++){
+		if(i>=indice && i<indice+nbDocPage){
+			document.getElementById("ligne"+i).style.display = "";
+		}else{
+			document.getElementById("ligne"+i).style.display = "none";
+		}
+	}
+	if(indice<nbDocPage){
+		document.getElementById("prem").style.display = "none";
+		document.getElementById("prec").style.display = "none";
+		document.getElementById("suiv").style.display = "";
+		document.getElementById("der").style.display = "";
+	}else if(indice+1>totDoc-nbDocPage){
+		document.getElementById("prem").style.display = "";
+		document.getElementById("prec").style.display = "";
+		document.getElementById("suiv").style.display = "none";
+		document.getElementById("der").style.display = "none";
+	}else{
+		document.getElementById("prem").style.display = "";
+		document.getElementById("prec").style.display = "";
+		document.getElementById("suiv").style.display = "";
+		document.getElementById("der").style.display = "";
+	}
+	pageCourante = Math.ceil((indice+1)/nbDocPage);
+	dernierePage = Math.ceil(totDoc/nbDocPage);
+	document.getElementById("page").innerHTML = pageCourante+' sur '+dernierePage;
+}
+
+function deplie(){
+	// Permet au href du niveau4 de ne pas renvoyé en haut de la page.
+}
+   
+function doubleClic(id){
+ 
+	// recuperation du lien en cours
+	var lien = document.getElementById(id).getAttribute("href");	
+	
+	// desactivation du lien en cours
+	document.getElementById(id).removeAttribute("href");
+	
+	if (indDoubleClic==0){
+		indDoubleClic = 1;
+		id2=id;
+		lien2=lien;
+	}
+	else
+	{	 
+		// ré-activation du lien précédent
+		document.getElementById(id2).setAttribute("href",lien2);
+		id2=id;
+		lien2=lien;
+	}
+}
+
+// document.getElementById("imgQEDNLU").style.display = "none";
+// Fonction qui met à jour la date de consultation et enleve l'icone nouveau document
+function majDateConsultation(id){
+
+	date = new Date();
+	idString = id.toString();
+	numBloc = idString.charAt(0);
+	
+	jour = date.getDate().toString();
+	if(jour.length<2) jour = "0" + jour;
+	mois = (date.getMonth() + 1).toString();
+	if(mois.length<2) mois = "0" + mois;
+	
+	myDate = jour+'/'+mois+'/'+date.getFullYear();
+	document.getElementById("date"+id).innerHTML = myDate;
+	
+	if(document.getElementById("pict"+id)!= null){
+		if(document.getElementById("pict"+id).style.display == ""){
+			document.getElementById("pict"+id).style.display = "none";
+			arrBlocNewDocs[numBloc] = arrBlocNewDocs[numBloc] - 1;
+			if(arrBlocNewDocs[numBloc] == 0){
+				document.getElementById("imgBloc"+numBloc).style.display = "none";
+				
+			}
+		}
+	}
+	
+	nbNew = 0;
+	for (nbBlocs=1;nbBlocs<=arrBlocNewDocs.length;nbBlocs++){
+		if (arrBlocNewDocs[nbBlocs] != null){
+			nbNew = nbNew + arrBlocNewDocs[nbBlocs];
+		}
+	}
+	if (nbNew == 0 && document.getElementById("imgQEDNLU") != null){
+		document.getElementById("imgQEDNLU").style.display = "none";
+	}
+}
+
+function ancre(){
+	var ancre = "ID009";
+	if(ancre != null){
+		this.window.location.href = urlNonModif+'#'+ancre;
+	}
+}
+
+function mettreUnCookie(nom, valeur) {
+		//alert('nom: ' + nom + ' ; valeur: ' + valeur);
+		var today = new Date();
+		var expdate = new Date(); // crée un objet date indispensable 
+		expdate = new Date(today.getTime() + ( 24 * 60 * 60 * 1000)); 
+		// on rajoute 1 jour en millisecondes 
+		document.cookie = "cookedoc"+nom + "=" + escape(valeur) + ((expdate == null)?"":("; expires=" + expdate.toGMTString())) + ";path=/";
+}
+function setCookie(c_name,value,expiredays)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate()+expiredays);
+document.cookie=c_name+ "=" +escape(value)+
+((expiredays==null) ? "" : ";expires="+exdate.toUTCString()) + ";path=/";
+}
+
+//fdn 
+
+
+function activerLiens() {
+	var page = document.getElementById("e-doc");
+  	var tousLiens = page.getElementsByTagName("a");
+	for (var i = 0; i < tousLiens.length; i++) {
+   		var href = tousLiens[i].getAttribute("href_bak");
+   		var srctab = tousLiens[i].getElementsByTagName("img");
+   		if (href != null && href.indexOf('ouvreTelechargement')  != -1){   
+    			tousLiens[i].setAttribute("href",href);
+    			tousLiens[i].removeAttribute("href_bak");
+    			if(srctab[0].getAttribute("src").indexOf('ajax') != -1){
+    				srctab[0].removeAttribute("src");
+    				srctab[0].setAttribute("src",srctab[0].getAttribute("src_bak"));
+    				srctab[0].removeAttribute("src_bak");
+    				srctab[0].removeAttribute("title");
+    				srctab[0].setAttribute("title",srctab[0].getAttribute("title_bak"));
+    				srctab[0].removeAttribute("title_bak");
+       			}
+    	}	
+  	}
+  	
+}
+    
+function selectionLiens (id){
+	var lien = document.getElementById(id).getAttribute("href");
+	if (lien != null){
+		document.getElementById(id).removeAttribute("href");
+		document.getElementById(id).setAttribute("href_bak", lien);
+		var srctab = document.getElementById(id).getElementsByTagName("img");
+		srctab[0].setAttribute("src_bak", srctab[0].getAttribute("src"));
+		srctab[0].removeAttribute("src");
+   		srctab[0].setAttribute("src","/web/bam/appli/web/commun/img/ajax-loader.gif");
+   		srctab[0].setAttribute("title_bak", srctab[0].getAttribute("title"));
+   		srctab[0].removeAttribute("title");
+   		srctab[0].setAttribute("title","Téléchargement en cours");
+	}
+    var page = document.getElementById("e-doc");
+    var allAnchors = page.getElementsByTagName("a");
+    for (var i = 0; i < allAnchors.length; i++) {
+			if (allAnchors[i].getAttribute("href") != null && allAnchors[i].getAttribute("href").indexOf('ouvreTelechargement') != -1 && allAnchors[i].getAttribute("href_bak") == null) {
+		   		allAnchors[i].setAttribute("href_bak", allAnchors[i].getAttribute("href"));
+   				allAnchors[i].removeAttribute("href");
+   			}		
+    }
+    
+   var delaiEdoc = 30000;
+   setTimeout("activerLiens()",delaiEdoc); 
+}
+
+//fin fdn
+
+
+</SCRIPT>
+<body onload = ancre();></body>
+
+	<SCRIPT LANGUAGE="JavaScript">
+	//FIL D'ARIANNE
+	var breadCrumbs = [{
+		    label: "E-Documents - Consultation",
+		    uri: "Edocsynth",
+		    type: Type.ACTION_BNT
+		},{
+			label: "Consultation documents électroniques",
+			uri: "",
+			type: ""
+		}];
+	refreshBreadCrumbs(breadCrumbs);
+	// -->
+	</SCRIPT>
+
+
+
+
+<div class="boutons-act">
+<h1>
+	
+		Consultation documents électroniques
+	
+	
+	
+		<span id="top-actions">
+			<a href="javascript:ouvreassistance('collecteNI?fwkaid=122906320_14122017_37594&fwkpid=122907695_14122017&act=Aide&stbzn=pu&stbpg=pagePU&sessionAPP=Edocsynth&sessionSAG=4c159fea160522c10e5-6732.SAG_V6&IDENT=L_AID&ECRAN_AIDE=EDOCSYNTH&NUM_AIDE=0',520,480,'no')"
+			   id="top-actions-aide" 
+			    onmouseout="afftextStat(0)"
+			   onmouseover="afftextStat(statusaide);return true"
+			   title="Besoin d'Aide ?">Aide</a>
+		</span>
+	
+</h1>
+</div>
+
+<!-------------- ERREURS-VALIDATION ----------->
+
+		
+
+
+
+
+
+
+
+
+
+
+<script>champsEnErreur = null;</script>
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------- FIN ERREURS-VALIDATION ----------->
+
+<!-- 
+     Chargement de l'image "fleche_blanc_bas.png" pour corriger le bug sous IE6 de disparition de la flèche lors du clic pour ouvrir un bloc
+     AnoR7MOA 163 - E-Documents - Page consultation absence de flèche sur synthèse dépliée 
+-->
+<img id="correctionie6" src="/web/bam/appli/web/commun/img/fleche_blanc_bas.png" style="display:none"  />
+
+<!-- Onglet Recherche -->
+
+	<ul id="menu-onglet">
+		<li>
+				<a href="collecteNI?fwkaid=122906320_14122017_37594&fwkpid=122907695_14122017&fwkidpu=122906320_14122017_37594&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Recherche&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Edocsynth&sessionSAG=4c159fea160522c10e5-6732.SAG_V6" onMouseOver="StatusMessage(true, statusrecherche);return true" onMouseOut="StatusMessage( false )" class="onglethautpage nomarge">Recherche</a>
+			
+		</li>
+		
+	</ul>
+
+<p>Pour d&eacute;mat&eacute;rialiser vos documents, rendez-vous dans la rubrique 100% en ligne puis choisissez la vignette e-Documents ou cliquez sur le lien suivant pour obtenir plus d'informations :</p>
+<p class="marge">
+	Pour en savoir plus sur le format pdf <a href="javascript:;" onclick="ouvreassistance(getUrlAction('Aide&IDENT=L_LEX&typeaction=popup&typeaction=Popup#p'),500,480,'no')">cliquez ici</a>
+</p>
+  <SCRIPT language="JavaScript">
+  	if(navigator.appCodeName=="Mozilla"){
+		var ffVers = navigator.userAgent.lastIndexOf('/');
+		if(navigator.userAgent.substring(ffVers+1,ffVers+2)=="2"){
+		  initBulle("black","white","black",1);
+		}
+	}
+  </SCRIPT> 
+<DIV id="e-doc" class="ca-forms">
+	<!---------- E-relevés, e-contrats...---------->
+	<!------------- EDOC-SYNTH1-010 --------------->
+		  	<DIV id="entete1">
+				<H2 class="niveau1"> <a href="javascript:showHideDeplie('panneau1','imagefleche1');" style="text-decoration:none; color:#FFFFFF">RELEVES DE COMPTES                                </a>
+					<script LANGUAGE="JavaScript">arrBlocNewDocs[1] = 0;</script>		
+					<a id="Aimagefleche1" title="Fermer le panneau RELEVES DE COMPTES                                " class="fleche-ouvrir" onClick="showHideDeplie('panneau1','imagefleche1');"><img id="imagefleche1" style="cursor:pointer;" src="/web/bam/appli/web/commun/img/fleche_blanc_bas.png"/></a>
+				</H2>
+			</DIV>
+			<DIV id="panneau1" class="panneaux" style="display:block;">
+			<script LANGUAGE="JavaScript">arrPanneaux.push("panneau1");arrLibs.push("RELEVES DE COMPTES                                ");</script>
+					<h3 class="niveau2">RELEVES DE COMPTES                                </h3>
+						<TABLE class="ca-table">
+							<caption  class="niveau3">
+								
+									<div class="entete-table-compte-repliable"><a name="ID009"></a><a id =ID009cliq href="collecteNI?fwkaid=122906320_14122017_37594&fwkpid=122907695_14122017&fwkidpu=122906320_14122017_37594&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Detail&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Edocsynth&sessionSAG=4c159fea160522c10e5-6732.SAG_V6&NIV1=RELEVES DE COMPTES                                &ind=ID009" style="text-decoration:none; color:#FFFFFF" >M.       NONAME CHRISTOPHE</a>
+									<a id="niv4bisAID009" style="display:none;" class="fleche-ouvrir" title="Ouvrir le panneau M.       NONAME CHRISTOPHE" href="collecteNI?fwkaid=122906320_14122017_37594&fwkpid=122907695_14122017&fwkidpu=122906320_14122017_37594&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Detail&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Edocsynth&sessionSAG=4c159fea160522c10e5-6732.SAG_V6&NIV1=RELEVES DE COMPTES                                &ind=ID009&ANCRE=ID009">
+										<img id="niv4bisImgID009" alt="Ouvrir" src="/web/bam/appli/web/commun/img/fleche_blanc_droite.png"/>
+									</a>
+							</caption>
+							
+							<script LANGUAGE="JavaScript">document.getElementById("ID009cliq").removeAttribute("href"); </script>
+									
+							
+							<thead> 
+								<tr class="doublelignes">
+									<th width="260" class="der-cel"> </th>
+									<th width="80" id="date-dispo-compte1" abbr="mise à disposition">Date de <BR> mise &agrave; disposition</th>
+									<th width="95" id="date-tele-compte1" abbr="téléchargement">Date de <BR>t&eacute;l&eacute;chargement</th>
+									<th width="80" id="date-fin-dispo-compte1" class="der-cel" abbr="fin de disponibilité">Date de <BR> fin de disponibilit&eacute;</th>
+									<th class="der-cel" colspan="2"> </th>
+								</tr>
+							</thead>
+										
+										<tr class="ligne-impaire">
+				                            <th id="compte-1" class="cel-texte" colspan="6" style="border-bottom-width: 5px;">
+				                                <div class="entete-table-compte-repliable">
+													<a onClick="showhideDocs('LIV A 65002245315 M.       NONAME CHRISTOPHE','title-panneau-docs','img-panneau-docs');" style="cursor:pointer;">LIV A 65002245315 M.       NONAME CHRISTOPHE</a>
+				                                    <a id="title-panneau-docs" title="Fermer le panneau LIV A 65002245315 M.       NONAME CHRISTOPHE" class="fleche-ouvrir" onClick="showhideDocs('LIV A 65002245315 M.       NONAME CHRISTOPHE','title-panneau-docs','img-panneau-docs');"><img id="img-panneau-docs" src="/web/bam/appli/web/commun/img/fleche_bleuc_bas.png" style="cursor:pointer;"/></a>
+				                                </div>
+				                            </th>
+			                        	</tr>
+										<script LANGUAGE="JavaScript">nbDocPage = 10;</script>
+													<tr id="ligne0" title="Relevé" class="ligne-paire">
+					                            	    <th class="cel-texte">
+					                                    <span class="gauche" style="padding-left: 5px; font-weight: normal">Relevé n°005 du 29/09/2017</span>
+					                                	</th>
+					                                	<td>30/09/2017</td>
+					                                <td id="date12">14/12/2017</td>
+				                                <td>30/09/2027</td>
+				                                <td>
+					                                
+		<a id="12" href="javascript:selectionLiens(12);ouvreTelechargement('collecteNI?fwkaid=122906320_14122017_37594&fwkpid=122907695_14122017&fwkidpu=122906320_14122017_37594&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=Telecharger&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Edocsynth&sessionSAG=4c159fea160522c10e5-6732.SAG_V6&IDDGED=1419687584');majDateConsultation(12);mettreUnCookie('1419687584','1419687584');">
+		<img title="Téléchargez votre document" style="cursor: pointer;" alt="Télécharger" src="/web/bam/appli/web/commun/img/picto_pdf.png"/>
+									</a>
+					                                </td>
+				                            		</tr>
+						</TABLE>
+			</DIV>
+	<!------------- FIN EDOC-SYNTH1-010 --------------->
+	
+	<!------------ Documents Papiers -------------->
+	<!------------- EDOC-SYNTH1-020 --------------->
+	
+	<!------------- FIN EDOC-SYNTH1-020 --------------->
+	
+	<!---------- Documents Indisponibles ---------->
+	<!------------- EDOC-SYNTH1-030 --------------->
+	
+</DIV>
+<!------------- FIN EDOC-SYNTH1-030 --------------->
+  
+<!--------------- EDOC-SYNTH1-xxx --------------->
+<TABLE WIDTH="364" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+	<TD ALIGN="right">
+	
+				
+<script type="text/javascript">
+var g_TagPageBAM = "Consultation::DocumentElectronique";  
+var g_TagPap = [];
+</script>
+
+
+
+
+<script type="text/javascript">
+	
+	// desactivitation des impressions de tags
+	cmSetupOther({"cm_TrackImpressions":""});
+	
+	//deactivation de la capture auto des clics
+ 	cmSetupOther({"cm_TrackLink":false}); 
+</script>
+			
+<script type="text/javascript">
+	var WebAnalytics = { Page: { PageIdentifier: "88200_CLI_3_SU02" }};
+				// define field values... 		
+			webanalytics = { 
+			    // ... to use with the standard Page View tag
+			    page:{
+					pageid:"Consultation::DocumentElectronique",
+					categoryid:"B",
+					searchterm:null,
+					searchresults:null,
+					attributes:"00000064560567-_--_--_--_--_--_--_--_-88200",
+					extrafields:null
+				}
+					
+};
+</script>
+
+
+
+			
+	</TD>
+</TR>
+</TABLE>
+
+
+<!----------- FIN EDOC-SYNTH1-xxx --------------->
+
+<!-----  FIN zone pu  ---->
+
+</div><div style="min-height:35px;">
+<!-----  DEBUT zone espaceBBAS  ---->
+
+<!-----  FIN zone espaceBBAS  ---->
+
+</div><div height="33" valign="middle" id="BBAS">
+<!-----  DEBUT zone BBAS  ---->
+<div idcomp='tcm-1356-263645'><script> prefixe = 'pack_112'; </script><!DOCTYPE table SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><span><div id="conteneur_PROMO_BAM"><form action="#" class="ca-forms" enctype="application/x-www-form-urlencoded" method="get" version="tcm:1356-184523-32 v.3"><script xml:space="preserve">var marqueurXiti="PBAS_Edoc_E15";var marqueurXiti263645 = marqueurXiti+ '_Affichage'; </script><h2 class="titre-infos"><titre>Information</titre></h2><p style="margin-top:15px; margin-bottom:10px;"><texte>Si votre dernier relev&#233; de compte ne s'affiche pas sur cet &#233;cran dans la rubrique &#34;Relev&#233;s de comptes&#34;, cliquez sur la petite fl&#232;che bleue &#224; droite du compte concern&#233; afin d'afficher tous vos relev&#233;s. Votre dernier relev&#233; sera affich&#233; au d&#233;but de la liste.</texte></p><p class="infos"><span>&#160;</span><dynamiclink AnimCom="Stevcom" Profil_bam="+profil_evt_bbas" label="." onclick="clicXiti('PBAS_Edoc_E15__lien_E_DOC_E15', 'N');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='.';return true;" ref="tcm-1356-245240"><a href="#" onclick="clicXiti('PBAS_Edoc_E15__lien_E_DOC_E15', 'N'); javascript:lancerSTEvCom('Stevcom','profil_bam='+profil_evt_bbas, this,'ACTION=lancerPUContenu(\'tcm-1356-245240\',\'global\')');" onmouseout="top.window.status='';return true;" onmouseover="top.window.status='.';return true;" shape="rect">.</a></dynamiclink></p></form></div></span></div><!--vide-->
+<!-----  FIN zone BBAS  ---->
+
+</div>
+</div>
+</div>
+</div>
+</TD><TD valign="top" width="6.5px">
+
+<!-----  DEBUT zone filler  ---->
+<SPAN style="font-size: 1px">&nbsp;</SPAN>
+
+
+<!-----  FIN zone filler  ---->
+
+</TD><TD valign="top" width="160px" align="right">
+<div style="width: 160px;" class="popupPAP" align="left">
+<div valign="middle" style="font-size:0px;">
+<!-----  DEBUT zone SECU  ---->
+
+<SPAN style="font-size: 0px">&nbsp;</SPAN>
+
+<!-----  FIN zone SECU  ---->
+
+</div><div valign="middle">
+<!-----  DEBUT zone BAM  ---->
+<!--vide--><!--vide-->
+<!-----  FIN zone BAM  ---->
+
+</div><div valign="middle">
+<!-----  DEBUT zone INFO  ---->
+<!--vide--><!--vide-->
+<!-----  FIN zone INFO  ---->
+
+</div><div valign="middle">
+<!-----  DEBUT zone PROMO  ---->
+<!--vide--><!--vide-->
+<!-----  FIN zone PROMO  ---->
+
+</div>
+</div>
+</TD>
+</TABLE>
+</TD></TR><TR valign="middle"><TD>
+<!-----  DEBUT zone footer  ---->
+
+
+<SCRIPT LANGUAGE=JavaScript>
+var codeCaisse = "882";
+</SCRIPT>
+
+			<img style="margin: 0px 0px 20px 780px; width:170px;height:37px;z-index: -1;position: absolute;" src="/web/bam/tech/allmedia/stb/commun/img/logo_pied.png"></img>
+
+<BR>
+
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+	<TR valign="middle" align="center">
+		<TD>
+
+			<script>
+			<!--
+			aide_f0= "Accédez aux Conditions Générales d'utilisation";
+			//-->
+			</script>
+			<A href="javascript:lancerContenu('tcm-1356-185301','global')" class="footerlien" onMouseOver="StatusMessage(true, aide_f0);return true" onMouseOut="StatusMessage( false )">Conditions Générales d'utilisation</A>
+
+			<SPAN class="footerseparateur">&nbsp;|&nbsp;</SPAN>
+
+			<script>
+			<!--
+			aide_f1= "Accédez à l'aide";
+			//-->
+			</script>
+			<A href="javascript:ouvreassistance(getUrlAction('Aide&IDENT=L_INF'),500,480,'no')" class="footerlien" onMouseOver="StatusMessage(true, aide_f1);return true" onMouseOut="StatusMessage( false )">Aide</A>
+
+			<SPAN class="footerseparateur">&nbsp;|&nbsp;</SPAN>
+
+			<script>
+			<!--
+			aide_f2= "Accédez au lexique";
+			//-->
+			</script>
+			<A href="javascript:ouvreassistance(getUrlAction('Aide&IDENT=L_LEX'),500,480,'no')" class="footerlien" onMouseOver="StatusMessage(true, aide_f2);return true" onMouseOut="StatusMessage( false )">Lexique</A>
+
+			<SPAN class="footerseparateur">&nbsp;|&nbsp;</SPAN>
+
+			<script>
+			<!--
+			aide_f3= "";
+			//-->
+			</script>
+			<A href="javascript:ouvrirPopup('https://www.ca-paris.fr/site-securite.html','popupSecurity','','','yes', 'yes', 'yes', 'yes', 'yes', 'yes')" class="footerlien" onMouseOver="StatusMessage(true, aide_f3);return true" onMouseOut="StatusMessage( false )">Sécurité</A>
+
+			<SPAN class="footerseparateur">&nbsp;|&nbsp;</SPAN>
+
+			<script>
+			<!--
+			aide_f4= "";
+			//-->
+			</script>
+			<A href="javascript:ouvrirPopup('https://www.ca-paris.fr/CNIL/','popupCnil','','','yes', 'yes', 'yes', 'yes', 'yes', 'yes')" class="footerlien" onMouseOver="StatusMessage(true, aide_f4);return true" onMouseOut="StatusMessage( false )">Politique de protection des données</A>
+
+			<SPAN class="footerseparateur">&nbsp;|&nbsp;</SPAN>
+
+			<script>
+			<!--
+			aide_f5= "";
+			//-->
+			</script>
+			<A href="javascript:ouvrirPopup('https://www.ca-paris.fr/TARIFS/','popupTarifs','','','yes', 'yes', 'yes', 'yes', 'yes', 'yes')" class="footerlien" onMouseOver="StatusMessage(true, aide_f5);return true" onMouseOut="StatusMessage( false )">Nos tarifs</A>
+
+		</TD>
+	</TR>
+	<TR>
+		<TD align="center">
+
+
+
+
+
+<SCRIPT LANGUAGE=JavaScript>
+var iDSession = "4c159fea160522c10e5-6732.SAG_V6";
+var codeCR = "882";
+</SCRIPT>	 
+<TABLE width="100%">
+	<TR>
+		<TD class="footercopyright" align="center">
+		<BR>&nbsp;
+		<TD>
+	</TR>
+</TABLE>
+		</TD>
+		
+	</TR>
+</TABLE>
+
+
+<!-----  FIN zone footer  ---->
+
+</TD></TR>
+</TABLE>
+</div></body></html>
