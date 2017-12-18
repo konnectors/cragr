@@ -3,6 +3,7 @@ const xlsx = require('xlsx')
 const bluebird = require('bluebird')
 const moment = require('moment')
 const url = require('url')
+const regions = require('../regions.json')
 
 // time given to the connector to save the files
 const FULL_TIMEOUT = Date.now() + 60 * 1000
@@ -23,7 +24,7 @@ module.export = new BaseKonnector(start)
 
 function start (requiredFields) {
   fields = requiredFields
-  return fetchBankUrl(fields.bankId)
+  return getBankUrl(fields.bankId)
   .then(login)
   .then(parseAccounts)
   .then(saveAccounts)
@@ -34,35 +35,16 @@ function start (requiredFields) {
   .then(getDocuments)
 }
 
-function fetchBankUrl (bankId) {
-  return rq('https://www.credit-agricole.fr')
-  .then($ => {
-    log('info', 'Getting the list of banks')
-    const script = Array.from($('script')).find(script => {
-      return $(script).html().includes('CR_infos_v2')
-    })
+function getBankUrl (bankId) {
+  const bankUrl = regions[bankId]
 
-    if (!script) {
-      log('error', 'Failed to get the list of available banks')
-      throw new Error(errors.VENDOR_DOWN)
-    }
+  if (bankUrl === undefined) {
+    log('error', `The bank id ${bankId} is unknown`)
+    throw new Error(errors.LOGIN_FAILED)
+  }
 
-    const assoc = JSON.parse($(script).html().match(/= ({.*});/)[1])
-    const result = {}
-    for (let key in assoc) {
-      result[assoc[key].id_caisse] = assoc[key].url
-    }
-
-    const bankUrl = result[bankId]
-
-    if (bankUrl === undefined) {
-      log('error', `The bank id ${bankId} is unknown`)
-      throw new Error(errors.LOGIN_FAILED)
-    }
-
-    log('info', `Bank url is ${bankUrl}`)
-    return bankUrl
-  })
+  log('info', `Bank url is ${bankUrl}`)
+  return Promise.resolve(bankUrl)
 }
 
 function cleanDocumentLabel (label) {
