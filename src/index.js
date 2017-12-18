@@ -23,7 +23,8 @@ module.export = new BaseKonnector(start)
 
 function start (requiredFields) {
   fields = requiredFields
-  return login(fields)
+  return fetchBankUrl(fields.bankId)
+  .then(login)
   .then(parseAccounts)
   .then(saveAccounts)
   .then(comptes => bluebird.each(comptes, compte => {
@@ -31,6 +32,37 @@ function start (requiredFields) {
     .then(operations => saveOperations(compte, operations))
   }))
   .then(getDocuments)
+}
+
+function fetchBankUrl (bankId) {
+  return rq('https://www.credit-agricole.fr')
+  .then($ => {
+    log('info', 'Getting the list of banks')
+    const script = Array.from($('script')).find(script => {
+      return $(script).html().includes('CR_infos_v2')
+    })
+
+    if (!script) {
+      log('error', 'Failed to get the list of available banks')
+      throw new Error(errors.VENDOR_DOWN)
+    }
+
+    const assoc = JSON.parse($(script).html().match(/= ({.*});/)[1])
+    const result = {}
+    for (let key in assoc) {
+      result[assoc[key].id_caisse] = assoc[key].url
+    }
+
+    const bankUrl = result[bankId]
+
+    if (bankUrl === undefined) {
+      log('error', `The bank id ${bankId} is unknown`)
+      throw new Error(errors.LOGIN_FAILED)
+    }
+
+    log('info', `Bank url is ${bankUrl}`)
+    return bankUrl
+  })
 }
 
 function cleanDocumentLabel (label) {
@@ -208,9 +240,9 @@ function parseAccounts ($) {
   }))
 }
 
-function login () {
+function login (bankUrl) {
   log('info', 'Logging in')
-  return rq('https://www.ca-paris.fr/particuliers.html')
+  return rq(`${bankUrl}/particuliers.html`)
   .then($ => {
     const script = Array.from($('script'))
       .map(script => $(script).html().trim())
