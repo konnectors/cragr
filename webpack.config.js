@@ -10,6 +10,7 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin([
+      { from: 'regions.json' },
       { from: 'manifest.konnector' },
       { from: 'package.json' },
       { from: 'README.md' },
