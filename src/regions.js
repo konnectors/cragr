@@ -23,15 +23,23 @@ request('https://www.credit-agricole.fr').then(body => {
       .match(/= ({.*});/)[1]
   )
   const result = {}
+  const manifestConfig = []
   for (let key in assoc) {
     result[assoc[key].id_caisse] = assoc[key].url
+    manifestConfig.push({
+      name: assoc[key].nom,
+      value: assoc[key].id_caisse
+    })
   }
 
-  fs.writeFileSync(
-    path.join(__dirname, '..', 'regions.json'),
-    JSON.stringify(result, null, 2)
-  )
-  console.log(
-    `The list of regions is written in ${path.resolve('../regions.json')}`
-  )
+  const regionFilePath = path.join(__dirname, '../regions.json')
+  fs.writeFileSync(regionFilePath, JSON.stringify(result, null, 2))
+
+  console.log(`The list of regions is written in ${regionFilePath}`)
+
+  manifestConfig.sort((a, b) => a.name.localeCompare(b.name))
+  const manifestFilePath = path.join(__dirname, '../manifestConfig.json')
+  fs.writeFileSync(manifestFilePath, JSON.stringify(manifestConfig, null, 2))
+
+  console.log(`The manifest configuration is written in ${manifestFilePath}`)
 })
