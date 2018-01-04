@@ -259,14 +259,17 @@ function parseAccounts ($) {
     // to complete when we have more data
   }
 
-  return comptes.map(compte => ({
-    institutionLabel: 'Crédit Agricole',
-    type: label2Type[compte[0]] || 'UNKNOWN LABEL',
-    label: compte[0],
-    number: compte[1],
-    balance: parseFloat(compte[2].replace(' ', '').replace(',', '.')),
-    linkOperations: compte[5]
-  }))
+  return comptes.map(compte => {
+    const linkOperations = compte[compte.length - 1]
+    return {
+      institutionLabel: 'Crédit Agricole',
+      type: label2Type[compte[0]] || 'UNKNOWN LABEL',
+      label: compte[0],
+      number: compte[1],
+      balance: parseFloat(compte[2].replace(' ', '').replace(',', '.')),
+      linkOperations: linkOperations
+    }
+  })
 }
 
 function login (bankUrl) {
