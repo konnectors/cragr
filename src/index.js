@@ -177,9 +177,18 @@ function fetchOperations (account) {
       raw: true
     })
     const worksheet = workbook.Sheets[workbook.SheetNames[0]]
-    return xlsx.utils
-      .sheet_to_csv(worksheet)
-      .split('\n')
+
+    // first get the full date
+    const lines = xlsx.utils.sheet_to_csv(worksheet).split('\n')
+
+    const { startDate, endDate } = lines[7]
+      .split(',')
+      .shift()
+      .match(/entre le (.*) et le (.*)/)
+      .slice(1)
+      .map(date => moment(date, 'DD/MM/YYYY'))
+
+    return lines
       .slice(9)
       .filter(line => {
         return line.length > 3 // avoid lines with empty cells
@@ -199,20 +208,25 @@ function fetchOperations (account) {
         }
 
         // some months are abbreviated in French and other in English!!! + encoding problem
-        // TODO use the real csv export (but which is harder to reach) which has better dates
-        const date = cells[0]
+        let date = cells[0]
           .toLowerCase()
           .replace('dã©c', 'dec')
           .replace('aoã»', 'aug')
 
+        date = moment(date, 'DD-MMM')
+        if (!date.isBetween(startDate, endDate)) {
+          date.subtract(1, 'year')
+        }
+
         // FIXME a lot of information is hidden in the label of the operation (type of operation,
         // real date of the operation) but the formating is quite inconsistent
         return {
-          date: moment(date, 'DD-MMM').toDate(),
-          label: labels.shift(),
+          date: date.toDate(),
+          label: labels[0],
+          originalLabel: labels.join('\n'),
           type: 'none', // TODO parse the labels for that
           dateImport: new Date(),
-          dateOperation: date, // TODO parse the label for that
+          dateOperation: date.toDate(), // TODO parse the label for that
           currency: 'EUR',
           amount,
           account: `${account._id}`
