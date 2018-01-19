@@ -181,7 +181,7 @@ function fetchOperations (account) {
     // first get the full date
     const lines = xlsx.utils.sheet_to_csv(worksheet).split('\n')
 
-    const { startDate, endDate } = lines[7]
+    const [ startDate, endDate ] = lines[7]
       .split(',')
       .shift()
       .match(/entre le (.*) et le (.*)/)
@@ -214,7 +214,9 @@ function fetchOperations (account) {
           .replace('aoã»', 'aug')
 
         date = moment(date, 'DD-MMM')
-        if (!date.isBetween(startDate, endDate)) {
+        endDate.add(1, 'day')
+        const check = date.isBetween(startDate, endDate)
+        if (check === false) {
           date.subtract(1, 'year')
         }
 
