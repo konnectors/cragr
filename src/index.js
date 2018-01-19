@@ -38,9 +38,8 @@ function start (requiredFields) {
     .then(saveAccounts)
     .then(comptes =>
       bluebird.each(comptes, compte => {
-        return fetchOperations(compte).then(operations =>
-          saveOperations(compte, operations)
-        )
+        return fetchOperations(compte)
+          .then(operations => saveOperations(compte, operations))
       })
     )
     .then(getDocuments)
@@ -181,13 +180,6 @@ function fetchOperations (account) {
     // first get the full date
     const lines = xlsx.utils.sheet_to_csv(worksheet).split('\n')
 
-    const [ startDate, endDate ] = lines[7]
-      .split(',')
-      .shift()
-      .match(/entre le (.*) et le (.*)/)
-      .slice(1)
-      .map(date => moment(date, 'DD/MM/YYYY'))
-
     return lines
       .slice(9)
       .filter(line => {
@@ -214,9 +206,11 @@ function fetchOperations (account) {
           .replace('aoã»', 'aug')
 
         date = moment(date, 'DD-MMM')
-        endDate.add(1, 'day')
-        const check = date.isBetween(startDate, endDate)
-        if (check === false) {
+
+        // adjust the date since we do not have the year in the document but we know the document
+        // gives us a 6 month timeframe
+        const limit = moment().add(1, 'day')
+        if (date.isAfter(limit)) {
           date.subtract(1, 'year')
         }
 
