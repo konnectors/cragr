@@ -26,10 +26,10 @@
     "deploy:travis": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --repo=https://$GITHUB_TOKEN@github.com/cozy/cozy-konnector-bank-cragr.git"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^4.0.1",
-    "eslint-config-cozy-app": "^0.3.1",
-    "git-directory-deploy": "^1.5.1",
-    "prettier": "^1.9.2",
-    "webpack": "^3.5.0"
+    "copy-webpack-plugin": "4.3.1",
+    "eslint-config-cozy-app": "0.3.1",
+    "git-directory-deploy": "1.5.1",
+    "prettier": "1.10.2",
+    "webpack": "3.10.0"
   }
 }
