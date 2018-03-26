@@ -30,6 +30,6 @@
     "eslint-config-cozy-app": "0.5.1",
     "git-directory-deploy": "1.5.1",
     "prettier": "1.11.1",
-    "webpack": "3.10.0"
+    "webpack": "3.11.0"
   }
 }
