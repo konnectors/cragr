@@ -11,7 +11,7 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "cozy-konnector-libs": "3.0.13",
-    "xlsx": "0.11.13"
+    "xlsx": "0.12.6"
   },
   "scripts": {
     "start": "node index.js",
