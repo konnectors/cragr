@@ -10,8 +10,8 @@
   "author": "doubleface <christophe@cozycloud.cc>",
   "license": "AGPL-3.0",
   "dependencies": {
-    "cozy-konnector-libs": "3.0.13",
-    "xlsx": "0.11.13"
+    "cozy-konnector-libs": "3.7.4",
+    "xlsx": "0.12.6"
   },
   "scripts": {
     "start": "node index.js",
@@ -30,7 +30,7 @@
     "eslint-config-cozy-app": "0.5.1",
     "git-directory-deploy": "1.5.1",
     "prettier": "1.11.1",
-    "webpack": "3.11.0",
+    "webpack": "4.3.0",
     "webpack-cli": "2.0.13"
   }
 }
