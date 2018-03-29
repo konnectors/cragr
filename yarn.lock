@@ -8074,9 +8074,9 @@ ws@^4.0.0:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
 
-xlsx@0.12.6:
-  version "0.12.6"
-  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.12.6.tgz#be8483e6caac0417dc82df0991281c5554cf6b43"
+xlsx@0.12.7:
+  version "0.12.7"
+  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.12.7.tgz#4b767b7d71d6b5f56928e9d213231805dfaf864e"
   dependencies:
     adler-32 "~1.2.0"
     cfb "~1.0.5"
