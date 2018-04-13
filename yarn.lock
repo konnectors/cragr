@@ -1457,9 +1457,9 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-cfb@~1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/cfb/-/cfb-1.0.5.tgz#5f7cf2fcb385dd41db271cf1f28a83fcd705bf06"
+cfb@~1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/cfb/-/cfb-1.0.6.tgz#d0107fa579a8d79c53a31074a755abcb898017f0"
   dependencies:
     commander "^2.14.1"
     printj "~1.1.2"
@@ -8074,12 +8074,12 @@ ws@^4.0.0:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
 
-xlsx@0.12.7:
-  version "0.12.7"
-  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.12.7.tgz#4b767b7d71d6b5f56928e9d213231805dfaf864e"
+xlsx@0.12.9:
+  version "0.12.9"
+  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.12.9.tgz#839bad5107531f63d1a7229d97121e5ef00abe38"
   dependencies:
     adler-32 "~1.2.0"
-    cfb "~1.0.5"
+    cfb "~1.0.6"
     codepage "~1.12.1"
     commander "~2.14.1"
     crc-32 "~1.2.0"
