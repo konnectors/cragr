@@ -10,7 +10,7 @@
   "author": "doubleface <christophe@cozycloud.cc>",
   "license": "AGPL-3.0",
   "dependencies": {
-    "cozy-konnector-libs": "3.7.4",
+    "cozy-konnector-libs": "3.8.1",
     "xlsx": "0.12.9"
   },
   "scripts": {
