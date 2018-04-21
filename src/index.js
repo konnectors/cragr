@@ -14,7 +14,7 @@ const url = require('url')
 const regions = require('../regions.json')
 
 // time given to the connector to save the files
-const FULL_TIMEOUT = Date.now() + 60 * 1000
+const FULL_TIMEOUT = Date.now() + 4 * 60 * 1000
 
 const rq = request({
   // debug: true,
