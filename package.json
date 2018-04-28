@@ -12,7 +12,7 @@
   "main": "./src/index",
   "dependencies": {
     "cozy-konnector-libs": "4.1.8",
-    "xlsx": "0.12.10"
+    "xlsx": "0.12.11"
   },
   "scripts": {
     "prettier": "prettier --write '{src,test}/**/*.{js,jsx}' && eslint --fix '{src,test}/**/*.{js,jsx}'",
