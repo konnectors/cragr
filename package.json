@@ -28,7 +28,7 @@
     "cozy-jobs-cli": "1.0.17",
     "eslint-config-cozy-app": "0.8.0",
     "git-directory-deploy": "1.5.1",
-    "prettier": "1.13.3",
+    "prettier": "1.13.4",
     "webpack": "4.10.2",
     "webpack-cli": "2.1.4"
   }
