@@ -30,6 +30,6 @@
     "git-directory-deploy": "1.5.1",
     "prettier": "1.13.4",
     "webpack": "4.10.2",
-    "webpack-cli": "2.1.4"
+    "webpack-cli": "3.0.2"
   }
 }
