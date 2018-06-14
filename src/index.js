@@ -37,11 +37,10 @@ function start(requiredFields) {
     .then(parseAccounts)
     .then(saveAccounts)
     .then(comptes =>
-      bluebird.each(comptes, compte => {
-        return fetchOperations(compte).then(operations =>
-          saveOperations(compte, operations)
-        )
-      })
+      Promise.all([
+        ...comptes.map(compte => fetchOperations(compte).then(operations => saveOperations(compte, operations))),
+        fetchBalances(comptes)
+      ])
     )
     .then(getDocuments)
 }
@@ -369,4 +368,67 @@ function login(bankUrl) {
         throw new Error(errors.LOGIN_FAILED)
       }
     })
+}
+
+async function getBalanceHistory(year, accountId) {
+  const index = await cozyClient.data.defineIndex(
+    'io.cozy.bank.balancehistories',
+    ['year', 'relationships.account.data._id']
+  )
+  const options = {
+    selector: { year, 'relationships.account.data._id': accountId },
+    limit: 1
+  }
+  const [balance] = await cozyClient.data.query(index, options)
+
+  if (balance) {
+    log(
+      'info',
+      `Found a io.cozy.bank.balancehistories document for year ${year} and account ${accountId}`
+    )
+    return balance
+  }
+
+  log(
+    'info',
+    `io.cozy.bank.balancehistories document not found for year ${year} and account ${accountId}, creating a new one`
+  )
+  return getEmptyBalanceHistory(year, accountId)
+}
+
+function getEmptyBalanceHistory(year, accountId) {
+  return {
+    year,
+    balances: {},
+    metadata: {
+      version: 1
+    },
+    relationships: {
+      account: {
+        data: {
+          _id: accountId,
+          _type: 'io.cozy.bank.accounts'
+        }
+      }
+    }
+  }
+}
+
+function fetchBalances(accounts) {
+  const now = moment()
+  const todayAsString = now.format('YYYY-MM-DD')
+  const currentYear = now.year()
+
+  return Promise.all(
+    accounts.map(account => {
+      const history = getBalanceHistory(currentYear, account._id)
+      history.balances[todayAsString] = account.balance
+
+      return history
+    })
+  )
+}
+
+function saveBalances(balances) {
+  return updateOrCreate(balances, 'io.cozy.bank.balancehistories', ['_id'])
 }
