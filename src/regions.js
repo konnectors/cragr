@@ -1,3 +1,5 @@
+/* eslint no-console: off */
+
 const request = require('request-promise')
 const cheerio = require('cheerio')
 const fs = require('fs')

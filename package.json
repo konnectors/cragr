@@ -2,34 +2,52 @@
   "name": "cragr",
   "version": "1.0.0",
   "description": "Crédit Agricole connector",
-  "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cozy/cozy-konnector-bank-cragr.git"
+    "url": "git+https://github.com/konnectors/cozy-konnector-bank-cragr.git"
   },
-  "author": "doubleface <christophe@cozycloud.cc>",
+  "keywords": [],
+  "author": "Cozy Cloud",
   "license": "AGPL-3.0",
-  "main": "./src/index",
-  "dependencies": {
-    "cozy-konnector-libs": "4.1.8",
-    "xlsx": "0.12.11"
+  "main": "./src/index.js",
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-cozy-app"
+    ]
   },
+  "eslintIgnore": [
+    "build"
+  ],
   "scripts": {
-    "prettier": "prettier --write '{src,test}/**/*.{js,jsx}' && eslint --fix '{src,test}/**/*.{js,jsx}'",
-    "standalone": "cozy-run-standalone",
-    "regions": "node src/regions.js",
+    "start": "node ./src/index.js",
     "dev": "cozy-run-dev",
+    "standalone": "cozy-run-standalone",
+    "pretest": "npm run clean",
+    "test": "konitor testit .",
+    "check": "konitor check .",
+    "clean": "rm -rf ./data",
+    "regions": "node src/regions.js",
     "build": "webpack",
-    "deploy": "git-directory-deploy --directory build/ --branch build --repo=https://github.com/cozy/cozy-konnector-bank-cragr.git",
-    "deploy:travis": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --repo=https://$GITHUB_TOKEN@github.com/cozy/cozy-konnector-bank-cragr.git"
+    "precommit": "yarn lint",
+    "lint": "eslint --fix .",
+    "deploy": "git-directory-deploy --directory build/ --branch build --repo=https://github.com/konnectors/cozy-konnector-bank-cragr.git",
+    "cozyPublish": "cozy-app-publish --token $REGISTRY_TOKEN --build-commit $(git rev-parse ${DEPLOY_BRANCH:-build})",
+    "travisDeployKey": "./bin/generate_travis_deploy_key"
+  },
+  "dependencies": {
+    "cozy-konnector-libs": "4.5.2",
+    "xlsx": "0.13.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "4.5.1",
-    "cozy-jobs-cli": "1.0.17",
+    "cozy-app-publish": "0.3.6",
+    "cozy-jobs-cli": "1.3.3",
+    "eslint": "4.19.1",
     "eslint-config-cozy-app": "0.8.0",
     "git-directory-deploy": "1.5.1",
-    "prettier": "1.13.4",
+    "husky": "0.14.3",
+    "konitor": "0.9.0",
     "webpack": "4.12.0",
-    "webpack-cli": "3.0.3"
+    "webpack-cli": "3.0.7"
   }
 }

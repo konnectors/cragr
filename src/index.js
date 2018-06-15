@@ -1,7 +1,7 @@
 const {
   BaseKonnector,
   log,
-  request,
+  requestFactory,
   errors,
   updateOrCreate,
   addData,
@@ -16,7 +16,7 @@ const regions = require('../regions.json')
 // time given to the connector to save the files
 const FULL_TIMEOUT = Date.now() + 4 * 60 * 1000
 
-const rq = request({
+const request = requestFactory({
   // debug: true,
   jar: true,
   json: false,
@@ -30,7 +30,7 @@ let fields = {}
 
 module.export = new BaseKonnector(start)
 
-function start (requiredFields) {
+function start(requiredFields) {
   fields = requiredFields
   return getBankUrl(fields.bankId)
     .then(login)
@@ -38,14 +38,15 @@ function start (requiredFields) {
     .then(saveAccounts)
     .then(comptes =>
       bluebird.each(comptes, compte => {
-        return fetchOperations(compte)
-          .then(operations => saveOperations(compte, operations))
+        return fetchOperations(compte).then(operations =>
+          saveOperations(compte, operations)
+        )
       })
     )
     .then(getDocuments)
 }
 
-function getBankUrl (bankId) {
+function getBankUrl(bankId) {
   const bankUrl = regions[bankId]
 
   if (bankUrl === undefined) {
@@ -57,7 +58,7 @@ function getBankUrl (bankId) {
   return Promise.resolve(bankUrl)
 }
 
-function cleanDocumentLabel (label) {
+function cleanDocumentLabel(label) {
   // remove some special characters from the label
   return label
     .trim()
@@ -67,15 +68,15 @@ function cleanDocumentLabel (label) {
     .replace('.', '')
 }
 
-function getDocuments () {
+function getDocuments() {
   log('info', 'Getting accounts statements')
   return fetchStatementPage()
     .then(parseStatementsPage)
     .then(accounts => bluebird.each(accounts, fetchAndSaveAccountDocuments))
 }
 
-function fetchAccountDocuments (account, index) {
-  return rq(account.link).then($ => {
+function fetchAccountDocuments(account, index) {
+  return request(account.link).then($ => {
     log('info', account.label)
     // now get all the links to the releves of this account
     const entries = Array.from(
@@ -105,7 +106,7 @@ function fetchAccountDocuments (account, index) {
   })
 }
 
-function saveAccountDocuments (entries, index, length) {
+function saveAccountDocuments(entries, index, length) {
   // Give an equal time to fetch documents for each account
   // next documents will be downloaded for the next run
   const remainingTime = FULL_TIMEOUT - Date.now()
@@ -115,13 +116,13 @@ function saveAccountDocuments (entries, index, length) {
   })
 }
 
-function fetchAndSaveAccountDocuments (account, index, length) {
+function fetchAndSaveAccountDocuments(account, index, length) {
   return fetchAccountDocuments(account, index).then(entries =>
     saveAccountDocuments(entries, index, length)
   )
 }
 
-function parseStatementsPage ($) {
+function parseStatementsPage($) {
   // find the "Releve de comptes" section
   // here I suppose the fist section is always the releves de comptes section but the name is
   // checked
@@ -153,21 +154,22 @@ function parseStatementsPage ($) {
   }
 }
 
-function fetchStatementPage () {
-  return rq(statementsUrl)
+function fetchStatementPage() {
+  return request(statementsUrl)
 }
 
-function saveOperations (account, operations) {
+function saveOperations(account, operations) {
   return addData(operations, 'io.cozy.bank.operations')
 }
 
-function fetchOperations (account) {
+function fetchOperations(account) {
   log('info', `Gettings operations for ${account.label}`)
 
-  const rq = request({
-    cheerio: false
+  const request = requestFactory({
+    cheerio: false,
+    jar: true
   })
-  return rq({
+  return request({
     url: `${baseUrl}/stb/${account.linkOperations}&typeaction=telechargement`,
     encoding: 'binary'
   }).then(body => {
@@ -202,8 +204,8 @@ function fetchOperations (account) {
         // some months are abbreviated in French and other in English!!! + encoding problem
         let date = cells[0]
           .toLowerCase()
-          .replace('dã©c', 'dec')
-          .replace('aoã»', 'aug')
+          .replace('é', 'e')
+          .replace('û', 'u')
 
         date = moment(date, 'DD-MMM')
 
@@ -231,11 +233,11 @@ function fetchOperations (account) {
   })
 }
 
-function saveAccounts (accounts) {
+function saveAccounts(accounts) {
   return updateOrCreate(accounts, 'io.cozy.bank.accounts', ['number'])
 }
 
-function parseAccounts ($) {
+function parseAccounts($) {
   log('info', 'Gettings accounts')
   const comptes = Array.from($('.ca-table tbody tr img'))
     .map(compte => $(compte).closest('tr'))
@@ -282,9 +284,9 @@ function parseAccounts ($) {
   })
 }
 
-function login (bankUrl) {
+function login(bankUrl) {
   log('info', 'Logging in')
-  return rq(`${bankUrl}/particuliers.html`)
+  return request(`${bankUrl}/particuliers.html`)
     .then($ => {
       const script = Array.from($('script'))
         .map(script =>
@@ -301,7 +303,7 @@ function login (bankUrl) {
       const urlObj = url.parse(loginUrl)
       baseUrl = `${urlObj.protocol}//${urlObj.hostname}`
 
-      return rq({
+      return request({
         url: loginUrl,
         method: 'POST',
         form: {
@@ -339,7 +341,7 @@ function login (bankUrl) {
         .map(nb => decodeTable[nb])
         .join(',')
 
-      return rq({
+      return request({
         method: 'POST',
         url: loginUrl,
         form: {

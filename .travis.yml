@@ -1,27 +1,41 @@
 language: node_js
-matrix:
-  fast_finish: true
 node_js:
-- '6'
-branches:
-  except:
-  - build
+- '8'
 env:
   global:
-  - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    - deadsnakes
-    packages:
-    - g++-4.8
-    - python3.5
+  - GH_USER_EMAIL="travis@example.org"
+  - GH_USER_NAME="cozy-bot"
+  - DEPLOY_REPOSITORY="git@github.com:konnectors/cozy-konnector-bank-cragr.git"
 cache:
   yarn: true
   directories:
   - node_modules
+branches:
+  except:
+  - build
+  - latest
 script:
+- yarn lint
 - yarn build
-after_success:
-  - test $TRAVIS_BRANCH = "master" && yarn run deploy:travis -- --branch=build
+- yarn run check
+deploy:
+- provider: script
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  on:
+    branch: master
+- provider: script
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  on:
+    tags: true
+before_install:
+# run the yarn travisDeployKey command to genrate this
+# - openssl aes-256-cbc -K $encrypted_0b21ecdcf920_key -iv $encrypted_0b21ecdcf920_iv
+#   -in github_deploy_key.enc -out /tmp/github_deploy_key -d
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/github_deploy_key
+- ssh-add /tmp/github_deploy_key
+after_deploy:
+- rm /tmp/github_deploy_key
+- ssh-add -D
