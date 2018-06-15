@@ -5,7 +5,8 @@ const {
   errors,
   updateOrCreate,
   addData,
-  saveFiles
+  saveFiles,
+  cozyClient
 } = require('cozy-konnector-libs')
 const xlsx = require('xlsx')
 const bluebird = require('bluebird')
@@ -37,10 +38,14 @@ function start(requiredFields) {
     .then(parseAccounts)
     .then(saveAccounts)
     .then(comptes =>
-      Promise.all([
-        ...comptes.map(compte => fetchOperations(compte).then(operations => saveOperations(compte, operations))),
-        fetchBalances(comptes)
-      ])
+      bluebird
+        .each(comptes, compte => {
+          return fetchOperations(compte).then(operations =>
+            saveOperations(compte, operations)
+          )
+        })
+        .then(fetchBalances)
+        .then(saveBalances)
     )
     .then(getDocuments)
 }
@@ -420,8 +425,8 @@ function fetchBalances(accounts) {
   const currentYear = now.year()
 
   return Promise.all(
-    accounts.map(account => {
-      const history = getBalanceHistory(currentYear, account._id)
+    accounts.map(async account => {
+      const history = await getBalanceHistory(currentYear, account._id)
       history.balances[todayAsString] = account.balance
 
       return history
