@@ -1,0 +1,627 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sync should correctly sync accounts/operations/histories 1`] = `
+Array [
+  Array [
+    Object {
+      "_id": undefined,
+      "balance": 1700,
+      "institutionLabel": "Crédit Agricole",
+      "label": "LIVRET A",
+      "number": "65002241337",
+      "type": "bank",
+      "vendorId": "65002241337",
+    },
+  ],
+  Array [
+    Object {
+      "_id": undefined,
+      "balance": 2526.23,
+      "institutionLabel": "Crédit Agricole",
+      "label": "COMPTE CHEQUE",
+      "number": "60284131339",
+      "type": "bank",
+      "vendorId": "60284131339",
+    },
+  ],
+  Array [
+    Object {
+      "_id": undefined,
+      "balance": 7000,
+      "institutionLabel": "Crédit Agricole",
+      "label": "LIVRET A",
+      "number": "60285571338",
+      "type": "bank",
+      "vendorId": "60285571338",
+    },
+  ],
+]
+`;
+
+exports[`sync should correctly sync accounts/operations/histories 2`] = `
+Array [
+  Array [
+    Object {
+      "account": 1,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-09T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.250Z,
+      "dateOperation": 2018-05-09T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2018-05-09_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-01T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.250Z,
+      "dateOperation": 2018-05-01T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude Promesse",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2018-05-01_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": -150,
+      "currency": "EUR",
+      "date": 2018-03-30T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.251Z,
+      "dateOperation": 2018-03-30T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2018-03-30_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": -192,
+      "currency": "EUR",
+      "date": 2018-03-26T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.251Z,
+      "dateOperation": 2018-03-26T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2018-03-26_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": -750,
+      "currency": "EUR",
+      "date": 2017-12-28T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.251Z,
+      "dateOperation": 2017-12-28T23:00:00.000Z,
+      "label": "\\"De L'annee Taux  0",
+      "originalLabel": "\\"De L'annee Taux  0",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2017-12-28_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": 6000,
+      "currency": "EUR",
+      "date": 2017-12-27T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.252Z,
+      "dateOperation": 2017-12-27T23:00:00.000Z,
+      "label": "Vrt Douillet Claude",
+      "originalLabel": "Vrt Douillet Claude
+Virement En Votre Faveur",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2017-12-27_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": 450,
+      "currency": "EUR",
+      "date": 2017-12-27T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.252Z,
+      "dateOperation": 2017-12-27T23:00:00.000Z,
+      "label": "2425464",
+      "originalLabel": "2425464
+Remise De Cheque",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2017-12-27_1",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-09T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.271Z,
+      "dateOperation": 2018-05-09T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2018-05-09_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-01T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.271Z,
+      "dateOperation": 2018-05-01T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude Promesse",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2018-05-01_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -150,
+      "currency": "EUR",
+      "date": 2018-03-30T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.271Z,
+      "dateOperation": 2018-03-30T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2018-03-30_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -192,
+      "currency": "EUR",
+      "date": 2018-03-26T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.272Z,
+      "dateOperation": 2018-03-26T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2018-03-26_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -750,
+      "currency": "EUR",
+      "date": 2017-12-28T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.272Z,
+      "dateOperation": 2017-12-28T23:00:00.000Z,
+      "label": "\\"De L'annee Taux  0",
+      "originalLabel": "\\"De L'annee Taux  0",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2017-12-28_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": 6000,
+      "currency": "EUR",
+      "date": 2017-12-27T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.272Z,
+      "dateOperation": 2017-12-27T23:00:00.000Z,
+      "label": "Vrt Douillet Claude",
+      "originalLabel": "Vrt Douillet Claude
+Virement En Votre Faveur",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2017-12-27_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": 450,
+      "currency": "EUR",
+      "date": 2017-12-27T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.273Z,
+      "dateOperation": 2017-12-27T23:00:00.000Z,
+      "label": "2425464",
+      "originalLabel": "2425464
+Remise De Cheque",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2017-12-27_1",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-09T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.289Z,
+      "dateOperation": 2018-05-09T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2018-05-09_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-01T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.289Z,
+      "dateOperation": 2018-05-01T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude Promesse",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2018-05-01_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -150,
+      "currency": "EUR",
+      "date": 2018-03-30T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.289Z,
+      "dateOperation": 2018-03-30T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2018-03-30_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -192,
+      "currency": "EUR",
+      "date": 2018-03-26T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.289Z,
+      "dateOperation": 2018-03-26T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2018-03-26_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -750,
+      "currency": "EUR",
+      "date": 2017-12-28T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.289Z,
+      "dateOperation": 2017-12-28T23:00:00.000Z,
+      "label": "\\"De L'annee Taux  0",
+      "originalLabel": "\\"De L'annee Taux  0",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2017-12-28_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": 6000,
+      "currency": "EUR",
+      "date": 2017-12-27T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.290Z,
+      "dateOperation": 2017-12-27T23:00:00.000Z,
+      "label": "Vrt Douillet Claude",
+      "originalLabel": "Vrt Douillet Claude
+Virement En Votre Faveur",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2017-12-27_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": 450,
+      "currency": "EUR",
+      "date": 2017-12-27T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.290Z,
+      "dateOperation": 2017-12-27T23:00:00.000Z,
+      "label": "2425464",
+      "originalLabel": "2425464
+Remise De Cheque",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2017-12-27_1",
+    },
+  ],
+]
+`;
+
+exports[`sync should correctly sync accounts/operations/histories 3`] = `
+Array [
+  Array [
+    Object {
+      "_id": 123,
+      "balance": 1700,
+      "institutionLabel": "Crédit Agricole",
+      "label": "LIVRET A",
+      "number": "65002241337",
+      "type": "bank",
+      "vendorId": "65002241337",
+    },
+  ],
+  Array [
+    Object {
+      "_id": undefined,
+      "balance": 2526.23,
+      "institutionLabel": "Crédit Agricole",
+      "label": "COMPTE CHEQUE",
+      "number": "60284131339",
+      "type": "bank",
+      "vendorId": "60284131339",
+    },
+  ],
+  Array [
+    Object {
+      "_id": undefined,
+      "balance": 7000,
+      "institutionLabel": "Crédit Agricole",
+      "label": "LIVRET A",
+      "number": "60285571338",
+      "type": "bank",
+      "vendorId": "60285571338",
+    },
+  ],
+]
+`;
+
+exports[`sync should correctly sync accounts/operations/histories 4`] = `
+Array [
+  Array [
+    Object {
+      "account": 1,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-09T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.379Z,
+      "dateOperation": 2018-05-09T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2018-05-09_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-01T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.379Z,
+      "dateOperation": 2018-05-01T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude Promesse",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2018-05-01_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": -150,
+      "currency": "EUR",
+      "date": 2018-03-30T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.379Z,
+      "dateOperation": 2018-03-30T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2018-03-30_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": -192,
+      "currency": "EUR",
+      "date": 2018-03-26T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.379Z,
+      "dateOperation": 2018-03-26T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2018-03-26_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-09T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.384Z,
+      "dateOperation": 2018-05-09T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2018-05-09_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-01T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.384Z,
+      "dateOperation": 2018-05-01T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude Promesse",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2018-05-01_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -150,
+      "currency": "EUR",
+      "date": 2018-03-30T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.385Z,
+      "dateOperation": 2018-03-30T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2018-03-30_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 2,
+      "amount": -192,
+      "currency": "EUR",
+      "date": 2018-03-26T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.385Z,
+      "dateOperation": 2018-03-26T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "60284131339",
+      "vendorId": "60284131339_2018-03-26_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-09T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.390Z,
+      "dateOperation": 2018-05-09T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2018-05-09_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -500,
+      "currency": "EUR",
+      "date": 2018-05-01T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.390Z,
+      "dateOperation": 2018-05-01T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Claude Promesse",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2018-05-01_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -150,
+      "currency": "EUR",
+      "date": 2018-03-30T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.390Z,
+      "dateOperation": 2018-03-30T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2018-03-30_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 3,
+      "amount": -192,
+      "currency": "EUR",
+      "date": 2018-03-26T22:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.390Z,
+      "dateOperation": 2018-03-26T22:00:00.000Z,
+      "label": "Virement Emis",
+      "originalLabel": "Virement Emis
+Web Douillet Renflou",
+      "type": "none",
+      "vendorAccountId": "60285571338",
+      "vendorId": "60285571338_2018-03-26_0",
+    },
+  ],
+  Array [
+    Object {
+      "account": 1,
+      "amount": -750,
+      "currency": "EUR",
+      "date": 2017-12-28T23:00:00.000Z,
+      "dateImport": 2018-06-26T18:11:45.379Z,
+      "dateOperation": 2017-12-28T23:00:00.000Z,
+      "label": "\\"De L'annee Taux  0",
+      "originalLabel": "\\"De L'annee Taux  0",
+      "type": "none",
+      "vendorAccountId": "65002241337",
+      "vendorId": "65002241337_2017-12-28_0",
+    },
+  ],
+]
+`;

@@ -7,6 +7,7 @@ const {
   cozyClient
 } = require('cozy-konnector-libs')
 const groupBy = require('lodash/groupBy')
+const omit = require('lodash/omit')
 const xlsx = require('xlsx')
 const bluebird = require('bluebird')
 const moment = require('moment')
@@ -42,7 +43,7 @@ let lib
 async function start(requiredFields) {
   fields = requiredFields
   const bankUrl = getBankUrl(fields.bankId)
-  const accountsPage = await login(bankUrl)
+  const accountsPage = await lib.login(bankUrl)
   const accounts = lib.parseAccounts(accountsPage)
   log('info', `Found ${accounts.length} accounts`)
   let allOperations = []
@@ -53,12 +54,12 @@ async function start(requiredFields) {
   }
   log('info', allOperations.slice(0, 5), 'operations[0:5]')
   const { accounts: savedAccounts } = await reconciliator.save(
-    accounts,
+    accounts.map(x => omit(x, 'linkOperations')),
     allOperations
   )
   const balances = await fetchBalances(savedAccounts)
-  await saveBalances(balances)
-  await fetchDocuments()
+  await lib.saveBalances(balances)
+  await lib.fetchDocuments()
 }
 
 function getBankUrl(bankId) {
@@ -241,10 +242,12 @@ async function fetchOperations(account) {
 }
 
 function parseOperations(account, body) {
-  const workbook = xlsx.read(body, {
-    type: 'string',
-    raw: true
-  })
+  const workbook = body.Sheets
+    ? body
+    : xlsx.read(body, {
+        type: 'string',
+        raw: true
+      })
 
   const worksheet = workbook.Sheets[workbook.SheetNames[0]]
 
@@ -482,7 +485,10 @@ function saveBalances(balances) {
 module.exports = lib = {
   start,
   parseAccounts,
+  saveBalances,
   fetchOperations,
   parseOperations,
-  syncOperations
+  syncOperations,
+  fetchDocuments,
+  login
 }
