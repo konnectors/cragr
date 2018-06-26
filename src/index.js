@@ -13,12 +13,8 @@ const bluebird = require('bluebird')
 const moment = require('moment')
 const url = require('url')
 const regions = require('../regions.json')
-const {
-  Document,
-  BankAccount,
-  BankTransaction,
-  BankingReconciliator
-} = require('cozy-doctypes')
+const doctypes = require('cozy-doctypes')
+const { BankAccount, BankTransaction, BankingReconciliator } = doctypes
 
 // time given to the connector to save the files
 const FULL_TIMEOUT = Date.now() + 4 * 60 * 1000
@@ -35,7 +31,7 @@ let baseUrl = null
 let statementsUrl = null
 let fields = {}
 
-Document.registerClient(cozyClient)
+doctypes.registerClient(cozyClient)
 
 module.export = new BaseKonnector(start)
 
@@ -59,7 +55,7 @@ async function start(requiredFields) {
   log('info', allOperations.slice(0, 5), 'operations[0:5]')
   const { accounts: savedAccounts } = await reconciliator.save(
     accounts,
-    allOperations,
+    allOperations
   )
   const balances = await fetchBalances(savedAccounts)
   await saveBalances(balances)
