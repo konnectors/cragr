@@ -4,7 +4,6 @@ const {
   requestFactory,
   errors,
   updateOrCreate,
-  addData,
   saveFiles,
   cozyClient
 } = require('cozy-konnector-libs')
@@ -14,6 +13,12 @@ const bluebird = require('bluebird')
 const moment = require('moment')
 const url = require('url')
 const regions = require('../regions.json')
+const {
+  Document,
+  BankAccount,
+  BankTransaction,
+  BankingReconciliator
+} = require('cozy-doctypes')
 
 // time given to the connector to save the files
 const FULL_TIMEOUT = Date.now() + 4 * 60 * 1000
@@ -30,24 +35,35 @@ let baseUrl = null
 let statementsUrl = null
 let fields = {}
 
+Document.registerClient(cozyClient)
+
 module.export = new BaseKonnector(start)
 
-function start(requiredFields) {
+const reconciliator = new BankingReconciliator({
+  BankAccount,
+  BankTransaction
+})
+
+async function start(requiredFields) {
   fields = requiredFields
-  return getBankUrl(fields.bankId)
-    .then(login)
-    .then(parseAccounts)
-    .then(comptes =>
-      bluebird
-        .each(comptes, compte => {
-          return fetchOperations(compte).then(operations =>
-            saveOperations(compte, operations)
-          )
-        })
-        .then(fetchBalances)
-        .then(saveBalances)
-    )
-    .then(getDocuments)
+  const bankUrl = getBankUrl(fields.bankId)
+  const accountsPage = await login(bankUrl)
+  const accounts = parseAccounts(accountsPage)
+  log('info', `Found ${accounts.length} accounts`)
+  let allOperations = []
+  for (let account of accounts) {
+    const operations = await fetchOperations(account)
+    log('info', `Found ${operations.length} operations`)
+    allOperations = allOperations.concat(operations)
+  }
+  log('info', allOperations.slice(0, 5), 'operations[0:5]')
+  const { accounts: savedAccounts } = await reconciliator.save(
+    accounts,
+    allOperations,
+  )
+  const balances = await fetchBalances(savedAccounts)
+  await saveBalances(balances)
+  await fetchDocuments()
 }
 
 function getBankUrl(bankId) {
@@ -59,7 +75,7 @@ function getBankUrl(bankId) {
   }
 
   log('info', `Bank url is ${bankUrl}`)
-  return Promise.resolve(bankUrl)
+  return bankUrl
 }
 
 function cleanDocumentLabel(label) {
@@ -72,7 +88,7 @@ function cleanDocumentLabel(label) {
     .replace('.', '')
 }
 
-function getDocuments() {
+function fetchDocuments() {
   log('info', 'Getting accounts statements')
   return fetchStatementPage()
     .then(parseStatementsPage)
@@ -162,10 +178,6 @@ function fetchStatementPage() {
   return request(statementsUrl)
 }
 
-function saveOperations(account, operations) {
-  return addData(operations, 'io.cozy.bank.operations')
-}
-
 async function fetchOperations(account) {
   log('info', `Gettings operations for ${account.label}`)
 
@@ -252,10 +264,10 @@ async function fetchOperations(account) {
 
 function parseAccounts($) {
   log('info', 'Gettings accounts')
-  const comptes = Array.from($('.ca-table tbody tr img'))
-    .map(compte => $(compte).closest('tr'))
-    .map(compte =>
-      Array.from($(compte).find('td'))
+  const accounts = Array.from($('.ca-table tbody tr img'))
+    .map(account => $(account).closest('tr'))
+    .map(account =>
+      Array.from($(account).find('td'))
         .map(td => {
           const $td = $(td)
           let text = $td.text().trim()
@@ -284,15 +296,16 @@ function parseAccounts($) {
     // to complete when we have more data
   }
 
-  return comptes.map(compte => {
-    const linkOperations = compte[compte.length - 1]
+  return accounts.map(account => {
+    const operationsLink = account[account.length - 1]
     return {
       institutionLabel: 'Crédit Agricole',
-      type: label2Type[compte[0]] || 'UNKNOWN LABEL',
-      label: compte[0],
-      number: compte[1],
-      balance: parseFloat(compte[2].replace(' ', '').replace(',', '.')),
-      linkOperations: linkOperations
+      type: label2Type[account[0]] || 'UNKNOWN LABEL',
+      label: account[0],
+      number: account[1],
+      vendorId: account[1],
+      balance: parseFloat(account[2].replace(' ', '').replace(',', '.')),
+      linkOperations: operationsLink
     }
   })
 }

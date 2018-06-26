@@ -1191,9 +1191,9 @@ cozy-client-js@0.9.0, cozy-client-js@^0.9.0:
     pouchdb-adapter-cordova-sqlite "https://github.com/SnceGroup/pouchdb-adapter-cordova-sqlite.git#f3ee23009b70209c611435d57491aa77fb88802a"
     pouchdb-find "0.10.4"
 
-cozy-doctypes@1.0.1-beta.3:
-  version "1.0.1-beta.3"
-  resolved "https://registry.yarnpkg.com/cozy-doctypes/-/cozy-doctypes-1.0.1-beta.3.tgz#6282f09163a3d91bb9c34a52ca4eeab69c2ff013"
+cozy-doctypes@1.0.1-beta.5:
+  version "1.0.1-beta.5"
+  resolved "https://registry.yarnpkg.com/cozy-doctypes/-/cozy-doctypes-1.0.1-beta.5.tgz#f06fdb2d74338149060b825ff36eb20b7dde21ee"
   dependencies:
     es6-promise-pool "^2.5.0"
     lodash "^4.17.10"
