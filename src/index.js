@@ -8,6 +8,7 @@ const {
   saveFiles,
   cozyClient
 } = require('cozy-konnector-libs')
+const groupBy = require('lodash/groupBy')
 const xlsx = require('xlsx')
 const bluebird = require('bluebird')
 const moment = require('moment')
@@ -36,7 +37,6 @@ function start(requiredFields) {
   return getBankUrl(fields.bankId)
     .then(login)
     .then(parseAccounts)
-    .then(saveAccounts)
     .then(comptes =>
       bluebird
         .each(comptes, compte => {
@@ -166,79 +166,88 @@ function saveOperations(account, operations) {
   return addData(operations, 'io.cozy.bank.operations')
 }
 
-function fetchOperations(account) {
+async function fetchOperations(account) {
   log('info', `Gettings operations for ${account.label}`)
 
   const request = requestFactory({
     cheerio: false,
     jar: true
   })
-  return request({
+
+  const body = await request({
     url: `${baseUrl}/stb/${account.linkOperations}&typeaction=telechargement`,
     encoding: 'binary'
-  }).then(body => {
-    const workbook = xlsx.read(body, {
-      type: 'string',
-      raw: true
+  })
+
+  const workbook = xlsx.read(body, {
+    type: 'string',
+    raw: true
+  })
+
+  const worksheet = workbook.Sheets[workbook.SheetNames[0]]
+
+  // first get the full date
+  const lines = xlsx.utils.sheet_to_csv(worksheet).split('\n')
+
+  const operations = lines
+    .slice(9)
+    .filter(line => {
+      return line.length > 3 // avoid lines with empty cells
     })
-    const worksheet = workbook.Sheets[workbook.SheetNames[0]]
+    .map(line => {
+      const cells = line.split(',')
+      const labels = cells[1].split('\u001b :').map(elem => elem.trim())
 
-    // first get the full date
-    const lines = xlsx.utils.sheet_to_csv(worksheet).split('\n')
+      // select the right cell if it is a debit or a credit
+      let amount = 0
+      if (cells[2].length) {
+        amount = parseFloat(cells[2]) * -1
+      } else if (cells[3].length) {
+        amount = parseFloat(cells[3])
+      } else {
+        log('error', cells, 'Could not find an amount in this operation')
+      }
 
-    return lines
-      .slice(9)
-      .filter(line => {
-        return line.length > 3 // avoid lines with empty cells
-      })
-      .map(line => {
-        const cells = line.split(',')
-        const labels = cells[1].split('\u001b :').map(elem => elem.trim())
-
-        // select the right cell if it is a debit or a credit
-        let amount = 0
-        if (cells[2].length) {
-          amount = parseFloat(cells[2]) * -1
-        } else if (cells[3].length) {
-          amount = parseFloat(cells[3])
-        } else {
-          log('error', cells, 'Could not find an amount in this operation')
-        }
-
-        // some months are abbreviated in French and other in English!!! + encoding problem
-        let date = cells[0]
+      // some months are abbreviated in French and other in English!!! + encoding problem
+      let date = parseDate(
+        cells[0]
           .toLowerCase()
           .replace('é', 'e')
           .replace('û', 'u')
+      )
 
-        date = moment(date, 'DD-MMM')
+      // adjust the date since we do not have the year in the document but we know the document
+      // gives us a 6 month timeframe
+      const limit = moment().add(1, 'day')
+      if (date.isAfter(limit)) {
+        date.subtract(1, 'year')
+      }
 
-        // adjust the date since we do not have the year in the document but we know the document
-        // gives us a 6 month timeframe
-        const limit = moment().add(1, 'day')
-        if (date.isAfter(limit)) {
-          date.subtract(1, 'year')
-        }
+      // FIXME a lot of information is hidden in the label of the operation (type of operation,
+      // real date of the operation) but the formating is quite inconsistent
+      return {
+        date: date.toDate(),
+        label: labels[0],
+        originalLabel: labels.join('\n'),
+        type: 'none', // TODO parse the labels for that
+        dateImport: new Date(),
+        dateOperation: date.toDate(), // TODO parse the label for that
+        currency: 'EUR',
+        vendorAccountId: account.number,
+        amount
+      }
+    })
 
-        // FIXME a lot of information is hidden in the label of the operation (type of operation,
-        // real date of the operation) but the formating is quite inconsistent
-        return {
-          date: date.toDate(),
-          label: labels[0],
-          originalLabel: labels.join('\n'),
-          type: 'none', // TODO parse the labels for that
-          dateImport: new Date(),
-          dateOperation: date.toDate(), // TODO parse the label for that
-          currency: 'EUR',
-          amount,
-          account: `${account._id}`
-        }
-      })
+  // Forge a vendorId by concatenating account number, day YYYY-MM-DD and index
+  // of the operation during the day
+  const groups = groupBy(operations, x => x.date.toISOString().slice(0, 10))
+  Object.entries(groups).forEach(([date, group]) => {
+    group.forEach((operation, i) => {
+      operation.vendorId = `${account.number}_${date}_${i}`
+    })
   })
-}
 
-function saveAccounts(accounts) {
-  return updateOrCreate(accounts, 'io.cozy.bank.accounts', ['number'])
+  return operations
 }
 
 function parseAccounts($) {
@@ -432,6 +441,23 @@ function fetchBalances(accounts) {
       return history
     })
   )
+}
+
+function parseDate(date) {
+  let mdate = moment(date, 'DD-MMM')
+  if (!mdate.isValid()) {
+    moment.locale('fr')
+    mdate = moment(date + '.', 'DD-MMM')
+    if (!mdate.isValid()) {
+      moment.locale('en')
+      mdate = moment(date + '.', 'DD-MMM')
+      if (!mdate.isValid()) {
+        log('warn', `Cannot parse date ${date}`)
+      }
+    }
+  }
+
+  return mdate
 }
 
 function saveBalances(balances) {
