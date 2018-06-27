@@ -1,0 +1,2581 @@
+<html><head><title>Caisse R&#xFFFD;gionale d&apos;Ile de France</title></head><body marginheight="0" topmargin="0" vspace="0" marginwidth="0" leftmargin="0" hspace="0"><div id="container">
+<link id="linkcss" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/cssstyles.css" rel="stylesheet">
+<table border="0" width="960px" cellpadding="0" cellspacing="0">
+<tbody><tr valign="middle"><td>
+<!-----  DEBUT zone enteteTech  ---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/antiquus.css?v=59" media="all">
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/antiquus.css?v=59" media="all">
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles.css?v=59" media="all">
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles.css?v=59" media="all">
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles-mod.css?v=59" media="all">
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles-mod.css?v=59" media="all">
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/stb.css?v=59" media="all">
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var PATH_STATIC = '';
+
+</script>
+
+
+<script src="/web/eca/tech/allmedia/wai/js/wai.js" type="text/javascript"></script>
+<script src="/web/eca/tech/allmedia/wai/js/swfobject.js" type="text/javascript"></script>
+<script src="/web/bam/tech/allmedia/stb/commun/js/jquery.js" type="text/javascript"></script>
+<!-- TEST -->
+
+
+<script type="text/javascript" src="https://libs.de.coremetrics.com/eluminate.js"></script>
+
+<script type="text/javascript">
+	cmSetClientID("50580000|88200_CLI_3",true,"data.de.coremetrics.com","credit-agricole.fr");
+</script>
+
+<script type="text/javascript">
+	// T300543 - Ajout limitation de dur�e du cookie IBM � 13 mois
+	cmSetupOther({"cm_JSFCoreCookieExpireSeconds":"33696000"});
+</script>
+
+
+
+<script language="JavaScript">
+
+<!--
+idSessionSag = "-1337-49a1.SAG_V6";
+idPage = "pagePU";
+urlBase = "/stb"+"/entreeBam";
+
+// Donn�es pour l'authentification forte
+errSecu = "0";
+
+var codeCaisse = "1337";
+var	ccXiti = "17";
+var ccCoremetrics = "5";
+var WB_TRACKING_CBINAM = "1";
+var TRACKING = "O";
+var	topPfv = "B";
+var sDate = "20180626";
+var urlImageWAI = "";
+var pathDynamicStb = "/stb";
+var messageperso_info = "";
+var messageperso_bam = "";
+//4�me PAP
+var messageperso_promo = "";
+var messageperso_bbas = "";
+//Fin 4�me PAP
+// Ecart J8
+ var messageperso_menuHaut = "";
+ var messageperso_menuBas = "";
+ var profil_evt_menh = "                    ";
+ var profil_evt_menb = "                    ";
+
+var profil_evt_bam = "P315                ";
+var profil_evt_info = "                    ";
+var profil_evt_promo = "                    ";
+//4�me PAP
+var profil_evt_bbas = "                    ";
+//Fin 4�me PAP
+var toppersoffres = "";
+
+
+
+	var listeproduits_recommande = null;
+
+
+	var listeproduits_recommande_enfants = null;
+
+
+	var listeproduits_souscriptible = null;
+
+
+	var listeproduits_souscriptible_enfants = null;
+
+
+
+var donneesClient = {
+		age:19720209,
+		aCreditImmo:false,
+		aCreditConso:false,
+		aLivretEpargne:false,
+		montantLivretEpargne:-1,
+		aCompteTitre:false,
+		profilClient:"Particulier",
+		marcheClient:null,
+		eligibleSouscriptionEnfant:false,
+		codePerimetre: "60285513337",
+		codeAgence: "00526",
+		aLivretEpargneAbonne:false,
+		montantLivretEpargneAbonne:-1
+}
+var listecomptes_client = [
+			{
+				libelle: "LIV A",
+				numero : 65002241337,
+				nature : "L2"
+			}
+			,
+			{
+				libelle: "LIV A",
+				numero : 60285571338,
+				nature : "L2"
+			}
+			,
+			{
+				libelle: "CCHQ",
+				numero : 60284131339,
+				nature : "30"
+			}
+			 ];
+
+
+function getUrlAction(action,idZone) {
+	var url = urlBase;
+	url = url + "?sessionSAG="+idSessionSag;
+	url = url + "&stbpg="+idPage;
+	url = url + "&act="+action;
+	if (idZone)
+		url = url + "&stbzn="+idZone;
+
+	return url;
+}
+
+function getUrlActionPartenaire(partenaire) {
+	var url = urlBase;
+	url = url + "?sessionSAG="+idSessionSag;
+	url = url + "&stbpg="+idPage;
+	url = url + "&site="+partenaire;
+	url = url + "&typeaction=reroutage_aller";
+	return url;
+}
+
+function doAction(act,idZone, actCrt, idCpt) {
+	var url = getUrlAction(act,idZone);
+
+	if (idZone == "bnt") {
+		// action courant = action demandee
+		var crt = act;
+		// on surchage l'action courante si besoin (cas du detail)
+		if (actCrt) {
+			crt = actCrt;
+		}
+
+		indEt=crt.indexOf("&");
+		if (indEt != -1)
+			crt = crt.substring(0,indEt);
+
+		url = url + "&actCrt="+crt;
+		if (idCpt)
+			url = url + "&idCptCrt="+idCpt;
+	}
+	document.location.href = url;
+}
+
+function doActionDelayed(act,idZone, actCrt, idCpt) {
+	var html = " <SCRIPT language=\"JavaScript\" src=\"/web/bam/appli/web/commun/js/prisesFWK.js\" ></SCRIPT> <SCRIPT language=\"JavaScript\" src=\"/web/bam/appli/web/commun/js/outils.js\" > </SCRIPT> <SCRIPT language=\"JavaScript\" src=\"/web/bam/appli/web/commun/js/infosbulle.js\" > </SCRIPT> <table width=\"480\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"> <tr> <td colspan=\"2\" height=\"6\"></td> </tr> <tr> <td height=\"20\"><font class=\"titrepage\">Synth�se globale</font></td> <td height=\"20\"></td> </tr> <TR> <TD colSpan = \"2\" height=\"4\"><IMG src=\"/web/bam/appli/web/commun/picts/filettitrepage.gif\" border=0 width=\"100%\" height=\"1\"> </TD> </TR> </table> <br> <br> <FONT CLASS=\"taille3\" FACE=\"Helvetica,Arial\" SIZE=\"3\" color=\"Black\"> Veuillez patienter quelques instants pendant la construction de votre synth�se (cette op�ration peut prendre quelques minutes). </FONT><span id=\"infoBull\"></span><span id=\"ombrBull\"></span><br> <TABLE WIDTH=\"364\" BORDER=\"0\" CELLSPACING=\"0\" CELLPADDING=\"0\"> </TABLE> ";
+
+	document.getElementById('trPagePu').innerHTML = html;
+
+	doAction(act,idZone, actCrt, idCpt);
+
+}
+
+function enchainerApplication(idSite) {
+	var url = getUrlAction('partenaire');
+	if (idSite.substring(0,7) != "http://" && idSite.substring(0,8) != "https://")
+		idSite = "http://"+idSite;
+	url = url + "&cible="+idSite;
+	window.open(url, "win", "height=500, width=600, location=yes, menubar=yes, resizable=yes, scrollbars=yes, status=yes, toolbar=yes");
+}
+
+function lancerURLParam(url,height,width,scrollbar){
+	if (url.substring(0,7) != "http://" && url.substring(0,8) != "https://")
+		url = "http://"+url;
+	ouvrirPopup(url, "win", height, width, 'yes', 'yes','yes','yes','no',scrollbar);
+}
+
+function lancerURL(url){
+	lancerURLParam(url,500,600,'yes');
+}
+
+function lancerURLSimul(url){
+	lancerURLParam(url,500,690,'yes');
+}
+
+function ouvrirPopup(url, nom, h, w, loc, menu, tool, rsize, status, scroll){
+window.open(url, nom, "height="+h+", width="+w+", location="+loc+", menubar="+menu+", resizable="+rsize+", scrollbars="+scroll+", status="+status+", toolbar="+tool);
+}
+
+
+function lancerContenu(idContenu, idGabarit) {
+
+	var url = getUrlAction(idGabarit);
+	url = url + "&idContenu="+idContenu;
+
+	document.location.href= url;
+}
+
+function lancerPUContenu(idContenu) {
+
+	var chemin = "Performance&prov=pap&tcm="+idContenu;
+	var url = getUrlAction(chemin);
+
+	document.location.href= url;
+}
+
+function lancerPu(idPu) {
+
+	var url = getUrlAction(idPu);
+
+	document.location.href= url;
+}
+
+function lancerPuParam(idPu, param) {
+
+	var url = getUrlAction(idPu);
+	url = url + "&"+param;
+
+	document.location.href= url;
+}
+
+function getIdComp(obj) {
+
+  var cArret = 'BODY';
+  var cNode = 'DIV';
+  var cAttr = 'idcomp';
+
+  if(obj.parentNode) {
+  	var currNode = obj.parentNode;
+  	var idcomp;
+  	while(currNode && currNode.nodeName != cArret) {
+    	if(currNode.nodeName == cNode && (idcomp = currNode.getAttribute(cAttr)))
+      		return idcomp;
+
+    	currNode = currNode.parentNode;
+  	}
+  }
+  else {
+	idcomp = obj;
+	return idcomp;
+  }
+  return null;
+}
+
+function lancerPuParamComp(idPu, param, obj) {
+
+  var url = getUrlAction(idPu);
+  url += "&"+ param;
+  url += "&IDCOMP="+ getIdComp(obj);
+
+  document.location.href = url;
+}
+
+function lancerPuPartenaire(partenaire) {
+
+	var url = getUrlActionPartenaire(partenaire);
+
+	document.location.href = url;
+
+}
+
+function lancerPuPartenaireParam(partenaire, sdt, param) {
+
+	var url = getUrlActionPartenaire(partenaire);
+	url = url + "&sdt=" + sdt + "&parampartenaire=" + param;
+
+	document.location.href = url;
+
+}
+
+function lancerPuPartenaireParamComp(partenaire, sdt, param, obj) {
+
+	var url = getUrlActionPartenaire(partenaire);
+	url = url + "&sdt=" + sdt + "&parampartenaire=" + param + ";" + getIdComp(obj);
+	document.location.href = url;
+}
+
+function lancerPuPartenaireParamComp2(partenaire, sdt, param, idComp) {
+
+            var url = getUrlActionPartenaire(partenaire);
+            url = url + "&sdt=" + sdt + "&parampartenaire=" + param + ";" + idComp;
+
+            document.location.href = url;
+}
+
+function lancerPuPartenaireParamPopup(partenaire, sdt, param, nom, h, w, loc, menu, tool, rsize, status, scroll)
+{
+	var url = getUrlActionPartenaire(partenaire);
+	url = url + "&sdt=" + sdt + "&parampartenaire=" + param;
+	ouvrirPopup(url, nom, h, w, loc, menu, tool, rsize, status, scroll);
+}
+
+function lancerEvenement(evenement) {
+
+	var url = urlBase;
+	url = url + "?sessionSAG="+idSessionSag;
+	url = url + "&stbpg="+idPage;
+	url = url + "&stbevt="+evenement;
+
+	document.location.href= url;
+}
+function lancerSTEvCom(idPu, param1, obj, param2) {
+	var aRemplacer = /\&/g;
+	param2 = param2.replace(aRemplacer, "etcommercial")
+
+	var url = getUrlAction(idPu);
+	url += "&"+ param1;
+	url += "&IDCOMP="+ getIdComp(obj);
+	url += "&"+ param2;
+
+	if (param2.substring(0,16) == "ACTION=lancerURL")
+		ouvrirPopup(url,"win", 500, 600, 'yes', 'yes','yes','yes','no','yes');
+	else
+		document.location.href = url;
+}
+
+function lancerSTTrackingElargi(idPu, idCompSource, idCompCible, action) {
+	var aRemplacer = /\&/g;
+	action = action.replace(aRemplacer, "etcommercial")
+
+	var url = getUrlAction(idPu);
+	url += "&idCompSource="+ idCompSource;
+	url += "&idCompCible="+ idCompCible;
+	url += "&"+ action;
+	url += "&provenance=TE";
+
+	if (action.substring(0,16) == "ACTION=lancerURL")
+		ouvrirPopup(url,"win", 500, 600, 'yes', 'yes','yes','yes','no','yes');
+	else
+		document.location.href = url;
+
+}
+function StatusMessage(over,msg) {
+	if (browserOK==true) {
+		if(over==true) window.status=msg;
+		else window.status=" ";
+	}
+}
+
+function iframePuPartenaireParam(frameId, partenaire, sdt, param) {
+
+	var url = getUrlActionPartenaire(partenaire);
+	url = url + "&sdt=" + sdt + "&parampartenaire=" + param;
+	document.getElementById(frameId).src = url;
+
+}
+
+
+
+function iframePuPartenaireParamComp(frameId, partenaire, sdt, param, obj) {
+
+    var url = getUrlActionPartenaire(partenaire);
+    url = url + "&sdt=" + sdt + "&parampartenaire=" + param + ";" + getIdComp(obj);
+    document.getElementById(frameId).src = url;
+}
+
+
+//-->
+</script>
+
+
+
+
+<script language="JavaScript">
+<!--
+
+function ouvrePOPUP(item,widthpop,heightpop,men) {
+	if(item.indexOf("?") != -1) {
+		item = item+"&stbevt=Popup";
+	}
+	else {
+		item = item+"?stbevt=Popup";
+	}
+
+	ouvreFenetre(item,widthpop,heightpop,men,"PopUp");
+}
+function ouvreassistance(item,widthpop,heightpop,men) {
+	ouvreFenetre(item,widthpop,heightpop,men,"Assistance");
+}
+
+function ouvreFenetre(item,widthpop,heightpop,men,titre) {
+
+	if (item.indexOf("?") != -1) {
+		if (item.indexOf("#") != -1)
+			url = item.substring(0,item.indexOf("#"))+"&typeaction=Popup"+item.substring(item.indexOf("#"),item.length);
+		else
+			url = item+"&typeaction=Popup";
+	} else {
+		url = item;
+	}
+
+	aazz = "menubar=" + men + ",resizable=yes,toolbar=no,width=" + widthpop + ",height=" + heightpop + ",scrollbars=yes";
+
+	// on verifie si l'on n'est pas deja sur la bonne fenetre
+	if (titre!=window.name) {
+		// Mise en commentaire de l ancien code
+		//if (!saf) {
+			// on recupere un reference sur le popup (s'il n'est pas ouvert, cela en ouvre une!)
+		//	popup1 = window.open('',titre,aazz);
+			// on ferme le popup
+		//	popup1.close();
+		//}
+		// on ouvre le nouveau avec les nouveaux parametres (taille, bouton...)
+		//popup1 = window.open('',titre,aazz);
+		//popup1.name = titre;
+		//setSize(popup1,widthpop,heightpop);
+
+		popup1 = window.open(url,titre,aazz);
+
+	    if (moz ) popup1.focus();
+	    //popup1.location =url;
+	} else {
+		window.name = titre;
+		setSize(window,widthpop,heightpop);
+		document.location = url;
+	}
+
+}
+
+function setSize(win,width,height) {
+	if (win.outerWidth) {
+		win.outerWidth = width;
+		win.outerHeight = height;
+	}
+	else if (win.resizeTo) {
+		win.resizeTo(width,height);
+	}
+	else {
+		alert("Not supported.");
+	}
+}
+
+//ouvre une fen�tre popup en plein �cran ne laissant l'affichage que de la bnt
+function ouvrirPopupBntVisible(url) {
+	window.open(url,'Popup','location=no,toolbar=no,directories=no,menubar=yes,resizable=yes,scrollbars=yes,status=yes,width='+(screen.availWidth-140)+',height='+screen.availHeight+',screenY=0,screenX='+140);
+}
+
+// -->
+</script>
+
+
+
+
+
+<script language="JavaScript">
+<!--
+// Detection navigateur
+nsvers = "0.94"; // pour netscape "6.2";
+ievers = "5";
+browserOK = false;
+isIE55 = false;
+var d, na, nua, nav, nan, dom, ie, ienu, ie4, ie5, ie5x, ie6, moz, moznu, ns62, mac, win, old, lin, ie5mac, ie5xwin, op, opnu, op4, op5, op6, op7, konq, saf, saf_num;
+
+//variable initialization
+
+d = document;
+na = navigator;
+nav = na.appVersion;
+nan = na.appName;
+nua = na.userAgent;
+win = ( nav.indexOf( 'Win' ) != -1 );
+mac = ( nav.indexOf( 'Mac' ) != -1 );
+lin = ( nav.indexOf( 'Linux' ) != -1 );
+
+if ( !d.layers ){
+	dom = ( d.getElementById );
+	old = ( nav.substring( 0, 1 ) < 4 );
+	op = ( nua.indexOf( 'Opera' ) != -1 );
+	moz = ( nua.indexOf( 'Gecko' ) != -1 );
+	ie = ( d.all && !op );
+	konq = ( nua.indexOf( 'Konqueror' ) != -1 );
+	saf = ( nua.indexOf( 'Safari' ) != -1 );
+
+	if ( op ){
+		op_pos = nua.indexOf( 'Opera' );
+		opnu = nua.substr( ( op_pos + 6 ), 3 );
+		op5 = ( opnu.substring( 0, 1 ) == 5 );
+		op6 = ( opnu.substring( 0, 1 ) == 6 );
+		op7 = ( opnu.substring( 0, 1 ) == 7 );
+	}
+	else if ( saf ){
+		saf_pos = nua.indexOf( 'Safari' );
+		saf_nu = nua.substr( ( saf_pos + 7 ), 2 );
+	}
+	else if ( moz ){
+		rv_pos = nua.indexOf( 'rv' );
+		moz_rv = nua.substr( ( rv_pos + 3 ), 3 );
+		moz_rv_sub = nua.substr( ( rv_pos + 7 ), 1 );
+		moz_rv_sub = moz_rv + moz_rv_sub;
+		browserOK = (moz_rv_sub >= nsvers);
+	}
+	else if ( ie ){
+		ie_pos = nua.indexOf( 'MSIE' );
+		ienu = nua.substr( ( ie_pos + 5 ), 3 );
+		ie4 = ( !dom );
+		ie5 = ( ienu.substring( 0, 1 ) == 5 );
+		ie6 = ( ienu.substring( 0, 1 ) == 6 );
+		browserOK = ( ienu.substring( 0, 1 ) >= ievers );
+	}
+	else{}
+
+	ie5x = ( d.all && dom );
+	isIE55 = ie5x;
+	ie5mac = ( mac && ie5 );
+	ie5xwin = ( win && ie5x );
+}
+
+
+function submitTelecharger(action) {
+	var frm;
+	frm = document.frm_tel;
+	frm.typeaction.value = "telechargement";
+	if (isIE55)	{
+		frm.target = 'frameTelecharge';
+	}
+	frm.fwkcodeaction.value = 'Executer';
+	frm.fwkaction.value = action;
+	frm.submit();
+}
+
+function getCSS() {
+	elt =  document.getElementById("linkcss");
+	return elt.getAttribute("href");
+}
+
+function getCSSIE(num){
+	var nom = navigator.appName;
+	var version = navigator.appVersion;
+	var retour = "";
+	if(nom == "Microsoft Internet Explorer"){
+		version = (version.split(";")[1]).split("\ ")[2].substring(0,1);
+		var versionNum = parseInt(version);
+		var chemin = "/web/bam/appli/web/commun/styles/";
+		if(num=="1"){
+			chemin = "/web/bam/tech/allmedia/stb/commun/styles/";
+		}
+		if(versionNum == 8){
+			retour = ""+chemin+"ie8.css?v=58";
+		}else if(versionNum<= 7){
+			retour = ""+chemin+"ie.css?v=58";
+		}
+	}
+	return retour;
+}
+
+function getCSSIEOLD(){
+	var nom = navigator.appName;
+	var version = navigator.appVersion;
+	var retour = "";
+	if(nom == "Microsoft Internet Explorer"){
+		version = (version.split(";")[1]).split("\ ")[2].substring(0,1);
+		var versionNum = parseInt(version);
+		if(versionNum< 7){
+			retour = "/web/bam/tech/allmedia/stb/commun/styles/ieold.css?v=58";
+		}
+	}
+	return retour;
+}
+
+//FEUILLE_STYLE = getCSS();
+FEUILLE_STYLE_ANTIQUUS = "/web/bam/tech/allmedia/stb/commun/styles/antiquus.css?v=58";
+FEUILLE_STYLE_ANTIQUUS2 = "/web/bam/appli/web/commun/styles/antiquus.css?v=58";
+FEUILLE_STYLE = "/web/bam/tech/allmedia/stb/commun/styles/styles.css?v=58";
+FEUILLE_STYLE2 = "/web/bam/appli/web/commun/styles/styles.css?v=58";
+FEUILLE_STYLE_MOD = "/web/bam/tech/allmedia/stb/commun/styles/styles-mod.css?v=58";
+FEUILLE_STYLE_MOD2 = "/web/bam/appli/web/commun/styles/styles-mod.css?v=58";
+FEUILLE_STYLE_IE = getCSSIE(1);
+FEUILLE_STYLE_IEOLD = getCSSIEOLD();
+FEUILLE_STYLE_IE2 = getCSSIE(2);
+FEUILLE_STYLE_IEOLD2 = "/web/bam/appli/web/commun/styles/ieold.css?v=58";
+
+
+PICTS = 		"/web/bam/tech/allmedia/stb/commun/picts";
+
+var urlTelechargement= "";
+function telechargeFinal() {
+	return urlTelechargement;
+	titre = "T�l�chargement";
+	aazz = "menubar=no,resizable=yes,toolbar=no,width=400,height=450";
+	//popup1 = window.open(urlTelechargement,titre,aazz);
+}
+function ouvreTelechargement(val, isForm) {
+	titre = "T�l�chargement";
+	var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+	if (is_chrome)
+	aazz = "menubar=no,resizable=yes,toolbar=no,width=860,height=480";
+	else aazz = "menubar=no,resizable=yes,toolbar=no,width=520,height=480";
+	//aazz = "menubar=no,resizable=yes,toolbar=no,width=520,height=480";
+	popup1 = window.open('',titre,aazz);
+	if (!isForm){
+		url = val + "&typeaction=telechargement";
+		urlTelechargement = url;
+		var frmTel;
+		frmTel = document.FRM_TEL;
+		frmTel.urlTel.value = url;
+		frmTel.target = 'T�l�chargement';
+		frmTel.submit();
+	}
+	if ((browserOK) && (navigator.appName=="Netscape")) popup1.focus();
+	// Cas du telechargement a partir d un releve
+	// Si modification du texte du pop-up de telechargement, penser a le modifier egalement dans Telechargement.jsp (cas a partir de la bnt ou de la synthese)
+	if (isForm){
+ 		popup1.document.writeln('<html><head><title>'+titre+'</title>');
+ 		//on inclue toutes les css necessaires (cf enteteCSS.jsp)
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_ANTIQUUS+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_ANTIQUUS2+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE2+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_MOD+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_MOD2+'">');
+ 		//gestion des feuilles de styles pour IE
+ 		if(FEUILLE_STYLE_IE!=""){
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IE+'">');
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IE2+'">');
+ 		}
+ 		if(FEUILLE_STYLE_IEOLD!=""){
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IEOLD+'">');
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IEOLD2+'">');
+ 		}
+ 		popup1.document.writeln('<script language=\"JavaScript\">');
+ 		popup1.document.writeln('function tel() {');
+		popup1.document.writeln('}');
+		popup1.document.writeln('function fermer() {');
+		popup1.document.writeln('	self.close();');
+		popup1.document.writeln('}');
+		popup1.document.writeln('</script>');
+		popup1.document.writeln('</head>');
+		popup1.document.writeln('<body leftMargin="0" text="#000000" topMargin="0" onload="tel()">');
+		//on inclue les css ici sinon pas de rafraichissement
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_ANTIQUUS+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_ANTIQUUS2+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE2+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_MOD+'">');
+ 		popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_MOD2+'">');
+ 		//gestion des feuilles de styles pour IE
+ 		if(FEUILLE_STYLE_IE!=""){
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IE+'">');
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IE2+'">');
+ 		}
+ 		if(FEUILLE_STYLE_IEOLD!=""){
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IEOLD+'">');
+ 			popup1.document.writeln('<LINK REL="STYLESHEET" TYPE="text/css" HREF="'+FEUILLE_STYLE_IEOLD2+'">');
+ 		}
+ 		popup1.document.writeln('<div id="container">');
+		popup1.document.writeln('<style>#container{width:500px;}.boutons-act, .titrepage {width:290px; }</style>');
+		if(FEUILLE_STYLE_IE!=""){
+ 			popup1.document.writeln('<style>.boutons-act, .titrepage {width:420px;}</style>');
+ 		}
+		popup1.document.writeln('<div id="col-popup">');
+		popup1.document.writeln('<div class="boutons-act">');
+		popup1.document.writeln('<a id="ancre-contenu" name="ancre-contenu" href="#ancre-contenu"></a>');
+		popup1.document.writeln('<h1>T�l�chargement</h1>');
+		popup1.document.writeln('<span id="top-actions">');
+		popup1.document.writeln('<a id="top-actions-fermer" href="javascript:window.close()" target="_parent" onMouseOver="StatusMessage(true, statusfermer);return true" onMouseOut="StatusMessage(false)">Fermer</a>');
+		popup1.document.writeln('</span>');
+		popup1.document.writeln('</div>');
+		popup1.document.writeln('<br/>Veuillez patienter, le t&eacute;l&eacute;chargement est en cours.<br/>');
+		popup1.document.writeln('<br/>');
+		popup1.document.writeln('<TABLE align="center" width="100%">');
+		popup1.document.writeln('<TR class="colceltitresoustetiere">');
+		popup1.document.writeln('<TD height="22"></TD>');
+		popup1.document.writeln('</TR>');
+		popup1.document.writeln('<TR>');
+		popup1.document.writeln('<TD><IMG src="'+PICTS+'/filetcorpspage.gif" border="0" height="1" width="100%"></TD>');
+		popup1.document.writeln('<td height="15"></td>');
+		popup1.document.writeln('</TR>');
+		popup1.document.writeln('</TABLE>');
+		popup1.document.writeln('</div>');
+		popup1.document.writeln('</div>');
+		popup1.document.writeln('</body></html>');
+		popup1.document.close();
+		var frm;
+		frm = document.frm_tel;
+		frm.typeaction.value = "telechargement";
+		frm.target = 'T�l�chargement';
+		frm.fwkcodeaction.value = 'Executer';
+		frm.fwkaction.value = val;
+		frm.submit();
+
+	}
+
+}
+
+//-->
+</script>
+
+<!-----  FIN zone enteteTech  ---->
+
+</td></tr><tr valign="middle"><td>
+<!-----  DEBUT zone boutonVert  ---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Javascript pour g�n�rer le boutonVert -->
+<script type="text/javascript">
+
+
+idSessionSag = "-1337-49a1.SAG_V6";
+idPage = "pagePU";
+urlBase = "/stb"+"/entreeBam";
+
+
+
+// Donn�es pour l'authentification forte
+errSecu = "0";
+
+var codeCaisse = "882";
+var	ccXiti = "17";
+var ccCoremetrics = "5";
+var WB_TRACKING_CBINAM = "1";
+var TRACKING = "O";
+var	topPfv = "B";
+var urlImageWAI = "";
+var pathDynamicStb = "/stb";
+
+//Parametre BV
+var OICLIBCLIENT= "M.       DOUILLET CLAUDE        ";
+var OICIDPART= "00000064560567";
+var OICIDAGENCE= "00526";
+var OICTOPDATENAISSANCE= "19800209";
+var OICTYPEPARTENAIRE= "B";
+var OICTOPPRISERDV= true;
+var OICTOPISBAM= true;
+var OICTOPMAILSECU= true;
+var OICTOPCANALSOS= false;
+var OICTOPCANALTEL= false;
+var OICTOPTCANALCHAT= false;
+var OICTOPCANALRDV= false;
+var OICTOPCANALMAIL= false;
+var OICTOPBV= false;
+
+(function(){
+  var t = document.createElement('script');
+  t.type="text/javascript";
+  t.async=true;
+  t.src="https://www.ca-paris.fr/Vitrine/ModExt/FO/OIC/P_OIC.jsp";
+  var n=document.getElementsByTagName('script')[0];
+  n.parentNode.insertBefore(t,n);
+})();
+</script>
+
+
+<!-----  FIN zone boutonVert  ---->
+
+</td></tr><tr height="17" valign="top"><td>
+<!-----  DEBUT zone bnc  ---->
+
+
+
+
+
+
+
+
+
+<div id="entete_professionnel">
+
+<div id="entete_2">
+    <div id="gauche-entete_2">
+    	<h1>
+			<table>
+				<tbody><tr>
+					<td>
+						<a title="Caisse R&#xFFFD;gionale d&apos;Ile de France, retour &#xFFFD; l&apos;accueil" href="#" id="lien-logo_2">
+							<img alt="Caisse R&#xFFFD;gionale d&apos;Ile de France, retour &#xFFFD; l&apos;accueil" src="/web/bam/tech/allmedia/stb/commun/img/logo_882.png">
+						</a>
+					</td>
+				</tr>
+			</tbody></table>
+
+        </h1>
+<!--        <p id="slogan"></p>-->
+    </div>
+    <div id="centre-entete_2">
+<!--	    <img alt="Cr�dit Agricole Nord de France, retour � l'accueil" src="/web/bam/tech/allmedia/stb/commun/img/separateur.png"></img>-->
+	     <p id="typeespace_2">
+
+	     </p>
+    </div>
+    <div id="droite-entete_2">
+        <p id="der-conn_2">Votre derni&#xFFFD;re connexion :  26 juin 2018 &#xFFFD; 18:38</p>
+        <div id="bloc-login_2">
+            <div id="bloc-login-infos_2" style="font-size: 11px;">
+                <p>Bonjour </p>
+                <p>M.       DOUILLET CLAUDE        </p>
+            </div>
+            <div id="btn-bloc-login_2">
+
+                <a onmouseover="StatusMessage(true, &apos;D&#xFFFD;connexion&apos;);return true" onmouseout="StatusMessage( false )" href="javascript:doAction(&apos;TA_Deconnexion&amp;typeaction=deconnexion&apos;,&apos;bnc&apos;);" id="btn-deconnexion_2">D&#xFFFD;connexion</a>
+            </div>
+        </div>
+        <div class="clearboth"></div>
+        <div id="bloc-login_22">
+
+
+
+			<p>
+                    <a id="coordonnees_2" href="javascript:lancerPu(&apos;Coordonnees&apos;)" onmouseover="StatusMessage(true, &apos;G&#xFFFD;rer vos coordonn&#xFFFD;es&apos;);return true" onmouseout="StatusMessage( false )">Vos Coordonn&#xFFFD;es</a>
+                    &#xA0; <a id="contact_2" href="javascript:lancerPu(&apos;Contact&apos;)" onmouseover="StatusMessage(true, &apos;Si vous avez une demande particuli&#xFFFD;re, cliquez ici&apos;);return true" onmouseout="StatusMessage( false )">Nous contacter</a>
+
+               		&#xA0; <a id="btn-sos_22" href="javascript:lancerContenu(&apos;tcm-1356-185300&apos;,&apos;global&apos;);" onmouseover="StatusMessage(true, &apos;D&#xFFFD;clarez une perte, un vol ou un sinistre&apos;);return true" onmouseout="StatusMessage( false )">SOS Urgences</a>
+			</p>
+
+
+
+        </div>
+        <div class="clearboth"></div>
+    </div>
+</div>
+
+
+
+<ul id="menu-bnc_2">
+
+
+
+
+			<li id="bnc-compte" class="bnc-g  prem-menu">
+			<p style="text-align:center">
+				<a href="javascript:doAction(&apos;Synthcomptes&amp;prov=bnc-comptes&apos;, &apos;bnc&apos;);" id="bnc-compte-href" style="width: 118 " onmouseover="StatusMessage(true, &apos;Comptes et cartes&apos;); document.getElementById(&apos;bnc-compte_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-compte_on.png&apos;; return true" onmouseout="StatusMessage( false ); document.getElementById(&apos;bnc-compte_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-compte_off.png&apos;;">
+					<img alt="Comptes et cartes" id="bnc-compte_logo" src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-compte_off.png">
+
+
+						<br>
+					<span>
+							Comptes<br><span class="small"> &amp; cartes</span>
+					</span>
+				</a>
+			</p>
+			</li>
+
+		<li>
+		</li>
+
+
+			<li id="bnc-messagerie" class="bnc-gmess">
+				<p style="text-align:center">
+				   <a href="javascript:lancerPu(&apos;Msdossier&apos;)" id="bnc-messagerie-href" style="width:
+							118
+						" onmouseover="StatusMessage(true, &apos;Messagerie &apos;);
+							document.getElementById(&apos;bnc-messagerie_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-messagerie_on.png&apos;;
+							return true" onmouseout="StatusMessage( false );
+							document.getElementById(&apos;bnc-messagerie_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-messagerie_off.png&apos;;">
+						<img alt="Messagerie " id="bnc-messagerie_logo" src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-messagerie_off.png">
+
+
+						<br>
+						<span>
+							Messagerie
+						</span>
+					</a>
+				</p>
+			</li>
+
+
+		<li>
+		</li>
+
+
+			<li id="bnc-espaceconseil" class="bnc-g ">
+			<p style="text-align:center">
+				<a href="javascript:lancerSTTrackingElargi(&apos;Performance&amp;prov=bnc-escons&apos;,&apos;bnc-espaceconseil&apos;,&apos;&apos;,&apos;ACTION=&apos;)" id="bnc-espaceconseil-href" style="width: 118 " onmouseover="StatusMessage(true, &apos;Conseils&apos;); document.getElementById(&apos;bnc-espaceconseil_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-espaceconseil_on.png&apos;; return true" onmouseout="StatusMessage( false ); document.getElementById(&apos;bnc-espaceconseil_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-espaceconseil_off.png&apos;;">
+					<img alt="Conseils" id="bnc-espaceconseil_logo" src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-espaceconseil_off.png">
+
+
+						<br>
+					<span>
+							Conseils
+					</span>
+				</a>
+			</p>
+			</li>
+
+		<li>
+		</li>
+
+
+			<li id="bnc-devissimulations" class="bnc-g ">
+			<p style="text-align:center">
+				<a href="javascript:lancerSTTrackingElargi(&apos;Performance&amp;prov=bnc-desim&apos;,&apos;bnc-devissimulations&apos;,&apos;&apos;,&apos;ACTION=&apos;)" id="bnc-devissimulations-href" style="width: 118 " onmouseover="StatusMessage(true, &apos;Simulation et Devis&apos;); document.getElementById(&apos;bnc-devissimulations_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-devissimulations_on.png&apos;; return true" onmouseout="StatusMessage( false ); document.getElementById(&apos;bnc-devissimulations_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-devissimulations_off.png&apos;;">
+					<img alt="Simulation et Devis" id="bnc-devissimulations_logo" src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-devissimulations_off.png">
+
+
+						<br>
+					<span>
+							Simulation<br><span class="small"> &amp; Devis</span>
+					</span>
+				</a>
+			</p>
+			</li>
+
+		<li>
+		</li>
+
+
+		<li id="bnc-quotidien" class="bnc-d ">
+			<p style="text-align:center">
+				<a href="javascript:lancerSTTrackingElargi(&apos;Performance&amp;prov=bnc-quot&apos;,&apos;bnc-quotidien&apos;,&apos;&apos;,&apos;ACTION=&apos;)" id="bnc-quotidien-href" style="width:
+							118
+						" onmouseover="StatusMessage(true, &apos;Quotidien&apos;); document.getElementById(&apos;bnc-quotidien_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-quotidien_on.png&apos;; return true" onmouseout="StatusMessage( false ); document.getElementById(&apos;bnc-quotidien_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-quotidien_off.png&apos;">
+
+					<img alt="Quotidien" id="bnc-quotidien_logo" src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-quotidien_off.png">
+
+						<br>
+					<span>
+							Quotidien
+					</span>
+
+				</a>
+			</p>
+		</li>
+
+
+
+
+		<li id="bnc-credits" class="bnc-d ">
+			<p style="text-align:center">
+				<a href="javascript:lancerSTTrackingElargi(&apos;Performance&amp;prov=bnc-cred&apos;,&apos;bnc-credits&apos;,&apos;&apos;,&apos;ACTION=&apos;)" id="bnc-credits-href" style="width:
+							118
+						" onmouseover="StatusMessage(true, &apos;Cr&#xFFFD;dits&apos;); document.getElementById(&apos;bnc-credits_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-credits_on.png&apos;; return true" onmouseout="StatusMessage( false ); document.getElementById(&apos;bnc-credits_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-credits_off.png&apos;">
+
+					<img alt="Cr&#xFFFD;dits" id="bnc-credits_logo" src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-credits_off.png">
+
+						<br>
+					<span>
+							Cr&#xFFFD;dits
+					</span>
+
+				</a>
+			</p>
+		</li>
+
+
+
+
+		<li id="bnc-epargne" class="bnc-d ">
+			<p style="text-align:center">
+				<a href="javascript:lancerSTTrackingElargi(&apos;Performance&amp;prov=bnc-epar&apos;,&apos;bnc-epargne&apos;,&apos;&apos;,&apos;ACTION=&apos;)" id="bnc-epargne-href" style="width:
+							118
+						" onmouseover="StatusMessage(true, &apos;&#xFFFD;pargner&apos;); document.getElementById(&apos;bnc-epargne_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-epargne_on.png&apos;; return true" onmouseout="StatusMessage( false ); document.getElementById(&apos;bnc-epargne_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-epargne_off.png&apos;">
+
+					<img alt="&#xFFFD;pargner" id="bnc-epargne_logo" src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-epargne_off.png">
+
+						<br>
+					<span>
+							&#xFFFD;pargner
+					</span>
+
+				</a>
+			</p>
+		</li>
+
+
+
+
+		<li id="bnc-assurance" class="bnc-d  der-menu">
+			<p style="text-align:center">
+				<a href="javascript:lancerSTTrackingElargi(&apos;Performance&amp;prov=bnc-assur&apos;,&apos;bnc-assurance&apos;,&apos;&apos;,&apos;ACTION=&apos;)" id="bnc-assurance-href" style="width:
+							120
+						" onmouseover="StatusMessage(true, &apos;Assurance&apos;); document.getElementById(&apos;bnc-assurance_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-assurance_on.png&apos;; return true" onmouseout="StatusMessage( false ); document.getElementById(&apos;bnc-assurance_logo&apos;).src=&apos;/web/bam/tech/allmedia/stb/commun/img/p_bnc-assurance_off.png&apos;">
+
+					<img alt="S&apos;assurer" id="bnc-assurance_logo" src="/web/bam/tech/allmedia/stb/commun/img/p_bnc-assurance_off.png">
+
+						<br>
+					<span>
+							S&apos;assurer
+					</span>
+
+				</a>
+			</p>
+		</li>
+
+
+
+
+
+	</ul>
+
+
+
+
+
+<!-----  FIN zone bnc  ---->
+
+</div></td></tr><tr valign="middle"><td>
+<!-----  DEBUT zone FILDARIANE  ---->
+
+
+
+
+<script type="text/javascript">
+  var PU_PREM_ECRAN = "javascript:doAction('Synthcomptes', 'bnt');";
+</script>
+<div id="fil-ariane_2">
+    <div id="fil-ariane-contenu">
+	    <ul>
+			<li id="ariane-home_2">
+				<a title="Retour &#xFFFD; la page d&apos;accueil" href="javascript:doAction(&apos;Synthcomptes&apos;, &apos;bnt&apos;);"><img height="25" alt="Retour &#xFFFD; la page d&apos;accueil" src="/web/bam/tech/allmedia/stb/commun/img/picto_home.png"></a>
+			</li>
+	    </ul>
+	</div>
+
+
+
+
+	<script src="/web/bam/appli/web/commun/js/breadcrumbs.js?v=59" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+							<script>aide_message= "Acc�dez � vos messages";</script>
+
+
+								<div id="ariane-message3_2">
+								<p>
+<!--								Vous avez  -->
+									<a href="javascript:doAction(&apos;Msdossier&apos;,&apos;infoperso&apos;)" onmouseover="StatusMessage(true, aide_message);return true" onmouseout="StatusMessage( false )">
+								<span style="color:#F8F8FF; font-size:22px; font-weight:bold; text-decoration:none">&#xA0;0</span>&#xA0; <img src="/web/bam/tech/allmedia/stb/commun/img/pic_messagerie_gris.png">
+<!--									nouveau&nbsp;message-->
+									</a>
+								</p>
+								</div>
+
+
+
+
+</div>
+
+
+<!-----  FIN zone FILDARIANE  ---->
+
+</td></tr><tr valign="middle"><td>
+<!-----  DEBUT zone libPerimetre  ---->
+
+
+
+
+<div id="libPerimetre_2">
+	<span class="textePerimetre_2">Espace Titulaire : Comptes particuliers</span>
+</div>
+
+
+
+
+
+<!-----  FIN zone libPerimetre  ---->
+
+</td></tr><tr valign="middle"><td>
+<!-----  DEBUT zone infoperso  ---->
+
+<!-----  FIN zone infoperso  ---->
+
+</td></tr><tr height="17" valign="top"><td><table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td valign="top" width="168px">
+<table border="0" valign="top" width="168px" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<!-----  DEBUT zone MENH  ---->
+<div idcomp="tcm-1356-326464"><script> prefixe = 'pack_204'; </script><ul id="menu-bnt">
+
+ <li class="boutonMen"><dynamiclink label="Souscription en ligne" onclick="clicXiti(&apos;Bnt_haut_Vide__bnt_souscription_100pour_cent&apos;, &apos;N&apos;);" onmouseout="top.window.status=&apos;&apos;;return true;" onmouseover="top.window.status=&apos;Souscription en ligne&apos;;return true;" ref="tcm-1356-295540"><a href="javascript:lancerPUContenu(&apos;tcm-1356-295540&apos;,&apos;global&apos;);" onclick="clicXiti(&apos;Bnt_haut_Vide__bnt_souscription_100pour_cent&apos;, &apos;N&apos;);" onmouseout="top.window.status=&apos;&apos;;return true;" onmouseover="top.window.status=&apos;Souscription en ligne&apos;;return true;" shape="rect"><binarycontent img="/PAP_bnt_souscription_tcm_1356_345822.jpg"><script xml:space="preserve">displayBinary(prefixe, "/PAP_bnt_souscription_tcm_1356_345822.jpg", "", "");</script></binarycontent></a></dynamiclink></li><li class="boutonMen"><a href="#" onclick="clicXiti(&apos;Bnt_haut_Vide__Priserdv&apos;, &apos;N&apos;); lancerPu(&apos;Priserdv&apos;);" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, &apos;Prendre un RDV directement dans l\&apos;agenda de votre conseiller / votre agence&apos;);return true;" shape="rect"><binarycontent img="/btn_prendre_rdv2016_V2_tcm_1356_439017.png"><script xml:space="preserve">displayBinary(prefixe, "/btn_prendre_rdv2016_V2_tcm_1356_439017.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><a href="#" onclick="clicXiti(&apos;Bnt_haut_Vide__ESIMULCA__BNT_CREDITS__Partenaire&apos;, &apos;N&apos;); lancerPuPartenaireParam(&apos;ESIMULCA&apos;, &apos;BNT_CREDITS&apos;, &apos;&apos;);" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, &apos;Simuler votre pr&#xEA;t immobilier&apos;);return true;" shape="rect"><binarycontent img="/btn_e_immo_2017_ok_tcm_1356_487659.png"><script xml:space="preserve">displayBinary(prefixe, "/btn_e_immo_2017_ok_tcm_1356_487659.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><a href="#" onclick="clicXiti(&apos;Bnt_haut_Vide__PACIFICA__LSTDEV__Partenaire&apos;, &apos;N&apos;); lancerPuPartenaireParam(&apos;PACIFICA&apos;, &apos;LSTDEV&apos;, &apos;&apos;);" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, &apos;Faire un devis, souscrire, g&#xE9;rer vos contrats (d&#xE9;clarer un sinistre, r&#xE9;cup&#xE9;rer une attestation...)&apos;);return true;" shape="rect"><binarycontent img="/btn_assurance__bien_2016_V2_tcm_1356_439018.png"><script xml:space="preserve">displayBinary(prefixe, "/btn_assurance__bien_2016_V2_tcm_1356_439018.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><a href="#" onclick="clicXiti(&apos;Bnt_haut_Vide__PREDICA__ADHE__Partenaire&apos;, &apos;N&apos;); lancerPuPartenaireParam(&apos;PREDICA&apos;, &apos;ADHE&apos;, &apos;&apos;);" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, &apos;Simuler, souscrire un contrat, g&#xE9;rer vos avoirs (arbitrage...)&apos;);return true;" shape="rect"><binarycontent img="/btn_assurance_vie_2016_V2_tcm_1356_439019.png"><script xml:space="preserve">displayBinary(prefixe, "/btn_assurance_vie_2016_V2_tcm_1356_439019.png", "", "");</script></binarycontent></a></li><script xml:space="preserve">/*<![CDATA[*/$(document).ready(function () {$('li.tcmMenH> h2').click(function () {if ($(this).next('ul.menPersH1:visible').length != 0) {$(this).next('ul.menPersH1').slideUp('normal');$(this).removeClass('unfolded');}else{$(this).next('ul.menPersH1').slideDown('normal');$(this).addClass('unfolded');}return false;});$('li.toggleSubMenu > a').click(function () {if ($(this).next('ul.menPersH2:visible').length != 0) {$(this).next('ul.menPersH2').slideUp('normal');} else {$(this).next('ul.menPersH2').slideDown('normal');}return false;});});/*]]>*/</script>
+</ul></div><!--vide-->
+<!-----  FIN zone MENH  ---->
+
+</td></tr><tr><td>
+<!-----  DEBUT zone bnt  ---->
+
+
+
+<script language="JavaScript">
+function go() {
+	url = document.forms.FRM_LST.nocpte.options[document.forms.FRM_LST.nocpte.selectedIndex].value;
+    i = document.forms.FRM_LST.nocpte.selectedIndex;
+    if (url != "")
+	{
+		doAction(url,'bnt','DetCpt', i );
+	}
+}
+
+choix=false;
+function choixCompte() {
+  if (saf) {
+    go();
+  } else {
+        if (choix) {
+                choix=false;
+                go();
+        }
+        else
+                choix = true;
+ }
+}
+
+function resetChoix() {
+        choix=false;
+}
+
+</script>
+<form name="FRM_LST" method="POST">
+
+
+<ul id="menu-bnt_2">
+  <li>
+    <h2 id="bnt-titre-synthese" class="prem-titre-bnt">
+<!--			<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-vert.png" vertical-align="middle"></div>    -->
+			<div class="traitgauchevert">&#xA0;</div>
+    		<div class="libmenubnt">
+ 			   Synth&#xFFFD;ses
+ 			 </div>
+ 	</h2>
+ 	</li>
+    <ul>
+
+
+		<script>aide_bnt1_0= "Acc�dez � vos comptes";</script>
+
+				<li class="nomarge-li-BNT">
+					<a class="itemactif-bnt-titre-Autrescomptes" style="width:auto" href="javascript:doAction(&apos;Synthcomptes&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_0);return true" onmouseout="StatusMessage( false )">Mes Comptes</a>
+				</li>
+
+		<script>aide_bnt1_1= "Acc�dez � vos cr�dits";</script>
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Synthcredits&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_1);return true" onmouseout="StatusMessage( false )">Mes Cr&#xFFFD;dits</a>
+				</li>
+
+		<script>aide_bnt1_2= "Acc�dez � vos contrats d'�pargne";</script>
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Synthepargnes&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_2);return true" onmouseout="StatusMessage( false )">Mon &#xFFFD;pargne</a>
+				</li>
+
+		<script>aide_bnt1_3= "Acc�dez � vos contrats d'assurances";</script>
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Synthassurances&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_3);return true" onmouseout="StatusMessage( false )">Mes Assurances</a>
+				</li>
+
+		<script>aide_bnt1_4= "Acc�dez � vos avantages fid�lit�";</script>
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Reroutfidelite&amp;typeaction=reroutage_aller&amp;site=FIDELITE&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_4);return true" onmouseout="StatusMessage( false )">Ma fid&#xFFFD;lit&#xFFFD;</a>
+				</li>
+
+		<script>aide_bnt1_5= "Acc�dez � vos comptes en devises";</script>
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Synthdevises&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_5);return true" onmouseout="StatusMessage( false )">Devises</a>
+				</li>
+
+		<script>aide_bnt1_6= "Visualisez la situation globale de votre patrimoine";</script>
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doActionDelayed(&apos;Synthglobale&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_6);return true" onmouseout="StatusMessage( false )">Situation globale</a>
+				</li>
+
+
+				    <!-- </ul> -->
+  				<!-- </li>  -->
+
+  				<p style="height:10px;"></p>
+				<li id="padding-top-titre-bnt">
+					<h2 id="bnt-titre-services">
+<!--						<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-rose-1.png" vertical-align="middle"></div>    -->
+    					<div class="traitgaucherose1">&#xA0;</div>
+    					<div class="libmenubnt">
+ 						   Services
+ 			 			</div>
+					</h2>
+					<ul>
+				<script>aide_bnt1_7= "Effectuez un virement";</script>
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Virementssepa&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_7);return true" onmouseout="StatusMessage( false )">Virements</a>
+				</li>
+		<script>aide_bnt1_8= "Commandez votre ch�quier";</script>
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Chequiers&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt1_8);return true" onmouseout="StatusMessage( false )">Ch&#xFFFD;quiers</a>
+				</li>
+
+		</ul>
+	</li>
+
+
+
+
+	<p style="height:10px;"></p>
+		<li id="padding-top-titre-bnt">
+		    <h2 id="bnt-titre-eservices">
+<!--		    	<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-rose-2.png" vertical-align="middle"></div>    -->
+	    		<div class="traitgaucherose2">&#xA0;</div>
+	    		<div class="libmenubnt">
+			    	e-Services
+		    	</div>
+		    </h2>
+		    <ul>
+
+				<script>aide_bnt3_0= "Effectuez une demande de souscription � un de nos produits directement en ligne"; </script>
+
+						<li class="nomarge-li-BNT">
+						<a style="width:auto" href="#" onclick="lancerSTTrackingElargi(&apos;Performance&amp;prov=bnt&apos;,&apos;bnt-souscription100enligne&apos;,&apos;&apos;,&apos;ACTION=&apos;);" onmouseover="StatusMessage(true, aide_bnt3_0);return true" onmouseout="StatusMessage( false )">Souscription 100% <br> en ligne</a>
+						</li>
+
+				<script>aide_bnt3_1= "Signez vos contrats en attente"; </script>
+
+						<li class="nomarge-li-BNT">
+						<a style="width:auto" href="javascript:doAction(&apos;Contratsenattente&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt3_1);return true" onmouseout="StatusMessage( false )">Mes contrats en attente</a>
+						</li>
+
+
+				<script>aide_bnt3_2= "Acc�dez au service de pr�sentation et de r�glement de factures"; </script>
+
+							<li class="nomarge-li-BNT">
+								<a style="width:auto" href="javascript:doAction(&apos;Sepamail&apos;,&apos;bnt&apos;)" sepamail="" onmouseover="StatusMessage(true, aide_bnt3_2);return true" onmouseout="StatusMessage( false )">Mes factures par SEPAmail
+								</a>
+							</li>
+
+
+				<script>aide_bnt3_3= "L'essentiel sur votre produit en quelques points cl�s"; </script>
+
+						<li class="nomarge-li-BNT">
+						<a style="width:auto" href="javascript:lancerContenu(&apos;tcm-1356-240649&apos;,&apos;global&apos;);" onmouseover="StatusMessage(true, aide_bnt3_3);return true" onmouseout="StatusMessage( false )">M&#xFFFD;mo</a>
+						</li>
+
+
+			</ul>
+		</li>
+
+
+
+	<!-- E-Documents -->
+
+	<p style="height:10px;"></p>
+	<li id="padding-top-titre-bnt">
+	    <h2 id="bnt-titre-edocuments">
+<!--			<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-rose-2.png" vertical-align="middle"></div>    -->
+	    	<div class="traitgaucherose2">&#xA0;</div>
+	    	<div class="libmenubnt">
+			    	e-Documents
+		    </div>
+	    </h2>
+	    <ul>
+
+			<script>aide_bnt4_0= "G�rer vos documents �lectroniques"; </script>
+
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Edocgest&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt4_0);return true" onmouseout="StatusMessage( false )">Gestion</a>
+				</li>
+
+
+
+
+			<script>aide_bnt4_1= "Consulter vos documents �lectroniques"; </script>
+
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto;height:23" href="javascript:doAction(&apos;Edocsynth&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt4_1);return true" onmouseout="StatusMessage( false )">Consultation&#xA0;
+						<img id="imgQEDNLU" alt="Nouveau e-Document" title="Nouveau e-Document" src="/web/bam/appli/web/commun/img/picto_nouveau.png">
+					</a>
+				</li>
+
+
+
+
+    	</ul>
+    </li>
+
+
+
+	<p style="height:10px;"></p>
+	<li id="padding-top-titre-bnt">
+	    <h2 id="bnt-titre-outils">
+<!--			<div class="traitgauche"><img src="/web/bam/tech/allmedia/stb/commun/img/Puc-gris.png" vertical-align="middle"></div>    -->
+	    	<div class="traitgauchegris">&#xA0;</div>
+	    	<div class="libmenubnt">
+			    	Outils
+		    </div>
+	    </h2>
+
+	    <ul>
+
+				<script>aide_bnt5_0= "T�l�chargez vos relev�s de comptes"; </script>
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Telechargement&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt5_0);return true" onmouseout="StatusMessage( false )">T&#xFFFD;l&#xFFFD;chargement</a>
+				</li>
+
+
+				<script>aide_bnt5_1= "G�rer vos pr�f�rences"; </script>
+
+				<li class="nomarge-li-BNT">
+					<a style="width:auto" href="javascript:doAction(&apos;Preferences&apos;,&apos;bnt&apos;)" onmouseover="StatusMessage(true, aide_bnt5_1);return true" onmouseout="StatusMessage( false )">Vos Pr&#xFFFD;f&#xFFFD;rences</a>
+				</li>
+
+
+    </ul>
+  </li>
+</ul>
+
+<form action="app/bam/tech/allmedia/stb/navibam/jsp/Telechargement.jsp" name="FRM_TEL" method="post">
+<input type="hidden" name="urlTel">
+</form>
+
+<!-----  FIN zone bnt  ---->
+
+</ul></form></td></tr><tr><td>
+<!-----  DEBUT zone MENB  ---->
+<div idcomp="tcm-1356-243747"><script> prefixe = 'pack_204'; </script><ul id="menu-bnt">
+
+ <li class="boutonMen"><a href="#" onclick="clicXiti(&apos;menu_gauche_pdc_bas__Lien_Facebook_160px&apos;, &apos;N&apos;); lancerURL(&apos;http://www.facebook.com/CreditAgricoleIDF&apos;);" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, &apos;Facebook&apos;);return true;" shape="rect"><binarycontent img="/img_bam_facebook_tcm_1356_291776.png"><script xml:space="preserve">displayBinary(prefixe, "/img_bam_facebook_tcm_1356_291776.png", "", "");</script></binarycontent></a></li><li class="boutonMen"><h2 class=""><dynamiclink label="Num&#xE9;ros d&apos;urgence" onclick="clicXiti(&apos;menu_gauche_pdc_bas__bnt_numero_urgence&apos;, &apos;N&apos;);" onmouseout="top.window.status=&apos;&apos;;return true;" onmouseover="top.window.status=&apos;Num&#xE9;ros d&apos;urgence&apos;;return true;" ref="tcm-1356-185300"><a href="javascript:lancerPUContenu(&apos;tcm-1356-185300&apos;,&apos;global&apos;);" onclick="clicXiti(&apos;menu_gauche_pdc_bas__bnt_numero_urgence&apos;, &apos;N&apos;);" onmouseout="top.window.status=&apos;&apos;;return true;" onmouseover="top.window.status=&apos;Num&#xE9;ros d&apos;urgence&apos;;return true;" shape="rect">Num&#xE9;ros d&apos;urgence</a></dynamiclink></h2></li><li class="boutonMen"><h2 class=""><a href="#" onclick="clicXiti(&apos;menu_gauche_pdc_bas__Aide_et_Assistance&apos;, &apos;N&apos;); lancerURL(&apos;https://www.ca-paris.fr/Vitrine/ObjCommun/Fic/Paris/aide-assistance/faq-client.html&apos;);" onmouseout="StatusMessage(false);return true;" onmouseover="StatusMessage(true, &apos;D&#xE9;mo et FAQ&apos;);return true;" shape="rect">D&#xE9;mo et FAQ</a></h2></li><script xml:space="preserve">/*<![CDATA[*/$(document).ready(function () {$('li.tcmMenB> h2').click(function () {if ($(this).next('ul.menPersB1:visible').length != 0) {$(this).next('ul.menPersB1').slideUp('normal');$(this).removeClass('unfolded');}else{$(this).next('ul.menPersB1').slideDown('normal');$(this).addClass('unfolded');}return false;});$('li.toggleSubMenu > a').click(function () {if ($(this).next('ul.menPersB2:visible').length != 0) {$(this).next('ul.menPersB2').slideUp('normal');} else {$(this).next('ul.menPersB2').slideDown('normal');}return false;});});/*]]>*/</script>
+</ul></div><!--vide-->
+<!-----  FIN zone MENB  ---->
+
+</td></tr>
+</tbody></table>
+</td><td valign="top" width="6.5px">
+
+<!-----  DEBUT zone filler  ---->
+<span style="font-size: 1px">&#xA0;</span>
+
+
+<!-----  FIN zone filler  ---->
+
+</td><td valign="top" width="590px" id="col-centre">
+<div border="0" width="100%" cellpadding="0" cellspacing="0">
+<div valign="top" width="590px"><div>
+<div height="33" valign="middle" id="trPagePu">
+<!-----  DEBUT zone pu  ---->
+
+
+
+
+
+<!-- MLA
+	L'include suivant est le m�me que celui fait dans EnteteSTB.jsp
+	Il permet de charger toutes les CSS de la BAM dans le NP lors du lancement d'une PU
+	C'est pour corriger le probl�me des pertes des CSS lors d'un back navigateur
+	quand le client est dans un page de contenu et qu'il revient dans la BAM
+	Ceci � pour cons�quence de charger en double les CSS au lancement de l'application
+ -->
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/antiquus.css?v=59" media="all">
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/antiquus.css?v=59" media="all">
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles.css?v=59" media="all">
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles.css?v=59" media="all">
+
+
+<link rel="stylesheet" type="text/css" href="/web/bam/tech/allmedia/stb/commun/styles/styles-mod.css?v=59" media="all">
+<link rel="stylesheet" type="text/css" href="/web/bam/appli/web/commun/styles/styles-mod.css?v=59" media="all">
+
+
+<script language="JavaScript" src="/web/bam/appli/web/commun/js/prisesFWK.js"> </script>
+<script language="JavaScript" src="/web/bam/appli/web/commun/js/outils.js"> </script>
+<script language="JavaScript" src="/web/bam/appli/web/commun/js/infosbulle.js"> </script>
+<script src="/web/bam/appli/web/commun/js/griserBouton.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+<style type="text/css ">
+.ca-table th, .ca-table td {
+padding:0 0px;
+}
+</style>
+
+
+
+<script language="JavaScript">
+<!--
+// on recupere la version du navigateur
+Version=navigator.appVersion
+Version=Version.substring(0,1)
+// si c'est Netscape 2 ou plus, c'est bon
+browserOK=((navigator.appCodeName=="Mozilla") && (Version > 1))
+browserOK2=((browserOK) && (navigator.appName=="Netscape"))
+//Message affich� quand le souris est au-dessus:
+statusaide="Besoin d'Aide ?";
+statuscarte="Acc�der au d�tail de vos cartes";
+statuscompte="Acc�dez au d�tail de votre compte";
+statusdetassu="Consulter le d�tail de votre contrat d'assurance";
+statussuite="suite de la liste";
+statusvaleur="Afficher vos soldes en valeur";
+statusoperation="Afficher vos soldes en op�ration";
+statusvaleuroperation="Afficher vos soldes en valeur et en op�ration";
+statustitre="Consulter le d�tail de votre compte sur WebTitres";
+statustelechargement="T�l�chargez votre relev�";
+statusalerterougevert="Modifier votre alerte sur solde";
+statusalerteorange="Modifier votre alerte encours carte";
+
+statusopen="Acc�dez � votre r�serve Open";
+statusopen2="Acc�dez � vos r�serves Open";
+statusopen3="Acc�dez � votre r�serve Open";
+statusatoutlibre2="Acc�dez � vos r�serves Atout Libre";
+statusatoutlibre="Acc�dez � votre r�serve Atout Libre";
+statussuppletis="Acc�dez � votre r�serve Suppletis"
+statussuppletis2="Acc�dez � vos r�serves Suppletis"
+statusnrgreencam="Acc�dez � votre r�serve Nouveau Revolving Greencam"
+statusnrgreencam2="Acc�dez � vos r�serves Nouveau Revolving Greencam"
+statusrescredit2="Acc�dez � vos r�serves de cr�dit";
+statustpe="Acc�der � vos contrats TPE";
+statusremise="Acc�der � vos remises de ch�ques";
+statusimprime="Imprimer la synth�se";
+
+statusdevis="Effectuer un devis";
+statusdeclaration="Acc�der � la d�claration de sinistres";
+statussouscription="Souscrivez � une assurance en ligne";
+statusepargne="Acc�dez au d�tail de votre compte �pargne assurance";
+
+// Cr�dit
+statussimcredper = "Simulez et faites votre demande de cr�dit personnel en ligne";
+statussimcredimmo = "Simulez et faites votre demande de cr�dit habitat en ligne";
+statusechcredpro = "Acc�der � l'�ch�ancier des cr�dits professionnels";
+
+statusOngletBilanPerso = "Acc�dez � l'outil de bilan personnalis�"
+
+
+
+statusDetCompte = "Acc�dez au d�tail de votre compte"; //statuscompte
+statusAssVie = "Acc�dez au d�tail de votre contrat"; //statusdetassu
+statusTel = "T�l�charger votre relev�"; //statustelechargement
+
+statusCarteMozaic = "Acc�dez � la consultation de votre carte Moza�c";
+statusfermer = "Fermer cette fen�tre";
+
+function taille(){
+        window.status = "taille �cran = " + outerWidth + " x " + outerHeight;
+        t1 = setTimeout('taille()','500');
+}
+function lancer(url) {
+	document.location = url;
+}
+var newwidthpopup=690;
+// --></script>
+
+
+
+<script type="text/javascript">
+var breadCrumbs = [
+    {
+         label: "Synth�se comptes"
+    }
+];
+refreshBreadCrumbs(breadCrumbs);
+</script>
+
+
+
+
+
+
+
+
+<div class="boutons-act">
+<script language="javascript">
+var widthpopup=580;
+ try {
+ widthpopup=newwidthpopup;
+
+ }
+ catch (err){
+
+ }
+
+</script>
+<h1>
+
+		Synth&#xFFFD;se comptes
+
+
+
+		<span id="top-actions">
+			<a href="javascript:ouvrePOPUP(&apos;collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337&amp;fwkidpu=1337_1337_1337&amp;fwkrank=1&amp;fwkmperf=OFF&amp;executeNP=&amp;fwkaction=ouvrePopUp&amp;fwkcodeaction=Executer&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-1337-49a1.SAG_V6&apos;,widthpopup,580,&apos;yes&apos;)" onmouseover="StatusMessage(true, statusimprime);return true" onmouseout="StatusMessage( false )" id="top-actions-imprimer">Imprimer</a>
+			<a href="javascript:ouvreassistance(&apos;collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337&amp;act=Aide&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-1337-49a1.SAG_V6&amp;IDENT=L_AID&amp;ECRAN_AIDE=SYNTHCOMPTES_SYNTHESE&amp;NUM_AIDE=0&apos;,520,480,&apos;no&apos;)" id="top-actions-aide" onmouseout="StatusMessage( false )" onmouseover="StatusMessage(true, statusaide);return true">Aide</a>
+		</span>
+
+</h1>
+</div>
+
+<!-------------- ERREURS-VALIDATION ----------->
+
+
+
+
+
+
+
+
+
+
+
+
+<script>champsEnErreur = null;</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------- FIN ERREURS-VALIDATION ----------->
+
+<table width="590px">
+<form name="frm_fwk" method="POST" action="collecteNI?fwkaid=1337_1337_1337&amp4;fwkpid=1337_1337_1337"></form>
+<input type="hidden" name="fwkpid" value="1337_1337_1337">
+<input type="hidden" name="fwkaid" value="1337_1337_1337">
+<input type="hidden" name="fwkidpu" value="1337_1337_1337">
+<input type="hidden" name="fwkrank" value="1">
+<input type="hidden" name="fwkmperf" value="OFF">
+<input type="hidden" name="fwkaction" value="">
+<input type="hidden" name="fwkcodeaction" value="">
+<input type="hidden" name="executeNP" value="">
+
+
+<input type="hidden" name="stbzn" value="pu">
+
+
+<input type="hidden" name="stbpg" value="pagePU">
+
+
+
+  <tbody><tr>
+    <td valign="top">
+
+<!----------------------------------------- Onglets -------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+    <ul id="menu-onglet">
+
+	        <li>
+	            <a href="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337&amp;act=Edocsynth&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-1337-49a1.SAG_V6" title="Vos documents &#xFFFD;lectroniques">E-Documents</a>
+	        </li>
+
+	        <li>
+	            <a href="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337&amp;fwkidpu=1337_1337_1337&amp;fwkrank=1&amp;fwkmperf=OFF&amp;executeNP=&amp;fwkaction=Cartes&amp;fwkcodeaction=Executer&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-1337-49a1.SAG_V6&amp;SYNTH_ORIGINE=Synthcomptes&amp;PU_CIBLE=Cartes" title="Acc&#xFFFD;der aux informations de vos cartes bancaires">Infos Cartes</a>
+	        </li>
+
+
+    </ul>
+
+
+<!---------------------------------  Fin liste onglets ---------------------------------------->
+<!-----------------------------Options d'affichage--------------------------------------->
+
+
+      <table width="480" border="0" cellspacing="3" cellpadding="0" align="center">
+	        <tbody><tr>
+	          <td width="30%" height="6">
+	            <div align="right">Solde en :</div>
+	          </td>
+
+	          <td width="7%" height="6">
+	            <div align="right">
+	              <input type="radio" name="radiobutton" value="radiobutton" onclick="javascript:fwkPUAvancer(&apos;Valeur&apos;)" onmouseover="StatusMessage(true, statusvaleur);return true" onmouseout="StatusMessage( false )">
+	            </div>
+	          </td>
+
+	          <td width="5%" height="6">
+	            <div align="left">Valeur</div>
+	          </td>
+
+
+	          <td width="7%" height="6">
+	            <div align="right">
+	              <input type="radio" name="radiobutton" value="radiobutton" onclick="javascript:fwkPUAvancer(&apos;Operation&apos;)" onmouseover="StatusMessage(true, statusoperation);return true" onmouseout="StatusMessage( false )">
+	            </div>
+	          </td>
+
+	          <td width="5%" height="6">
+	            <div align="left">Op&#xE9;ration</div>
+	          </td>
+
+
+	          <td width="7%" height="6">
+	            <div align="right">
+	              <input type="radio" name="radiobutton" value="radiobutton" checked onclick="javascript:fwkPUAvancer(&apos;ValOpe&apos;)" onmouseover="StatusMessage(true, statusvaleuroperation);return true" onmouseout="StatusMessage( false )">
+	            </div>
+	          </td>
+
+	          <td width="19%" height="6">
+	            <div align="left">Valeur / Op&#xE9;ration</div>
+	          </td>
+	        </tr>
+	  </tbody></table>
+
+<!-----------------------------Fin Options d'affichage--------------------------------------->
+
+
+<script language="JavaScript">
+//surcharge de la fonction fwkPUAvancer pour pouvoir appeler des formulaires diff�rents
+function fwkPUAvancerForm(prm_action, formulaire) {
+	var frmFWK;
+	frmFWK = document.forms[formulaire];
+	frmFWK.fwkcodeaction.value = 'Executer';
+	frmFWK.fwkaction.value = prm_action;
+	frmFWK.submit();
+}
+</script>
+
+<table class="ca-table" width="590px">
+
+
+             <tbody><tr>
+                <td height="10" valign="bottom" colspan="8" style="text-align:left;padding-left:0px;">
+                	<div class="boutons-navig">
+                		<h2>Comptes personnels</h2>
+						<span class="pager">
+					        <!-- EVOL MLA 08/03/10: pas de pagination lorsque l'on imprime ses compte -->
+
+					               <!-----------------------------  Boutons de navigations dans les pages---------------------------------->
+
+
+
+<!-----------------------------Fin Boutons de navigations dans les pages--------------------------------------->
+
+					    </span>
+				    </div>
+                </td>
+              </tr>
+
+
+
+
+<tr style="height:0px;">
+
+
+
+
+                </tr><tr>
+                  <td colspan="8" class="titretetiere cel-texte" height="22">&#xA0;M.       DOUILLET CLAUDE&#xA0;-&#xA0;Titulaire
+                  &#xA0;
+
+                   </td>
+                </tr>
+                <tr style="height:0px;">
+			<!-------------Liste : COLONNES----------------->
+			</tr><tr class="tr-thead">
+			<!-- COLONNE 1 : Ic�ne de t�l�chargement -->
+
+					<th colspan="2" class="colceltitresoustetiere" height="22">
+	            		<div align="left">&#xA0;Type de compte&#xA0;</div>
+	            	</th>
+	            	<th colspan="2" class="colceltitresoustetiere" height="22">
+	            		<div align="center">&#xA0;N&#xFFFD; de compte&#xA0;</div>
+	            	</th>
+
+			<!-- COLONNE 2 : Libell� de compte -->
+
+			<!-- COLONNE 3 : Num�ro de compte -->
+
+			<!-- COLONNE 4 : Alerte -->
+
+			<!-- COLONNE 5 : Mensualit� -->
+
+
+		   	<!-- COLONNE 6 : Valeur / Montant Initial / Texte -->
+
+
+
+					<th colspan="1" class="colceltitresoustetiere" height="22" width="110">
+		            	<div align="center">&#xA0;En valeur&#xA0;</div>
+				    </th>
+
+           	<!-- COLONNE 7 : Op�ration / Captial restant du / Montant disponible -->
+
+
+
+					<th colspan="1" class="colceltitresoustetiere" height="22" width="110">
+		            	<div align="center">&#xA0;En op&#xFFFD;ration&#xA0;</div>
+		            </th>
+
+			<!-- COLONNE 8 : Devise -->
+
+
+				<th colspan="1" class="colceltitresoustetiere" height="22">
+	            	<div align="center">&#xA0;Devise&#xA0;</div>
+	            </th>
+	         <!-- COLONNE 9 : Ic�ne de t�l�chargement -->
+				<th colspan="1" class="colceltitresoustetiere" height="22">
+	            	<div align="center">&#xA0;</div>
+	            </th>
+	     	</tr>
+			<!-------------Liste : DONNEES----------------->
+
+
+
+
+						<tr class="colcellignepaire">
+
+
+
+
+
+
+
+					<td class="cel-texte gras" height="17" align="left" onmouseover="StatusMessage(true,&apos;LIVRET A&apos;)" onmouseout="StatusMessage( false )">
+
+						<form name="frm1" method="POST" action="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337">
+						<input type="hidden" name="fwkpid" value="1337_1337_1337">
+<input type="hidden" name="fwkaid" value="1337_1337_1337">
+<input type="hidden" name="fwkidpu" value="1337_1337_1337">
+<input type="hidden" name="fwkrank" value="1">
+<input type="hidden" name="fwkmperf" value="OFF">
+<input type="hidden" name="fwkaction" value="">
+<input type="hidden" name="fwkcodeaction" value="">
+<input type="hidden" name="executeNP" value="">
+
+
+<input type="hidden" name="stbzn" value="pu">
+
+
+<input type="hidden" name="stbpg" value="pagePU">
+
+
+
+						<a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm1&apos;)"><input type="hidden" name="donneesFrm" value="&amp;XCDOMC=L2&amp;NOCPT=65002241337&amp;CSSCP=00000000000&amp;CFPRO=L2&amp;CFONCP=1&amp;MSTPRE=170000&amp;CADEVI=EUR&amp;IDELCOCS=65002241337&amp;LILIG1=M.       DOUILLET CLAUDE&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes">
+						&#xA0;LIV A</a>
+						</form>
+
+	                </td>
+
+					<td height="17">
+	                  <div align="center">
+
+	                  	<form name="frma1" method="POST" action="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337">
+						<input type="hidden" name="fwkpid" value="1337_1337_1337">
+<input type="hidden" name="fwkaid" value="1337_1337_1337">
+<input type="hidden" name="fwkidpu" value="1337_1337_1337">
+<input type="hidden" name="fwkrank" value="1">
+<input type="hidden" name="fwkmperf" value="OFF">
+<input type="hidden" name="fwkaction" value="">
+<input type="hidden" name="fwkcodeaction" value="">
+<input type="hidden" name="executeNP" value="">
+
+
+<input type="hidden" name="stbzn" value="pu">
+
+
+<input type="hidden" name="stbpg" value="pagePU">
+
+
+
+						<input type="hidden" name="donneesFrm" value="&amp;XCDOMC=L2&amp;NOCPT=65002241337&amp;CSSCP=00000000000&amp;CFPRO=L2&amp;CFONCP=1&amp;MSTPRE=170000&amp;CADEVI=EUR&amp;IDELCOCS=65002241337&amp;LILIG1=M.       DOUILLET CLAUDE&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes&amp;TOPALE=1">
+						<a href="javascript:fwkPUAvancerForm(&apos;AlerteFrm&apos;,&apos;frma1&apos;)" onmouseover="StatusMessage(true, statusalerterougevert);return true" onmouseout="StatusMessage( false )">
+
+<!-- 	                  	<a href="collecteNI?fwkaid=1337_1337_1337&fwkpid=1337_1337_1337&fwkidpu=1337_1337_1337&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=DetailAlerte&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-1337-49a1.SAG_V6&XCDOMC=L2&NOCPT=65002241337&CSSCP=00000000000&CFPRO=L2&CFONCP=1&MSTPRE=170000&CADEVI=EUR&IDELCOCS=65002241337&LILIG1=M.       DOUILLET CLAUDE&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
+ -->
+
+
+
+	              	   </a></form>
+	                 	</div>
+	                </td>
+
+					<td height="17" align="left" colspan="2">
+
+						<a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm1&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )">
+						&#xA0;65002241337</a>
+
+	                </td>
+
+
+
+	                <td height="17">
+	                  <div align="right"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm1&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )" class="montant3">&#xA0;1 700,00
+
+		                  </a>
+
+
+	                  </div>
+	                </td>
+
+
+					<td height="17">
+	                 <div align="right"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm1&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )" class="montant3">1 700,00
+
+	                 	 </a>
+
+	                  </div>
+	                </td>
+
+
+					<td height="17" class="cel-devise">
+	                  <div align="center"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm1&apos;)" onmouseover="StatusMessage(true, &apos;EUR&apos;);return true" onmouseout="StatusMessage( false )">EUR
+	           		  </a>
+
+	                  </div>
+	                </td>
+
+					<td height="17">
+	                  <div align="center">
+
+	            			<a href="javascript:ouvreTelechargement(&apos;collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337&amp;fwkidpu=1337_1337_1337&amp;fwkrank=1&amp;fwkmperf=OFF&amp;executeNP=&amp;fwkaction=Telechargement&amp;fwkcodeaction=Executer&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-1337-49a1.SAG_V6&amp;XCDOMC=L2&amp;NOCPT=65002241337&amp;CSSCP=00000000000&amp;CFPRO=L2&amp;CFONCP=1&amp;MSTPRE=170000&amp;CADEVI=EUR&amp;IDELCOCS=65002241337&amp;LILIG1=M.       DOUILLET CLAUDE&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes&apos;)" onmouseover="StatusMessage(true, statustelechargement);return true" onmouseout="StatusMessage( false )"><img src="/web/bam/appli/web/commun/img/picto_telecharger.png" border="0" align="BASELINE" hspace="2"></a>
+
+	                  </div>
+	                </td>
+
+
+
+
+
+
+
+
+
+
+			</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<tr class="ligneRef"><td style="height:30px" colspan="8"></td></tr>
+
+                <tr>
+                  <td colspan="8" class="titretetiere cel-texte" height="22">&#xA0;M.Ou Mme DOUILLET&#xA0;-&#xA0;Co-titulaire
+                  &#xA0;
+
+                   </td>
+                </tr>
+                <tr style="height:0px;">
+			<!-------------Liste : COLONNES----------------->
+			</tr><tr class="tr-thead">
+			<!-- COLONNE 1 : Ic�ne de t�l�chargement -->
+
+					<th colspan="2" class="colceltitresoustetiere" height="22">
+	            		<div align="left">&#xA0;Type de compte&#xA0;</div>
+	            	</th>
+	            	<th colspan="2" class="colceltitresoustetiere" height="22">
+	            		<div align="center">&#xA0;N&#xFFFD; de compte&#xA0;</div>
+	            	</th>
+
+			<!-- COLONNE 2 : Libell� de compte -->
+
+			<!-- COLONNE 3 : Num�ro de compte -->
+
+			<!-- COLONNE 4 : Alerte -->
+
+			<!-- COLONNE 5 : Mensualit� -->
+
+
+		   	<!-- COLONNE 6 : Valeur / Montant Initial / Texte -->
+
+
+
+					<th colspan="1" class="colceltitresoustetiere" height="22" width="110">
+		            	<div align="center">&#xA0;En valeur&#xA0;</div>
+				    </th>
+
+           	<!-- COLONNE 7 : Op�ration / Captial restant du / Montant disponible -->
+
+
+
+					<th colspan="1" class="colceltitresoustetiere" height="22" width="110">
+		            	<div align="center">&#xA0;En op&#xFFFD;ration&#xA0;</div>
+		            </th>
+
+			<!-- COLONNE 8 : Devise -->
+
+
+				<th colspan="1" class="colceltitresoustetiere" height="22">
+	            	<div align="center">&#xA0;Devise&#xA0;</div>
+	            </th>
+	         <!-- COLONNE 9 : Ic�ne de t�l�chargement -->
+				<th colspan="1" class="colceltitresoustetiere" height="22">
+	            	<div align="center">&#xA0;</div>
+	            </th>
+	     	</tr>
+			<!-------------Liste : DONNEES----------------->
+
+
+
+
+						<tr class="colcellignepaire">
+
+
+
+
+
+
+
+					<td class="cel-texte gras" height="17" align="left" onmouseover="StatusMessage(true,&apos;COMPTE CHEQUE&apos;)" onmouseout="StatusMessage( false )">
+
+						<form name="frm2" method="POST" action="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337">
+						<input type="hidden" name="fwkpid" value="1337_1337_1337">
+<input type="hidden" name="fwkaid" value="1337_1337_1337">
+<input type="hidden" name="fwkidpu" value="1337_1337_1337">
+<input type="hidden" name="fwkrank" value="1">
+<input type="hidden" name="fwkmperf" value="OFF">
+<input type="hidden" name="fwkaction" value="">
+<input type="hidden" name="fwkcodeaction" value="">
+<input type="hidden" name="executeNP" value="">
+
+
+<input type="hidden" name="stbzn" value="pu">
+
+
+<input type="hidden" name="stbpg" value="pagePU">
+
+
+
+						<a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm2&apos;)"><input type="hidden" name="donneesFrm" value="&amp;XCDOMC=30&amp;NOCPT=60284131339&amp;CSSCP=00000000000&amp;CFPRO=30&amp;CFONCP=1&amp;MSTPRE=252623&amp;CADEVI=EUR&amp;IDELCOCS=60284131339&amp;LILIG1=M.OU MME DOUILLET&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes">
+						&#xA0;CCHQ</a>
+						</form>
+
+	                </td>
+
+					<td height="17">
+	                  <div align="center">
+
+	                  	<form name="frma2" method="POST" action="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337">
+						<input type="hidden" name="fwkpid" value="1337_1337_1337">
+<input type="hidden" name="fwkaid" value="1337_1337_1337">
+<input type="hidden" name="fwkidpu" value="1337_1337_1337">
+<input type="hidden" name="fwkrank" value="1">
+<input type="hidden" name="fwkmperf" value="OFF">
+<input type="hidden" name="fwkaction" value="">
+<input type="hidden" name="fwkcodeaction" value="">
+<input type="hidden" name="executeNP" value="">
+
+
+<input type="hidden" name="stbzn" value="pu">
+
+
+<input type="hidden" name="stbpg" value="pagePU">
+
+
+
+						<input type="hidden" name="donneesFrm" value="&amp;XCDOMC=30&amp;NOCPT=60284131339&amp;CSSCP=00000000000&amp;CFPRO=30&amp;CFONCP=1&amp;MSTPRE=252623&amp;CADEVI=EUR&amp;IDELCOCS=60284131339&amp;LILIG1=M.OU MME DOUILLET&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes&amp;TOPALE=1">
+						<a href="javascript:fwkPUAvancerForm(&apos;AlerteFrm&apos;,&apos;frma2&apos;)" onmouseover="StatusMessage(true, statusalerterougevert);return true" onmouseout="StatusMessage( false )">
+
+<!-- 	                  	<a href="collecteNI?fwkaid=1337_1337_1337&fwkpid=1337_1337_1337&fwkidpu=1337_1337_1337&fwkrank=1&fwkmperf=OFF&executeNP=&fwkaction=DetailAlerte&fwkcodeaction=Executer&stbzn=pu&stbpg=pagePU&sessionAPP=Synthcomptes&sessionSAG=-1337-49a1.SAG_V6&XCDOMC=30&NOCPT=60284131339&CSSCP=00000000000&CFPRO=30&CFONCP=1&MSTPRE=252623&CADEVI=EUR&IDELCOCS=60284131339&LILIG1=M.OU MME DOUILLET&APPELANT=Synthcomptes&SYNTH_ORIGINE=Synthcomptes&TOPALE=1" onMouseOver="StatusMessage(true, statusalerterougevert);return true" onMouseOut="StatusMessage( false )">
+ -->
+
+
+
+	              	   </a></form>
+	                 	</div>
+	                </td>
+
+					<td height="17" align="left" colspan="2">
+
+						<a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm2&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )">
+						&#xA0;60284131339</a>
+
+	                </td>
+
+
+
+	                <td height="17">
+	                  <div align="right"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm2&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )" class="montant3">&#xA0;2 526,23
+
+		                  </a>
+
+
+	                  </div>
+	                </td>
+
+
+					<td height="17">
+	                 <div align="right"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm2&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )" class="montant3">2 526,23
+
+	                 	 </a>
+
+	                  </div>
+	                </td>
+
+
+					<td height="17" class="cel-devise">
+	                  <div align="center"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm2&apos;)" onmouseover="StatusMessage(true, &apos;EUR&apos;);return true" onmouseout="StatusMessage( false )">EUR
+	           		  </a>
+
+	                  </div>
+	                </td>
+
+					<td height="17">
+	                  <div align="center">
+
+	            			<a href="javascript:ouvreTelechargement(&apos;collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337&amp;fwkidpu=1337_1337_1337&amp;fwkrank=1&amp;fwkmperf=OFF&amp;executeNP=&amp;fwkaction=Telechargement&amp;fwkcodeaction=Executer&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-7d17143jytjta164398361d5-49a1.SAG_V6&amp;XCDOMC=30&amp;NOCPT=60284131339&amp;CSSCP=00000000000&amp;CFPRO=30&amp;CFONCP=1&amp;MSTPRE=252623&amp;CADEVI=EUR&amp;IDELCOCS=60284131339&amp;LILIG1=M.OU MME DOUILLET&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes&apos;)" onmouseover="StatusMessage(true, statustelechargement);return true" onmouseout="StatusMessage( false )"><img src="/web/bam/appli/web/commun/img/picto_telecharger.png" border="0" align="BASELINE" hspace="2"></a>
+
+	                  </div>
+	                </td>
+
+
+
+
+
+
+
+
+
+
+			</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<tr class="ligneRef"><td style="height:30px" colspan="8"></td></tr>
+
+                <tr>
+                  <td colspan="8" class="titretetiere cel-texte" height="22">&#xA0;M.       DOUILLET Raphael&#xA0;-&#xA0;Mandataire
+                  &#xA0;
+
+                   </td>
+                </tr>
+                <tr style="height:0px;">
+			<!-------------Liste : COLONNES----------------->
+			</tr><tr class="tr-thead">
+			<!-- COLONNE 1 : Ic�ne de t�l�chargement -->
+
+					<th colspan="2" class="colceltitresoustetiere" height="22">
+	            		<div align="left">&#xA0;Type de compte&#xA0;</div>
+	            	</th>
+	            	<th colspan="2" class="colceltitresoustetiere" height="22">
+	            		<div align="center">&#xA0;N&#xFFFD; de compte&#xA0;</div>
+	            	</th>
+
+			<!-- COLONNE 2 : Libell� de compte -->
+
+			<!-- COLONNE 3 : Num�ro de compte -->
+
+			<!-- COLONNE 4 : Alerte -->
+
+			<!-- COLONNE 5 : Mensualit� -->
+
+
+		   	<!-- COLONNE 6 : Valeur / Montant Initial / Texte -->
+
+
+
+					<th colspan="1" class="colceltitresoustetiere" height="22" width="110">
+		            	<div align="center">&#xA0;En valeur&#xA0;</div>
+				    </th>
+
+           	<!-- COLONNE 7 : Op�ration / Captial restant du / Montant disponible -->
+
+
+
+					<th colspan="1" class="colceltitresoustetiere" height="22" width="110">
+		            	<div align="center">&#xA0;En op&#xFFFD;ration&#xA0;</div>
+		            </th>
+
+			<!-- COLONNE 8 : Devise -->
+
+
+				<th colspan="1" class="colceltitresoustetiere" height="22">
+	            	<div align="center">&#xA0;Devise&#xA0;</div>
+	            </th>
+	         <!-- COLONNE 9 : Ic�ne de t�l�chargement -->
+				<th colspan="1" class="colceltitresoustetiere" height="22">
+	            	<div align="center">&#xA0;</div>
+	            </th>
+	     	</tr>
+			<!-------------Liste : DONNEES----------------->
+
+
+
+
+						<tr class="colcellignepaire">
+
+
+
+
+
+
+
+					<td class="cel-texte gras" height="17" align="left" onmouseover="StatusMessage(true,&apos;LIVRET A&apos;)" onmouseout="StatusMessage( false )">
+
+						<form name="frm3" method="POST" action="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337">
+						<input type="hidden" name="fwkpid" value="1337_1337_1337">
+<input type="hidden" name="fwkaid" value="1337_1337_1337">
+<input type="hidden" name="fwkidpu" value="1337_1337_1337">
+<input type="hidden" name="fwkrank" value="1">
+<input type="hidden" name="fwkmperf" value="OFF">
+<input type="hidden" name="fwkaction" value="">
+<input type="hidden" name="fwkcodeaction" value="">
+<input type="hidden" name="executeNP" value="">
+
+
+<input type="hidden" name="stbzn" value="pu">
+
+
+<input type="hidden" name="stbpg" value="pagePU">
+
+
+
+						<a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm3&apos;)"><input type="hidden" name="donneesFrm" value="&amp;XCDOMC=L2&amp;NOCPT=60285571338&amp;CSSCP=00000000000&amp;CFPRO=L2&amp;CFONCP=6&amp;MSTPRE=700000&amp;CADEVI=EUR&amp;IDELCOCS=60285571338&amp;LILIG1=M.       DOUILLET RAPHAEL&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes">
+						&#xA0;LIV A</a>
+						</form>
+
+	                </td>
+
+					<td height="17">
+	                  <div align="center">
+
+	                  	<form name="frma3" method="POST" action="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337">
+						<input type="hidden" name="fwkpid" value="1337_1337_1337">
+<input type="hidden" name="fwkaid" value="1337_1337_1337">
+<input type="hidden" name="fwkidpu" value="1337_1337_1337">
+<input type="hidden" name="fwkrank" value="1">
+<input type="hidden" name="fwkmperf" value="OFF">
+<input type="hidden" name="fwkaction" value="">
+<input type="hidden" name="fwkcodeaction" value="">
+<input type="hidden" name="executeNP" value="">
+
+
+<input type="hidden" name="stbzn" value="pu">
+
+
+<input type="hidden" name="stbpg" value="pagePU">
+
+
+
+
+						<input type="hidden" name="donneesFrm" value="&amp;XCDOMC=L2&amp;NOCPT=60285571338&amp;CSSCP=00000000000&amp;CFPRO=L2&amp;CFONCP=6&amp;MSTPRE=700000&amp;CADEVI=EUR&amp;IDELCOCS=60285571338&amp;LILIG1=M.       DOUILLET RAPHAEL&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes&amp;TOPALE=1">
+						<a href="javascript:fwkPUAvancerForm(&apos;AlerteFrm&apos;,&apos;frma3&apos;)" onmouseover="StatusMessage(true, statusalerterougevert);return true" onmouseout="StatusMessage( false )">
+
+
+
+	              	   </a></form>
+	                 	</div>
+	                </td>
+
+					<td height="17" align="left" colspan="2">
+
+						<a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm3&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )">
+						&#xA0;60285571338</a>
+
+	                </td>
+
+
+
+	                <td height="17">
+	                  <div align="right"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm3&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )" class="montant3">&#xA0;7 000,00
+
+		                  </a>
+
+
+	                  </div>
+	                </td>
+
+
+					<td height="17">
+	                 <div align="right"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm3&apos;)" onmouseover="StatusMessage(true, statuscompte);return true" onmouseout="StatusMessage( false )" class="montant3">7 000,00
+
+	                 	 </a>
+
+	                  </div>
+	                </td>
+
+
+					<td height="17" class="cel-devise">
+	                  <div align="center"><a href="javascript:fwkPUAvancerForm(&apos;Releves&apos;,&apos;frm3&apos;)" onmouseover="StatusMessage(true, &apos;EUR&apos;);return true" onmouseout="StatusMessage( false )">EUR
+	           		  </a>
+
+	                  </div>
+	                </td>
+
+					<td height="17">
+	                  <div align="center">
+
+	            			<a href="javascript:ouvreTelechargement(&apos;collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337&amp;fwkidpu=1337_1337_1337&amp;fwkrank=1&amp;fwkmperf=OFF&amp;executeNP=&amp;fwkaction=Telechargement&amp;fwkcodeaction=Executer&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-1337-49a1.SAG_V6&amp;XCDOMC=L2&amp;NOCPT=60285571338&amp;CSSCP=00000000000&amp;CFPRO=L2&amp;CFONCP=6&amp;MSTPRE=700000&amp;CADEVI=EUR&amp;IDELCOCS=60285571338&amp;LILIG1=M.       DOUILLET RAPHAEL&amp;APPELANT=Synthcomptes&amp;SYNTH_ORIGINE=Synthcomptes&apos;)" onmouseover="StatusMessage(true, statustelechargement);return true" onmouseout="StatusMessage( false )"><img src="/web/bam/appli/web/commun/img/picto_telecharger.png" border="0" align="BASELINE" hspace="2"></a>
+
+	                  </div>
+	                </td>
+
+
+
+
+
+
+
+
+
+
+			</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tbody></table>
+<br>
+<!-----------------------------  Boutons de navigations dans les pages---------------------------------->
+<!-- EVOL MLA 08/03/10: pas de pagination lorsque l'on imprime ses compte -->
+
+	<div>
+		<span class="droite">
+			<!-----------------------------  Boutons de navigations dans les pages---------------------------------->
+
+
+
+<!-----------------------------Fin Boutons de navigations dans les pages--------------------------------------->
+		</span>
+	</div>
+
+<br>
+<!-----------------------------Fin Boutons de navigations dans les pages--------------------------------------->
+<!----------------------------------------- Onglets -------------------------------------------------------------->
+
+
+
+
+
+
+	<br>
+       <div style="border-top: 1px solid #D3D3D3;">
+    <ul id="menu-onglet">
+
+	        <li>
+	            <a href="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337&amp;act=Edocsynth&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-1337-49a1.SAG_V6" title="Vos documents &#xFFFD;lectroniques">E-Documents</a>
+	        </li>
+
+	        <li>
+	            <a href="collecteNI?fwkaid=1337_1337_1337&amp;fwkpid=1337_1337_1337&amp;fwkidpu=1337_1337_1337&amp;fwkrank=1&amp;fwkmperf=OFF&amp;executeNP=&amp;fwkaction=Cartes&amp;fwkcodeaction=Executer&amp;stbzn=pu&amp;stbpg=pagePU&amp;sessionAPP=Synthcomptes&amp;sessionSAG=-1337-49a1.SAG_V6&amp;SYNTH_ORIGINE=Synthcomptes&amp;PU_CIBLE=Cartes" title="Acc&#xFFFD;der aux informations de vos cartes bancaires">Infos Cartes</a>
+	        </li>
+
+
+    </ul>  </div>
+
+<!---------------------------------  Fin liste onglets ---------------------------------------->
+    </td>
+  </tr>
+
+</tbody></table>
+
+<table width="364" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td align="right">
+
+
+<script type="text/javascript">
+var g_TagPageBAM = "consultation::synthese::compte";
+var g_TagPap = [];
+</script>
+
+
+
+
+<script type="text/javascript">
+
+	// desactivitation des impressions de tags
+	cmSetupOther({"cm_TrackImpressions":""});
+
+	//deactivation de la capture auto des clics
+ 	cmSetupOther({"cm_TrackLink":false});
+</script>
+
+<script type="text/javascript">
+	var WebAnalytics = { Page: { PageIdentifier: "88200_CLI_3_SU02" }};
+				// define field values...
+			webanalytics = {
+			    // ... to use with the standard Page View tag
+			    page:{
+					pageid:"consultation::synthese::compte",
+					categoryid:"B",
+					searchterm:null,
+					searchresults:null,
+					attributes:"00000064560567-_--_--_--_--_--_--_--_-88200",
+					extrafields:null
+				}
+
+};
+</script>
+
+
+
+
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-----  FIN zone pu  ---->
+
+</div><div style="min-height:35px;">
+<!-----  DEBUT zone espaceBBAS  ---->
+
+<!-----  FIN zone espaceBBAS  ---->
+
+</div><div height="33" valign="middle" id="BBAS">
+<!-----  DEBUT zone BBAS  ---->
+<!--vide--><!--vide-->
+<!-----  FIN zone BBAS  ---->
+
+</div>
+</div>
+</div>
+</div>
+</td><td valign="top" width="6.5px">
+
+<!-----  DEBUT zone filler  ---->
+<span style="font-size: 1px">&#xA0;</span>
+
+
+<!-----  FIN zone filler  ---->
+
+</td><td valign="top" width="160px" align="right">
+<div style="width: 160px;" class="popupPAP" align="left">
+<div valign="middle" style="font-size:0px;">
+<!-----  DEBUT zone SECU  ---->
+
+<span style="font-size: 0px">&#xA0;</span>
+
+<!-----  FIN zone SECU  ---->
+
+</div><div valign="middle">
+<!-----  DEBUT zone BAM  ---->
+<!--vide--><!--vide-->
+<!-----  FIN zone BAM  ---->
+
+</div><div valign="middle">
+<!-----  DEBUT zone INFO  ---->
+<!--vide--><!--vide-->
+<!-----  FIN zone INFO  ---->
+
+</div><div valign="middle">
+<!-----  DEBUT zone PROMO  ---->
+<div idcomp="tcm-1356-435343"><script> prefixe = 'pack_204'; </script><div class="bloc-pap" id="racineGDC" version="tcm:1356-184523-32 v.3"><script xml:space="preserve">var marqueurXiti="Syn_Promo_Simulations";var marqueurXiti435343 = marqueurXiti+ '_Affichage'; </script><h2><titre>Devis et simulations</titre></h2><p><style xml:space="preserve">.bloc-pap img{display:block;}</style><dynamiclink animcom="Stevcom" profil_bam="+profil_evt_promo" label="Cliquez ici" onclick="clicXiti(&apos;Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation&apos;, &apos;N&apos;);" onmouseout="top.window.status=&apos;&apos;;return true;" onmouseover="top.window.status=&apos;Cliquez ici&apos;;return true;" ref="tcm-1356-295118"><a href="#" onclick="clicXiti(&apos;Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation&apos;, &apos;N&apos;); javascript:lancerSTEvCom(&apos;Stevcom&apos;,&apos;profil_bam=&apos;+profil_evt_promo, this,&apos;ACTION=lancerPUContenu(\&apos;tcm-1356-295118\&apos;,\&apos;global\&apos;)&apos;);" onmouseout="top.window.status=&apos;&apos;;return true;" onmouseover="top.window.status=&apos;Cliquez ici&apos;;return true;" shape="rect"><binarycontent img="/devis_simulation_pap_droit_002%2E1_tcm_1356_371354.jpg"><script xml:space="preserve">displayBinary(prefixe, "/devis_simulation_pap_droit_002%2E1_tcm_1356_371354.jpg", "", "");</script></binarycontent></a></dynamiclink></p><div class="bloc-pap-texte"><p><script type="text/javascript" xml:space="preserve">document.write(String.fromCharCode(60,115,99,114,105,112,116,32,116,121,112,101,61,34,116,101,120,116,47,106,97,118,97,115,99,114,105,112,116,34,32,115,114,99,61,34,104,116,116,112,115,58,47,47,119,119,119,46,99,97,45,112,97,114,105,115,46,102,114,47,86,105,116,114,105,110,101,47,79,98,106,67,111,109,109,117,110,47,70,105,99,47,80,97,114,105,115,47,115,99,114,105,112,116,47,109,101,110,117,95,98,97,115,95,101,97,103,101,110,99,101,46,106,115,34,32,119,105,100,116,104,61,34,49,54,48,34,32,104,101,105,103,104,116,61,34,49,48,34,62,60,47,115,99,114,105,112,116,62));</script></p><p class="lirelasuite"><dynamiclink animcom="Stevcom" profil_bam="+profil_evt_promo" label="Cliquez ici" onclick="clicXiti(&apos;Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation&apos;, &apos;N&apos;);" onmouseout="top.window.status=&apos;&apos;;return true;" onmouseover="top.window.status=&apos;Cliquez ici&apos;;return true;" ref="tcm-1356-295118"><a href="#" onclick="clicXiti(&apos;Syn_Promo_Simulations__Lien_page_BAM_Devis___Simulation&apos;, &apos;N&apos;); javascript:lancerSTEvCom(&apos;Stevcom&apos;,&apos;profil_bam=&apos;+profil_evt_promo, this,&apos;ACTION=lancerPUContenu(\&apos;tcm-1356-295118\&apos;,\&apos;global\&apos;)&apos;);" onmouseout="top.window.status=&apos;&apos;;return true;" onmouseover="top.window.status=&apos;Cliquez ici&apos;;return true;" shape="rect">Cliquez ici</a></dynamiclink></p></div></div></div><!--vide-->
+<!-----  FIN zone PROMO  ---->
+
+</div>
+</div>
+</td>
+</tr></tbody></table>
+</td></tr><tr valign="middle"><td>
+<!-----  DEBUT zone footer  ---->
+
+
+<script language="JavaScript">
+var codeCaisse = "882";
+</script>
+
+			<img style="margin: 0px 0px 20px 780px; width:170px;height:37px;z-index: -1;position: absolute;" src="/web/bam/tech/allmedia/stb/commun/img/logo_pied.png">
+
+<br>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tbody><tr valign="middle" align="center">
+		<td>
+
+			<script>
+			<!--
+			aide_f0= "Acc�dez aux Conditions G�n�rales d'utilisation";
+			//-->
+			</script>
+			<a href="javascript:lancerContenu(&apos;tcm-1356-185301&apos;,&apos;global&apos;)" class="footerlien" onmouseover="StatusMessage(true, aide_f0);return true" onmouseout="StatusMessage( false )">Conditions G&#xFFFD;n&#xFFFD;rales d&apos;utilisation</a>
+
+			<span class="footerseparateur">&#xA0;|&#xA0;</span>
+
+			<script>
+			<!--
+			aide_f1= "Acc�dez � l'aide";
+			//-->
+			</script>
+			<a href="javascript:ouvreassistance(getUrlAction(&apos;Aide&amp;IDENT=L_INF&apos;),500,480,&apos;no&apos;)" class="footerlien" onmouseover="StatusMessage(true, aide_f1);return true" onmouseout="StatusMessage( false )">Aide</a>
+
+			<span class="footerseparateur">&#xA0;|&#xA0;</span>
+
+			<script>
+			<!--
+			aide_f2= "Acc�dez au lexique";
+			//-->
+			</script>
+			<a href="javascript:ouvreassistance(getUrlAction(&apos;Aide&amp;IDENT=L_LEX&apos;),500,480,&apos;no&apos;)" class="footerlien" onmouseover="StatusMessage(true, aide_f2);return true" onmouseout="StatusMessage( false )">Lexique</a>
+
+			<span class="footerseparateur">&#xA0;|&#xA0;</span>
+
+			<script>
+			<!--
+			aide_f3= "";
+			//-->
+			</script>
+			<a href="javascript:ouvrirPopup(&apos;https://www.ca-paris.fr/site-securite.html&apos;,&apos;popupSecurity&apos;,&apos;&apos;,&apos;&apos;,&apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;)" class="footerlien" onmouseover="StatusMessage(true, aide_f3);return true" onmouseout="StatusMessage( false )">S&#xFFFD;curit&#xFFFD;</a>
+
+			<span class="footerseparateur">&#xA0;|&#xA0;</span>
+
+			<script>
+			<!--
+			aide_f4= "";
+			//-->
+			</script>
+			<a href="javascript:ouvrirPopup(&apos;https://www.ca-paris.fr/CNIL/&apos;,&apos;popupCnil&apos;,&apos;&apos;,&apos;&apos;,&apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;)" class="footerlien" onmouseover="StatusMessage(true, aide_f4);return true" onmouseout="StatusMessage( false )">Politique de protection des donn&#xFFFD;es</a>
+
+			<span class="footerseparateur">&#xA0;|&#xA0;</span>
+
+			<script>
+			<!--
+			aide_f5= "";
+			//-->
+			</script>
+			<a href="javascript:ouvrirPopup(&apos;https://www.ca-paris.fr/TARIFS/&apos;,&apos;popupTarifs&apos;,&apos;&apos;,&apos;&apos;,&apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;, &apos;yes&apos;)" class="footerlien" onmouseover="StatusMessage(true, aide_f5);return true" onmouseout="StatusMessage( false )">Nos tarifs</a>
+
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+
+
+
+
+
+<script language="JavaScript">
+var iDSession = "-1337-49a1.SAG_V6";
+var codeCR = "882";
+</script>
+<table width="100%">
+	<tbody><tr>
+		<td class="footercopyright" align="center">
+		<br>&#xA0;
+		</td><td>
+	</td></tr>
+</tbody></table>
+		</td>
+
+	</tr>
+</tbody></table>
+
+
+<!-----  FIN zone footer  ---->
+
+</td></tr>
+</tbody></table>
+</div>
+</body></html>

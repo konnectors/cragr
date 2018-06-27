@@ -191,7 +191,7 @@
   ],
   "screenshots": [],
   "permissions": {
-    "bank account": {
+    "bank.accounts": {
       "description": "Required to save the list of bank accounts",
       "type": "io.cozy.bank.accounts"
     },
@@ -203,6 +203,10 @@
       "description": "Required to get the account's data",
       "type": "io.cozy.accounts",
       "verbs": ["GET"]
+    },
+    "bank.balancehistories": {
+      "description": "Required to save balance histories",
+      "type": "io.cozy.bank.balancehistories"
     },
     "files": {
       "description": "Required to save the account statements",
@@ -216,11 +220,14 @@
   "langs": ["fr", "en"],
   "locales": {
     "fr": {
-      "short_description": "Récupère vos operation bancaires",
-      "long_description": "Récupère vos operation bancaires",
+      "short_description": "Récupère vos opérations bancaires",
+      "long_description": "Récupère vos opérations bancaires",
       "permissions": {
-        "bank accounts": {
-          "description": "Utilisé pour sauvegarder le liste de vos comptes bancaires"
+        "bank.accounts": {
+          "description": "Utilisé pour sauvegarder la liste de vos comptes bancaires"
+        },
+        "bank.balancehistories": {
+          "description": "Utilisé pour sauvegarder les historiques de solde"
         }
       }
     },
@@ -228,8 +235,11 @@
       "short_description": "Retrieves your bank operations",
       "long_description": "Retrieves your bank operations",
       "permissions": {
-        "bank accounts": {
+        "bank.accounts": {
           "description": "Used to save the list of bank accounts"
+        },
+        "bank.balancehistories": {
+          "description": "Required to save balance histories"
         }
       }
     }
