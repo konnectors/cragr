@@ -1,36 +1,197 @@
 {
-  "version": "0.0.1",
+  "version": "1.0.0",
   "name": "Crédit Agricole",
-  "type": "node",
+  "type": "konnector",
+  "language": "node",
+  "icon": "icon.png",
   "slug": "creditagricole",
-  "source": "git://github.com/cozy/cozy-konnector-bank-cragr.git",
+  "source": "git://github.com/konnectors/cozy-konnector-bank-cragr.git",
+  "editor": "Cozy",
+  "vendor_link": "https://www.paris-g4-enligne.credit-agricole.fr/stb/entreeBam",
+  "categories": ["banking"],
   "fields": {
-    "account": {
-      "doctype": "io.cozy.accounts",
-      "account_type": "cragr",
-      "accountFormat": "login,password"
-    }
-  },
-  "locales": {
-    "fr": {
-      "description": "Récupère vos operation bancaires",
-      "permissions": {
-        "bank accounts": {
-          "description": "Utilisé pour sauvegarder le liste de vos comptes bancaires"
+    "bankId": {
+      "type": "dropdown",
+      "label": "branchName",
+      "options": [
+        {
+          "name": "Alpes Provence",
+          "value": "1"
+        },
+        {
+          "name": "Alsace-Vosges",
+          "value": "2"
+        },
+        {
+          "name": "Anjou-Maine",
+          "value": "3"
+        },
+        {
+          "name": "Aquitaine",
+          "value": "4"
+        },
+        {
+          "name": "Atlantique-Vendée",
+          "value": "5"
+        },
+        {
+          "name": "Brie-Picardie",
+          "value": "6"
+        },
+        {
+          "name": "Centre Est",
+          "value": "7"
+        },
+        {
+          "name": "Centre France",
+          "value": "8"
+        },
+        {
+          "name": "Centre Loire",
+          "value": "9"
+        },
+        {
+          "name": "Centre Ouest",
+          "value": "10"
+        },
+        {
+          "name": "Champagne-Bourgogne",
+          "value": "11"
+        },
+        {
+          "name": "Charente-Maritime Deux-Sèvres",
+          "value": "12"
+        },
+        {
+          "name": "Charente-Périgord",
+          "value": "13"
+        },
+        {
+          "name": "Corse",
+          "value": "14"
+        },
+        {
+          "name": "Côtes-d’Armor",
+          "value": "15"
+        },
+        {
+          "name": "Des Savoie",
+          "value": "16"
+        },
+        {
+          "name": "Finistère",
+          "value": "17"
+        },
+        {
+          "name": "Franche-Comté",
+          "value": "18"
+        },
+        {
+          "name": "Guadeloupe",
+          "value": "19"
+        },
+        {
+          "name": "Île-de-France",
+          "value": "20"
+        },
+        {
+          "name": "Ille-et-Vilaine",
+          "value": "21"
+        },
+        {
+          "name": "Languedoc",
+          "value": "22"
+        },
+        {
+          "name": "Loire Haute-Loire",
+          "value": "23"
+        },
+        {
+          "name": "Lorraine",
+          "value": "24"
+        },
+        {
+          "name": "Martinique",
+          "value": "25"
+        },
+        {
+          "name": "Morbihan",
+          "value": "26"
+        },
+        {
+          "name": "Nord de France",
+          "value": "27"
+        },
+        {
+          "name": "Nord Midi Pyrénées",
+          "value": "28"
+        },
+        {
+          "name": "Nord-Est",
+          "value": "29"
+        },
+        {
+          "name": "Normandie",
+          "value": "30"
+        },
+        {
+          "name": "Normandie-Seine",
+          "value": "31"
+        },
+        {
+          "name": "Provence Côte d’Azur",
+          "value": "32"
+        },
+        {
+          "name": "Pyrénées Gascogne",
+          "value": "33"
+        },
+        {
+          "name": "Réunion",
+          "value": "34"
+        },
+        {
+          "name": "Sud Méditerranée",
+          "value": "35"
+        },
+        {
+          "name": "Sud Rhône Alpes",
+          "value": "36"
+        },
+        {
+          "name": "Toulouse 31",
+          "value": "37"
+        },
+        {
+          "name": "Touraine-Poitou",
+          "value": "38"
+        },
+        {
+          "name": "Val de France",
+          "value": "39"
         }
-      }
+      ]
     },
-    "en": {
-      "description": "Retrieves your bank operations",
-      "permissions": {
-        "bank accounts": {
-          "description": "Used to save the list of bank accounts"
-        }
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "advancedFields": {
+      "folderPath": {
+        "advanced": true,
+        "isRequired": false
       }
     }
   },
+  "data_types": [
+    "bankAccounts",
+    "bankTransactions"
+  ],
+  "screenshots": [],
   "permissions": {
-    "bank account": {
+    "bank.accounts": {
       "description": "Required to save the list of bank accounts",
       "type": "io.cozy.bank.accounts"
     },
@@ -43,13 +204,45 @@
       "type": "io.cozy.accounts",
       "verbs": ["GET"]
     },
+    "bank.balancehistories": {
+      "description": "Required to save balance histories",
+      "type": "io.cozy.bank.balancehistories"
+    },
     "files": {
       "description": "Required to save the account statements",
       "type": "io.cozy.files"
     }
   },
   "developer": {
-    "name": "doubleface",
-    "url": "https://github.com/doubleface"
-  }
+    "name": "Cozy Cloud",
+    "url": "https://cozy.io"
+  },
+  "langs": ["fr", "en"],
+  "locales": {
+    "fr": {
+      "short_description": "Récupère vos opérations bancaires",
+      "long_description": "Récupère vos opérations bancaires",
+      "permissions": {
+        "bank.accounts": {
+          "description": "Utilisé pour sauvegarder la liste de vos comptes bancaires"
+        },
+        "bank.balancehistories": {
+          "description": "Utilisé pour sauvegarder les historiques de solde"
+        }
+      }
+    },
+    "en": {
+      "short_description": "Retrieves your bank operations",
+      "long_description": "Retrieves your bank operations",
+      "permissions": {
+        "bank.accounts": {
+          "description": "Used to save the list of bank accounts"
+        },
+        "bank.balancehistories": {
+          "description": "Required to save balance histories"
+        }
+      }
+    }
+  },
+  "manifest_version": "2"
 }

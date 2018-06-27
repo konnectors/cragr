@@ -2,34 +2,54 @@
   "name": "cragr",
   "version": "1.0.0",
   "description": "Crédit Agricole connector",
-  "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cozy/cozy-konnector-bank-cragr.git"
+    "url": "git+https://github.com/konnectors/cozy-konnector-bank-cragr.git"
   },
-  "author": "doubleface <christophe@cozycloud.cc>",
+  "keywords": [],
+  "author": "Cozy Cloud",
   "license": "AGPL-3.0",
-  "dependencies": {
-    "cozy-konnector-libs": "^3.0.13",
-    "xlsx": "^0.11.13"
+  "main": "./src/index.js",
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-cozy-app"
+    ]
   },
+  "eslintIgnore": [
+    "build"
+  ],
   "scripts": {
-    "start": "node index.js",
-    "prettier": "prettier --write '{src,test}/**/*.{js,jsx}' && eslint --fix '{src,test}/**/*.{js,jsx}'",
-    "standalone": "cozy-konnector-standalone src/index.js",
-    "standalone:record": "REPLAY=record cozy-konnector-standalone src/index.js",
-    "standalone:replay": "REPLAY=replay cozy-konnector-standalone src/index.js",
+    "start": "node ./src/index.js",
+    "dev": "cozy-run-dev",
+    "standalone": "cozy-run-standalone",
+    "pretest": "npm run clean",
+    "test": "konitor testit .",
+    "check": "konitor check .",
+    "clean": "rm -rf ./data",
     "regions": "node src/regions.js",
-    "dev": "cozy-konnector-dev src/index.js",
     "build": "webpack",
-    "deploy": "git-directory-deploy --directory build/ --branch build --repo=https://github.com/cozy/cozy-konnector-bank-cragr.git",
-    "deploy:travis": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --repo=https://$GITHUB_TOKEN@github.com/cozy/cozy-konnector-bank-cragr.git"
+    "precommit": "yarn lint",
+    "lint": "eslint --fix .",
+    "deploy": "git-directory-deploy --directory build/ --branch build --repo=${DEPLOY_REPOSITORY:-https://$GITHUB_TOKEN@github.com/konnectors/cozy-konnector-bank-cragr.git}",
+    "cozyPublish": "cozy-app-publish --token $REGISTRY_TOKEN --build-commit $(git rev-parse ${DEPLOY_BRANCH:-build})",
+    "travisDeployKey": "./bin/generate_travis_deploy_key"
+  },
+  "dependencies": {
+    "cozy-doctypes": "1.0.1-beta.6",
+    "cozy-konnector-libs": "4.5.3",
+    "jest": "^23.2.0",
+    "xlsx": "0.13.0"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^4.0.1",
-    "eslint-config-cozy-app": "^0.3.1",
-    "git-directory-deploy": "^1.5.1",
-    "prettier": "^1.9.2",
-    "webpack": "^3.5.0"
+    "copy-webpack-plugin": "4.5.1",
+    "cozy-app-publish": "0.3.6",
+    "cozy-jobs-cli": "1.4.0",
+    "eslint": "4.19.1",
+    "eslint-config-cozy-app": "0.8.0",
+    "git-directory-deploy": "1.5.1",
+    "husky": "0.14.3",
+    "konitor": "0.9.0",
+    "webpack": "4.12.0",
+    "webpack-cli": "3.0.8"
   }
 }
