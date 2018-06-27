@@ -35,7 +35,7 @@
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
   "dependencies": {
-    "cozy-doctypes": "1.0.1-beta.5",
+    "cozy-doctypes": "1.0.1-beta.6",
     "cozy-konnector-libs": "4.5.3",
     "jest": "^23.2.0",
     "xlsx": "0.13.0"
