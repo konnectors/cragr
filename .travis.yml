@@ -28,7 +28,7 @@ deploy:
   script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
   on:
     tags: true
-before_install:
+before_deploy:
 - openssl aes-256-cbc -K $encrypted_228966402ede_key -iv $encrypted_228966402ede_iv
   -in github_deploy_key.enc -out /tmp/github_deploy_key -d
 - eval "$(ssh-agent -s)"
