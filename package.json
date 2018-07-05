@@ -41,7 +41,7 @@
     "xlsx": "0.13.0"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "4.5.1",
+    "copy-webpack-plugin": "4.5.2",
     "cozy-app-publish": "0.3.6",
     "cozy-jobs-cli": "1.4.0",
     "eslint": "4.19.1",
