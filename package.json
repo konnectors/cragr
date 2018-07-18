@@ -36,14 +36,14 @@
   },
   "dependencies": {
     "cozy-doctypes": "1.0.1-beta.6",
-    "cozy-konnector-libs": "4.7.2",
+    "cozy-konnector-libs": "4.8.1",
     "jest": "^23.2.0",
     "xlsx": "0.13.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "4.5.2",
     "cozy-app-publish": "0.3.6",
-    "cozy-jobs-cli": "1.4.4",
+    "cozy-jobs-cli": "1.4.8",
     "eslint": "5.1.0",
     "eslint-config-cozy-app": "0.10.0",
     "git-directory-deploy": "1.5.1",
