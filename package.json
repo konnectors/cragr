@@ -48,7 +48,7 @@
     "eslint-config-cozy-app": "0.10.0",
     "git-directory-deploy": "1.5.1",
     "husky": "0.14.3",
-    "konitor": "0.9.0",
+    "konitor": "0.10.2",
     "webpack": "4.16.1",
     "webpack-cli": "3.1.2"
   }
