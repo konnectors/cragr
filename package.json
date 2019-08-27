@@ -56,7 +56,7 @@
     "husky": "3.0.3",
     "konitor": "0.10.2",
     "svgo": "1.3.0",
-    "webpack": "4.39.2",
+    "webpack": "4.39.3",
     "webpack-cli": "3.3.6"
   }
 }
