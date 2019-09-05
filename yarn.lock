@@ -2411,23 +2411,23 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-cozy-app@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/eslint-config-cozy-app/-/eslint-config-cozy-app-1.2.3.tgz#db7b25237a04fdaf158dd97e13ad88b27878f60e"
-  integrity sha512-PzDNQPmhiTRavwMjEd1pFfqKzhbimEmY8TceF0VjZSa2PplaVjnbxBLD/Oz01fiYkAfi80vyEyh+2y7VTMyz9g==
+eslint-config-cozy-app@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-cozy-app/-/eslint-config-cozy-app-1.3.1.tgz#f2fb4450c97b2d4e7dfcdbae534d50f9fbb12de5"
+  integrity sha512-gRmovSCjwCFMk1Mbz0R1RfGh5zcIEeiNOis/FizeFsGO01hWc6AALemPsXIRfHTfiXg536yzJr8XNcPGu/VYCw==
   dependencies:
     babel-eslint "10.0.1"
     eslint "5.16.0"
-    eslint-config-prettier "4.1.0"
+    eslint-config-prettier "4.3.0"
     eslint-plugin-prettier "3.1.0"
     eslint-plugin-react "7.14.3"
     eslint-plugin-vue "5.2.3"
     prettier "1.16.4"
 
-eslint-config-prettier@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.1.0.tgz#181364895899fff9fd3605fecb5c4f20e7d5f395"
-  integrity sha512-zILwX9/Ocz4SV2vX7ox85AsrAgXV3f2o2gpIicdMIOra48WYqgUnWNH/cR/iHtmD2Vb3dLSC3LiEJnS05Gkw7w==
+eslint-config-prettier@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.3.0.tgz#c55c1fcac8ce4518aeb77906984e134d9eb5a4f0"
+  integrity sha512-sZwhSTHVVz78+kYD3t5pCWSYEdVSBR0PXnwjDRsUs8ytIrK8PLXw+6FKp8r3Z7rx4ZszdetWlXYKOHoUrrwPlA==
   dependencies:
     get-stdin "^6.0.0"
 
