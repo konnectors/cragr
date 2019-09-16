@@ -1725,7 +1725,35 @@ cozy-jobs-cli@1.9.19:
     replay "2.4.0"
     strip-json-comments "3.0.1"
 
-cozy-konnector-libs@4.26.0, cozy-konnector-libs@^4.26.0:
+cozy-konnector-libs@4.28.1:
+  version "4.28.1"
+  resolved "https://registry.yarnpkg.com/cozy-konnector-libs/-/cozy-konnector-libs-4.28.1.tgz#4038de72749c519c542c82a5ffd02a6931a279fb"
+  integrity sha512-f3d8nU/Jidld67oCi+IL3SVZkEePWd9THZWTF1T/kA/0GCAMS+6z/kgW/9LtgtwKGJaZ14CK2MmBN8QRxezvYQ==
+  dependencies:
+    bluebird "^3.5.5"
+    bluebird-retry "^0.11.0"
+    cheerio "^1.0.0-rc.3"
+    classificator "^0.3.3"
+    cozy-client "^6.58.1"
+    cozy-client-js "^0.16.4"
+    cozy-doctypes "^1.63.2"
+    cozy-logger "^1.6.0"
+    date-fns "^1.30.1"
+    file-type "^12.2.0"
+    geco "^0.11.1"
+    lodash-id "^0.14.0"
+    lowdb "^1.0.0"
+    mime-types "^2.1.24"
+    pdfjs "^2.3.0"
+    pdfjs-dist "^2.1.266"
+    raven "^2.6.4"
+    raw-body "^2.4.1"
+    request "^2.88.0"
+    request-debug "^0.2.0"
+    request-promise "^4.2.4"
+    strip-json-comments "^3.0.1"
+
+cozy-konnector-libs@^4.26.0:
   version "4.26.0"
   resolved "https://registry.yarnpkg.com/cozy-konnector-libs/-/cozy-konnector-libs-4.26.0.tgz#c19e5b9d2b49629a56eaec7cee1602f1ce81fb9c"
   integrity sha512-BKF8cbnUDNt8Ent04uhw3BQ5jtKWJLouLKwORjwcGI6AcUYbIxesjdTibt2JGMSRO4VepITYuPGeFyKBJPDgdw==
@@ -1765,6 +1793,14 @@ cozy-logger@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/cozy-logger/-/cozy-logger-1.5.0.tgz#76c619f8371354b627600db1006bd5e118263370"
   integrity sha512-ekgFSGbJepAmppZ5Kd/osthdKnneLPDsI5ouAj/me6sOUcklwPhhlaKdMw68FP9oFcfE4+ZGnMM70ep4CwZSKA==
+  dependencies:
+    chalk "^2.4.2"
+    json-stringify-safe "5.0.1"
+
+cozy-logger@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/cozy-logger/-/cozy-logger-1.6.0.tgz#51675e081e0a40baae6c38c64718cfaee5ee66ff"
+  integrity sha512-UkPR5lQDY6HldNv3N3c8HaxlfgcgAB/iRBFwJNFL2I17lhcM0u7w27vo1nuFeX6geMeFUjvedq/awawxZ1mTQg==
   dependencies:
     chalk "^2.4.2"
     json-stringify-safe "5.0.1"
