@@ -1713,23 +1713,23 @@ cozy-doctypes@^1.63.2:
     lodash "4.17.15"
     prop-types "^15.7.2"
 
-cozy-jobs-cli@1.9.23:
-  version "1.9.23"
-  resolved "https://registry.yarnpkg.com/cozy-jobs-cli/-/cozy-jobs-cli-1.9.23.tgz#0a9d2a0256218c6eeecdb44c4eaaceb712c67c3a"
-  integrity sha512-Z4prlieNuq3hrkoigVmaxV3AwD+qaCMFmUXWE/xV2A8CiJbdiJ3VFUhTEfJpVedlPMseDvAUtLuH2k58X3/Zjw==
+cozy-jobs-cli@1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/cozy-jobs-cli/-/cozy-jobs-cli-1.10.2.tgz#6a8bf21815a43d33d1e22c6c82dc445cb639d3db"
+  integrity sha512-hDpui+x09GR+a8AVD0yTDf90HeJbvRUJ1m5EBhpU2I1SGPNH507Pbf8g6w7i+Zb/5z1avub9yWi2kxNbB9/+SQ==
   dependencies:
     cheerio "1.0.0-rc.3"
     cli-highlight "2.1.1"
     commander "3.0.1"
     cozy-client-js "0.16.4"
-    cozy-konnector-libs "^4.28.2"
+    cozy-konnector-libs "^4.30.2"
     cozy-logger "1.6.0"
     open "6.4.0"
     pretty "2.0.0"
     replay "2.4.0"
     strip-json-comments "3.0.1"
 
-cozy-konnector-libs@4.28.2, cozy-konnector-libs@^4.28.2:
+cozy-konnector-libs@4.28.2:
   version "4.28.2"
   resolved "https://registry.yarnpkg.com/cozy-konnector-libs/-/cozy-konnector-libs-4.28.2.tgz#c033320f43c5219571a033e6581fed816e97ffeb"
   integrity sha512-daDuPmgz8VJrGVOVUsWxB3FcsNHlQ59T71TuCYQSSQGv1Gz2tUwVJxr4QILnspSAUf3eQgGxbc7/I/QQmEpNUQ==
@@ -1751,6 +1751,33 @@ cozy-konnector-libs@4.28.2, cozy-konnector-libs@^4.28.2:
     mime-types "^2.1.24"
     pdfjs "^2.3.0"
     pdfjs-dist "^2.1.266"
+    raven "^2.6.4"
+    raw-body "^2.4.1"
+    request "^2.88.0"
+    request-debug "^0.2.0"
+    request-promise "^4.2.4"
+    strip-json-comments "^3.0.1"
+
+cozy-konnector-libs@^4.30.2:
+  version "4.30.2"
+  resolved "https://registry.yarnpkg.com/cozy-konnector-libs/-/cozy-konnector-libs-4.30.2.tgz#9cd053dd3d0ad6445542faa127e10b3fe2020125"
+  integrity sha512-gvWxGJBkj02eqMEqU9BeEw1fRjCcWen3lHlGVOrm5kN8KC40lx2y5ySHWVibkxiwdXkhBXe6PVm7jk6VyuV0/A==
+  dependencies:
+    bluebird "^3.5.5"
+    bluebird-retry "^0.11.0"
+    btoa "1.2.1"
+    cheerio "^1.0.0-rc.3"
+    classificator "^0.3.3"
+    cozy-client "^6.58.1"
+    cozy-client-js "^0.16.4"
+    cozy-doctypes "^1.63.2"
+    cozy-logger "^1.6.0"
+    date-fns "^1.30.1"
+    file-type "^12.2.0"
+    geco "^0.11.1"
+    lodash-id "^0.14.0"
+    lowdb "^1.0.0"
+    mime-types "^2.1.24"
     raven "^2.6.4"
     raw-body "^2.4.1"
     request "^2.88.0"
