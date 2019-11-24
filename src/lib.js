@@ -14,6 +14,7 @@ const moment = require('moment')
 const url = require('url')
 const regions = require('../regions.json')
 const doctypes = require('cozy-doctypes')
+const cheerio = require('cheerio')
 const { BankAccount, BankTransaction, BankingReconciliator } = doctypes
 
 // time given to the connector to save the files
@@ -26,10 +27,30 @@ const request = requestFactory({
   cheerio: true
 })
 
+const newRequest = requestFactory({
+  // debug: true,
+  jar: true,
+  json: true,
+  cheerio: false,
+  resolveWithFullResponse: true,
+  headers: {
+    // For some reason, it only works with this user-agent, taken from weboob
+    'User-Agent':
+      'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0'
+  }
+})
+
 let loginUrl = null
 let baseUrl = null
 let statementsUrl = null
 let fields = {}
+
+const rootUrl = 'https://www.credit-agricole.fr'
+const accountsUrl = 'particulier/acceder-a-mes-comptes.html'
+const keypadUrl = 'particulier/acceder-a-mes-comptes.authenticationKeypad.json'
+const securityCheckUrl =
+  'particulier/acceder-a-mes-comptes.html/j_security_check'
+let newSite = 0
 
 doctypes.registerClient(cozyClient)
 
@@ -316,7 +337,7 @@ function parseOperations(account, body) {
 }
 
 function login(bankUrl) {
-  log('info', 'Logging in')
+  log('info', 'Try to login with old scheme')
   return request(`${bankUrl}/particuliers.html`)
     .then($ => {
       const script = Array.from($('script'))
@@ -400,6 +421,85 @@ function login(bankUrl) {
         throw new Error(errors.LOGIN_FAILED)
       }
     })
+    .catch($ => {
+      if ($.statusCode == 404) {
+        return newlogin(bankUrl)
+      } else {
+        log('error', `Status code: ${$.statusCode}`)
+        throw new Error(errors.VENDOR_DOWN)
+      }
+    })
+}
+
+function newlogin(bankUrl) {
+  log('info', 'Try to login with new scheme')
+  return newRequest(`${bankUrl}/${accountsUrl}`).then($ => {
+    // Get the form data to post
+    let form = []
+    cheerio
+      .load($.body)('form[id=loginForm]')
+      .serializeArray()
+      .map(x => (form[x.name] = x.value))
+    // Request a secure keypad
+    return newRequest(`${bankUrl}/${keypadUrl}`, {
+      method: 'POST',
+      // Set a referer and the login in the body, necessary with this user-agent
+      headers: {
+        Referer: `${bankUrl}/${accountsUrl}`
+      },
+      body: {
+        user_id: fields.login
+      }
+    })
+      .then($ => {
+        // Extract password and keypad id
+        const keypadPassword = Array.from(fields.password)
+          .map(digit => {
+            return $.body.keyLayout.indexOf(digit)
+          })
+          .toString()
+
+        return {
+          keypadPassword: keypadPassword,
+          keypadId: $.body.keypadId
+        }
+      })
+      .then(secureForm => {
+        // Fill and post login form
+        form['j_username'] = fields.login
+        form['j_password'] = secureForm['keypadPassword']
+        form['keypadId'] = secureForm['keypadId']
+        return newRequest(`${bankUrl}/${securityCheckUrl}`, {
+          method: 'POST',
+          form: form
+        })
+          .then($ => {
+            newSite = 1
+            return newRequest(`${rootUrl}${$.body.url}`)
+          })
+          .catch($ => {
+            if ($.statusCode == 500) {
+              log('error', $.error.error.message)
+              if (
+                $.error.error.message.includes(
+                  'Votre identification est incorrecte'
+                )
+              ) {
+                throw new Error(errors.LOGIN_FAILED)
+              } else if (
+                $.error.error.message.includes('Un incident technique')
+              ) {
+                throw new Error(errors.VENDOR_DOWN)
+              } else {
+                throw new Error(errors.LOGIN_FAILED)
+              }
+            } else {
+              log('error', $.message)
+              throw new Error(errors.LOGIN_FAILED)
+            }
+          })
+      })
+  })
 }
 
 async function getBalanceHistory(year, accountId) {
