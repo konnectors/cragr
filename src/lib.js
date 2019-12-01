@@ -53,6 +53,8 @@ const securityCheckUrl =
   'particulier/acceder-a-mes-comptes.html/j_security_check'
 const accountDetailsUrl =
   'particulier/operations/synthese/jcr:content.produits-valorisation.json'
+const accountOperationsUrl =
+  'particulier/operations/synthese/detail-comptes/jcr:content.n3.operations.json'
 const label2Type = {
   'LIVRET A': 'bank',
   'COMPTE CHEQUE': 'bank',
@@ -82,7 +84,7 @@ async function start(requiredFields) {
   log('info', `Found ${accounts.length} accounts`)
   let allOperations = []
   for (let account of accounts) {
-    const operations = await syncOperations(account)
+    const operations = await syncOperations(account, bankUrl)
     log('info', `Found ${operations.length} operations`)
     allOperations = allOperations.concat(operations)
   }
@@ -310,23 +312,70 @@ function fetchStatementPage() {
   return request(statementsUrl)
 }
 
-async function syncOperations(account) {
-  const rawOperations = await lib.fetchOperations(account)
-  return lib.parseOperations(account, rawOperations)
+async function syncOperations(account, bankUrl) {
+  const rawOperations = await lib.fetchOperations(account, bankUrl)
+  if (newSite == 0) {
+    return lib.parseOperations(account, rawOperations)
+  } else {
+    return lib.parseNewOperations(account, rawOperations)
+  }
 }
 
-async function fetchOperations(account) {
+async function fetchOperations(account, bankUrl) {
   log('info', `Gettings operations for ${account.label}`)
 
-  const request = requestFactory({
-    cheerio: false,
-    jar: true
-  })
+  if (newSite == 0) {
+    const request = requestFactory({
+      cheerio: false,
+      jar: true
+    })
 
-  return request({
-    url: `${baseUrl}/stb/${account.linkOperations}&typeaction=telechargement`,
-    encoding: 'binary'
-  })
+    return request({
+      url: `${baseUrl}/stb/${account.linkOperations}&typeaction=telechargement`,
+      encoding: 'binary'
+    })
+  } else {
+    let rawOperations = []
+
+    const $ = await newRequest(`${bankUrl}/${accountOperationsUrl}`, {
+      qs: {
+        compteIdx: 0,
+        grandeFamilleCode: account.caData.category,
+        idElementContrat: account.caData.contrat,
+        idDevise: account.caData.devise,
+        count: 100
+      }
+    })
+
+    $.body.listeOperations.forEach(x => {
+      rawOperations.push(x)
+    })
+
+    let nextSetStartIndex = $.body.nextSetStartIndex
+    let hasNext = $.body.hasNext
+
+    while (hasNext) {
+      const $ = await newRequest(`${bankUrl}/${accountOperationsUrl}`, {
+        qs: {
+          compteIdx: 0,
+          grandeFamilleCode: account.caData.category,
+          idElementContrat: account.caData.contrat,
+          idDevise: account.caData.devise,
+          startIndex: nextSetStartIndex,
+          count: 100
+        }
+      })
+
+      nextSetStartIndex = $.body.nextSetStartIndex
+      hasNext = $.body.hasNext
+
+      $.body.listeOperations.forEach(x => {
+        rawOperations.push(x)
+      })
+    }
+
+    return rawOperations
+  }
 }
 
 function parseOperations(account, body) {
@@ -391,6 +440,33 @@ function parseOperations(account, body) {
       }
     })
 
+  forgeVendorId(account, operations)
+
+  return operations
+}
+
+function parseNewOperations(account, rawOperations) {
+  let operations = []
+
+  rawOperations.forEach(x => {
+    operations.push({
+      amount: x.montant,
+      date: new Date(x.dateValeur),
+      dateOperation: new Date(x.dateOperation),
+      label: x.libelleOperation.trim(),
+      dateImport: new Date(),
+      currency: x.idDevise,
+      vendorAccountId: account.number,
+      type: 'none' // TODO Map libelleTypeOperation to type
+    })
+  })
+
+  forgeVendorId(account, operations)
+
+  return operations
+}
+
+function forgeVendorId(account, operations) {
   // Forge a vendorId by concatenating account number, day YYYY-MM-DD and index
   // of the operation during the day
   const groups = groupBy(operations, x => x.date.toISOString().slice(0, 10))
@@ -399,8 +475,6 @@ function parseOperations(account, body) {
       operation.vendorId = `${account.number}_${date}_${i}`
     })
   })
-
-  return operations
 }
 
 function login(bankUrl) {
@@ -656,6 +730,7 @@ module.exports = lib = {
   saveBalances,
   fetchOperations,
   parseOperations,
+  parseNewOperations,
   syncOperations,
   fetchDocuments,
   login
