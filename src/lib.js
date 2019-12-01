@@ -45,11 +45,21 @@ let baseUrl = null
 let statementsUrl = null
 let fields = {}
 
+const bankLabel = 'Crédit Agricole'
 const rootUrl = 'https://www.credit-agricole.fr'
 const accountsUrl = 'particulier/acceder-a-mes-comptes.html'
 const keypadUrl = 'particulier/acceder-a-mes-comptes.authenticationKeypad.json'
 const securityCheckUrl =
   'particulier/acceder-a-mes-comptes.html/j_security_check'
+const accountDetailsUrl =
+  'particulier/operations/synthese/jcr:content.produits-valorisation.json'
+const label2Type = {
+  'LIVRET A': 'bank',
+  'COMPTE CHEQUE': 'bank',
+  CCHQ: 'Checkings',
+  PEL: 'Savings'
+  // to complete when we have more data
+}
 let newSite = 0
 
 doctypes.registerClient(cozyClient)
@@ -65,7 +75,10 @@ async function start(requiredFields) {
   fields = requiredFields
   const bankUrl = getBankUrl(fields.bankId)
   const accountsPage = await lib.login(bankUrl)
-  const accounts = lib.parseAccounts(accountsPage)
+  let accounts = lib.parseAccounts(accountsPage)
+  if (newSite) {
+    await lib.getAccountsDetails(accounts, bankUrl)
+  }
   log('info', `Found ${accounts.length} accounts`)
   let allOperations = []
   for (let account of accounts) {
@@ -75,7 +88,7 @@ async function start(requiredFields) {
   }
   log('info', allOperations.slice(0, 5), 'operations[0:5]')
   const { accounts: savedAccounts } = await reconciliator.save(
-    accounts.map(x => omit(x, 'linkOperations')),
+    accounts.map(x => omit(x, ['linkOperations', 'caData'])),
     allOperations
   )
   const balances = await fetchBalances(savedAccounts)
@@ -191,52 +204,106 @@ function parseStatementsPage($) {
   }
 }
 
+function fillNewAccount(json) {
+  return {
+    institutionLabel: bankLabel,
+    type: label2Type[json.libelleUsuelProduit.trim()] || 'UNKNOWN LABEL',
+    label: json.libelleProduit.trim(),
+    number: json.numeroCompteBam,
+    vendorId: json.numeroCompteBam,
+    balance: json.solde,
+    caData: {
+      category: json.grandeFamilleProduitCode,
+      contrat: json.idElementContrat,
+      devise: json.idDevise
+    }
+  }
+}
+
 function parseAccounts($) {
   log('info', 'Gettings accounts')
-  const accounts = Array.from($('.ca-table tbody tr img'))
-    .map(account => $(account).closest('tr'))
-    .map(account =>
-      Array.from($(account).find('td'))
-        .map(td => {
-          const $td = $(td)
-          let text = $td.text().trim()
 
-          // Get the full label of the account which is onmouseover event
-          const mouseover = $td.attr('onmouseover') || ''
-          let fullText = mouseover.match(/'(.*)'/)
-          if (fullText) text = fullText[1]
+  if (newSite == 0) {
+    const accounts = Array.from($('.ca-table tbody tr img'))
+      .map(account => $(account).closest('tr'))
+      .map(account =>
+        Array.from($(account).find('td'))
+          .map(td => {
+            const $td = $(td)
+            let text = $td.text().trim()
 
-          // if there is an image in the td then get the link to the csv
-          if ($td.find('img').length) {
-            text = $td
-              .find('a')
-              .attr('href')
-              .match(/\('(.*)'\)/)[1]
-          }
+            // Get the full label of the account which is onmouseover event
+            const mouseover = $td.attr('onmouseover') || ''
+            let fullText = mouseover.match(/'(.*)'/)
+            if (fullText) text = fullText[1]
 
-          return text
-        })
-        .filter(td => td.length > 0)
+            // if there is an image in the td then get the link to the csv
+            if ($td.find('img').length) {
+              text = $td
+                .find('a')
+                .attr('href')
+                .match(/\('(.*)'\)/)[1]
+            }
+
+            return text
+          })
+          .filter(td => td.length > 0)
+      )
+
+    return accounts.map(account => {
+      const operationsLink = account[account.length - 1]
+      return {
+        institutionLabel: bankLabel,
+        type: label2Type[account[0]] || 'UNKNOWN LABEL',
+        label: account[0],
+        number: account[1],
+        vendorId: account[1],
+        balance: parseFloat(account[2].replace(' ', '').replace(',', '.')),
+        linkOperations: operationsLink
+      }
+    })
+  } else {
+    const accountsJson = JSON.parse(
+      cheerio
+        .load($.body)('.Synthesis-main')
+        .attr('data-ng-init')
+        .match(/syntheseController.init\(({.*}),\s{.*}\)/)[1]
     )
-
-  const label2Type = {
-    'LIVRET A': 'bank',
-    'COMPTE CHEQUE': 'bank'
-    // to complete when we have more data
+    const accounts = []
+    // Add main account
+    accounts.push(fillNewAccount(accountsJson.comptePrincipal))
+    accountsJson.grandesFamilles.forEach(x => {
+      // Only keep 'placements', ignore 'assurances' and 'credits'
+      if (x.titre === 'MES PLACEMENTS') {
+        x.elementsContrats.forEach(element => {
+          accounts.push(fillNewAccount(element))
+        })
+      }
+    })
+    return accounts
   }
+}
 
-  return accounts.map(account => {
-    const operationsLink = account[account.length - 1]
-    return {
-      institutionLabel: 'Crédit Agricole',
-      type: label2Type[account[0]] || 'UNKNOWN LABEL',
-      label: account[0],
-      number: account[1],
-      vendorId: account[1],
-      balance: parseFloat(account[2].replace(' ', '').replace(',', '.')),
-      linkOperations: operationsLink
+async function getAccountsDetails(accounts, bankUrl) {
+  for (let idx in accounts) {
+    // Other accounts than the main accounts do not give the balance in JSON,
+    // request account details to retrieve it
+    if (
+      typeof accounts[idx].balance === 'undefined' &&
+      accounts[idx].caData.category
+    ) {
+      log('info', `Getting account #${idx} details`)
+      await newRequest(
+        `${bankUrl}/${accountDetailsUrl}/${accounts[idx].caData.category}`
+      ).then($ => {
+        $.body.forEach(element => {
+          accounts.find(
+            x => x.caData.contrat == element.idElementContrat
+          ).balance = element.solde
+        })
+      })
     }
-  })
+  }
 }
 
 function fetchStatementPage() {
@@ -585,6 +652,7 @@ function saveBalances(balances) {
 module.exports = lib = {
   start,
   parseAccounts,
+  getAccountsDetails,
   saveBalances,
   fetchOperations,
   parseOperations,
