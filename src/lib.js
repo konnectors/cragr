@@ -15,7 +15,13 @@ const url = require('url')
 const regions = require('../regions.json')
 const doctypes = require('cozy-doctypes')
 const cheerio = require('cheerio')
-const { BankAccount, BankTransaction, BankingReconciliator } = doctypes
+const {
+  Document,
+  BankAccount,
+  BankTransaction,
+  BalanceHistory,
+  BankingReconciliator
+} = doctypes
 
 // time given to the connector to save the files
 const FULL_TIMEOUT = Date.now() + 4 * 60 * 1000
@@ -64,7 +70,7 @@ const label2Type = {
 }
 let newSite = 0
 
-doctypes.registerClient(cozyClient)
+Document.registerClient(cozyClient)
 
 const reconciliator = new BankingReconciliator({
   BankAccount,
@@ -643,50 +649,6 @@ function newlogin(bankUrl) {
   })
 }
 
-async function getBalanceHistory(year, accountId) {
-  const index = await cozyClient.data.defineIndex(
-    'io.cozy.bank.balancehistories',
-    ['year', 'relationships.account.data._id']
-  )
-  const options = {
-    selector: { year, 'relationships.account.data._id': accountId },
-    limit: 1
-  }
-  const [balance] = await cozyClient.data.query(index, options)
-
-  if (balance) {
-    log(
-      'info',
-      `Found a io.cozy.bank.balancehistories document for year ${year} and account ${accountId}`
-    )
-    return balance
-  }
-
-  log(
-    'info',
-    `io.cozy.bank.balancehistories document not found for year ${year} and account ${accountId}, creating a new one`
-  )
-  return getEmptyBalanceHistory(year, accountId)
-}
-
-function getEmptyBalanceHistory(year, accountId) {
-  return {
-    year,
-    balances: {},
-    metadata: {
-      version: 1
-    },
-    relationships: {
-      account: {
-        data: {
-          _id: accountId,
-          _type: 'io.cozy.bank.accounts'
-        }
-      }
-    }
-  }
-}
-
 function fetchBalances(accounts) {
   const now = moment()
   const todayAsString = now.format('YYYY-MM-DD')
@@ -694,7 +656,10 @@ function fetchBalances(accounts) {
 
   return Promise.all(
     accounts.map(async account => {
-      const history = await getBalanceHistory(currentYear, account._id)
+      const history = await BalanceHistory.getByYearAndAccount(
+        currentYear,
+        account._id
+      )
       history.balances[todayAsString] = account.balance
 
       return history
