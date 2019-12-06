@@ -101,7 +101,9 @@ async function start(requiredFields) {
   )
   const balances = await fetchBalances(savedAccounts)
   await lib.saveBalances(balances)
-  await lib.fetchDocuments()
+  if (newSite == 0) {
+    await lib.fetchDocuments()
+  }
 }
 
 function getBankUrl(bankId) {
