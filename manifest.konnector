@@ -9,6 +9,7 @@
   "editor": "Cozy",
   "vendor_link": "https://www.paris-g4-enligne.credit-agricole.fr/stb/entreeBam",
   "categories": ["banking"],
+  "frequency": "daily",
   "fields": {
     "bankId": {
       "type": "dropdown",
