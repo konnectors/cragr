@@ -3,7 +3,11 @@ node_js:
 - '12'
 env:
   global:
-  - DEPLOY_REPOSITORY="git@github.com:konnectors/cozy-konnector-bank-cragr.git"
+  - DEPLOY_REPOSITORY="git@github.com:konnectors/cragr.git"
+  # REGISTRY_TOKEN(editor=cozy, app=cragr)
+  - secure: n0eUlXbNZXNhgnrBK95obLo2xGQyJdB0R5gwvuOOMfTfStc0+8hT/W5ftz9V1IcpZJm470bW/irHtVCoMHsI89VF9G1QwG82xuBvFuXQDJGd0rC74r0GtjV0Dp+rJWBwjUM2QLet86UHGtC3CnH2C2z6FJZQ1b2WrKBSjQtIMYH7ogYz1KKcBmuHs98fo98u+MalYX9b3c0/qHNv25gaokh93U+DqNrAP9MP5n35xuYElrc3ydF3swUQzzYZHAzIragRwYnYQn8KkMskggUptNbP1sUW8rPPxErqT5hF5E7Mxi9542YAHgewjgVYko4J7Eb7bXcUQyGGM9IXDw+dqZ210qvSrJmkZlRqEiXAp8Ta6KoPf3t3kOorZ6Lxx8MMAHvH0HHs1fJmSjXK9z5OR3pgaFp+2ktjzf12DFckODNRcR2txUQv77G7L7DBNbRufYHB5KNQPcuiuADR4FnbN6ad/KN2w1RgcXLIjQxOJrCwhGMqU/0A6Y7LI1gGl4hqaaaYv/aTygKv5z1xq7ltoeC7OXR+4wjyAsFUZho+2NCC//HrOIWB2L4Pa+mrB3eWNdbFksHSpYM1JYrssQGQwMavLH6n57133Q7mf+hm+ixkAPL0krY44M8ansXjb55iGWzr3CrF1+7lTLD5bnOCNlQqgzIptGWyr6WNzqC120s=
+  # MATTERMOST_HOOK_URL
+  - secure: cLBVjG8IiGPoYkC1ecfU7SQKg3GqRvnC4Vurm94QA6WTQbTjRrYFRSzLkPjjsoAb+IDdY+bstwZCmv44BE8G/ew5Nc700zeF52NXpVxof26jwhYPev3WDhYOjccXYYrq75n8+lCdkMoeR04+FCA9nd1GR3rDSq1VbKJdLCuR6sw0iytHKZJeMt0T7VYHMqQtz8bfYJd5GKobqK0nLhUXLXuQ7FrSs1sfuIizwV4EPDu7f+MQsGHHYzXdFiy9MjZcfqn3XUXWJRqQ3wFQxp6HklSxP+VDeYM5fP1KmhIb0J7oznEuapvN3a8dXj7qk47OBLlmxRvny6/7DkyFZ+/4wGhZkfs90Ps1dKCR9YDbi2soqjEpC21DdDOKpl1QUT0W89z1aJtn0MTIZgyEsxlgDZq1ryf6Ue5wmyIMtocbr30Nf/1DUj8qEIRoEXlTtNRdZuu2nkATIITAlyzIVwYMs18Qn1DbY/gbTQPSqTtjbF0ZbRATMjOfg7y7TuRIGz4iyVsu3qhO7v3PLqJPbudk7TirFpB3OX8FE/daaEakF0tCCgz+PEpLVJF0m1M1lvboI1/vfVBM0NX5f9vgRdWAHZJ9gRNM9HMV1MSfOXSPH/J5l2iF7w+FRVrDU8hY/ImDQYg7PN/KVqFjleQheg4nm6FlipoxHjLZj9qavnuLFH0=
 cache:
   yarn: true
   directories:
@@ -11,23 +15,23 @@ cache:
 branches:
   except:
   - build
-  - latest
+  - build-debug
 script:
 - yarn lint
 - yarn build
 deploy:
 - provider: script
   skip-cleanup: true
-  script: DEPLOY_BRANCH=build yarn deploy
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
   on:
     branch: master
 - provider: script
   skip-cleanup: true
-  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish --postpublish mattermost
   on:
     tags: true
-before_deploy:
-- openssl aes-256-cbc -K $encrypted_228966402ede_key -iv $encrypted_228966402ede_iv
+before_install:
+- openssl aes-256-cbc -K $encrypted_e9c11a6221ee_key -iv $encrypted_e9c11a6221ee_iv
   -in github_deploy_key.enc -out /tmp/github_deploy_key -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/github_deploy_key
