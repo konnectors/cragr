@@ -4,11 +4,11 @@
     "value": "1"
   },
   {
-    "name": "Alsace-Vosges",
+    "name": "Alsace Vosges",
     "value": "2"
   },
   {
-    "name": "Anjou-Maine",
+    "name": "Anjou Maine",
     "value": "3"
   },
   {
@@ -16,11 +16,11 @@
     "value": "4"
   },
   {
-    "name": "Atlantique-Vendée",
+    "name": "Atlantique Vendée",
     "value": "5"
   },
   {
-    "name": "Brie-Picardie",
+    "name": "Brie Picardie",
     "value": "6"
   },
   {
@@ -40,15 +40,15 @@
     "value": "10"
   },
   {
-    "name": "Champagne-Bourgogne",
+    "name": "Champagne Bourgogne",
     "value": "11"
   },
   {
-    "name": "Charente-Maritime Deux-Sèvres",
+    "name": "Charente Maritime Deux-Sèvres",
     "value": "12"
   },
   {
-    "name": "Charente-Périgord",
+    "name": "Charente Périgord",
     "value": "13"
   },
   {
@@ -56,7 +56,7 @@
     "value": "14"
   },
   {
-    "name": "Côtes-d’Armor",
+    "name": "Côtes d'Armor",
     "value": "15"
   },
   {
@@ -68,7 +68,7 @@
     "value": "17"
   },
   {
-    "name": "Franche-Comté",
+    "name": "Franche Comté",
     "value": "18"
   },
   {
@@ -80,7 +80,7 @@
     "value": "20"
   },
   {
-    "name": "Ille-et-Vilaine",
+    "name": "Ille et Vilaine",
     "value": "21"
   },
   {
@@ -96,7 +96,7 @@
     "value": "24"
   },
   {
-    "name": "Martinique",
+    "name": "Martinique Guyane",
     "value": "25"
   },
   {
@@ -104,7 +104,7 @@
     "value": "26"
   },
   {
-    "name": "Nord de France",
+    "name": "Nord De France",
     "value": "27"
   },
   {
@@ -120,11 +120,11 @@
     "value": "30"
   },
   {
-    "name": "Normandie-Seine",
+    "name": "Normandie Seine",
     "value": "31"
   },
   {
-    "name": "Provence Côte d’Azur",
+    "name": "Provence Côte d'Azur",
     "value": "32"
   },
   {
@@ -148,11 +148,11 @@
     "value": "37"
   },
   {
-    "name": "Touraine-Poitou",
+    "name": "Touraine Poitou",
     "value": "38"
   },
   {
-    "name": "Val de France",
+    "name": "Val De France",
     "value": "39"
   }
 ]

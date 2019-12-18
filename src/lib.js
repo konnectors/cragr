@@ -14,7 +14,14 @@ const moment = require('moment')
 const url = require('url')
 const regions = require('../regions.json')
 const doctypes = require('cozy-doctypes')
-const { BankAccount, BankTransaction, BankingReconciliator } = doctypes
+const cheerio = require('cheerio')
+const {
+  Document,
+  BankAccount,
+  BankTransaction,
+  BalanceHistory,
+  BankingReconciliator
+} = doctypes
 
 // time given to the connector to save the files
 const FULL_TIMEOUT = Date.now() + 4 * 60 * 1000
@@ -26,12 +33,44 @@ const request = requestFactory({
   cheerio: true
 })
 
+const newRequest = requestFactory({
+  // debug: true,
+  jar: true,
+  json: true,
+  cheerio: false,
+  resolveWithFullResponse: true,
+  headers: {
+    // For some reason, it only works with this user-agent, taken from weboob
+    'User-Agent':
+      'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0'
+  }
+})
+
 let loginUrl = null
 let baseUrl = null
 let statementsUrl = null
 let fields = {}
 
-doctypes.registerClient(cozyClient)
+const bankLabel = 'Crédit Agricole'
+const rootUrl = 'https://www.credit-agricole.fr'
+const accountsUrl = 'particulier/acceder-a-mes-comptes.html'
+const keypadUrl = 'particulier/acceder-a-mes-comptes.authenticationKeypad.json'
+const securityCheckUrl =
+  'particulier/acceder-a-mes-comptes.html/j_security_check'
+const accountDetailsUrl =
+  'particulier/operations/synthese/jcr:content.produits-valorisation.json'
+const accountOperationsUrl =
+  'particulier/operations/synthese/detail-comptes/jcr:content.n3.operations.json'
+const label2Type = {
+  'LIVRET A': 'bank',
+  'COMPTE CHEQUE': 'bank',
+  CCHQ: 'Checkings',
+  PEL: 'Savings'
+  // to complete when we have more data
+}
+let newSite = 0
+
+Document.registerClient(cozyClient)
 
 const reconciliator = new BankingReconciliator({
   BankAccount,
@@ -44,22 +83,27 @@ async function start(requiredFields) {
   fields = requiredFields
   const bankUrl = getBankUrl(fields.bankId)
   const accountsPage = await lib.login(bankUrl)
-  const accounts = lib.parseAccounts(accountsPage)
+  let accounts = lib.parseAccounts(accountsPage)
+  if (newSite) {
+    await lib.getAccountsDetails(accounts, bankUrl)
+  }
   log('info', `Found ${accounts.length} accounts`)
   let allOperations = []
   for (let account of accounts) {
-    const operations = await syncOperations(account)
+    const operations = await syncOperations(account, bankUrl)
     log('info', `Found ${operations.length} operations`)
     allOperations = allOperations.concat(operations)
   }
   log('info', allOperations.slice(0, 5), 'operations[0:5]')
   const { accounts: savedAccounts } = await reconciliator.save(
-    accounts.map(x => omit(x, 'linkOperations')),
+    accounts.map(x => omit(x, ['linkOperations', 'caData'])),
     allOperations
   )
   const balances = await fetchBalances(savedAccounts)
   await lib.saveBalances(balances)
-  await lib.fetchDocuments()
+  if (newSite == 0) {
+    await lib.fetchDocuments()
+  }
 }
 
 function getBankUrl(bankId) {
@@ -170,75 +214,176 @@ function parseStatementsPage($) {
   }
 }
 
+function fillNewAccount(json) {
+  return {
+    institutionLabel: bankLabel,
+    type: label2Type[json.libelleUsuelProduit.trim()] || 'UNKNOWN LABEL',
+    label: json.libelleProduit.trim(),
+    number: json.numeroCompteBam,
+    vendorId: json.numeroCompteBam,
+    balance: json.solde,
+    caData: {
+      category: json.grandeFamilleProduitCode,
+      contrat: json.idElementContrat,
+      devise: json.idDevise
+    }
+  }
+}
+
 function parseAccounts($) {
   log('info', 'Gettings accounts')
-  const accounts = Array.from($('.ca-table tbody tr img'))
-    .map(account => $(account).closest('tr'))
-    .map(account =>
-      Array.from($(account).find('td'))
-        .map(td => {
-          const $td = $(td)
-          let text = $td.text().trim()
 
-          // Get the full label of the account which is onmouseover event
-          const mouseover = $td.attr('onmouseover') || ''
-          let fullText = mouseover.match(/'(.*)'/)
-          if (fullText) text = fullText[1]
+  if (newSite == 0) {
+    const accounts = Array.from($('.ca-table tbody tr img'))
+      .map(account => $(account).closest('tr'))
+      .map(account =>
+        Array.from($(account).find('td'))
+          .map(td => {
+            const $td = $(td)
+            let text = $td.text().trim()
 
-          // if there is an image in the td then get the link to the csv
-          if ($td.find('img').length) {
-            text = $td
-              .find('a')
-              .attr('href')
-              .match(/\('(.*)'\)/)[1]
-          }
+            // Get the full label of the account which is onmouseover event
+            const mouseover = $td.attr('onmouseover') || ''
+            let fullText = mouseover.match(/'(.*)'/)
+            if (fullText) text = fullText[1]
 
-          return text
-        })
-        .filter(td => td.length > 0)
+            // if there is an image in the td then get the link to the csv
+            if ($td.find('img').length) {
+              text = $td
+                .find('a')
+                .attr('href')
+                .match(/\('(.*)'\)/)[1]
+            }
+
+            return text
+          })
+          .filter(td => td.length > 0)
+      )
+
+    return accounts.map(account => {
+      const operationsLink = account[account.length - 1]
+      return {
+        institutionLabel: bankLabel,
+        type: label2Type[account[0]] || 'UNKNOWN LABEL',
+        label: account[0],
+        number: account[1],
+        vendorId: account[1],
+        balance: parseFloat(account[2].replace(' ', '').replace(',', '.')),
+        linkOperations: operationsLink
+      }
+    })
+  } else {
+    const accountsJson = JSON.parse(
+      cheerio
+        .load($.body)('.Synthesis-main')
+        .attr('data-ng-init')
+        .match(/syntheseController.init\(({.*}),\s{.*}\)/)[1]
     )
-
-  const label2Type = {
-    'LIVRET A': 'bank',
-    'COMPTE CHEQUE': 'bank'
-    // to complete when we have more data
+    const accounts = []
+    // Add main account
+    accounts.push(fillNewAccount(accountsJson.comptePrincipal))
+    accountsJson.grandesFamilles.forEach(x => {
+      // Only keep 'placements', ignore 'assurances' and 'credits'
+      if (x.titre === 'MES PLACEMENTS') {
+        x.elementsContrats.forEach(element => {
+          accounts.push(fillNewAccount(element))
+        })
+      }
+    })
+    return accounts
   }
+}
 
-  return accounts.map(account => {
-    const operationsLink = account[account.length - 1]
-    return {
-      institutionLabel: 'Crédit Agricole',
-      type: label2Type[account[0]] || 'UNKNOWN LABEL',
-      label: account[0],
-      number: account[1],
-      vendorId: account[1],
-      balance: parseFloat(account[2].replace(' ', '').replace(',', '.')),
-      linkOperations: operationsLink
+async function getAccountsDetails(accounts, bankUrl) {
+  for (let idx in accounts) {
+    // Other accounts than the main accounts do not give the balance in JSON,
+    // request account details to retrieve it
+    if (
+      typeof accounts[idx].balance === 'undefined' &&
+      accounts[idx].caData.category
+    ) {
+      log('info', `Getting account #${idx} details`)
+      await newRequest(
+        `${bankUrl}/${accountDetailsUrl}/${accounts[idx].caData.category}`
+      ).then($ => {
+        $.body.forEach(element => {
+          accounts.find(
+            x => x.caData.contrat == element.idElementContrat
+          ).balance = element.solde
+        })
+      })
     }
-  })
+  }
 }
 
 function fetchStatementPage() {
   return request(statementsUrl)
 }
 
-async function syncOperations(account) {
-  const rawOperations = await lib.fetchOperations(account)
-  return lib.parseOperations(account, rawOperations)
+async function syncOperations(account, bankUrl) {
+  const rawOperations = await lib.fetchOperations(account, bankUrl)
+  if (newSite == 0) {
+    return lib.parseOperations(account, rawOperations)
+  } else {
+    return lib.parseNewOperations(account, rawOperations)
+  }
 }
 
-async function fetchOperations(account) {
+async function fetchOperations(account, bankUrl) {
   log('info', `Gettings operations for ${account.label}`)
 
-  const request = requestFactory({
-    cheerio: false,
-    jar: true
-  })
+  if (newSite == 0) {
+    const request = requestFactory({
+      cheerio: false,
+      jar: true
+    })
 
-  return request({
-    url: `${baseUrl}/stb/${account.linkOperations}&typeaction=telechargement`,
-    encoding: 'binary'
-  })
+    return request({
+      url: `${baseUrl}/stb/${account.linkOperations}&typeaction=telechargement`,
+      encoding: 'binary'
+    })
+  } else {
+    let rawOperations = []
+
+    const $ = await newRequest(`${bankUrl}/${accountOperationsUrl}`, {
+      qs: {
+        compteIdx: 0,
+        grandeFamilleCode: account.caData.category,
+        idElementContrat: account.caData.contrat,
+        idDevise: account.caData.devise,
+        count: 100
+      }
+    })
+
+    $.body.listeOperations.forEach(x => {
+      rawOperations.push(x)
+    })
+
+    let nextSetStartIndex = $.body.nextSetStartIndex
+    let hasNext = $.body.hasNext
+
+    while (hasNext) {
+      const $ = await newRequest(`${bankUrl}/${accountOperationsUrl}`, {
+        qs: {
+          compteIdx: 0,
+          grandeFamilleCode: account.caData.category,
+          idElementContrat: account.caData.contrat,
+          idDevise: account.caData.devise,
+          startIndex: nextSetStartIndex,
+          count: 100
+        }
+      })
+
+      nextSetStartIndex = $.body.nextSetStartIndex
+      hasNext = $.body.hasNext
+
+      $.body.listeOperations.forEach(x => {
+        rawOperations.push(x)
+      })
+    }
+
+    return rawOperations
+  }
 }
 
 function parseOperations(account, body) {
@@ -303,6 +448,33 @@ function parseOperations(account, body) {
       }
     })
 
+  forgeVendorId(account, operations)
+
+  return operations
+}
+
+function parseNewOperations(account, rawOperations) {
+  let operations = []
+
+  rawOperations.forEach(x => {
+    operations.push({
+      amount: x.montant,
+      date: new Date(x.dateValeur),
+      dateOperation: new Date(x.dateOperation),
+      label: x.libelleOperation.trim(),
+      dateImport: new Date(),
+      currency: x.idDevise,
+      vendorAccountId: account.number,
+      type: 'none' // TODO Map libelleTypeOperation to type
+    })
+  })
+
+  forgeVendorId(account, operations)
+
+  return operations
+}
+
+function forgeVendorId(account, operations) {
   // Forge a vendorId by concatenating account number, day YYYY-MM-DD and index
   // of the operation during the day
   const groups = groupBy(operations, x => x.date.toISOString().slice(0, 10))
@@ -311,12 +483,10 @@ function parseOperations(account, body) {
       operation.vendorId = `${account.number}_${date}_${i}`
     })
   })
-
-  return operations
 }
 
 function login(bankUrl) {
-  log('info', 'Logging in')
+  log('info', 'Try to login with old scheme')
   return request(`${bankUrl}/particuliers.html`)
     .then($ => {
       const script = Array.from($('script'))
@@ -400,50 +570,85 @@ function login(bankUrl) {
         throw new Error(errors.LOGIN_FAILED)
       }
     })
-}
-
-async function getBalanceHistory(year, accountId) {
-  const index = await cozyClient.data.defineIndex(
-    'io.cozy.bank.balancehistories',
-    ['year', 'relationships.account.data._id']
-  )
-  const options = {
-    selector: { year, 'relationships.account.data._id': accountId },
-    limit: 1
-  }
-  const [balance] = await cozyClient.data.query(index, options)
-
-  if (balance) {
-    log(
-      'info',
-      `Found a io.cozy.bank.balancehistories document for year ${year} and account ${accountId}`
-    )
-    return balance
-  }
-
-  log(
-    'info',
-    `io.cozy.bank.balancehistories document not found for year ${year} and account ${accountId}, creating a new one`
-  )
-  return getEmptyBalanceHistory(year, accountId)
-}
-
-function getEmptyBalanceHistory(year, accountId) {
-  return {
-    year,
-    balances: {},
-    metadata: {
-      version: 1
-    },
-    relationships: {
-      account: {
-        data: {
-          _id: accountId,
-          _type: 'io.cozy.bank.accounts'
-        }
+    .catch($ => {
+      if ($.statusCode == 404) {
+        return newlogin(bankUrl)
+      } else {
+        log('error', `Status code: ${$.statusCode}`)
+        throw new Error(errors.VENDOR_DOWN)
       }
-    }
-  }
+    })
+}
+
+function newlogin(bankUrl) {
+  log('info', 'Try to login with new scheme')
+  return newRequest(`${bankUrl}/${accountsUrl}`).then($ => {
+    // Get the form data to post
+    let form = []
+    cheerio
+      .load($.body)('form[id=loginForm]')
+      .serializeArray()
+      .map(x => (form[x.name] = x.value))
+    // Request a secure keypad
+    return newRequest(`${bankUrl}/${keypadUrl}`, {
+      method: 'POST',
+      // Set a referer and the login in the body, necessary with this user-agent
+      headers: {
+        Referer: `${bankUrl}/${accountsUrl}`
+      },
+      body: {
+        user_id: fields.login
+      }
+    })
+      .then($ => {
+        // Extract password and keypad id
+        const keypadPassword = Array.from(fields.password)
+          .map(digit => {
+            return $.body.keyLayout.indexOf(digit)
+          })
+          .toString()
+
+        return {
+          keypadPassword: keypadPassword,
+          keypadId: $.body.keypadId
+        }
+      })
+      .then(secureForm => {
+        // Fill and post login form
+        form['j_username'] = fields.login
+        form['j_password'] = secureForm['keypadPassword']
+        form['keypadId'] = secureForm['keypadId']
+        return newRequest(`${bankUrl}/${securityCheckUrl}`, {
+          method: 'POST',
+          form: form
+        })
+          .then($ => {
+            newSite = 1
+            return newRequest(`${rootUrl}${$.body.url}`)
+          })
+          .catch($ => {
+            if ($.statusCode == 500) {
+              log('error', $.error.error.message)
+              if (
+                $.error.error.message.includes(
+                  'Votre identification est incorrecte'
+                )
+              ) {
+                throw new Error(errors.LOGIN_FAILED)
+              } else if (
+                $.error.error.message.includes('Un incident technique')
+              ) {
+                throw new Error(errors.VENDOR_DOWN)
+              } else {
+                throw new Error(errors.LOGIN_FAILED)
+              }
+            } else {
+              log('error', $.message)
+              throw new Error(errors.LOGIN_FAILED)
+            }
+          })
+      })
+  })
 }
 
 function fetchBalances(accounts) {
@@ -453,7 +658,10 @@ function fetchBalances(accounts) {
 
   return Promise.all(
     accounts.map(async account => {
-      const history = await getBalanceHistory(currentYear, account._id)
+      const history = await BalanceHistory.getByYearAndAccount(
+        currentYear,
+        account._id
+      )
       history.balances[todayAsString] = account.balance
 
       return history
@@ -485,9 +693,11 @@ function saveBalances(balances) {
 module.exports = lib = {
   start,
   parseAccounts,
+  getAccountsDetails,
   saveBalances,
   fetchOperations,
   parseOperations,
+  parseNewOperations,
   syncOperations,
   fetchDocuments,
   login
