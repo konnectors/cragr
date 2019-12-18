@@ -22,12 +22,12 @@ script:
 deploy:
 - provider: script
   skip-cleanup: true
-  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish --space selfhosted
   on:
     branch: master
 - provider: script
   skip-cleanup: true
-  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish --postpublish mattermost
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish --space selfhosted --postpublish mattermost
   on:
     tags: true
 before_install:
