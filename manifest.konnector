@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "name": "Crédit Agricole",
   "type": "konnector",
   "language": "node",
@@ -8,9 +8,7 @@
   "source": "git://github.com/konnectors/cragr.git",
   "editor": "Cozy",
   "vendor_link": "https://www.paris-g4-enligne.credit-agricole.fr/stb/entreeBam",
-  "categories": [
-    "banking"
-  ],
+  "categories": ["banking"],
   "frequency": "daily",
   "fields": {
     "bankId": {
@@ -205,9 +203,7 @@
     "accounts": {
       "description": "Required to get the account's data",
       "type": "io.cozy.accounts",
-      "verbs": [
-        "GET"
-      ]
+      "verbs": ["GET"]
     },
     "bank.balancehistories": {
       "description": "Required to save balance histories",
@@ -222,10 +218,7 @@
     "name": "Cozy Cloud",
     "url": "https://cozy.io"
   },
-  "langs": [
-    "fr",
-    "en"
-  ],
+  "langs": ["fr", "en"],
   "locales": {
     "fr": {
       "short_description": "Récupère vos opérations bancaires",
