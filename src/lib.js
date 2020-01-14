@@ -284,7 +284,10 @@ function parseAccounts($) {
     accounts.push(fillNewAccount(accountsJson.comptePrincipal))
     accountsJson.grandesFamilles.forEach(x => {
       // Only keep 'placements', ignore 'assurances' and 'credits'
-      if (x.titre === 'MES PLACEMENTS' || x.titre === 'MON EPARGNE DISPONIBLE') {
+      if (
+        x.titre === 'MES PLACEMENTS' ||
+        x.titre === 'MON EPARGNE DISPONIBLE'
+      ) {
         x.elementsContrats.forEach(element => {
           accounts.push(fillNewAccount(element))
         })
