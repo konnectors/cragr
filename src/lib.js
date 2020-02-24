@@ -631,19 +631,24 @@ function newlogin(bankUrl) {
           })
           .catch($ => {
             if ($.statusCode == 500) {
-              log('error', $.error.error.message)
-              if (
-                $.error.error.message.includes(
-                  'Votre identification est incorrecte'
-                )
-              ) {
-                throw new Error(errors.LOGIN_FAILED)
-              } else if (
-                $.error.error.message.includes('Un incident technique')
-              ) {
-                throw new Error(errors.VENDOR_DOWN)
+              if ($.error.url && $.error.url.includes('dsp2')) {
+                log('error', 'Strong authentication necessary')
+                throw new Error(errors.USER_ACTION_NEEDED)
               } else {
-                throw new Error(errors.LOGIN_FAILED)
+                log('error', $.error.error.message)
+                if (
+                  $.error.error.message.includes(
+                    'Votre identification est incorrecte'
+                  )
+                ) {
+                  throw new Error(errors.LOGIN_FAILED)
+                } else if (
+                  $.error.error.message.includes('Un incident technique')
+                ) {
+                  throw new Error(errors.VENDOR_DOWN)
+                } else {
+                  throw new Error(errors.LOGIN_FAILED)
+                }
               }
             } else {
               log('error', $.message)
