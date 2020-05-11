@@ -1,6 +1,6 @@
 {
   "name": "cozy-konnector-cragr",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Crédit Agricole",
   "repository": {
     "type": "git",
@@ -8,6 +8,13 @@
   },
   "keywords": [],
   "author": "Cozy Cloud",
+  "contributors": [
+    {
+      "name": "Benoit MERLE",
+      "email" : "benoitmerle@fserv.fr",
+      "url" : "https://gitlab.infosplatch.fr/konnectors"
+    }
+  ],
   "license": "AGPL-3.0",
   "main": "./src/index.js",
   "eslintConfig": {
@@ -34,6 +41,7 @@
     "build": "webpack",
     "lint": "eslint --fix .",
     "deploy": "git-directory-deploy --directory build/ --branch ${DEPLOY_BRANCH:-build} --repo=${DEPLOY_REPOSITORY:-$npm_package_repository_url}",
+    "deployme": "git-directory-deploy --directory build/ --branch build --repo=git@gitlab.infosplatch.fr:konnectors/cragr.git",
     "cozyPublish": "cozy-app-publish --token $REGISTRY_TOKEN --build-commit $(git rev-parse ${DEPLOY_BRANCH:-build})",
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
