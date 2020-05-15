@@ -21,6 +21,7 @@ const {
   BankingReconciliator
 } = doctypes
 
+const helpers = require('./helpers')
 const libOldSite = require('./lib_oldsite')
 
 // time given to the connector to save the files
@@ -60,13 +61,7 @@ const accountDetailsUrl =
   'particulier/operations/synthese/jcr:content.produits-valorisation.json'
 const accountOperationsUrl =
   'particulier/operations/synthese/detail-comptes/jcr:content.n3.operations.json'
-const label2Type = {
-  'LIVRET A': 'bank',
-  'COMPTE CHEQUE': 'bank',
-  CCHQ: 'Checkings',
-  PEL: 'Savings'
-  // to complete when we have more data
-}
+
 let newSite = 0
 
 Document.registerClient(cozyClient)
@@ -120,12 +115,13 @@ function getBankUrl(bankId) {
 function fillNewAccount(json) {
   return {
     institutionLabel: bankLabel,
-    type: label2Type[json.libelleUsuelProduit.trim()] || 'UNKNOWN LABEL',
+    type: helpers.getAccountType(json.libelleUsuelProduit.trim()),
     label: json.libelleProduit.trim(),
     number: json.numeroCompteBam,
     vendorId: json.numeroCompteBam,
     balance: json.solde,
     caData: {
+      index: json.index,
       category: json.grandeFamilleProduitCode,
       contrat: json.idElementContrat,
       devise: json.idDevise
@@ -148,10 +144,19 @@ function parseAccounts($) {
   // Add main account
   accounts.push(fillNewAccount(accountsJson.comptePrincipal))
   accountsJson.grandesFamilles.forEach(x => {
-    // Only keep 'placements', ignore 'assurances' and 'credits'
-    if (x.titre === 'MES PLACEMENTS' || x.titre === 'MON EPARGNE DISPONIBLE') {
+    // ignore 'MES ASSURANCES'
+    // then keep 'MES COMPTES' 'MES PLACEMENTS' 'MON EPARGNE DISPONIBLE' 'MES CREDITS'
+    if (x.titre !== 'MES ASSURANCES') {
       x.elementsContrats.forEach(element => {
-        accounts.push(fillNewAccount(element))
+        // if we want ignore mandatory account, then ignore them
+        if (
+          !(
+            element.rolePartenaireCalcule === 'MANDATAIRE' &&
+            fields.ignoreMandatoryAccount
+          )
+        ) {
+          accounts.push(fillNewAccount(element))
+        }
       })
     }
   })
@@ -173,7 +178,7 @@ async function getAccountsDetails(accounts, bankUrl) {
         $.body.forEach(element => {
           accounts.find(
             x => x.caData.contrat == element.idElementContrat
-          ).balance = element.solde
+          ).balance = helpers.getBalance(element, fields.countWithInterest)
         })
       })
     }
