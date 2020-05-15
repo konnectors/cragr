@@ -1,6 +1,4 @@
 const moment = require('moment')
-//const rerrors = require('request-promise/errors')
-//const { log, errors } = require('cozy-konnector-libs')
 
 // ====== Constants =======
 
