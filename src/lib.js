@@ -541,10 +541,10 @@ function parseNewOperations(account, rawOperations) {
   rawOperations.forEach(x => {
     operations.push({
       amount: x.montant,
-      date: new Date(x.dateValeur),
-      dateOperation: new Date(x.dateOperation),
+      date: helpers.parseDateFromOperations(x.dateValeur).format(),
+      dateOperation: helpers.parseDateFromOperations(x.dateOperation).format(),
       label: x.libelleOperation.trim(),
-      dateImport: new Date(),
+      dateImport: moment().format(),
       currency: x.idDevise,
       vendorAccountId: account.number,
       type: 'none' // TODO Map libelleTypeOperation to type
@@ -559,7 +559,7 @@ function parseNewOperations(account, rawOperations) {
 function forgeVendorId(account, operations) {
   // Forge a vendorId by concatenating account number, day YYYY-MM-DD and index
   // of the operation during the day
-  const groups = groupBy(operations, x => x.date.toISOString().slice(0, 10))
+  const groups = groupBy(operations, x => x.date.slice(0, 10))
   Object.entries(groups).forEach(([date, group]) => {
     group.forEach((operation, i) => {
       operation.vendorId = `${account.number}_${date}_${i}`
