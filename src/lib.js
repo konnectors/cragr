@@ -206,43 +206,40 @@ async function fetchOperations(account, bankUrl) {
   log('info', `Gettings operations for ${account.label}`)
 
   let rawOperations = []
+  let nextSetStartIndex = null
+  let hasNext = false
+  let pageIndex = 1
 
-  const $ = await newRequest(`${bankUrl}/${accountOperationsUrl}`, {
-    qs: {
-      compteIdx: 0,
+  do {
+    log(
+      'debug',
+      pageIndex,
+      'Gettings operations for ${account.label} inside page '
+    )
+
+    let qs = {
+      compteIdx: account.caData.index,
       grandeFamilleCode: account.caData.category,
       idElementContrat: account.caData.contrat,
       idDevise: account.caData.devise,
       count: 100
     }
-  })
 
-  $.body.listeOperations.forEach(x => {
-    rawOperations.push(x)
-  })
+    if (nextSetStartIndex !== null) qs.startIndex = nextSetStartIndex
 
-  let nextSetStartIndex = $.body.nextSetStartIndex
-  let hasNext = $.body.hasNext
-
-  while (hasNext) {
     const $ = await newRequest(`${bankUrl}/${accountOperationsUrl}`, {
-      qs: {
-        compteIdx: 0,
-        grandeFamilleCode: account.caData.category,
-        idElementContrat: account.caData.contrat,
-        idDevise: account.caData.devise,
-        startIndex: nextSetStartIndex,
-        count: 100
-      }
+      qs: qs
+    })
+
+    $.body.listeOperations.forEach(x => {
+      rawOperations.push(x)
     })
 
     nextSetStartIndex = $.body.nextSetStartIndex
     hasNext = $.body.hasNext
 
-    $.body.listeOperations.forEach(x => {
-      rawOperations.push(x)
-    })
-  }
+    pageIndex++
+  } while (hasNext)
 
   return rawOperations
 }
