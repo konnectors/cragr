@@ -11,7 +11,7 @@
   "categories": [
     "banking"
   ],
-  "frequency": "daily",
+  "frequency": "hourly",
   "fields": {
     "bankId": {
       "type": "dropdown",
