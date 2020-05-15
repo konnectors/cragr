@@ -25,7 +25,7 @@ const helpers = require('./helpers')
 const libOldSite = require('./lib_oldsite')
 
 // time given to the connector to save the files
-const FULL_TIMEOUT = Date.now() + 4 * 60 * 1000
+const FULL_TIMEOUT = Date.now() + 12 * 60 * 1000
 
 const request = requestFactory({
   // debug: true,
