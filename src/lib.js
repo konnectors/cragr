@@ -444,7 +444,7 @@ function parseAccounts($) {
         if (
           !(
             element.rolePartenaireCalcule === 'MANDATAIRE' &&
-            fields.ignoreMandatoryAccount
+            fields.ignoreMandatoryAccount === '1'
           )
         ) {
           accounts.push(fillNewAccount(element))
