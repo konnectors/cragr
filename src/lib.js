@@ -34,7 +34,7 @@ const request = requestFactory({
   cheerio: true
 })
 
-const newRequest = requestFactory({
+const requestJson = requestFactory({
   // debug: true,
   jar: true,
   json: true,
@@ -46,7 +46,6 @@ const newRequest = requestFactory({
       'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0'
   }
 })
-const requestJson = newRequest
 
 let baseUrl = null
 let fields = {}
@@ -460,7 +459,7 @@ async function getAccountsDetails(accounts, bankUrl) {
       accounts[idx].caData.category
     ) {
       log('info', `Getting account #${idx} details`)
-      await newRequest(
+      await requestJson(
         `${bankUrl}/${accountDetailsUrl}/${accounts[idx].caData.category}`
       ).then($ => {
         $.body.forEach(element => {
@@ -515,7 +514,7 @@ async function fetchOperations(account, bankUrl) {
 
     if (nextSetStartIndex !== null) qs.startIndex = nextSetStartIndex
 
-    const $ = await newRequest(`${bankUrl}/${accountOperationsUrl}`, {
+    const $ = await requestJson(`${bankUrl}/${accountOperationsUrl}`, {
       qs: qs
     })
 
@@ -576,7 +575,7 @@ async function login(bankUrl) {
 
 function newlogin(bankUrl) {
   log('info', 'Try to login with new scheme')
-  return newRequest(`${bankUrl}/${accountsUrl}`).then($ => {
+  return requestJson(`${bankUrl}/${accountsUrl}`).then($ => {
     // Get the form data to post
     let form = []
     cheerio
@@ -584,7 +583,7 @@ function newlogin(bankUrl) {
       .serializeArray()
       .map(x => (form[x.name] = x.value))
     // Request a secure keypad
-    return newRequest(`${bankUrl}/${keypadUrl}`, {
+    return requestJson(`${bankUrl}/${keypadUrl}`, {
       method: 'POST',
       // Set a referer and the login in the body, necessary with this user-agent
       headers: {
@@ -612,13 +611,13 @@ function newlogin(bankUrl) {
         form['j_username'] = fields.login
         form['j_password'] = secureForm['keypadPassword']
         form['keypadId'] = secureForm['keypadId']
-        return newRequest(`${bankUrl}/${securityCheckUrl}`, {
+        return requestJson(`${bankUrl}/${securityCheckUrl}`, {
           method: 'POST',
           form: form
         })
           .then($ => {
             newSite = 1
-            return newRequest(`${rootUrl}${$.body.url}`)
+            return requestJson(`${rootUrl}${$.body.url}`)
           })
           .catch($ => {
             if ($.statusCode == 500) {
