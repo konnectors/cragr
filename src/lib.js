@@ -506,7 +506,7 @@ async function fetchOperations(account, bankUrl) {
     log(
       'debug',
       pageIndex,
-      'Gettings operations for ${account.label} inside page '
+      `Gettings operations for ${account.label} inside page`
     )
 
     let qs = {
