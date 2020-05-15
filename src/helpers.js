@@ -1,4 +1,4 @@
-//const moment = require('moment')
+const moment = require('moment')
 //const rerrors = require('request-promise/errors')
 //const { log, errors } = require('cozy-konnector-libs')
 
@@ -25,6 +25,15 @@ const AbbrToAccountType = {
 }
 
 // ====== Public functions =======
+
+/**
+ * Convert string to {@link moment.Moment}
+ * @param {string} date
+ * @returns {moment.Moment}
+ */
+function parseDateFromOperations(date) {
+  return moment(date, 'LL LTS')
+}
 
 /**
  * Analyzes the URL of the bank account to find its type
@@ -104,5 +113,6 @@ module.exports = {
   getLinkWithoutBankId,
   parseDate,
   parseUrlDownload,
-  parseDocumentType
+  parseDocumentType,
+  parseDateFromOperations
 }
