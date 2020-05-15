@@ -181,6 +181,34 @@
     "password": {
       "type": "password"
     },
+    "countWithInterest": {
+      "type": "dropdown",
+      "label": "Compter les crêdits avec les interêts",
+      "options" : [
+        {
+          "name" : "Oui",
+          "value" : "1"
+        },
+        {
+          "name" : "Non",
+          "value" : "0"
+        }
+      ]
+    },
+    "ignoreMandatoryAccount" : {
+      "type": "dropdown",
+      "label": "Ignorer les comptes mandataire",
+      "options" : [
+        {
+          "name" : "Oui",
+          "value" : "1"
+        },
+        {
+          "name" : "Non",
+          "value" : "0"
+        }
+      ]
+    },
     "advancedFields": {
       "folderPath": {
         "advanced": true,
