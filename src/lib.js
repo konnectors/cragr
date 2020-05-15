@@ -31,7 +31,12 @@ const request = requestFactory({
   // debug: true,
   jar: true,
   json: false,
-  cheerio: true
+  cheerio: true,
+  headers: {
+    // For some reason, it only works with this user-agent, taken from weboob
+    'User-Agent':
+      'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0'
+  }
 })
 
 const requestJson = requestFactory({
