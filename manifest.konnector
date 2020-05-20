@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.3.0",
   "name": "Crédit Agricole",
   "type": "konnector",
   "language": "node",
@@ -184,28 +184,28 @@
     "countWithInterest": {
       "type": "dropdown",
       "label": "Compter les crêdits avec les interêts",
-      "options": [
+      "options" : [
         {
-          "name": "Oui",
-          "value": "1"
+          "name" : "Oui",
+          "value" : "1"
         },
         {
-          "name": "Non",
-          "value": "0"
+          "name" : "Non",
+          "value" : "0"
         }
       ]
     },
-    "ignoreMandatoryAccount": {
+    "ignoreMandatoryAccount" : {
       "type": "dropdown",
       "label": "Ignorer les comptes mandataire",
-      "options": [
+      "options" : [
         {
-          "name": "Oui",
-          "value": "1"
+          "name" : "Oui",
+          "value" : "1"
         },
         {
-          "name": "Non",
-          "value": "0"
+          "name" : "Non",
+          "value" : "0"
         }
       ]
     },
