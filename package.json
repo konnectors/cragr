@@ -48,10 +48,10 @@
     "cozy-konnector-libs": "4.34.4",
     "jest": "^26.0.0",
     "moment": "2.26.0",
-    "xlsx": "0.16.1"
+    "xlsx": "0.16.2"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "6.0.1",
+    "copy-webpack-plugin": "6.0.2",
     "cozy-app-publish": "0.22.3",
     "cozy-jobs-cli": "1.13.5",
     "eslint-config-cozy-app": "1.5.0",
