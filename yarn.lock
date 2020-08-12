@@ -7998,10 +7998,10 @@ ws@^7.2.3:
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.3.1.tgz#d0547bf67f7ce4f12a72dfe31262c68d7dc551c8"
   integrity sha512-D3RuNkynyHmEJIpD2qrgVkc9DQ23OrN/moAwZX4L8DfvszsJxpjQuUq3LMx6HoYji9fbIOBY18XWBsAux1ZZUA==
 
-xlsx@0.16.5:
-  version "0.16.5"
-  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.16.5.tgz#6c320d19d8dd633b369296f9856ea7a51fbd44f8"
-  integrity sha512-t2OQ7hTs/2Vtv0Xx9UVoWmAgUlYYRc3Ic79PlLofS7og8Hn0TvBbHEUvU/KpgS0txzT/J25avSf0ANecNrMyZA==
+xlsx@0.16.6:
+  version "0.16.6"
+  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.16.6.tgz#ec759df166cbfe5fdf01d08636a6796db26af9a3"
+  integrity sha512-iAPNt15C2umCx7Q6h9owZvNHRYVOImLp7Mc00uA4UhJvzjfM1OV3V7TgBXIHuawGF1G6GLXZr/r75e5jsiBefg==
   dependencies:
     adler-32 "~1.2.0"
     cfb "^1.1.4"
