@@ -2097,10 +2097,10 @@ cozy-device-helper@^1.7.3:
   dependencies:
     lodash "4.17.19"
 
-cozy-doctypes@1.74.4:
-  version "1.74.4"
-  resolved "https://registry.yarnpkg.com/cozy-doctypes/-/cozy-doctypes-1.74.4.tgz#658f8ce8086b0b59130ed6dc431d097c52d79cdf"
-  integrity sha512-+XC2SyJYIhHAduEvQ9vbkf2UNZJbzRXkDMlj7473zcfBm4G0vKFUqjkbz/uoQchdvksjuiJxSCcC9yNLFg6CnA==
+cozy-doctypes@1.74.5:
+  version "1.74.5"
+  resolved "https://registry.yarnpkg.com/cozy-doctypes/-/cozy-doctypes-1.74.5.tgz#e1baa9482452a992fcaff9f44cb5cff413f9bb5b"
+  integrity sha512-YRMXAxtCcoXbqoF0A4W8vPO1wGYqFOAwbe/ue2F4gSkLE0K40gmWchRICPG3A1VjFWCmfKLLCOUBZV4N4cPwKw==
   dependencies:
     "@babel/runtime" "7.5.5"
     cozy-logger "^1.6.0"
