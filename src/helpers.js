@@ -41,7 +41,7 @@ function parseDateFromOperations(date) {
  * @returns {string} The type of the bank account
  */
 function getAccountType(label) {
-  //log('debug', label, 'getAccountType() label')
+  // log('debug', label, 'getAccountType() label')
 
   return AbbrToAccountType[label] || 'Unknown'
 }
@@ -56,7 +56,7 @@ function getBalance(element, countWithInterest) {
   if (element.montantRestantDu !== undefined) {
     // credit
     if (countWithInterest !== null && countWithInterest === '1') {
-      //TODO
+      // TODO
     }
 
     return element.montantRestantDu * -1

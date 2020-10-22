@@ -136,7 +136,7 @@ function fetchDocuments() {
     const form = $('form[name="formulaire"]')
     const linkPost = helpers.getLinkWithoutBankId(form.attr('action'))
 
-    //log('debug', linkPost, 'linkPost')
+    // log('debug', linkPost, 'linkPost')
 
     // get token
     return requestJson(`${baseUrl}/${documentsUrl.getToken}`, {
@@ -144,7 +144,7 @@ function fetchDocuments() {
         Referer: `Referer: ${baseUrl}/${documentsUrl.getForm}`
       }
     }).then($ => {
-      //log('debug', $.body.token, 'Token')
+      // log('debug', $.body.token, 'Token')
 
       const csrf_token = $.body.token
 
@@ -185,10 +185,10 @@ function fetchDocuments() {
  * @returns {[]|*[]}
  */
 function parseStatementsPage($) {
-  //log('debug', $, '$')
+  // log('debug', $, '$')
   log('info', 'Parsing documents page')
 
-  //if can not find in page
+  // if can not find in page
   if ($('#entete1').length === 0) {
     log('warning', 'No document find')
     return []
@@ -219,10 +219,10 @@ function parseStatementsPage($) {
         // init
         let labelAccount = ''
 
-        //log('debug', title, 'title')
-        //log('warn', $contents.find('tbody').length, 'tbody length')
-        //log('warn', $contents.find('tbody').eq(0).text(), 'tbody text')
-        //log('warn', $contents.find('tbody').eq(0).find('tr').length, 'tr length')
+        // log('debug', title, 'title')
+        // log('warn', $contents.find('tbody').length, 'tbody length')
+        // log('warn', $contents.find('tbody').eq(0).text(), 'tbody text')
+        // log('warn', $contents.find('tbody').eq(0).find('tr').length, 'tr length')
 
         Array.from(
           $contents
@@ -230,16 +230,16 @@ function parseStatementsPage($) {
             .eq(0)
             .find('tr')
         ).forEach(tr => {
-          //log('debug', tr, 'tr')
+          // log('debug', tr, 'tr')
 
           const $tr = $(tr) // elem to jquery
 
-          //log('warn', $tr.find('.entete-table-compte-repliable').length, '.entete-table-compte-repliable length')
-          //log('warn', $tr.text(), 'tr text')
+          // log('warn', $tr.find('.entete-table-compte-repliable').length, '.entete-table-compte-repliable length')
+          // log('warn', $tr.text(), 'tr text')
 
           // list
           if ($tr.find('.entete-table-compte-repliable').length > 0) {
-            //log('debug', 'tr list')
+            // log('debug', 'tr list')
 
             const $div = $tr.find('.entete-table-compte-repliable')
 
@@ -264,7 +264,7 @@ function parseStatementsPage($) {
           }
           // direct
           else {
-            //log('debug', 'tr direct');
+            // log('debug', 'tr direct');
 
             const $cells = $tr.find('td')
             const date = helpers.parseDate($cells.eq(0).text())
@@ -289,7 +289,7 @@ function parseStatementsPage($) {
     })
   }
 
-  //log('debug', linksFilesOrDetails, 'list of files or details with their links')
+  // log('debug', linksFilesOrDetails, 'list of files or details with their links')
 
   return linksFilesOrDetails
 }
@@ -303,9 +303,9 @@ function parseStatementsPage($) {
  * @returns {Q.Promise<any> | Promise<void> | PromiseLike<any>}
  */
 function fetchAndSaveDocuments(linkFileOrDetails, index, length) {
-  //log('debug', linkFileOrDetails, 'linkFileOrDetails')
-  //log('debug', index, 'index')
-  //log('debug', length, 'length')
+  // log('debug', linkFileOrDetails, 'linkFileOrDetails')
+  // log('debug', index, 'index')
+  // log('debug', length, 'length')
 
   /**
    * parse every return in promise for get real links (when is detail)
@@ -323,7 +323,7 @@ function fetchAndSaveDocuments(linkFileOrDetails, index, length) {
  * @returns {Q.Promise<any> | Promise<{filename: string, fileurl: string}[]> | PromiseLike<{filename: string, fileurl: string}[]>}
  */
 function fetchLinksDocuments(linkFileOrDetails) {
-  //log('debug', linkFileOrDetails, 'linkFileOrDetails')
+  // log('debug', linkFileOrDetails, 'linkFileOrDetails')
   // if is file, then return him directly
   if (linkFileOrDetails.isFile) {
     const accountDir =
@@ -342,8 +342,8 @@ function fetchLinksDocuments(linkFileOrDetails) {
 
   return request(linkFileOrDetails.link).then($ => {
     log('info', linkFileOrDetails.account, 'get details for')
-    //log('debug', linkFileOrDetails, 'get details for')
-    //log('debug', $, '$')
+    // log('debug', linkFileOrDetails, 'get details for')
+    // log('debug', $, '$')
 
     // now get all the links to the releves of this account
     log(

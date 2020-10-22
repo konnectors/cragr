@@ -120,7 +120,7 @@ function oldLogin(bankUrl, fieldsParams) {
     })
     .catch($ => {
       if ($.statusCode == 404) {
-        //return lib.newlogin(bankUrl)
+        // return lib.newlogin(bankUrl)
         return null
       } else {
         log('error', `Status code: ${$.statusCode}`)
