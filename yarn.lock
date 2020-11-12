@@ -1925,6 +1925,28 @@ cozy-client@16.1.1, cozy-client@^16.1.1:
     sift "^6.0.0"
     url-search-params-polyfill "^7.0.0"
 
+cozy-client@^16.2.0:
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/cozy-client/-/cozy-client-16.2.0.tgz#6b1168cf2a91592da5a4dde1d237084dd90aa338"
+  integrity sha512-QJFaUbYGWg98uViIB5LX+4OEHZ7aEYubq5W/zqXQQlbDlGAhxYAtVJyl7hZfF/pex5VyGzSXMmfKxVqxiV0exQ==
+  dependencies:
+    "@cozy/minilog" "1.0.0"
+    btoa "^1.2.1"
+    cozy-device-helper "^1.7.3"
+    cozy-logger "^1.6.0"
+    cozy-stack-client "^16.0.0"
+    isomorphic-fetch "^3.0.0"
+    lodash "^4.17.13"
+    microee "^0.0.6"
+    open "^7.0.2"
+    prop-types "^15.6.2"
+    react-redux "^7.2.0"
+    redux "^3.7.2"
+    redux-thunk "^2.3.0"
+    server-destroy "^1.0.1"
+    sift "^6.0.0"
+    url-search-params-polyfill "^7.0.0"
+
 cozy-device-helper@^1.7.3:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/cozy-device-helper/-/cozy-device-helper-1.10.0.tgz#86c102d32b012f648dbce36cc6031d3895ee95a2"
@@ -1963,7 +1985,36 @@ cozy-jobs-cli@1.14.0:
     pretty "2.0.0"
     strip-json-comments "3.1.1"
 
-cozy-konnector-libs@4.36.0, cozy-konnector-libs@^4.36.0:
+cozy-konnector-libs@4.37.0:
+  version "4.37.0"
+  resolved "https://registry.yarnpkg.com/cozy-konnector-libs/-/cozy-konnector-libs-4.37.0.tgz#c783c2360963aaa47b9a984134c778778cbf9d63"
+  integrity sha512-LHlFaw27CmfQZEwXKlBLffyDIAY5T24GAfZsLg3bRa3N6t8hwk2GNWC7/tWKh0SjKZg5tWfeQursDMUTIl+8Tw==
+  dependencies:
+    babel-runtime "^6.26.0"
+    bluebird "^3.7.2"
+    bluebird-retry "^0.11.0"
+    btoa "1.2.1"
+    cheerio "^1.0.0-rc.3"
+    classificator "^0.3.3"
+    cozy-client "^16.2.0"
+    cozy-client-js "^0.17.4"
+    cozy-doctypes "^1.74.8"
+    cozy-logger "^1.6.0"
+    date-fns "^2.16.1"
+    file-type "^16.0.1"
+    geco "^0.11.1"
+    lodash-id "^0.14.0"
+    lowdb "^1.0.0"
+    mime-types "^2.1.27"
+    node-fetch "^2.6.1"
+    raven "^2.6.4"
+    raw-body "^2.4.1"
+    request "^2.88.2"
+    request-debug "^0.2.0"
+    request-promise "^4.2.6"
+    strip-json-comments "^3.1.1"
+
+cozy-konnector-libs@^4.36.0:
   version "4.36.0"
   resolved "https://registry.yarnpkg.com/cozy-konnector-libs/-/cozy-konnector-libs-4.36.0.tgz#2c52031ada50a1f8035cad441dd63ec3144f726b"
   integrity sha512-ZXxVA5pC2TxPe/8EF01Zc2gd5NaFF+7oLw3aREmulXGSB63oXEl9FI3LOyIkByVEvrNVcUVwcsSV19ikMc9ekg==
