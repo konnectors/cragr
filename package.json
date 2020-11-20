@@ -47,7 +47,7 @@
     "cozy-konnector-libs": "4.37.1",
     "jest": "^26.6.0",
     "moment": "2.29.1",
-    "xlsx": "0.16.8"
+    "xlsx": "0.16.9"
   },
   "devDependencies": {
     "cozy-jobs-cli": "1.15.1",
