@@ -51,7 +51,7 @@ function getBalance(element, countWithInterest) {
   if (element.solde !== undefined) return element.solde // standard account
   if (element.encoursActuel !== undefined) return element.encoursActuel // assurance vie
   if (element.valorisationContrat !== undefined)
-    return element.valorisationContrat // compte part sociale
+    return element.valorisationContrat // compte part sociale or Plan Epargne Populaire
 
   if (element.montantRestantDu !== undefined) {
     // credit
