@@ -467,9 +467,12 @@ async function getAccountsDetails(accounts, bankUrl) {
         `${bankUrl}/${accountDetailsUrl}/${accounts[idx].caData.category}`
       ).then($ => {
         $.body.forEach(element => {
-          accounts.find(
-            x => x.caData.contrat == element.idElementContrat
-          ).balance = helpers.getBalance(element, fields.countWithInterest)
+          if (element.idElementContrat === accounts[idx].caData.contrat) {
+            accounts[idx].balance = helpers.getBalance(
+              element,
+              fields.countWithInterest
+            )
+          }
         })
       })
     }
