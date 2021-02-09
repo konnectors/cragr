@@ -44,13 +44,13 @@
   },
   "dependencies": {
     "cozy-doctypes": "1.77.0",
-    "cozy-konnector-libs": "4.39.1",
+    "cozy-konnector-libs": "4.40.1",
     "jest": "^26.6.0",
     "moment": "2.29.1",
     "xlsx": "0.16.9"
   },
   "devDependencies": {
-    "cozy-jobs-cli": "1.15.7",
-    "cozy-konnector-build": "1.1.5"
+    "cozy-jobs-cli": "1.15.9",
+    "cozy-konnector-build": "1.1.7"
   }
 }
