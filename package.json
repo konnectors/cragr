@@ -50,7 +50,7 @@
     "xlsx": "0.17.1"
   },
   "devDependencies": {
-    "cozy-jobs-cli": "1.16.2",
+    "cozy-jobs-cli": "1.16.6",
     "cozy-konnector-build": "1.2.2"
   }
 }
