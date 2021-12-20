@@ -2034,31 +2034,6 @@ cozy-client@^23.18.0:
     sift "^6.0.0"
     url-search-params-polyfill "^7.0.0"
 
-cozy-client@^23.4.0:
-  version "23.5.0"
-  resolved "https://registry.yarnpkg.com/cozy-client/-/cozy-client-23.5.0.tgz#efdc42bec6a54d3d44ec94633d0e438a46bc5fbb"
-  integrity sha512-ZZWI2D6X0oP0azwcDm9WkiKN1xShYmYkdlvtLbApUh3oub1fuaKmc1SJsLNzZcXqdsht5v1SPzBViDqRybSz0w==
-  dependencies:
-    "@cozy/minilog" "1.0.0"
-    "@types/jest" "^26.0.20"
-    "@types/lodash" "^4.14.170"
-    btoa "^1.2.1"
-    cozy-device-helper "^1.12.0"
-    cozy-flags "2.7.1"
-    cozy-logger "^1.6.0"
-    cozy-stack-client "^23.5.0"
-    lodash "^4.17.13"
-    microee "^0.0.6"
-    node-fetch "^2.6.1"
-    open "^7.0.2"
-    prop-types "^15.6.2"
-    react-redux "^7.2.0"
-    redux "3 || 4"
-    redux-thunk "^2.3.0"
-    server-destroy "^1.0.1"
-    sift "^6.0.0"
-    url-search-params-polyfill "^7.0.0"
-
 cozy-device-helper@^1.12.0:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/cozy-device-helper/-/cozy-device-helper-1.12.0.tgz#619a24b0d3caf2d3f616a1524daef7c7b71eab7a"
@@ -2130,36 +2105,7 @@ cozy-konnector-build@1.2.3:
     webpack "5.59.1"
     webpack-cli "4.9.1"
 
-cozy-konnector-libs@4.42.2:
-  version "4.42.2"
-  resolved "https://registry.yarnpkg.com/cozy-konnector-libs/-/cozy-konnector-libs-4.42.2.tgz#f620cd7e9f657a54c8e2b68c1a06d4bbc56f0567"
-  integrity sha512-1QXTfxS1aQribnaGj73vNOG6JTP64gQJ/4cc63kpbJuY3WqM7LEWfacWrzRU6rHsJmlhSFMMg7WW1f3/jP58fg==
-  dependencies:
-    babel-runtime "^6.26.0"
-    bluebird "^3.7.2"
-    bluebird-retry "^0.11.0"
-    btoa "1.2.1"
-    cheerio "^1.0.0-rc.9"
-    classificator "^0.3.3"
-    cozy-client "^23.4.0"
-    cozy-client-js "^0.19.0"
-    cozy-doctypes "^1.82.2"
-    cozy-logger "^1.7.0"
-    date-fns "^2.22.1"
-    file-type "^16.5.0"
-    geco "^0.11.1"
-    lodash-id "^0.14.0"
-    lowdb "^1.0.0"
-    mime-types "^2.1.31"
-    node-fetch "^2.6.1"
-    raven "^2.6.4"
-    raw-body "^2.4.1"
-    request "^2.88.2"
-    request-debug "^0.2.0"
-    request-promise "^4.2.6"
-    strip-json-comments "^3.1.1"
-
-cozy-konnector-libs@^4.45.0:
+cozy-konnector-libs@4.45.0, cozy-konnector-libs@^4.45.0:
   version "4.45.0"
   resolved "https://registry.yarnpkg.com/cozy-konnector-libs/-/cozy-konnector-libs-4.45.0.tgz#ccee02726f8792790ce82ea06387c815611f18f7"
   integrity sha512-7vIZ+Tzcua5P/SJk2f7tpOtYQJ6wGPxcUjraWdJjLELu+KnxHAi/HYOIc6OMXksMomZkEWul0njqazSVM2fpYA==
@@ -2218,16 +2164,6 @@ cozy-stack-client@^23.4.0:
   version "23.10.0"
   resolved "https://registry.yarnpkg.com/cozy-stack-client/-/cozy-stack-client-23.10.0.tgz#390d10ba3d43e343570c9ba3c9c0970d8805d373"
   integrity sha512-X+iXI9Ig5AxbLRxovvCwpAPmV8bf6pu84bpW5YnRo97M+THzU0pNZwQu+ss1iVlY5qez9VjOSKpWbISjICSegw==
-  dependencies:
-    cozy-flags "2.7.1"
-    detect-node "^2.0.4"
-    mime "^2.4.0"
-    qs "^6.7.0"
-
-cozy-stack-client@^23.5.0:
-  version "23.5.0"
-  resolved "https://registry.yarnpkg.com/cozy-stack-client/-/cozy-stack-client-23.5.0.tgz#dc5c792da4a6ab6ddc9b664cdaf9f6b166626a64"
-  integrity sha512-yBqB4uaaNpsT9gnCegCxHPcU7PHwheKP30fbKNA21yOCL1KPeIpAY8cUIY+OKdiYYhXPkrlRfIor6g0knlGHBg==
   dependencies:
     cozy-flags "2.7.1"
     detect-node "^2.0.4"
