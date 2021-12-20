@@ -43,14 +43,14 @@
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
   "dependencies": {
-    "cozy-doctypes": "1.82.2",
+    "cozy-doctypes": "1.82.3",
     "cozy-konnector-libs": "4.42.2",
     "jest": "^27.0.0",
     "moment": "2.29.1",
     "xlsx": "0.17.1"
   },
   "devDependencies": {
-    "cozy-jobs-cli": "1.16.2",
-    "cozy-konnector-build": "1.2.2"
+    "cozy-jobs-cli": "1.16.6",
+    "cozy-konnector-build": "1.2.3"
   }
 }
