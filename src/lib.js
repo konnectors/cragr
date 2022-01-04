@@ -215,6 +215,31 @@ function parseStatementsPage($) {
       for (var index = 0; index < nbSubCategories; index++) {
         const title = $subCategories_title.eq(index).text()
         const $contents = $subCategories_contents.eq(index)
+        const nbSubCategories_contents = $subCategories_contents.length
+
+        // if have more sub categories contents than sub categories title,
+        // then it's means have documents with different name (joint account)
+        // we move this with last sub categorie for the script can load documents
+        // TODO should not put with last sub categorie but associated sub categorie
+        if (nbSubCategories_contents > 1 && nbSubCategories === 1) {
+          for (
+            let indexSubCat = 1;
+            indexSubCat <= nbSubCategories_contents;
+            indexSubCat++
+          ) {
+            $subCategories_contents
+              .eq(0)
+              .find('tbody')
+              .eq(0)
+              .append(
+                $subCategories_contents
+                  .eq(indexSubCat)
+                  .find('tbody')
+                  .eq(0)
+                  .find('tr')
+              )
+          }
+        }
 
         // init
         let labelAccount = ''
@@ -467,9 +492,12 @@ async function getAccountsDetails(accounts, bankUrl) {
         `${bankUrl}/${accountDetailsUrl}/${accounts[idx].caData.category}`
       ).then($ => {
         $.body.forEach(element => {
-          accounts.find(
-            x => x.caData.contrat == element.idElementContrat
-          ).balance = helpers.getBalance(element, fields.countWithInterest)
+          if (element.idElementContrat === accounts[idx].caData.contrat) {
+            accounts[idx].balance = helpers.getBalance(
+              element,
+              fields.countWithInterest
+            )
+          }
         })
       })
     }
