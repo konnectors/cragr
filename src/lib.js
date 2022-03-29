@@ -160,9 +160,7 @@ function fetchDocuments() {
           ':cq_csrf_token': csrf_token
         }
       })
-        .then(
-          parseStatementsPage
-        ) /*
+        .then(parseStatementsPage) /*
         .catch($ => {
           log(
             'debug',
@@ -224,12 +222,7 @@ function parseStatementsPage($) {
         // log('warn', $contents.find('tbody').eq(0).text(), 'tbody text')
         // log('warn', $contents.find('tbody').eq(0).find('tr').length, 'tr length')
 
-        Array.from(
-          $contents
-            .find('tbody')
-            .eq(0)
-            .find('tr')
-        ).forEach(tr => {
+        Array.from($contents.find('tbody').eq(0).find('tr')).forEach(tr => {
           // log('debug', tr, 'tr')
 
           const $tr = $(tr) // elem to jquery
@@ -248,10 +241,7 @@ function parseStatementsPage($) {
             )
 
             labelAccount = helpers.cleanDocumentLabel(
-              $div
-                .find('a')
-                .eq(1)
-                .text()
+              $div.find('a').eq(1).text()
             )
 
             linksFilesOrDetails.push({
@@ -269,11 +259,7 @@ function parseStatementsPage($) {
             const $cells = $tr.find('td')
             const date = helpers.parseDate($cells.eq(0).text())
             const link = helpers.parseUrlDownload($cells.eq(3).find('a'))
-            const name = $tr
-              .find('th')
-              .eq(0)
-              .text()
-              .trim()
+            const name = $tr.find('th').eq(0).text().trim()
 
             linksFilesOrDetails.push({
               isFile: true,
@@ -356,11 +342,7 @@ function fetchLinksDocuments(linkFileOrDetails) {
         const $cells = $(elem).find('td')
         const date = helpers.parseDate($cells.eq(0).text())
         const link = helpers.parseUrlDownload($cells.eq(3).find('a'))
-        const name = $(elem)
-          .find('th')
-          .eq(0)
-          .text()
-          .trim()
+        const name = $(elem).find('th').eq(0).text().trim()
 
         const accountDir =
           linkFileOrDetails.account !== ''
@@ -466,7 +448,7 @@ async function getAccountsDetails(accounts, bankUrl) {
       await requestJson(
         `${bankUrl}/${accountDetailsUrl}/${accounts[idx].caData.category}`
       ).then($ => {
-        $.body.forEach(element => {
+        return $.body.forEach(element => {
           accounts.find(
             x => x.caData.contrat == element.idElementContrat
           ).balance = helpers.getBalance(element, fields.countWithInterest)

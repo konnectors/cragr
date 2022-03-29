@@ -74,18 +74,11 @@ function cleanDocumentLabel(label) {
 }
 
 function getLinkWithoutBankId(url) {
-  return url
-    .split('/')
-    .splice(2)
-    .join('/')
+  return url.split('/').splice(2).join('/')
 }
 
 function parseDate(text) {
-  return text
-    .trim()
-    .split('/')
-    .reverse()
-    .join('-')
+  return text.trim().split('/').reverse().join('-')
 }
 
 function parseUrlDownload($a) {

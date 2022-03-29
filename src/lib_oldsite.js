@@ -38,11 +38,7 @@ function oldLogin(bankUrl, fieldsParams) {
   return request(`${bankUrl}/particuliers.html`)
     .then($ => {
       const script = Array.from($('script'))
-        .map(script =>
-          $(script)
-            .html()
-            .trim()
-        )
+        .map(script => $(script).html().trim())
         .find(script => {
           return script.match(/var chemin = "/)
         })
@@ -71,10 +67,7 @@ function oldLogin(bankUrl, fieldsParams) {
     })
     .then($ => {
       const touches = Array.from($('#pave-saisie-code td a')).filter(
-        touche =>
-          $(touche)
-            .text()
-            .trim() !== ''
+        touche => $(touche).text().trim() !== ''
       )
       const decodeTable = touches.reduce((memo, touche) => {
         const $touche = $(touche)
@@ -204,10 +197,7 @@ function parseOperations(account, body) {
 
       // some months are abbreviated in French and other in English!!! + encoding problem
       let date = parseDate(
-        cells[0]
-          .toLowerCase()
-          .replace('é', 'e')
-          .replace('û', 'u')
+        cells[0].toLowerCase().replace('é', 'e').replace('û', 'u')
       )
 
       // adjust the date since we do not have the year in the document but we know the document
@@ -278,21 +268,12 @@ function parseStatementsPage($) {
   // here I suppose the fist section is always the releves de comptes section but the name is
   // checked
   log('info', 'Getting the list of accounts with account statements')
-  if (
-    $('#entete1')
-      .text()
-      .trim() === 'RELEVES DE COMPTES'
-  ) {
+  if ($('#entete1').text().trim() === 'RELEVES DE COMPTES') {
     // get the list of accounts with links to display the details
     const accounts = Array.from($('#panneau1 .ca-table tbody')).map(account => {
       const $account = $(account)
       const label = helpers.cleanDocumentLabel(
-        $account
-          .find('tr')
-          .eq(0)
-          .find('a')
-          .eq(1)
-          .text()
+        $account.find('tr').eq(0).find('a').eq(1).text()
       )
 
       const link = $account.find('.fleche-ouvrir').attr('href')
@@ -310,17 +291,10 @@ function fetchAccountDocuments(account, index) {
     log('info', account.label)
     // now get all the links to the releves of this account
     const entries = Array.from(
-      $('#panneau1 table tbody')
-        .eq(index)
-        .find('tr[title]')
+      $('#panneau1 table tbody').eq(index).find('tr[title]')
     ).map(elem => {
       const $cells = $(elem).find('td')
-      const date = $cells
-        .eq(0)
-        .text()
-        .split('/')
-        .reverse()
-        .join('')
+      const date = $cells.eq(0).text().split('/').reverse().join('')
       const link = $cells
         .eq(3)
         .find('a')
