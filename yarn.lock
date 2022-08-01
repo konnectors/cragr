@@ -2874,10 +2874,10 @@ cozy-device-helper@^2.1.0:
   dependencies:
     lodash "^4.17.19"
 
-cozy-doctypes@1.83.7:
-  version "1.83.7"
-  resolved "https://registry.yarnpkg.com/cozy-doctypes/-/cozy-doctypes-1.83.7.tgz#258448aa5fa8f76d557c7635c148d9bfe54bbe33"
-  integrity sha512-sAMZ/xajc2rXWmBFB0fP4NWQmUDh6FmStRE2KFpMrq7UGM6wIBouVl1CYD7grdlompBh3/1kBNmAb5PuWRMnBQ==
+cozy-doctypes@1.85.1:
+  version "1.85.1"
+  resolved "https://registry.yarnpkg.com/cozy-doctypes/-/cozy-doctypes-1.85.1.tgz#4e2ea4a9be718b2c9f02d66ae09cecc59bfc93ee"
+  integrity sha512-WG5LLYfqb9D5wiMHwzQFtgi8IX20uMbCqUuM0c04u9nEJx0c/oGdFMtY38zf2hcB8oz+86++tHcceqsPuWTKhQ==
   dependencies:
     cozy-logger "^1.9.0"
     date-fns "^1.30.1"
